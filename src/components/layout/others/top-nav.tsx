@@ -480,13 +480,13 @@ export function AppTopbar({ user }: UserProps) {
                     height: 40,
                     width: 40,
                     borderRadius: 6,
-                    background: 'rgba(206,17,38,.1)',
+                    background: 'rgba(0,148,96,.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontWeight: 'bold',
                     fontSize: 12,
-                    color: '#CE1126',
+                    color: '#009460',
                   }}
                 >
                   {firstTeam.name?.slice(0, 2).toUpperCase() ?? 'AP'}
@@ -546,14 +546,14 @@ export function AppTopbar({ user }: UserProps) {
                 textShadow: '0 2px 4px rgba(0,0,0,0.1)',
               }}
             >
-              {config?.systemTitle || "SISE CEP Agriculture PS2040"}
+              {config?.systemTitle || "SISE-MALI"}
             </div>
             <div
               style={{
                 height: 2,
                 width: 60,
                 margin: '6px auto 0',
-                background: 'linear-gradient(90deg, transparent, #FCD116, #CE1126, #009460, transparent)',
+                background: 'linear-gradient(90deg, transparent, #009460, #FCD116, #CE1126, transparent)',
                 borderRadius: 2,
               }}
             />
@@ -743,11 +743,11 @@ export function AppTopbar({ user }: UserProps) {
           </div>
         )}
 
-        {/* ══ Bande tricolore Guinée ══ */}
+        {/* ══ Bande tricolore Mali ══ */}
         <div aria-hidden style={{ display: 'flex', height: 4 }}>
-          <div style={{ flex: 1, backgroundColor: '#CE1126' }} />
-          <div style={{ flex: 1, backgroundColor: '#FCD116' }} />
           <div style={{ flex: 1, backgroundColor: '#009460' }} />
+          <div style={{ flex: 1, backgroundColor: '#FCD116' }} />
+          <div style={{ flex: 1, backgroundColor: '#CE1126' }} />
         </div>
 
       </header >

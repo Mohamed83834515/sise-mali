@@ -41,7 +41,7 @@ export function SignUp() {
           <div className='relative flex items-center gap-3 p-10 pb-0'>
             <Logo className='size-10 rounded-xl' />
             <span className='text-base font-semibold uppercase tracking-widest text-white/90'>
-              SIMADOU
+              SISE-MALI
             </span>
           </div>
 
@@ -124,7 +124,7 @@ export function SignUp() {
 
               {/* Pill en haut */}
               <rect x="136" y="12" width="148" height="30" rx="15" fill="rgba(16,185,129,.3)" stroke="rgba(52,211,153,.35)" strokeWidth=".75" />
-              <text x="180" y="31" fill="rgba(255,255,255,.92)" fontSize="11" fontWeight="600" fontFamily="system-ui,sans-serif">Simadou 2040 🌱</text>
+              <text x="180" y="31" fill="rgba(255,255,255,.92)" fontSize="11" fontWeight="600" fontFamily="system-ui,sans-serif">SISE-MALI 🇲🇱</text>
 
               {/* Badge "En ligne" pulsant */}
               <circle cx="226" cy="104" r="6" fill="rgba(6,95,70,1)" stroke="rgba(6,78,59,1)" strokeWidth="1" />
@@ -145,7 +145,7 @@ export function SignUp() {
           <div className='relative space-y-5 px-10 pb-10'>
             <div className='space-y-2'>
               <p className='text-xs font-semibold uppercase tracking-widest' style={{ color: 'rgba(52,211,153,.85)' }}>
-                Programme Simadou 2040
+                République du Mali
               </p>
               <h2 className='text-2xl font-light leading-snug' style={{ color: 'rgba(255,255,255,.88)' }}>
                 Rejoignez une communauté qui{' '}

@@ -8,10 +8,14 @@ export const CHART_COLORS = {
 } as const
 
 export const HEADER_COLORS = {
-  guinea_rouge: { bg: '#CE1126', text: '#FFFFFF', label: 'Guinée Rouge' },
-  guinea_vert: { bg: '#009460', text: '#FFFFFF', label: 'Guinée Vert' },
-  guinea_white: { bg: '#FFFFFF', text: '#000000', label: 'Guinée Blanc' },
+  mali_vert: { bg: '#009460', text: '#FFFFFF', label: 'Mali Vert' },
+  mali_rouge: { bg: '#CE1126', text: '#FFFFFF', label: 'Mali Rouge' },
+  mali_or: { bg: '#FCD116', text: '#000000', label: 'Mali Jaune' },
+  mali_white: { bg: '#FFFFFF', text: '#000000', label: 'Mali Blanc' },
   slate: { bg: '#1e293b', text: '#f1f5f9', label: 'Slate' },
+  guinea_rouge: { bg: '#CE1126', text: '#FFFFFF', label: 'Mali Rouge' },
+  guinea_vert: { bg: '#009460', text: '#FFFFFF', label: 'Mali Vert' },
+  guinea_white: { bg: '#FFFFFF', text: '#000000', label: 'Mali Blanc' },
 } as const
 
 export type ChartColorKey = keyof typeof CHART_COLORS
@@ -19,9 +23,9 @@ export type HeaderColorKey = keyof typeof HEADER_COLORS
 
 // ─── Defaults ─────────────────────────────────────────────────────────────────
 
-const DEFAULT_COLOR: ChartColorKey = 'rouge'
-const DEFAULT_COLOR2: ChartColorKey = 'vert'
-const DEFAULT_HEADER_COLOR: HeaderColorKey = 'guinea_vert'
+const DEFAULT_COLOR: ChartColorKey = 'vert'
+const DEFAULT_COLOR2: ChartColorKey = 'rouge'
+const DEFAULT_HEADER_COLOR: HeaderColorKey = 'mali_vert'
 
 const CHART_STORAGE_KEY = 'app-chart-color'
 const CHART_STORAGE_KEY2 = 'app-chart-color-2'

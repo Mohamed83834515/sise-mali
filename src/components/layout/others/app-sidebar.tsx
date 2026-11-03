@@ -12,7 +12,7 @@ import { NavUser } from './nav-user'
 import { useLayout } from '@/stores/others/layout-store'
 import { CHART_COLORS, useColor } from '@/stores/others/color-store'
 import { useMe } from '@/simadou/allHooks/auth/authHooks'
-import simadouLogo from '@/assets/images/SimandouImg.png'
+import { MaliFlag } from '@/components/others/mali-flag'
 import { useGeneralParamsQuery } from '@/simadou/allHooks/generalParams/queries'
 import { useFilteredSidebar } from '@/simadou/allHooks/admin/use-filtered-sidebar'
 export function AppSidebar() {
@@ -35,14 +35,18 @@ export function AppSidebar() {
     >
       <SidebarHeader>
         <div className='flex items-start gap-4'>
-          <div className='flex aspect-square size-8 items-center justify-center rounded-lg  text-sidebar-primary-foreground'>
-            <img src={simadouLogo} className='size-4' />
+          <div className='flex aspect-square size-8 items-center justify-center rounded-lg bg-emerald-500/10 text-sidebar-primary-foreground p-1'>
+            {config?.structureLogo ? (
+              <img src={config.structureLogo} alt={config?.structureSigle || 'Mali'} className='size-6 object-contain rounded' />
+            ) : (
+              <MaliFlag width={22} height={15} className='rounded-xs shadow-xs' />
+            )}
           </div>
           <div className='grid flex-1 text-start text-sm leading-tight'>
             <span className='truncate font-semibold'>
-              {config?.systemTitle || "SISE CEP Agriculture PS2040"}
+              {config?.systemTitle || "SISE-MALI"}
             </span>
-            <span className='truncate text-xs'>{config?.structureSigle}</span>
+            <span className='truncate text-xs'>{config?.structureSigle || "Agriculture"}</span>
           </div>
         </div>
       </SidebarHeader>
@@ -53,7 +57,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         {user && (
-          <NavUser user={{ nom_perso: user.nom_perso ?? "Simadou", email: user.email ?? "hello@gmail.com", id_personnel_perso: user.id_personnel_perso ?? "4", statut: user.statut ?? 1, personnel_profile_picture: user.personnel_profile_picture, prenom_perso: user.prenom_perso }} />
+          <NavUser user={{ nom_perso: user.nom_perso ?? "Utilisateur", email: user.email ?? "contact@sise-mali.ml", id_personnel_perso: user.id_personnel_perso ?? "4", statut: user.statut ?? 1, personnel_profile_picture: user.personnel_profile_picture, prenom_perso: user.prenom_perso }} />
         )}
 
       </SidebarFooter>

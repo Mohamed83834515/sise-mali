@@ -97,7 +97,7 @@ const handleResend = () => {
                       dark:border-zinc-800">
         <Inbox className="size-3.5 shrink-0 text-zinc-400" aria-hidden />
        
-        <span className="text-xs text-zinc-400">{config?.structureEmail ?? 'simandou@gmail.com'}</span>  
+        <span className="text-xs text-zinc-400">{config?.structureEmail ?? 'contact@sise-mali.ml'}</span>  
       </div>
       <div className="flex items-center gap-2.5 px-3.5 py-2.5">
         <Clock className="size-3.5 shrink-0 text-zinc-400" aria-hidden />

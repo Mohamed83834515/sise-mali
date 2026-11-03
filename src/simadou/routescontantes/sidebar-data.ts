@@ -28,8 +28,8 @@ import { type SidebarData } from '../../components/layout/others/types'
 
 export const sidebarData: SidebarData = {
   user: {
-    name: "Simadou",
-    email: "hello@gmail.com",
+    name: "SISE-MALI",
+    email: "contact@sise-mali.ml",
     id: "zofmov",
     statut: 1
   },

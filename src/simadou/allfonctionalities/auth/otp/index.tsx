@@ -41,7 +41,7 @@ export function Otp() {
           <div className='relative flex items-center gap-3 p-10 pb-0'>
             <Logo className='size-10 rounded-xl' />
             <span className='text-base font-semibold uppercase tracking-widest text-white/90'>
-              SIMADOU
+              SISE-MALI
             </span>
           </div>
 

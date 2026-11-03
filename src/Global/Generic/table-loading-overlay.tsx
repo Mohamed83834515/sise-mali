@@ -1,3 +1,5 @@
+import { MaliFlag } from '@/components/others/mali-flag'
+
 function SpinningRing({
   r,
   stroke,
@@ -53,9 +55,17 @@ export function TableLoadingOverlay() {
       }}
     >
       <div style={{ position: 'relative', width: 80, height: 80 }}>
-        <SpinningRing r={54} stroke='#10B981' dasharray='200 140' duration='3s'   direction='cw'  />
-        <SpinningRing r={40} stroke='#EF4444' dasharray='150 101' duration='2s'   direction='ccw' />
-        <SpinningRing r={26} stroke='#F59E0B' dasharray='90 73'   duration='1.2s' direction='cw'  />
+        {/* Anneau extérieur — Vert (Mali) */}
+        <SpinningRing r={54} stroke='#009460' dasharray='200 140' duration='3s'   direction='cw'  />
+        {/* Anneau intermédiaire — Jaune/Or (Mali) */}
+        <SpinningRing r={40} stroke='#FCD116' dasharray='150 101' duration='2s'   direction='ccw' />
+        {/* Anneau intérieur — Rouge (Mali) */}
+        <SpinningRing r={26} stroke='#CE1126' dasharray='90 73'   duration='1.2s' direction='cw'  />
+
+        {/* Drapeau du Mali au centre */}
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <MaliFlag width={18} height={12} className='rounded-xs shadow-xs' />
+        </div>
       </div>
 
       <style>{`

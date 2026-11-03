@@ -6,7 +6,7 @@ interface LogoProps {
   alt?: string
 }
 
-export function Logo({ className, alt = 'SIMADOU' }: LogoProps) {
+export function Logo({ className, alt = 'SISE-MALI' }: LogoProps) {
   return (
     <img
       src={logoImg}

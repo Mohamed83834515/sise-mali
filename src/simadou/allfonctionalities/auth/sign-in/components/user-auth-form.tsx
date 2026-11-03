@@ -95,7 +95,7 @@ export function UserAuthForm({
             {error.message}
           </div>
         )}
-        <Button className='mt-2' disabled={isPending}>
+        <Button className='mt-2 bg-[#009460] hover:bg-[#007a4f] text-white transition-colors' disabled={isPending}>
           {isPending ? <Loader2 className='animate-spin' /> : <LogIn />}
           {isPending ? "Connexion .." : "Se connecter"}
         </Button>

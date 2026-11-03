@@ -256,7 +256,7 @@ export default function CoutUnitairePtbaManager({
             Saisissez les coûts unitaires directement dans le tableau.
           </p>
           <p className='text-xs text-muted-foreground mt-1'>
-            Les prix unitaires sont exprimés en Francs Guinéens ({currencyCode})
+            Les prix unitaires sont exprimés en Francs CFA ({currencyCode})
           </p>
         </div>
         <div className='flex flex-col gap-2 sm:flex-row'>
