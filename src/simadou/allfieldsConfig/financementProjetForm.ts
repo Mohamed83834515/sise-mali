@@ -42,7 +42,7 @@ export function getFinancementProjetFormConfig(
       },
       {
         name: 'montant',
-        label: 'Montant(GNF)',
+        label: 'Montant(FR)',
         type: 'number',
         placeholder: 'Ex. 1000000',
         required: true,

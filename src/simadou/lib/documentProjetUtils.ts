@@ -9,7 +9,7 @@ export function resolveDocumentUrl(document: string | undefined): string | null 
   if (/^https?:\/\//i.test(document)) return document
   const base =
     (import.meta.env.VITE_API_BASE_URL as string) ||
-    'https://api.ruche-sectoriel.net/api/'
+    'https://api.sise-mali.net/api/'
   const origin = base.replace(/\/api\/?$/, '')
   return document.startsWith('/') ? `${origin}${document}` : `${base}${document}`
 }

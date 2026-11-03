@@ -195,7 +195,7 @@ export default function ProjetDetail() {
                       notation: 'compact',
                       compactDisplay: 'short',
                       style: 'currency',
-                      currency: 'GNF',
+                      currency: 'FR',
                       maximumFractionDigits: 1,
                     }).format(0)}
                   </span>

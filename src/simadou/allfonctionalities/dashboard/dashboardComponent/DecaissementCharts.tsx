@@ -114,7 +114,7 @@ const DecaissementCharts: React.FC<DecaissementChartsProps> = ({
           <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">
             Décaissement par bailleur
           </h3>
-          <p className="text-xs text-gray-400 dark:text-gray-500">Prévu vs Décaissé (GNF)</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500">Prévu vs Décaissé (FR)</p>
         </div>
         <ResponsiveContainer width="100%" height={280}>
           <BarChart
@@ -205,7 +205,7 @@ const DecaissementCharts: React.FC<DecaissementChartsProps> = ({
           <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">
             Évolution mensuelle des décaissements
           </h3>
-          <p className="text-xs text-gray-400 dark:text-gray-500">Montants décaissés par mois (GNF)</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500">Montants décaissés par mois (FR)</p>
         </div>
         <ResponsiveContainer width="100%" height={220}>
           <BarChart

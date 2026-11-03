@@ -197,7 +197,7 @@ describe('exportRapportWord', () => {
           { type: 'title', text: 'PREAMBULE' },
           {
             type: 'paragraph',
-            text: 'Considérant le Programme SIMANDOU 2040 ;',
+            text: 'Considérant le Programme SISE-MALI 2040 ;',
           },
         ],
       })
@@ -206,7 +206,7 @@ describe('exportRapportWord', () => {
     // Deux sections : préambule en portrait, tableau en paysage.
     expect((xml.match(/<w:sectPr/g) ?? []).length).toBe(2)
     expect(xml).toContain('PREAMBULE')
-    expect(xml).toContain('Considérant le Programme SIMANDOU 2040 ;')
+    expect(xml).toContain('Considérant le Programme SISE-MALI 2040 ;')
     expect(xml).toMatch(/w:orient="landscape"/)
 
     // La bannière d'en-tête ouvre le document, avant le préambule.

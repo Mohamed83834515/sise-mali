@@ -162,7 +162,7 @@ function buildHeader(fiche: RapportExportFiche): Table {
             width: { size: CONTENT_WIDTH / 2, type: WidthType.DXA },
             borders: noBorder(),
             children: [
-              p(fiche.orgTitle ?? 'SIMANDOU', { bold: true, size: 22 }),
+              p(fiche.orgTitle ?? 'SISE-MALI', { bold: true, size: 22 }),
               p(
                 fiche.orgSubtitle ??
                 'Plateforme de suivi des projets et programmes',

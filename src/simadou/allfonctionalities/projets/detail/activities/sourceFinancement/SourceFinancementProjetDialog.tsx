@@ -136,7 +136,7 @@ export default function SourceFinancementManager({
                       0
                     )
                   )}{' '}
-                  GNF
+                  FR
                 </span>
               </div>
             </div>

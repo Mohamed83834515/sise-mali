@@ -6,7 +6,7 @@ import { getConfigDuration } from '@/lib/session-config'
 
 const BASE_URL =
   (import.meta.env.VITE_API_BASE_URL as string) ||
-  'https://api.ruche-sectoriel.net/api/'
+  'https://api.sise-mali.net/api/'
 
 export const api = axios.create({
   baseURL: BASE_URL,
@@ -16,7 +16,7 @@ export const api = axios.create({
     Accept: 'application/json',
   },
 
-  // 'https://api.ruche-sectoriel.net/api/'
+  // 'https://api.sise-mali.net/api/'
   timeout: 30000,
   withCredentials: true,
 })

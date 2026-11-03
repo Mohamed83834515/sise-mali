@@ -56,31 +56,31 @@ export function buildCadreAnalytiqueColumns({
   const childCountColumn: ColumnDef<CadreAnalytique>[] =
     nextNiveau && childCountByParentId
       ? [
-          {
-            id: `children_${nextNiveau.id_nca}`,
-            accessorFn: (row) => childCountByParentId.get(row.id_ca) ?? 0,
-            header: ({ column }) => (
-              <DataTableColumnHeader
-                column={column}
-                title={nextNiveau.libelle_nca}
-                className='w-full justify-center'
-              />
-            ),
-            cell: ({ row }) => (
-              <div className='flex w-full justify-center'>
-                <span className='tabular-nums text-sm'>
-                  {childCountByParentId.get(row.original.id_ca) ?? 0}
-                </span>
-              </div>
-            ),
-            meta: {
-              thClassName: '!text-center max-w-[11rem]',
-              tdClassName: 'text-center max-w-[11rem]',
-            },
-            enableSorting: true,
-            enableHiding: false,
+        {
+          id: `children_${nextNiveau.id_nca}`,
+          accessorFn: (row) => childCountByParentId.get(row.id_ca) ?? 0,
+          header: ({ column }) => (
+            <DataTableColumnHeader
+              column={column}
+              title={nextNiveau.libelle_nca}
+              className='w-full justify-center'
+            />
+          ),
+          cell: ({ row }) => (
+            <div className='flex w-full justify-center'>
+              <span className='tabular-nums text-sm'>
+                {childCountByParentId.get(row.original.id_ca) ?? 0}
+              </span>
+            </div>
+          ),
+          meta: {
+            thClassName: '!text-center max-w-[11rem]',
+            tdClassName: 'text-center max-w-[11rem]',
           },
-        ]
+          enableSorting: true,
+          enableHiding: false,
+        },
+      ]
       : []
 
   const lastNiveauId = getLastNiveauCadreAnalytiqueId(niveaux)
@@ -95,13 +95,13 @@ export function buildCadreAnalytiqueColumns({
       aggregatedBudgetByCadreId.get(row.id_ca) ??
       (Number(row.cout_axe) || 0),
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Budget GNF' />
+      <DataTableColumnHeader column={column} title='Budget FR' />
     ),
     cell: ({ row }) => (
       <span className='whitespace-nowrap tabular-nums text-sm'>
         {formatNumber(
           aggregatedBudgetByCadreId.get(row.original.id_ca) ??
-            row.original.cout_axe
+          row.original.cout_axe
         )}
       </span>
     ),
@@ -111,39 +111,39 @@ export function buildCadreAnalytiqueColumns({
   const indicateursColumn: ColumnDef<CadreAnalytique>[] =
     isLastLevel && onOpenIndicateurs
       ? [
-          {
-            id: 'planification_indicateur',
-            header: ({ column }) => (
-              <DataTableColumnHeader
-                column={column}
-                title='Indicateurs'
-                className='text-center'
-              />
-            ),
-            cell: ({ row }) => {
-              const count = getIndicateurCount?.(row.original) ?? 0
+        {
+          id: 'planification_indicateur',
+          header: ({ column }) => (
+            <DataTableColumnHeader
+              column={column}
+              title='Indicateurs'
+              className='text-center'
+            />
+          ),
+          cell: ({ row }) => {
+            const count = getIndicateurCount?.(row.original) ?? 0
 
-              return (
-                <div className='flex justify-center'>
-                  <Button
-                    type='button'
-                    variant='outline'
-                    size='sm'
-                    className='gap-2 border-green-200 bg-green-50 text-green-700 hover:bg-green-100'
-                    onClick={() => onOpenIndicateurs(row.original)}
-                  >
-                    <List className='h-4 w-4' />
-                    Indicateurs ({count})
-                  </Button>
-                </div>
-              )
-            },
-            meta: { thClassName: 'text-center', className: 'text-center' },
-            size: 100,
-            enableSorting: false,
-            enableHiding: false,
+            return (
+              <div className='flex justify-center'>
+                <Button
+                  type='button'
+                  variant='outline'
+                  size='sm'
+                  className='gap-2 border-green-200 bg-green-50 text-green-700 hover:bg-green-100'
+                  onClick={() => onOpenIndicateurs(row.original)}
+                >
+                  <List className='h-4 w-4' />
+                  Indicateurs ({count})
+                </Button>
+              </div>
+            )
           },
-        ]
+          meta: { thClassName: 'text-center', className: 'text-center' },
+          size: 100,
+          enableSorting: false,
+          enableHiding: false,
+        },
+      ]
       : []
 
   return [

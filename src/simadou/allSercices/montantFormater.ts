@@ -13,7 +13,7 @@
 export const formatNumber = (value: number | string | null | undefined): string => {
   const num = typeof value === 'string' ? parseFloat(value) : value ?? 0
   if (isNaN(num)) return '0'
-  
+
   // Formatage avec points comme séparateurs
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
@@ -41,7 +41,7 @@ export const parseMontant = (formattedValue: string): number => {
 }
 
 /**
- * Formate un nombre avec points et ajoute "GNF" si demandé
+ * Formate un nombre avec points et ajoute "FR" si demandé
  */
 export const formatMontantAvecDevise = (value: number | string | null | undefined, includeDevise: boolean = false): string => {
   const formatted = formatNumber(value)

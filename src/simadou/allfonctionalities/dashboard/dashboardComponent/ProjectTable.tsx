@@ -139,7 +139,7 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
                 colSpan={3}
                 className="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider border-t-0 border-r border-b border-white/15"
               >
-                Budget (GNF)
+                Budget (FR)
               </th>
               <th
                 rowSpan={2}
@@ -189,8 +189,8 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
                   <tr
                     key={projet.id}
                     className={`hover:bg-blue-50/40 dark:hover:bg-blue-900/20 transition-colors cursor-pointer ${idx % 2 === 0
-                        ? "bg-white dark:bg-gray-800"
-                        : "bg-gray-50/50 dark:bg-gray-800/50"
+                      ? "bg-white dark:bg-gray-800"
+                      : "bg-gray-50/50 dark:bg-gray-800/50"
                       }`}
                     onClick={() => onProjetClick?.(projet)}
                   >
@@ -303,8 +303,8 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
                 key={pg}
                 onClick={() => setPage(pg)}
                 className={`w-7 h-7 text-xs rounded-lg font-medium transition ${pg === page
-                    ? "text-white"
-                    : "text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  ? "text-white"
+                  : "text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
                   }`}
                 style={pg === page ? { backgroundColor: stroke } : {}}
               >

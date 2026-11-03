@@ -31,9 +31,9 @@ export const getConventionFormConfig = (
     },
     {
       name: 'montant_conv',
-      label: 'Montant (GNF)',
+      label: 'Montant (FR)',
       type: 'number',
-      placeholder: 'Montant en GNF',
+      placeholder: 'Montant en FR',
       required: true,
       gridCols: 2,
     },

@@ -154,21 +154,21 @@ function BudgetKpiCard({ budgetTotal, budgetDecaisse, budgetPct }: {
             <span className='text-xs text-muted-foreground shrink-0'>Prévu</span>
             <span className='text-sm font-bold text-right break-all leading-tight'>
               {formatNumber(budgetTotal)}
-              <span className='ml-1 text-[10px] font-normal text-muted-foreground'>GNF</span>
+              <span className='ml-1 text-[10px] font-normal text-muted-foreground'>FR</span>
             </span>
           </div>
           <div className='flex items-start justify-between gap-2'>
             <span className='text-xs text-muted-foreground shrink-0'>Décaissé</span>
             <span className={cn('text-sm font-bold text-right break-all leading-tight', col.text)}>
               {formatNumber(budgetDecaisse)}
-              <span className='ml-1 text-[10px] font-normal text-muted-foreground'>GNF</span>
+              <span className='ml-1 text-[10px] font-normal text-muted-foreground'>FR</span>
             </span>
           </div>
           <div className='flex items-start justify-between gap-2'>
             <span className='text-xs text-muted-foreground shrink-0'>Reste à décaisser</span>
             <span className='text-sm font-bold text-right break-all leading-tight text-red-500'>
               {formatNumber(ecart)}
-              <span className='ml-1 text-[10px] font-normal text-muted-foreground'>GNF</span>
+              <span className='ml-1 text-[10px] font-normal text-muted-foreground'>FR</span>
             </span>
           </div>
           <div className='pt-1 space-y-1'>
@@ -307,14 +307,14 @@ function TauxDecaissementPtbaCard({ taux, montantDecaisse, montantPrevu, selecte
               <p className='text-[9px] text-muted-foreground uppercase tracking-wide'>Prévu</p>
               <p className='text-xs font-bold break-all leading-tight text-muted-foreground'>
                 {formatNumber(montantPrevu)}
-                <span className='text-[9px] font-normal text-muted-foreground'> GNF</span>
+                <span className='text-[9px] font-normal text-muted-foreground'> FR</span>
               </p>
             </div>
             <div className='rounded-lg bg-emerald-50/70 px-2.5 py-1.5 dark:bg-emerald-950/20'>
               <p className='text-[9px] text-muted-foreground uppercase tracking-wide'>Décaissé</p>
               <p className={cn('text-xs font-bold break-all leading-tight', col.text)}>
                 {formatNumber(montantDecaisse)}
-                <span className='text-[9px] font-normal text-muted-foreground'> GNF</span>
+                <span className='text-[9px] font-normal text-muted-foreground'> FR</span>
               </p>
             </div>
           </div>
@@ -347,8 +347,8 @@ const avancementChartConfig = {
 } satisfies ChartConfig
 
 const decaissementChartConfig = {
-  realise: { label: 'Réalisé (GNF)', color: 'var(--color-chart-1)' },
-  cible: { label: 'Prévu (GNF)', color: 'var(--color-chart-2)' },
+  realise: { label: 'Réalisé (FR)', color: 'var(--color-chart-1)' },
+  cible: { label: 'Prévu (FR)', color: 'var(--color-chart-2)' },
 } satisfies ChartConfig
 
 // ─── Graphiques ──────────────────────────────────────────────────────────────
@@ -372,7 +372,7 @@ function DecaissementComparatifCard({ data, isLoading }: {
           </div>
           <div>
             <CardTitle className='text-sm font-semibold'>Décaissement par année</CardTitle>
-            <CardDescription className='text-xs'>Montant réalisé vs prévu (GNF) — toutes années</CardDescription>
+            <CardDescription className='text-xs'>Montant réalisé vs prévu (FR) — toutes années</CardDescription>
           </div>
         </div>
       </CardHeader>
@@ -389,7 +389,7 @@ function DecaissementComparatifCard({ data, isLoading }: {
                   <CartesianGrid vertical={false} strokeDasharray='3 3' className='stroke-muted/40' />
                   <XAxis dataKey='annee' tickLine={false} tickMargin={10} axisLine={false} className='fill-muted-foreground text-xs' />
                   <YAxis tickLine={false} axisLine={false} tickMargin={8} tickFormatter={fmt} className='fill-muted-foreground text-[10px]' />
-                  <ChartTooltip cursor={{ fill: 'rgba(0,0,0,0.04)' }} content={<ChartTooltipContent formatter={(v) => `${formatNumber(Number(v))} GNF`} />} />
+                  <ChartTooltip cursor={{ fill: 'rgba(0,0,0,0.04)' }} content={<ChartTooltipContent formatter={(v) => `${formatNumber(Number(v))} FR`} />} />
                   <Bar dataKey='cible' fill='#FCD116' radius={[4, 4, 0, 0]}>
                     <LabelList dataKey='cible' position='top' className='fill-muted-foreground text-[9px] font-bold' formatter={(v: any) => fmt(Number(v))} />
                   </Bar>
@@ -399,8 +399,8 @@ function DecaissementComparatifCard({ data, isLoading }: {
                 </BarChart>
               </ChartContainer>
               <CustomLegend items={[
-                { color: '#FCD116', label: 'Prévu (GNF)' },
-                { color: '#10b981', label: 'Réalisé (GNF) ' },
+                { color: '#FCD116', label: 'Prévu (FR)' },
+                { color: '#10b981', label: 'Réalisé (FR) ' },
               ]} />
             </div>
           </div>
@@ -516,17 +516,17 @@ function BudgetDetailCard({
           <div className='rounded-xl border border-emerald-100 bg-emerald-50 p-3 dark:border-emerald-900 dark:bg-emerald-950/30'>
             <p className='mb-1 text-[10px] tracking-widest text-emerald-600 uppercase'>Décaissé</p>
             <p className='text-sm leading-tight font-bold text-emerald-700 break-all'>{formatNumber(montantDecaisseTotal)}</p>
-            <p className='mt-0.5 text-[10px] text-emerald-600/70'>GNF</p>
+            <p className='mt-0.5 text-[10px] text-emerald-600/70'>FR</p>
           </div>
           <div className='rounded-xl border border-slate-100 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-900/50'>
             <p className='mb-1 text-[10px] tracking-widest text-muted-foreground uppercase'>Prévu</p>
             <p className='text-sm leading-tight font-bold break-all'>{formatNumber(budget_total)}</p>
-            <p className='mt-0.5 text-[10px] text-muted-foreground/70'>GNF</p>
+            <p className='mt-0.5 text-[10px] text-muted-foreground/70'>FR</p>
           </div>
           <div className='rounded-xl border border-red-100 bg-red-50 p-3 dark:border-red-900 dark:bg-red-950/30'>
             <p className='mb-1 text-[10px] tracking-widest text-red-500 uppercase'>Reste à décaisser</p>
             <p className='text-sm leading-tight font-bold text-red-600 break-all'>{formatNumber(ecart)}</p>
-            <p className='mt-0.5 text-[10px] text-red-500/70'>GNF</p>
+            <p className='mt-0.5 text-[10px] text-red-500/70'>FR</p>
           </div>
           <div className='rounded-xl border border-amber-100 bg-amber-50 p-3 dark:border-amber-900 dark:bg-amber-950/30'>
             <p className='mb-1 text-[10px] tracking-widest text-amber-600 uppercase'>Reste à décaisser</p>

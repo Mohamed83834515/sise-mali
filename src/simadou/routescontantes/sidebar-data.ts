@@ -35,7 +35,7 @@ export const sidebarData: SidebarData = {
   },
   teams: [
     {
-      name: 'SIMANDOU',
+      name: 'SISE-MALI',
       logo: Command,
       plan: 'agriculture',
     },

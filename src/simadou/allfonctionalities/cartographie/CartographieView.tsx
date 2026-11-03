@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Loader2 } from 'lucide-react'
 
-const CARTO_URL = 'https://carto.ruche-sectoriel.net/?showHeader=false&showFooter=false'
+const CARTO_URL = 'https://carto.sise-mali.net/?showHeader=false&showFooter=false'
 
 export default function CartographieView() {
   const [isLoading, setIsLoading] = useState(true)

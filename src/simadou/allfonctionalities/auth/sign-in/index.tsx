@@ -1,4 +1,4 @@
-import {  useSearch } from '@tanstack/react-router'
+import { useSearch } from '@tanstack/react-router'
 import { AuthLayout } from '../auth-layout'
 import { UserAuthForm } from './components/user-auth-form'
 import { Logo } from '@/assets/logo'
@@ -135,7 +135,7 @@ export function SignIn() {
             </div>
           </div>
           <p className='relative px-10 pb-6 text-xs' style={{ color: 'rgba(255,255,255,.18)' }}>
-            © {new Date().getFullYear()} SIMANDOU. Tous droits réservés.
+            © {new Date().getFullYear()} SISE-MALI. Tous droits réservés.
           </p>
         </div>
         */}
@@ -146,7 +146,7 @@ export function SignIn() {
           {/* Logo mobile uniquement */}
           <div className='mb-10 flex items-center gap-3 lg:hidden'>
             <Logo className='size-10 rounded-lg' />
-            <span className='text-lg font-semibold tracking-tight'>SIMANDOU</span>
+            <span className='text-lg font-semibold tracking-tight'>SISE-MALI</span>
           </div>
 
           <div className='w-full max-w-sm space-y-8'>

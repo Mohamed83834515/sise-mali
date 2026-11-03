@@ -51,10 +51,10 @@ export default function CiblesAnnuelles({
         annee,
         valeur_cible: existingCible
           ? Number(
-              existingCible.valeur_cible_indcateur_performance ??
-                existingCible.valeur_cible ??
-                0
-            )
+            existingCible.valeur_cible_indcateur_performance ??
+            existingCible.valeur_cible ??
+            0
+          )
           : 0,
         budget_an: existingCible ? Number(existingCible.budget_an ?? 0) : 0,
       }
@@ -96,7 +96,7 @@ export default function CiblesAnnuelles({
             <TableRow>
               <TableHead className='w-28'>Année</TableHead>
               <TableHead>Valeur Cible</TableHead>
-              <TableHead>Budget(GNF)</TableHead>
+              <TableHead>Budget(FR)</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

@@ -3,7 +3,7 @@ import { useAuthStore } from '@/stores/auth-store'
 import { useSessionStore } from '@/stores/others/session.store'
 
 const BASE_URL =
-  import.meta.env.VITE_API_URL || 'https://api.ruche-sectoriel.net/api'
+  import.meta.env.VITE_API_URL || 'https://api.sise-mali.net/api'
 
 // Instance publique
 export const publicInstance = axios.create({

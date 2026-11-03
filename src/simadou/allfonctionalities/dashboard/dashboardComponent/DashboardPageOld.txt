@@ -921,12 +921,12 @@ const DashboardPageOld: React.FC = () => {
                         {
                             label: 'Montant Total Prévu',
                             value: ptbaProgrammeStats.montantPrevu.toLocaleString('fr-FR'),
-                            suffix: 'GNF',
+                            suffix: 'FR',
                         },
                         {
                             label: 'Montant Total Décaissé',
                             value: ptbaProgrammeStats.montantDecaisse.toLocaleString('fr-FR'),
-                            suffix: `(${ptbaProgrammeStats.tauxDecaissement}%) GNF`,
+                            suffix: `(${ptbaProgrammeStats.tauxDecaissement}%) FR`,
                             valueColor: 'emerald',
                         },
                         {
@@ -948,13 +948,13 @@ const DashboardPageOld: React.FC = () => {
                         {
                             label: 'Montant Total Prévu',
                             value: ptbaDepartementStats.montantPrevu.toLocaleString('fr-FR'),
-                            suffix: 'GNF',
+                            suffix: 'FR',
                         },
                         {
                             label: 'Montant Total Décaissé',
                             value:
                                 ptbaDepartementStats.montantDecaisse.toLocaleString('fr-FR'),
-                            suffix: `(${ptbaDepartementStats.tauxDecaissement}%) GNF`,
+                            suffix: `(${ptbaDepartementStats.tauxDecaissement}%) FR`,
                             valueColor: 'purple',
                         },
                         {

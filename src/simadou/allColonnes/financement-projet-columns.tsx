@@ -41,7 +41,7 @@ export function buildFinancementProjetColumns({
       ),
       cell: ({ row }) => row.original.code_type + ':' + row.original.intitule || '—',
     },
-   
+
     {
       id: 'type_financement',
       accessorKey: 'type_financement',
@@ -64,7 +64,7 @@ export function buildFinancementProjetColumns({
       id: 'montant',
       accessorKey: 'montant',
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title='Montant(GNF)' />
+        <DataTableColumnHeader column={column} title='Montant(FR)' />
       ),
       cell: ({ row }) => (
         <span className='text-end block'>{formatMontant(row.original.montant)}</span>
@@ -86,7 +86,7 @@ export function buildFinancementProjetColumns({
         className: 'text-center'
       },
     },
-    
+
     buildEditDeleteActionsColumn<FinancementProjet>({
       onEdit,
       onDeleteRequest,

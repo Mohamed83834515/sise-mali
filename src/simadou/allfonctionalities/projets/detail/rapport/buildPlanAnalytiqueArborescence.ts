@@ -175,7 +175,7 @@ export function buildPlanAnalytiqueArboTable(
       'Activités du plan analytique en arborescence, avec indicateurs de performance (budget, unité, valeurs cibles).',
     headers: [
       'Activité',
-      'Budget (GNF)',
+      'Budget (FR)',
       'Intitulé indicateur',
       'Unité',
       'Valeur cible',
@@ -183,13 +183,13 @@ export function buildPlanAnalytiqueArboTable(
     ],
     rows: arbo.length
       ? arbo.map((r) => [
-          r.activite,
-          r.budget,
-          r.indicateur,
-          r.unite,
-          r.valeurCible,
-          r.sommeCibles,
-        ])
+        r.activite,
+        r.budget,
+        r.indicateur,
+        r.unite,
+        r.valeurCible,
+        r.sommeCibles,
+      ])
       : [['—', 'Aucune activité', '', '', '', '']],
     mergeFirstColumn: true,
     boldPrefixSeparator: SECTION_LABEL_SEPARATOR,

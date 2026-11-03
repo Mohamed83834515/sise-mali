@@ -30,7 +30,7 @@ export const buildSourceFinancementProjetColumns = (
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={`Montant ${currencyCode || 'GNF'}`}
+          title={`Montant ${currencyCode || 'FR'}`}
           className='justify-center'
         />
       ),

@@ -54,88 +54,88 @@ export function SignUp() {
 
               {/* ── Réseau de nœuds connectés ── */}
               {/* Lignes de connexion */}
-              <line x1="210" y1="120" x2="100" y2="200" stroke="rgba(52,211,153,.18)" strokeWidth="1" strokeDasharray="5 4"/>
-              <line x1="210" y1="120" x2="320" y2="200" stroke="rgba(52,211,153,.18)" strokeWidth="1" strokeDasharray="5 4"/>
-              <line x1="210" y1="120" x2="210" y2="230" stroke="rgba(52,211,153,.22)" strokeWidth="1" strokeDasharray="5 4"/>
-              <line x1="100" y1="200" x2="50"  y2="280" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5"/>
-              <line x1="100" y1="200" x2="160" y2="290" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5"/>
-              <line x1="320" y1="200" x2="370" y2="280" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5"/>
-              <line x1="320" y1="200" x2="260" y2="290" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5"/>
-              <line x1="210" y1="230" x2="160" y2="290" stroke="rgba(52,211,153,.1)"  strokeWidth="1" strokeDasharray="4 5"/>
-              <line x1="210" y1="230" x2="260" y2="290" stroke="rgba(52,211,153,.1)"  strokeWidth="1" strokeDasharray="4 5"/>
+              <line x1="210" y1="120" x2="100" y2="200" stroke="rgba(52,211,153,.18)" strokeWidth="1" strokeDasharray="5 4" />
+              <line x1="210" y1="120" x2="320" y2="200" stroke="rgba(52,211,153,.18)" strokeWidth="1" strokeDasharray="5 4" />
+              <line x1="210" y1="120" x2="210" y2="230" stroke="rgba(52,211,153,.22)" strokeWidth="1" strokeDasharray="5 4" />
+              <line x1="100" y1="200" x2="50" y2="280" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="100" y1="200" x2="160" y2="290" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="320" y1="200" x2="370" y2="280" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="320" y1="200" x2="260" y2="290" stroke="rgba(52,211,153,.12)" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="210" y1="230" x2="160" y2="290" stroke="rgba(52,211,153,.1)" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="210" y1="230" x2="260" y2="290" stroke="rgba(52,211,153,.1)" strokeWidth="1" strokeDasharray="4 5" />
               {/* Connexions secondaires */}
-              <line x1="50"  y1="280" x2="160" y2="290" stroke="rgba(52,211,153,.08)" strokeWidth=".75" strokeDasharray="3 5"/>
-              <line x1="160" y1="290" x2="260" y2="290" stroke="rgba(52,211,153,.08)" strokeWidth=".75" strokeDasharray="3 5"/>
-              <line x1="260" y1="290" x2="370" y2="280" stroke="rgba(52,211,153,.08)" strokeWidth=".75" strokeDasharray="3 5"/>
+              <line x1="50" y1="280" x2="160" y2="290" stroke="rgba(52,211,153,.08)" strokeWidth=".75" strokeDasharray="3 5" />
+              <line x1="160" y1="290" x2="260" y2="290" stroke="rgba(52,211,153,.08)" strokeWidth=".75" strokeDasharray="3 5" />
+              <line x1="260" y1="290" x2="370" y2="280" stroke="rgba(52,211,153,.08)" strokeWidth=".75" strokeDasharray="3 5" />
 
               {/* Nœuds secondaires — niveau 3 */}
-              {[[50,280],[160,290],[260,290],[370,280]].map(([cx,cy],i)=>(
+              {[[50, 280], [160, 290], [260, 290], [370, 280]].map(([cx, cy], i) => (
                 <g key={i}>
-                  <circle cx={cx} cy={cy} r="18" fill="rgba(16,185,129,.1)" stroke="rgba(52,211,153,.2)" strokeWidth="1"/>
-                  <circle cx={cx} cy={cy} r="9"  fill="rgba(16,185,129,.25)" stroke="rgba(52,211,153,.4)" strokeWidth="1"/>
+                  <circle cx={cx} cy={cy} r="18" fill="rgba(16,185,129,.1)" stroke="rgba(52,211,153,.2)" strokeWidth="1" />
+                  <circle cx={cx} cy={cy} r="9" fill="rgba(16,185,129,.25)" stroke="rgba(52,211,153,.4)" strokeWidth="1" />
                   {/* Avatars simplifiés */}
-                  <circle cx={cx} cy={cy-3} r="3.5" fill="rgba(167,243,208,.7)"/>
-                  <path d={`M${cx-5},${cy+8} Q${cx},${cy+3} ${cx+5},${cy+8}`} stroke="rgba(167,243,208,.7)" strokeWidth="1.2" fill="none"/>
+                  <circle cx={cx} cy={cy - 3} r="3.5" fill="rgba(167,243,208,.7)" />
+                  <path d={`M${cx - 5},${cy + 8} Q${cx},${cy + 3} ${cx + 5},${cy + 8}`} stroke="rgba(167,243,208,.7)" strokeWidth="1.2" fill="none" />
                 </g>
               ))}
 
               {/* Nœuds — niveau 2 */}
-              {[[100,200],[320,200],[210,230]].map(([cx,cy],i)=>(
+              {[[100, 200], [320, 200], [210, 230]].map(([cx, cy], i) => (
                 <g key={i}>
-                  <circle cx={cx} cy={cy} r="24" fill="rgba(16,185,129,.08)" stroke="rgba(52,211,153,.18)" strokeWidth="1"/>
-                  <circle cx={cx} cy={cy} r="14" fill="rgba(16,185,129,.2)"  stroke="rgba(52,211,153,.35)" strokeWidth="1.2"/>
-                  <circle cx={cx} cy={cy-4} r="4.5" fill="rgba(110,231,183,.85)"/>
-                  <path d={`M${cx-7},${cy+10} Q${cx},${cy+4} ${cx+7},${cy+10}`} stroke="rgba(110,231,183,.85)" strokeWidth="1.4" fill="none"/>
+                  <circle cx={cx} cy={cy} r="24" fill="rgba(16,185,129,.08)" stroke="rgba(52,211,153,.18)" strokeWidth="1" />
+                  <circle cx={cx} cy={cy} r="14" fill="rgba(16,185,129,.2)" stroke="rgba(52,211,153,.35)" strokeWidth="1.2" />
+                  <circle cx={cx} cy={cy - 4} r="4.5" fill="rgba(110,231,183,.85)" />
+                  <path d={`M${cx - 7},${cy + 10} Q${cx},${cy + 4} ${cx + 7},${cy + 10}`} stroke="rgba(110,231,183,.85)" strokeWidth="1.4" fill="none" />
                 </g>
               ))}
 
               {/* Nœud central — hub principal */}
-              <circle cx="210" cy="120" r="40" fill="rgba(16,185,129,.1)"  stroke="rgba(52,211,153,.15)" strokeWidth="1">
-                <animate attributeName="r" values="40;44;40" dur="3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite"/>
+              <circle cx="210" cy="120" r="40" fill="rgba(16,185,129,.1)" stroke="rgba(52,211,153,.15)" strokeWidth="1">
+                <animate attributeName="r" values="40;44;40" dur="3s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
               </circle>
-              <circle cx="210" cy="120" r="28" fill="rgba(16,185,129,.22)" stroke="rgba(52,211,153,.4)"  strokeWidth="1.5"/>
-              <circle cx="210" cy="120" r="16" fill="rgba(16,185,129,.5)"  stroke="rgba(52,211,153,.8)"  strokeWidth="1.5"/>
+              <circle cx="210" cy="120" r="28" fill="rgba(16,185,129,.22)" stroke="rgba(52,211,153,.4)" strokeWidth="1.5" />
+              <circle cx="210" cy="120" r="16" fill="rgba(16,185,129,.5)" stroke="rgba(52,211,153,.8)" strokeWidth="1.5" />
               {/* Icône personne centrale */}
-              <circle cx="210" cy="114" r="5.5" fill="rgba(167,243,208,.95)"/>
-              <path d="M200,132 Q210,124 220,132" stroke="rgba(167,243,208,.95)" strokeWidth="2" fill="none" strokeLinecap="round"/>
+              <circle cx="210" cy="114" r="5.5" fill="rgba(167,243,208,.95)" />
+              <path d="M200,132 Q210,124 220,132" stroke="rgba(167,243,208,.95)" strokeWidth="2" fill="none" strokeLinecap="round" />
 
               {/* Particules orbitales autour du hub */}
-              {[0,60,120,180,240,300].map((deg,i)=>{
+              {[0, 60, 120, 180, 240, 300].map((deg, i) => {
                 const rad = deg * Math.PI / 180
                 const x = 210 + 50 * Math.cos(rad)
                 const y = 120 + 50 * Math.sin(rad)
                 return (
                   <circle key={i} cx={x} cy={y} r="2.5" fill="rgba(52,211,153,.6)">
-                    <animate attributeName="opacity" values=".6;1;.6" dur={`${1.5+i*.3}s`} repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values=".6;1;.6" dur={`${1.5 + i * .3}s`} repeatCount="indefinite" />
                   </circle>
                 )
               })}
 
               {/* Carte flottante — gauche */}
-              <rect x="8" y="60" width="90" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75"/>
-              <text x="20" y="80"  fill="rgba(255,255,255,.38)" fontSize="8"   fontFamily="system-ui,sans-serif">MEMBRES</text>
-              <text x="20" y="97"  fill="rgba(52,211,153,.95)"  fontSize="17"  fontWeight="700" fontFamily="system-ui,sans-serif">10k+</text>
+              <rect x="8" y="60" width="90" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75" />
+              <text x="20" y="80" fill="rgba(255,255,255,.38)" fontSize="8" fontFamily="system-ui,sans-serif">MEMBRES</text>
+              <text x="20" y="97" fill="rgba(52,211,153,.95)" fontSize="17" fontWeight="700" fontFamily="system-ui,sans-serif">10k+</text>
 
               {/* Carte flottante — droite */}
-              <rect x="322" y="38" width="90" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75"/>
-              <text x="334" y="58" fill="rgba(255,255,255,.38)" fontSize="8"   fontFamily="system-ui,sans-serif">PROJETS</text>
-              <text x="334" y="75" fill="rgba(167,139,250,.95)"  fontSize="17"  fontWeight="700" fontFamily="system-ui,sans-serif">340+</text>
+              <rect x="322" y="38" width="90" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75" />
+              <text x="334" y="58" fill="rgba(255,255,255,.38)" fontSize="8" fontFamily="system-ui,sans-serif">PROJETS</text>
+              <text x="334" y="75" fill="rgba(167,139,250,.95)" fontSize="17" fontWeight="700" fontFamily="system-ui,sans-serif">340+</text>
 
               {/* Pill en haut */}
-              <rect x="136" y="12" width="148" height="30" rx="15" fill="rgba(16,185,129,.3)" stroke="rgba(52,211,153,.35)" strokeWidth=".75"/>
+              <rect x="136" y="12" width="148" height="30" rx="15" fill="rgba(16,185,129,.3)" stroke="rgba(52,211,153,.35)" strokeWidth=".75" />
               <text x="180" y="31" fill="rgba(255,255,255,.92)" fontSize="11" fontWeight="600" fontFamily="system-ui,sans-serif">Simadou 2040 🌱</text>
 
               {/* Badge "En ligne" pulsant */}
-              <circle cx="226" cy="104" r="6" fill="rgba(6,95,70,1)" stroke="rgba(6,78,59,1)" strokeWidth="1"/>
+              <circle cx="226" cy="104" r="6" fill="rgba(6,95,70,1)" stroke="rgba(6,78,59,1)" strokeWidth="1" />
               <circle cx="226" cy="104" r="3.5" fill="rgba(52,211,153,1)">
-                <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite" />
               </circle>
 
               {/* Étoiles */}
-              {[[32,40],[395,65],[18,170],[408,180],[38,310],[400,305]].map(([x,y],i)=>(
+              {[[32, 40], [395, 65], [18, 170], [408, 180], [38, 310], [400, 305]].map(([x, y], i) => (
                 <circle key={i} cx={x} cy={y} r="1.5" fill="rgba(255,255,255,.35)">
-                  <animate attributeName="opacity" values=".35;.9;.35" dur={`${2.1+i*.4}s`} repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values=".35;.9;.35" dur={`${2.1 + i * .4}s`} repeatCount="indefinite" />
                 </circle>
               ))}
             </svg>
@@ -172,7 +172,7 @@ export function SignUp() {
 
           {/* Footer */}
           <p className='relative px-10 pb-6 text-xs' style={{ color: 'rgba(255,255,255,.18)' }}>
-            © {new Date().getFullYear()} SIMANDOU. Tous droits réservés.
+            © {new Date().getFullYear()} SISE-MALI. Tous droits réservés.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ export function SignUp() {
           {/* Logo mobile */}
           <div className='mb-10 flex items-center gap-3 lg:hidden'>
             <Logo className='size-10 rounded-lg' />
-            <span className='text-lg font-semibold tracking-tight'>SIMANDOU</span>
+            <span className='text-lg font-semibold tracking-tight'>SISE-MALI</span>
           </div>
 
           <div className='w-full max-w-sm space-y-8'>

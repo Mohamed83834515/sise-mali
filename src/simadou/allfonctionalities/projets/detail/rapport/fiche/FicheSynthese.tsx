@@ -60,7 +60,7 @@ function formatGeneratedAt(date: Date) {
 }
 
 export function FicheSynthese({
-  orgTitle = 'SIMANDOU',
+  orgTitle = 'SISE-MALI',
   orgSubtitle = 'Plateforme de suivi des projets et programmes',
   badge = 'Rapport d’or',
   title,

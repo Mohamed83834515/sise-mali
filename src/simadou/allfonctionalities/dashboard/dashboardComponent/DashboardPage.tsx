@@ -262,12 +262,12 @@ const DashboardPage: React.FC = () => {
                         {
                             label: 'Montant Total Prévu',
                             value: formatNumber(ptbaProjetsStats.montantTotalPrevu),
-                            suffix: 'GNF',
+                            suffix: 'FR',
                         },
                         {
                             label: 'Montant Total Décaissé',
                             value: formatNumber(ptbaProjetsStats.montantTotalDecaisse),
-                            suffix: `(${formatDashboardPercent(ptbaProjetsStats.tauxDecaissement)}%) GNF`,
+                            suffix: `(${formatDashboardPercent(ptbaProjetsStats.tauxDecaissement)}%) FR`,
                             valueColor: 'emerald',
                         },
                         {
@@ -290,12 +290,12 @@ const DashboardPage: React.FC = () => {
                         {
                             label: 'Montant Total Prévu',
                             value: formatNumber(paoMinagriStats.montantTotalPrevu),
-                            suffix: 'GNF',
+                            suffix: 'FR',
                         },
                         {
                             label: 'Montant Total Décaissé',
                             value: formatNumber(paoMinagriStats.montantTotalDecaisse),
-                            suffix: `(${formatDashboardPercent(paoMinagriStats.tauxDecaissement)}%) GNF`,
+                            suffix: `(${formatDashboardPercent(paoMinagriStats.tauxDecaissement)}%) FR`,
                             valueColor: 'purple',
                         },
                         {

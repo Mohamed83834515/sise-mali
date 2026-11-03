@@ -114,7 +114,7 @@ export default function CoutUnitairePtbaManager({
   const [rows, setRows] = useState<CoutUnitaireRow[]>([])
   const [initialized, setInitialized] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
-  
+
   useEffect(() => {
     if (initialized || isLoading || isFetching) return
     setRows(syncRowsFromItems(coutsUnitaires, modifierPar))
@@ -280,15 +280,15 @@ export default function CoutUnitairePtbaManager({
               <TableHead className='min-w-48'>Intitulé tâche</TableHead>
               <TableHead className='min-w-24'>Unité</TableHead>
               <TableHead className='min-w-28'>Quantité</TableHead>
-              <TableHead className='min-w-28'>Prix unitaire (GNF)</TableHead>
-              <TableHead className='min-w-28'>Montant (GNF)</TableHead>
+              <TableHead className='min-w-28'>Prix unitaire (FR)</TableHead>
+              <TableHead className='min-w-28'>Montant (FR)</TableHead>
               <TableHead className='w-16 text-end'>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {rows.map((row, index) => {
               const qte = row.quantite_cu || 0
-              const prix = row.prix_unitaire  || 0
+              const prix = row.prix_unitaire || 0
               const ligneTotal = qte * prix
 
               return (

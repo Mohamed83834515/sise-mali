@@ -59,34 +59,34 @@ export function getCadreAnalytiqueFormConfigForDialog({
       },
       ...(showBudget
         ? [
-            {
-              name: 'cout_axe',
-              label: 'Budget (GNF)',
-              type: 'number' as const,
-              placeholder: 'Saisissez le budget ',
-              required: true,
-              min: 0,
-              step: 0.01,
-              gridCols: 2 as const,
-            },
-          ]
+          {
+            name: 'cout_axe',
+            label: 'Budget (FR)',
+            type: 'number' as const,
+            placeholder: 'Saisissez le budget ',
+            required: true,
+            min: 0,
+            step: 0.01,
+            gridCols: 2 as const,
+          },
+        ]
         : []),
       ...(showParent
         ? [
-            {
-              name: 'parent_ca',
-              label: parentLabel,
-              type: 'select' as const,
-              placeholder:
-                parentOptions.length > 0
-                  ? '-- Choisir un parent --'
-                  : 'Aucun parent disponible',
-              required: false,
-              options: parentOptions,
-              disabled: parentDisabled || parentOptions.length === 0,
-              gridCols: 2 as const,
-            },
-          ]
+          {
+            name: 'parent_ca',
+            label: parentLabel,
+            type: 'select' as const,
+            placeholder:
+              parentOptions.length > 0
+                ? '-- Choisir un parent --'
+                : 'Aucun parent disponible',
+            required: false,
+            options: parentOptions,
+            disabled: parentDisabled || parentOptions.length === 0,
+            gridCols: 2 as const,
+          },
+        ]
         : []),
     ],
   }

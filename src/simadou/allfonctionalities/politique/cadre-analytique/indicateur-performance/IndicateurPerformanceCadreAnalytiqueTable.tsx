@@ -162,7 +162,7 @@ export default function IndicateurPerformanceCadreAnalytiqueTable({
                   </tr>
                   <tr className='border-b last:border-b-0'>
                     <td className='border-r px-2 py-1.5 text-muted-foreground'>
-                      Budget (GNF)
+                      Budget (FR)
                     </td>
                     {years.map((year) => (
                       <td

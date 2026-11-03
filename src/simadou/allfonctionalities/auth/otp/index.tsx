@@ -50,11 +50,11 @@ export function Otp() {
             <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" className='w-full max-w-md'>
 
               {/* Halo de fond */}
-              <circle cx="210" cy="168" r="120" fill="rgba(124,58,237,.04)" stroke="rgba(139,92,246,.08)" strokeWidth="1"/>
-              <circle cx="210" cy="168" r="88"  fill="rgba(124,58,237,.06)" stroke="rgba(139,92,246,.1)"  strokeWidth="1"/>
+              <circle cx="210" cy="168" r="120" fill="rgba(124,58,237,.04)" stroke="rgba(139,92,246,.08)" strokeWidth="1" />
+              <circle cx="210" cy="168" r="88" fill="rgba(124,58,237,.06)" stroke="rgba(139,92,246,.1)" strokeWidth="1" />
 
               {/* Anneau orbital externe — pointillés */}
-              <circle cx="210" cy="168" r="148" stroke="rgba(139,92,246,.12)" strokeWidth="1" strokeDasharray="6 5"/>
+              <circle cx="210" cy="168" r="148" stroke="rgba(139,92,246,.12)" strokeWidth="1" strokeDasharray="6 5" />
 
               {/* Bouclier principal */}
               <path
@@ -73,30 +73,30 @@ export function Otp() {
 
               {/* Cadenas au centre du bouclier */}
               {/* Corps du cadenas */}
-              <rect x="190" y="148" width="40" height="32" rx="6" fill="rgba(139,92,246,.5)" stroke="rgba(167,139,250,.7)" strokeWidth="1.2"/>
+              <rect x="190" y="148" width="40" height="32" rx="6" fill="rgba(139,92,246,.5)" stroke="rgba(167,139,250,.7)" strokeWidth="1.2" />
               {/* Anse */}
               <path d="M198 148 L198 136 Q198 122 210 122 Q222 122 222 136 L222 148"
-                stroke="rgba(167,139,250,.8)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                stroke="rgba(167,139,250,.8)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
               {/* Trou de serrure */}
-              <circle cx="210" cy="162" r="5" fill="rgba(30,10,60,.8)" stroke="rgba(167,139,250,.5)" strokeWidth="1"/>
-              <rect x="208" y="163" width="4" height="6" rx="1" fill="rgba(30,10,60,.8)"/>
+              <circle cx="210" cy="162" r="5" fill="rgba(30,10,60,.8)" stroke="rgba(167,139,250,.5)" strokeWidth="1" />
+              <rect x="208" y="163" width="4" height="6" rx="1" fill="rgba(30,10,60,.8)" />
 
               {/* Digits OTP flottants autour du bouclier */}
               {[
-                { x: 80,  y: 100, digit: '4', delay: '0s'   },
+                { x: 80, y: 100, digit: '4', delay: '0s' },
                 { x: 340, y: 100, digit: '7', delay: '0.3s' },
-                { x: 58,  y: 200, digit: '2', delay: '0.6s' },
+                { x: 58, y: 200, digit: '2', delay: '0.6s' },
                 { x: 358, y: 200, digit: '9', delay: '0.9s' },
                 { x: 110, y: 290, digit: '1', delay: '1.2s' },
                 { x: 310, y: 290, digit: '5', delay: '1.5s' },
               ].map(({ x, y, digit, delay }) => (
                 <g key={digit + x}>
                   <rect x={x - 18} y={y - 18} width="36" height="36" rx="9"
-                    fill="rgba(255,255,255,.05)" stroke="rgba(167,139,250,.18)" strokeWidth=".75"/>
+                    fill="rgba(255,255,255,.05)" stroke="rgba(167,139,250,.18)" strokeWidth=".75" />
                   <text x={x} y={y + 7} textAnchor="middle"
                     fill="rgba(196,181,253,.7)" fontSize="16" fontWeight="700" fontFamily="monospace,system-ui">
                     {digit}
-                    <animate attributeName="opacity" values=".7;1;.7" dur="2.4s" begin={delay} repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values=".7;1;.7" dur="2.4s" begin={delay} repeatCount="indefinite" />
                   </text>
                 </g>
               ))}
@@ -109,9 +109,9 @@ export function Otp() {
                 [348, 200, 268, 168],
                 [118, 282, 175, 220],
                 [302, 282, 248, 220],
-              ].map(([x1,y1,x2,y2], i) => (
+              ].map(([x1, y1, x2, y2], i) => (
                 <line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
-                  stroke="rgba(139,92,246,.15)" strokeWidth=".75" strokeDasharray="4 4"/>
+                  stroke="rgba(139,92,246,.15)" strokeWidth=".75" strokeDasharray="4 4" />
               ))}
 
               {/* Particules de sécurité */}
@@ -120,36 +120,36 @@ export function Otp() {
                 [340, 268], [80, 268],
               ].map(([cx, cy], i) => (
                 <circle key={i} cx={cx} cy={cy} r="3" fill="rgba(167,139,250,.5)" stroke="rgba(167,139,250,.15)" strokeWidth="4">
-                  <animate attributeName="opacity" values=".5;1;.5" dur={`${1.8 + i * 0.35}s`} repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values=".5;1;.5" dur={`${1.8 + i * 0.35}s`} repeatCount="indefinite" />
                 </circle>
               ))}
 
               {/* Étoiles */}
-              {[[30,50],[395,55],[20,280],[408,275],[30,170],[400,170]].map(([x,y],i) => (
+              {[[30, 50], [395, 55], [20, 280], [408, 275], [30, 170], [400, 170]].map(([x, y], i) => (
                 <circle key={i} cx={x} cy={y} r="1.5" fill="rgba(255,255,255,.3)">
-                  <animate attributeName="opacity" values=".3;.85;.3" dur={`${2.2+i*.4}s`} repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values=".3;.85;.3" dur={`${2.2 + i * .4}s`} repeatCount="indefinite" />
                 </circle>
               ))}
 
               {/* Card stat — gauche */}
-              <rect x="8" y="58" width="96" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75"/>
-              <text x="20" y="78"  fill="rgba(255,255,255,.38)" fontSize="8"  fontFamily="system-ui,sans-serif">SÉCURITÉ</text>
-              <text x="20" y="96"  fill="rgba(196,181,253,.95)" fontSize="16" fontWeight="700" fontFamily="system-ui,sans-serif">256-bit</text>
+              <rect x="8" y="58" width="96" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75" />
+              <text x="20" y="78" fill="rgba(255,255,255,.38)" fontSize="8" fontFamily="system-ui,sans-serif">SÉCURITÉ</text>
+              <text x="20" y="96" fill="rgba(196,181,253,.95)" fontSize="16" fontWeight="700" fontFamily="system-ui,sans-serif">256-bit</text>
 
               {/* Card stat — droite */}
-              <rect x="318" y="34" width="96" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75"/>
-              <text x="330" y="54" fill="rgba(255,255,255,.38)" fontSize="8"  fontFamily="system-ui,sans-serif">EXPIRATION</text>
-              <text x="330" y="72" fill="rgba(251,191,36,.95)"  fontSize="16" fontWeight="700" fontFamily="system-ui,sans-serif">10 min</text>
+              <rect x="318" y="34" width="96" height="50" rx="9" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.09)" strokeWidth=".75" />
+              <text x="330" y="54" fill="rgba(255,255,255,.38)" fontSize="8" fontFamily="system-ui,sans-serif">EXPIRATION</text>
+              <text x="330" y="72" fill="rgba(251,191,36,.95)" fontSize="16" fontWeight="700" fontFamily="system-ui,sans-serif">10 min</text>
 
               {/* Pill top */}
-              <rect x="130" y="10" width="160" height="30" rx="15" fill="rgba(109,40,217,.32)" stroke="rgba(167,139,250,.3)" strokeWidth=".75"/>
+              <rect x="130" y="10" width="160" height="30" rx="15" fill="rgba(109,40,217,.32)" stroke="rgba(167,139,250,.3)" strokeWidth=".75" />
               <text x="174" y="29" fill="rgba(255,255,255,.9)" fontSize="11" fontWeight="600" fontFamily="system-ui,sans-serif">Vérification 2FA 🔐</text>
 
               {/* Checkmark animé sous le bouclier */}
               <circle cx="210" cy="248" r="14" fill="rgba(16,185,129,.15)" stroke="rgba(52,211,153,.35)" strokeWidth="1">
-                <animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite" />
               </circle>
-              <path d="M203 248 L208 254 L218 243" stroke="rgba(52,211,153,.9)" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M203 248 L208 254 L218 243" stroke="rgba(52,211,153,.9)" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
 
@@ -186,7 +186,7 @@ export function Otp() {
 
           {/* Footer */}
           <p className='relative px-10 pb-6 text-xs' style={{ color: 'rgba(255,255,255,.18)' }}>
-            © {new Date().getFullYear()} SIMANDOU. Tous droits réservés.
+            © {new Date().getFullYear()} SISE-MALI. Tous droits réservés.
           </p>
         </div>
 
@@ -196,7 +196,7 @@ export function Otp() {
           {/* Logo mobile */}
           <div className='mb-10 flex items-center gap-3 lg:hidden'>
             <Logo className='size-10 rounded-lg' />
-            <span className='text-lg font-semibold tracking-tight'>SIMANDOU</span>
+            <span className='text-lg font-semibold tracking-tight'>SISE-MALI</span>
           </div>
 
           <div className='w-full max-w-sm space-y-8'>
@@ -235,7 +235,7 @@ export function Otp() {
             {/* Note bas de page */}
             <p className='text-center text-xs text-zinc-400'>
               Problème de connexion ?{' '}
-              <a href='mailto:support@SIMANDOU.com' className='underline underline-offset-2 hover:text-zinc-700'>
+              <a href='mailto:support@SISE-MALI.com' className='underline underline-offset-2 hover:text-zinc-700'>
                 Contacter le support
               </a>
               .

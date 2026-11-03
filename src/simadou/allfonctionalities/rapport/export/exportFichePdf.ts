@@ -298,7 +298,7 @@ export async function exportFichePdf(payload: RapportExportPayload) {
   const contentWidth = pageWidth - marginX * 2
   const state: YState = { y: 16 }
 
-  const orgTitle = fiche.orgTitle ?? 'SIMANDOU'
+  const orgTitle = fiche.orgTitle ?? 'SISE-MALI'
   const orgSubtitle =
     fiche.orgSubtitle ?? 'Plateforme de suivi des projets et programmes'
   const badge = (fiche.badge ?? 'Fiche de synthèse').toUpperCase()

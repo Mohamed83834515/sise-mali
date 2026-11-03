@@ -168,20 +168,20 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
           items.length === 0
             ? 0
             : Math.round(
-                items.reduce(
-                  (s, p) => s + (Number(p.taux_execution_ptba) || 0),
-                  0
-                ) / items.length
-              )
+              items.reduce(
+                (s, p) => s + (Number(p.taux_execution_ptba) || 0),
+                0
+              ) / items.length
+            )
         const tauxDecaissement =
           items.length === 0
             ? 0
             : Math.round(
-                items.reduce(
-                  (s, p) => s + (Number(p.taux_decaissement_ptba) || 0),
-                  0
-                ) / items.length
-              )
+              items.reduce(
+                (s, p) => s + (Number(p.taux_decaissement_ptba) || 0),
+                0
+              ) / items.length
+            )
         return [
           String(year),
           String(items.length),
@@ -240,7 +240,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
         },
         {
           label: 'Budget décaissé',
-          value: `${formatNumber(budgetDecaisse)} GNF`,
+          value: `${formatNumber(budgetDecaisse)} FR`,
           accent: greenDark,
         },
         {
@@ -254,7 +254,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
           accent: greenDark,
         },
       ]}
-      narrative={`Le projet affiche un taux d’exécution physique de ${tauxGlobal} % (${realisees} activité(s) réalisée(s) sur ${data.tauxGlobalData.length} suivie(s)). Budget ${formatNumber(budget)} GNF, décaissement ${formatNumber(budgetDecaisse)} GNF (${budgetPct} %).`}
+      narrative={`Le projet affiche un taux d’exécution physique de ${tauxGlobal} % (${realisees} activité(s) réalisée(s) sur ${data.tauxGlobalData.length} suivie(s)). Budget ${formatNumber(budget)} FR, décaissement ${formatNumber(budgetDecaisse)} FR (${budgetPct} %).`}
       actions={<RapportExportButton formats={['word', 'pdf']} />}
     >
       <FicheSection
@@ -272,8 +272,8 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
             [
               'Porteur',
               projet.partenaire_projet?.intutile_ds ||
-                projet.partenaire_projet?.code_ds ||
-                '—',
+              projet.partenaire_projet?.code_ds ||
+              '—',
             ],
             ['Responsable', responsableLabel],
             [
@@ -285,7 +285,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
               'Date de clôture',
               dateCloture === '—' ? 'Non clôturé' : dateCloture,
             ],
-            ['Budget', `${formatNumber(projet.budget_projet)} GNF`],
+            ['Budget', `${formatNumber(projet.budget_projet)} FR`],
             [
               'Signataires',
               (projet.signataires_projet ?? [])
@@ -329,7 +329,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
             'Intitulé',
             'Type',
             'Bailleur',
-            'Montant (GNF)',
+            'Montant (FR)',
             "Date d'accord",
           ]}
           rows={data.financements.map((f) => [
@@ -352,7 +352,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
           title='Plan analytique (arborescence)'
           headers={[
             'Activité',
-            'Budget (GNF)',
+            'Budget (FR)',
             'Intitulé indicateur',
             'Unité',
             'Valeur cible',
