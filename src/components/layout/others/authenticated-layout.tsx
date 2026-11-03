@@ -72,7 +72,7 @@ function AuthenticatedLayoutInner({
         <SkipToMain />
         <div className='flex min-h-svh w-full flex-col'>
           {user && (
-            <AppTopbar user={{ nom_perso: user.nom_perso ?? "Utilisateur", email: user.email ?? "contact@sise-mali.ml", id_personnel_perso: user.id_personnel_perso ?? "4", statut: user.statut ?? 1, personnel_profile_picture: user.personnel_profile_picture, prenom_perso: user.prenom_perso }} />
+            <AppTopbar user={{ nom_perso: user.nom_perso ?? "Utilisateur", email: user.email ?? "contact@sise-mali.org", id_personnel_perso: user.id_personnel_perso ?? "4", statut: user.statut ?? 1, personnel_profile_picture: user.personnel_profile_picture, prenom_perso: user.prenom_perso }} />
           )}
           <div className='flex-1 p-4 sm:px-2 sm:py-2'>
             {children ?? <Outlet />}

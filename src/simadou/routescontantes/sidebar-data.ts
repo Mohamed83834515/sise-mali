@@ -28,16 +28,16 @@ import { type SidebarData } from '../../components/layout/others/types'
 
 export const sidebarData: SidebarData = {
   user: {
-    name: "SISE-MALI",
-    email: "contact@sise-mali.ml",
+    name: "SISE CPS/SEEUDE",
+    email: "contact@sise-mali.org",
     id: "zofmov",
     statut: 1
   },
   teams: [
     {
-      name: 'SISE-MALI',
+      name: 'SISE CPS/SEEUDE',
       logo: Command,
-      plan: 'agriculture',
+      plan: 'MEADD - PRTD-Mali',
     },
   ],
   navGroups: [

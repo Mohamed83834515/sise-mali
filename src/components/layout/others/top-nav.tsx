@@ -2,9 +2,7 @@ import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
 import { Search, X } from 'lucide-react'
 import { cn, getDisplayNameInitials } from '@/lib/utils'
-import pontLogo from '@/assets/images/pont.png'
-import logo1 from '@/assets/images/logo1.png'
-import logo3 from '@/assets/images/logo3.png'
+import logoMali from '@/assets/images/logo-mali.png'
 
 import {
   DropdownMenu,
@@ -338,7 +336,6 @@ export function AppTopbar({ user }: UserProps) {
   const accentRgb = hexToRgb(headerBg)
 
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
-  const [logoFailed, setLogoFailed] = useState(false)
 
   const routeGroup = useMemo((): NavCollapsible | null => {
     const allItems = sidebarData.navGroups.flatMap((g) => g.items)
@@ -457,76 +454,23 @@ export function AppTopbar({ user }: UserProps) {
           {/* LOGO — fond blanc pour lisibilité */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             {/* Logo principal */}
+            {/* Logo officiel République du Mali */}
             <div
               style={{
                 flexShrink: 0,
                 lineHeight: 0,
                 borderRadius: 10,
-                padding: 4,
+                padding: 3,
                 background: '#fff',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-              }}
-            >
-              {!logoFailed ? (
-                <img
-                  src={pontLogo}
-                  alt={firstTeam.name}
-                  style={{ height: 40, width: 40, objectFit: 'contain', borderRadius: 6 }}
-                  onError={() => setLogoFailed(true)}
-                />
-              ) : (
-                <div
-                  style={{
-                    height: 40,
-                    width: 40,
-                    borderRadius: 6,
-                    background: 'rgba(0,148,96,.1)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 12,
-                    color: '#009460',
-                  }}
-                >
-                  {firstTeam.name?.slice(0, 2).toUpperCase() ?? 'AP'}
-                </div>
-              )}
-            </div>
-
-            {/* Logo partenaire 1 */}
-            <div
-              style={{
-                flexShrink: 0,
-                lineHeight: 0,
-                borderRadius: 10,
-                padding: 4,
-                background: '#fff',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
               <img
-                src={logo1}
-                alt="Logo partenaire"
-                style={{ height: 40, width: 40, objectFit: 'contain', borderRadius: 6 }}
-              />
-            </div>
-
-            {/* Logo partenaire 2 */}
-            <div
-              style={{
-                flexShrink: 0,
-                lineHeight: 0,
-                borderRadius: 10,
-                padding: 4,
-                background: '#fff',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-              }}
-            >
-              <img
-                src={logo3}
-                alt="Logo partenaire"
-                style={{ height: 40, width: 40, objectFit: 'contain', borderRadius: 6 }}
+                src={logoMali}
+                alt={firstTeam.name || "République du Mali"}
+                style={{ height: 42, width: 42, objectFit: 'contain', borderRadius: '50%' }}
               />
             </div>
 
@@ -546,13 +490,25 @@ export function AppTopbar({ user }: UserProps) {
                 textShadow: '0 2px 4px rgba(0,0,0,0.1)',
               }}
             >
-              {config?.systemTitle || "SISE-MALI"}
+              {config?.systemTitle || "SISE CPS/SEEUDE"}
+            </div>
+            <div
+              style={{
+                fontSize: 10,
+                color: 'rgba(255,255,255,0.85)',
+                letterSpacing: '1px',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                marginTop: 1,
+              }}
+            >
+              CPS/SEEUDE — PRTD-Mali
             </div>
             <div
               style={{
                 height: 2,
                 width: 60,
-                margin: '6px auto 0',
+                margin: '4px auto 0',
                 background: 'linear-gradient(90deg, transparent, #009460, #FCD116, #CE1126, transparent)',
                 borderRadius: 2,
               }}

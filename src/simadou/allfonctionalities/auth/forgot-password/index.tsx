@@ -2,7 +2,7 @@ import { Link, useSearch } from '@tanstack/react-router'
 import { AuthLayout } from '../auth-layout'
 import { ForgotPasswordForm } from './components/forgot-password-form'
 import { AuthMaliHero } from '../components/auth-mali-hero'
-import { MaliFlag } from '@/components/others/mali-flag'
+import logoMali from '@/assets/images/logo-mali.png'
 
 const CONTENT = {
   setup: {
@@ -23,7 +23,7 @@ export function ForgotPassword() {
   return (
     <AuthLayout>
       <div className='flex min-h-screen w-screen overflow-hidden'>
-        {/* ── Panneau gauche – Branding Mali & SISE-MALI ── */}
+        {/* ── Panneau gauche – Branding Mali & SISE CPS/SEEUDE ── */}
         <AuthMaliHero />
 
         {/* ── Panneau droit – formulaire ── */}
@@ -31,8 +31,11 @@ export function ForgotPassword() {
 
           {/* Logo mobile */}
           <div className='mb-8 flex items-center gap-3 lg:hidden'>
-            <MaliFlag width={32} height={20} className='rounded-xs shadow-xs' />
-            <span className='text-lg font-bold tracking-tight text-zinc-900'>SISE-MALI</span>
+            <img src={logoMali} alt="SISE CPS/SEEUDE" className='size-11 object-contain rounded-full shadow-xs' />
+            <div>
+              <span className='block text-lg font-extrabold tracking-tight text-zinc-900'>SISE CPS/SEEUDE</span>
+              <span className='block text-[11px] text-zinc-500'>MEADD — PRTD-Mali</span>
+            </div>
           </div>
 
           <div className='w-full max-w-sm space-y-8'>
@@ -40,9 +43,9 @@ export function ForgotPassword() {
             {/* En-tête */}
             <div className="space-y-2">
               <div className='hidden lg:flex items-center gap-2 mb-1'>
-                <MaliFlag width={24} height={16} className='rounded-xs shadow-xs' />
-                <span className='text-xs font-semibold uppercase tracking-wider text-emerald-700'>
-                  République du Mali
+                <img src={logoMali} alt="Mali" className='size-7 object-contain rounded-full shadow-xs' />
+                <span className='text-xs font-bold uppercase tracking-wider text-emerald-800'>
+                  SISE CPS/SEEUDE
                 </span>
               </div>
               <h1 className="text-2xl font-bold tracking-tight text-zinc-900">
