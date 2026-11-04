@@ -123,8 +123,8 @@ export function AuthMaliHero() {
               <CheckCircle2 className='size-4' />
             </div>
             <div className='text-xs'>
-              <div className='font-semibold text-white'>Tableaux de bord &amp; TDB</div>
-              <div className='text-white/50 text-[11px]'>Rapports &amp; Décaissements</div>
+              <div className='font-semibold text-white'>Tableaux de bord</div>
+              <div className='text-white/50 text-[11px]'>États et rapports</div>
             </div>
           </div>
         </div>
