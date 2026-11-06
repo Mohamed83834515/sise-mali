@@ -1,4 +1,4 @@
-# simandu-refonte
+# SISE-MALI
 
 # Comment créer une fonctionnalité dans l'application
 

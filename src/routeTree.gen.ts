@@ -10,120 +10,70 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
-import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
-import { Route as errors503RouteImport } from './routes/(errors)/503'
-import { Route as errors500RouteImport } from './routes/(errors)/500'
-import { Route as errors404RouteImport } from './routes/(errors)/404'
-import { Route as errors403RouteImport } from './routes/(errors)/403'
-import { Route as errors401RouteImport } from './routes/(errors)/401'
-import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
-import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
-import { Route as authResetPasswordRouteImport } from './routes/(auth)/reset-password'
-import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as authForgotPasswordRouteImport } from './routes/(auth)/forgot-password'
+import { Route as authOtpRouteImport } from './routes/(auth)/otp'
+import { Route as authResetPasswordRouteImport } from './routes/(auth)/reset-password'
+import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
+import { Route as authSignUpRouteImport } from './routes/(auth)/sign-up'
+import { Route as errors401RouteImport } from './routes/(errors)/401'
+import { Route as errors403RouteImport } from './routes/(errors)/403'
+import { Route as errors404RouteImport } from './routes/(errors)/404'
+import { Route as errors500RouteImport } from './routes/(errors)/500'
+import { Route as errors503RouteImport } from './routes/(errors)/503'
+import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
 import { Route as AuthenticatedSettingsRouteRouteImport } from './routes/_authenticated/settings/route'
-import { Route as AuthenticatedUsersIndexRouteImport } from './routes/_authenticated/users/index'
-import { Route as AuthenticatedSettingsIndexRouteImport } from './routes/_authenticated/settings/index'
-import { Route as AuthenticatedHelpCenterIndexRouteImport } from './routes/_authenticated/help-center/index'
 import { Route as AuthenticatedAppsIndexRouteImport } from './routes/_authenticated/apps/index'
-import { Route as AuthenticatedSettingsNotificationsRouteImport } from './routes/_authenticated/settings/notifications'
-import { Route as AuthenticatedSettingsDisplayRouteImport } from './routes/_authenticated/settings/display'
-import { Route as AuthenticatedSettingsAppearanceRouteImport } from './routes/_authenticated/settings/appearance'
-import { Route as AuthenticatedSettingsAccountRouteImport } from './routes/_authenticated/settings/account'
 import { Route as AuthenticatedErrorsErrorRouteImport } from './routes/_authenticated/errors/$error'
-import { Route as AuthenticatedProgrammationParametrageMarchesRouteRouteImport } from './routes/_authenticated/programmation/parametrage-marches/route'
+import { Route as AuthenticatedHelpCenterIndexRouteImport } from './routes/_authenticated/help-center/index'
 import { Route as AuthenticatedParametrageAutresRouteRouteImport } from './routes/_authenticated/parametrage/autres/route'
-import { Route as AuthenticatedSuiviResultatsSuiviPtbaIndexRouteImport } from './routes/_authenticated/suivi-resultats/suivi-ptba/index'
-import { Route as AuthenticatedSuiviResultatsSuiviPpmIndexRouteImport } from './routes/_authenticated/suivi-resultats/suivi-ppm/index'
-import { Route as AuthenticatedSuiviResultatsSuiviIndicateursIndexRouteImport } from './routes/_authenticated/suivi-resultats/suivi-indicateurs/index'
-import { Route as AuthenticatedSuiviResultatsCartographieIndexRouteImport } from './routes/_authenticated/suivi-resultats/cartographie/index'
-import { Route as AuthenticatedRapportPtbaIndexRouteImport } from './routes/_authenticated/rapport/ptba/index'
-import { Route as AuthenticatedRapportIndicateursIndexRouteImport } from './routes/_authenticated/rapport/indicateurs/index'
-import { Route as AuthenticatedRapportEtatDesActivitesIndexRouteImport } from './routes/_authenticated/rapport/etat-des-activites/index'
-import { Route as AuthenticatedRapportDecaissementIndexRouteImport } from './routes/_authenticated/rapport/decaissement/index'
-import { Route as AuthenticatedProjetProgrammeZoneDeCollecteIndexRouteImport } from './routes/_authenticated/projet-programme/zone-de-collecte/index'
-import { Route as AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport } from './routes/_authenticated/projet-programme/unites-de-gestion/index'
-import { Route as AuthenticatedProjetProgrammeProjetsIndexRouteImport } from './routes/_authenticated/projet-programme/projets/index'
-import { Route as AuthenticatedProgrammePagesTestIndexRouteImport } from './routes/_authenticated/programme/pagesTest/index'
-import { Route as AuthenticatedProgrammeListeIndexRouteImport } from './routes/_authenticated/programme/liste/index'
-import { Route as AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport } from './routes/_authenticated/programme/indicateurs-performance/index'
-import { Route as AuthenticatedProgrammeIndicateursCmrIndexRouteImport } from './routes/_authenticated/programme/indicateurs-cmr/index'
-import { Route as AuthenticatedProgrammeCadreStrategiqueIndexRouteImport } from './routes/_authenticated/programme/cadre-strategique/index'
-import { Route as AuthenticatedProgrammeCadreAnalytiqueIndexRouteImport } from './routes/_authenticated/programme/cadre-analytique/index'
-import { Route as AuthenticatedProgrammationPtbaIndexRouteImport } from './routes/_authenticated/programmation/ptba/index'
-import { Route as AuthenticatedProgrammationProjetsIndexRouteImport } from './routes/_authenticated/programmation/projets/index'
-import { Route as AuthenticatedProgrammationPpmsIndexRouteImport } from './routes/_authenticated/programmation/ppms/index'
-import { Route as AuthenticatedProgrammationIndicateursPerformanceIndexRouteImport } from './routes/_authenticated/programmation/indicateurs-performance/index'
-import { Route as AuthenticatedProgrammationIndicateursActivitesPtbaIndexRouteImport } from './routes/_authenticated/programmation/indicateurs-activites-ptba/index'
-import { Route as AuthenticatedProgrammationContratPerformanceIndexRouteImport } from './routes/_authenticated/programmation/contrat-performance/index'
-import { Route as AuthenticatedProgrammationActivitesProjetIndexRouteImport } from './routes/_authenticated/programmation/activites-projet/index'
-import { Route as AuthenticatedProgrammationActivitesProgrammeIndexRouteImport } from './routes/_authenticated/programmation/activites-programme/index'
-import { Route as AuthenticatedParametrageUtilisateursIndexRouteImport } from './routes/_authenticated/parametrage/utilisateurs/index'
-import { Route as AuthenticatedParametrageUnitesDeGestionIndexRouteImport } from './routes/_authenticated/parametrage/unites-de-gestion/index'
-import { Route as AuthenticatedParametragePlansDeSiteIndexRouteImport } from './routes/_authenticated/parametrage/plans-de-site/index'
-import { Route as AuthenticatedParametragePartenaireFinancierIndexRouteImport } from './routes/_authenticated/parametrage/partenaire-financier/index'
-import { Route as AuthenticatedParametrageLocalitesIndexRouteImport } from './routes/_authenticated/parametrage/localites/index'
-import { Route as AuthenticatedParametrageDictionnaireIndicateursIndexRouteImport } from './routes/_authenticated/parametrage/dictionnaire-indicateurs/index'
-import { Route as AuthenticatedParametrageActeursIndexRouteImport } from './routes/_authenticated/parametrage/acteurs/index'
-import { Route as AuthenticatedSuiviResultatsSuiviIndicateursIdRouteImport } from './routes/_authenticated/suivi-resultats/suivi-indicateurs/$id'
-import { Route as AuthenticatedProjetProgrammeProjetsIdRouteImport } from './routes/_authenticated/projet-programme/projets/$id'
-import { Route as AuthenticatedProgrammationProjetsIdRouteImport } from './routes/_authenticated/programmation/projets/$id'
-import { Route as AuthenticatedProgrammationContratPerformanceIdRouteImport } from './routes/_authenticated/programmation/contrat-performance/$id'
+import { Route as AuthenticatedProgrammationParametrageMarchesRouteRouteImport } from './routes/_authenticated/programmation/parametrage-marches/route'
+import { Route as AuthenticatedSettingsIndexRouteImport } from './routes/_authenticated/settings/index'
+import { Route as AuthenticatedSettingsAccountRouteImport } from './routes/_authenticated/settings/account'
+import { Route as AuthenticatedSettingsAppearanceRouteImport } from './routes/_authenticated/settings/appearance'
+import { Route as AuthenticatedSettingsDisplayRouteImport } from './routes/_authenticated/settings/display'
+import { Route as AuthenticatedSettingsNotificationsRouteImport } from './routes/_authenticated/settings/notifications'
+import { Route as AuthenticatedUsersIndexRouteImport } from './routes/_authenticated/users/index'
 import { Route as authSetPasswordUidTokenRouteImport } from './routes/(auth)/set-password/$uid/$token'
+import { Route as AuthenticatedParametrageActeursIndexRouteImport } from './routes/_authenticated/parametrage/acteurs/index'
+import { Route as AuthenticatedParametrageDictionnaireIndicateursIndexRouteImport } from './routes/_authenticated/parametrage/dictionnaire-indicateurs/index'
+import { Route as AuthenticatedParametrageLocalitesIndexRouteImport } from './routes/_authenticated/parametrage/localites/index'
+import { Route as AuthenticatedParametragePartenaireFinancierIndexRouteImport } from './routes/_authenticated/parametrage/partenaire-financier/index'
+import { Route as AuthenticatedParametragePlansDeSiteIndexRouteImport } from './routes/_authenticated/parametrage/plans-de-site/index'
+import { Route as AuthenticatedParametrageUnitesDeGestionIndexRouteImport } from './routes/_authenticated/parametrage/unites-de-gestion/index'
+import { Route as AuthenticatedParametrageUtilisateursIndexRouteImport } from './routes/_authenticated/parametrage/utilisateurs/index'
+import { Route as AuthenticatedProgrammationActivitesProgrammeIndexRouteImport } from './routes/_authenticated/programmation/activites-programme/index'
+import { Route as AuthenticatedProgrammationActivitesProjetIndexRouteImport } from './routes/_authenticated/programmation/activites-projet/index'
+import { Route as AuthenticatedProgrammationContratPerformanceIndexRouteImport } from './routes/_authenticated/programmation/contrat-performance/index'
+import { Route as AuthenticatedProgrammationContratPerformanceIdRouteImport } from './routes/_authenticated/programmation/contrat-performance/$id'
+import { Route as AuthenticatedProgrammationIndicateursActivitesPtbaIndexRouteImport } from './routes/_authenticated/programmation/indicateurs-activites-ptba/index'
+import { Route as AuthenticatedProgrammationIndicateursPerformanceIndexRouteImport } from './routes/_authenticated/programmation/indicateurs-performance/index'
+import { Route as AuthenticatedProgrammationPpmsIndexRouteImport } from './routes/_authenticated/programmation/ppms/index'
+import { Route as AuthenticatedProgrammationProjetsIndexRouteImport } from './routes/_authenticated/programmation/projets/index'
+import { Route as AuthenticatedProgrammationProjetsIdRouteImport } from './routes/_authenticated/programmation/projets/$id'
+import { Route as AuthenticatedProgrammationPtbaIndexRouteImport } from './routes/_authenticated/programmation/ptba/index'
+import { Route as AuthenticatedProgrammeCadreAnalytiqueIndexRouteImport } from './routes/_authenticated/programme/cadre-analytique/index'
+import { Route as AuthenticatedProgrammeCadreStrategiqueIndexRouteImport } from './routes/_authenticated/programme/cadre-strategique/index'
+import { Route as AuthenticatedProgrammeIndicateursCmrIndexRouteImport } from './routes/_authenticated/programme/indicateurs-cmr/index'
+import { Route as AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport } from './routes/_authenticated/programme/indicateurs-performance/index'
+import { Route as AuthenticatedProgrammeListeIndexRouteImport } from './routes/_authenticated/programme/liste/index'
+import { Route as AuthenticatedProgrammePagesTestIndexRouteImport } from './routes/_authenticated/programme/pagesTest/index'
+import { Route as AuthenticatedProjetProgrammeProjetsIndexRouteImport } from './routes/_authenticated/projet-programme/projets/index'
+import { Route as AuthenticatedProjetProgrammeProjetsIdRouteImport } from './routes/_authenticated/projet-programme/projets/$id'
+import { Route as AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport } from './routes/_authenticated/projet-programme/unites-de-gestion/index'
+import { Route as AuthenticatedProjetProgrammeZoneDeCollecteIndexRouteImport } from './routes/_authenticated/projet-programme/zone-de-collecte/index'
+import { Route as AuthenticatedRapportDecaissementIndexRouteImport } from './routes/_authenticated/rapport/decaissement/index'
+import { Route as AuthenticatedRapportEtatDesActivitesIndexRouteImport } from './routes/_authenticated/rapport/etat-des-activites/index'
+import { Route as AuthenticatedRapportIndicateursIndexRouteImport } from './routes/_authenticated/rapport/indicateurs/index'
+import { Route as AuthenticatedRapportPtbaIndexRouteImport } from './routes/_authenticated/rapport/ptba/index'
+import { Route as AuthenticatedSuiviResultatsCartographieIndexRouteImport } from './routes/_authenticated/suivi-resultats/cartographie/index'
+import { Route as AuthenticatedSuiviResultatsSuiviIndicateursIndexRouteImport } from './routes/_authenticated/suivi-resultats/suivi-indicateurs/index'
+import { Route as AuthenticatedSuiviResultatsSuiviIndicateursIdRouteImport } from './routes/_authenticated/suivi-resultats/suivi-indicateurs/$id'
+import { Route as AuthenticatedSuiviResultatsSuiviPpmIndexRouteImport } from './routes/_authenticated/suivi-resultats/suivi-ppm/index'
+import { Route as AuthenticatedSuiviResultatsSuiviPtbaIndexRouteImport } from './routes/_authenticated/suivi-resultats/suivi-ptba/index'
 import { Route as AuthenticatedProjetProgrammeProjetsIdIndexRouteImport } from './routes/_authenticated/projet-programme/projets/$id/index'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const errors503Route = errors503RouteImport.update({
-  id: '/(errors)/503',
-  path: '/503',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const errors500Route = errors500RouteImport.update({
-  id: '/(errors)/500',
-  path: '/500',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const errors404Route = errors404RouteImport.update({
-  id: '/(errors)/404',
-  path: '/404',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const errors403Route = errors403RouteImport.update({
-  id: '/(errors)/403',
-  path: '/403',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const errors401Route = errors401RouteImport.update({
-  id: '/(errors)/401',
-  path: '/401',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const authSignUpRoute = authSignUpRouteImport.update({
-  id: '/(auth)/sign-up',
-  path: '/sign-up',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const authSignInRoute = authSignInRouteImport.update({
-  id: '/(auth)/sign-in',
-  path: '/sign-in',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const authResetPasswordRoute = authResetPasswordRouteImport.update({
-  id: '/(auth)/reset-password',
-  path: '/reset-password',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const authOtpRoute = authOtpRouteImport.update({
-  id: '/(auth)/otp',
-  path: '/otp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
@@ -131,27 +81,60 @@ const authForgotPasswordRoute = authForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
+const authOtpRoute = authOtpRouteImport.update({
+  id: '/(auth)/otp',
+  path: '/otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authResetPasswordRoute = authResetPasswordRouteImport.update({
+  id: '/(auth)/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authSignInRoute = authSignInRouteImport.update({
+  id: '/(auth)/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authSignUpRoute = authSignUpRouteImport.update({
+  id: '/(auth)/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const errors401Route = errors401RouteImport.update({
+  id: '/(errors)/401',
+  path: '/401',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const errors403Route = errors403RouteImport.update({
+  id: '/(errors)/403',
+  path: '/403',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const errors404Route = errors404RouteImport.update({
+  id: '/(errors)/404',
+  path: '/404',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const errors500Route = errors500RouteImport.update({
+  id: '/(errors)/500',
+  path: '/500',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const errors503Route = errors503RouteImport.update({
+  id: '/(errors)/503',
+  path: '/503',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedSettingsRouteRoute =
   AuthenticatedSettingsRouteRouteImport.update({
     id: '/settings',
     path: '/settings',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedUsersIndexRoute = AuthenticatedUsersIndexRouteImport.update({
-  id: '/users/',
-  path: '/users/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedSettingsIndexRoute =
-  AuthenticatedSettingsIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedSettingsRouteRoute,
-  } as any)
-const AuthenticatedHelpCenterIndexRoute =
-  AuthenticatedHelpCenterIndexRouteImport.update({
-    id: '/help-center/',
-    path: '/help-center/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedAppsIndexRoute = AuthenticatedAppsIndexRouteImport.update({
@@ -159,40 +142,16 @@ const AuthenticatedAppsIndexRoute = AuthenticatedAppsIndexRouteImport.update({
   path: '/apps/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthenticatedSettingsNotificationsRoute =
-  AuthenticatedSettingsNotificationsRouteImport.update({
-    id: '/notifications',
-    path: '/notifications',
-    getParentRoute: () => AuthenticatedSettingsRouteRoute,
-  } as any)
-const AuthenticatedSettingsDisplayRoute =
-  AuthenticatedSettingsDisplayRouteImport.update({
-    id: '/display',
-    path: '/display',
-    getParentRoute: () => AuthenticatedSettingsRouteRoute,
-  } as any)
-const AuthenticatedSettingsAppearanceRoute =
-  AuthenticatedSettingsAppearanceRouteImport.update({
-    id: '/appearance',
-    path: '/appearance',
-    getParentRoute: () => AuthenticatedSettingsRouteRoute,
-  } as any)
-const AuthenticatedSettingsAccountRoute =
-  AuthenticatedSettingsAccountRouteImport.update({
-    id: '/account',
-    path: '/account',
-    getParentRoute: () => AuthenticatedSettingsRouteRoute,
-  } as any)
 const AuthenticatedErrorsErrorRoute =
   AuthenticatedErrorsErrorRouteImport.update({
     id: '/errors/$error',
     path: '/errors/$error',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedProgrammationParametrageMarchesRouteRoute =
-  AuthenticatedProgrammationParametrageMarchesRouteRouteImport.update({
-    id: '/programmation/parametrage-marches',
-    path: '/programmation/parametrage-marches',
+const AuthenticatedHelpCenterIndexRoute =
+  AuthenticatedHelpCenterIndexRouteImport.update({
+    id: '/help-center/',
+    path: '/help-center/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedParametrageAutresRouteRoute =
@@ -201,184 +160,56 @@ const AuthenticatedParametrageAutresRouteRoute =
     path: '/parametrage/autres',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedSuiviResultatsSuiviPtbaIndexRoute =
-  AuthenticatedSuiviResultatsSuiviPtbaIndexRouteImport.update({
-    id: '/suivi-resultats/suivi-ptba/',
-    path: '/suivi-resultats/suivi-ptba/',
+const AuthenticatedProgrammationParametrageMarchesRouteRoute =
+  AuthenticatedProgrammationParametrageMarchesRouteRouteImport.update({
+    id: '/programmation/parametrage-marches',
+    path: '/programmation/parametrage-marches',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedSuiviResultatsSuiviPpmIndexRoute =
-  AuthenticatedSuiviResultatsSuiviPpmIndexRouteImport.update({
-    id: '/suivi-resultats/suivi-ppm/',
-    path: '/suivi-resultats/suivi-ppm/',
-    getParentRoute: () => AuthenticatedRouteRoute,
+const AuthenticatedSettingsIndexRoute =
+  AuthenticatedSettingsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
-const AuthenticatedSuiviResultatsSuiviIndicateursIndexRoute =
-  AuthenticatedSuiviResultatsSuiviIndicateursIndexRouteImport.update({
-    id: '/suivi-resultats/suivi-indicateurs/',
-    path: '/suivi-resultats/suivi-indicateurs/',
-    getParentRoute: () => AuthenticatedRouteRoute,
+const AuthenticatedSettingsAccountRoute =
+  AuthenticatedSettingsAccountRouteImport.update({
+    id: '/account',
+    path: '/account',
+    getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
-const AuthenticatedSuiviResultatsCartographieIndexRoute =
-  AuthenticatedSuiviResultatsCartographieIndexRouteImport.update({
-    id: '/suivi-resultats/cartographie/',
-    path: '/suivi-resultats/cartographie/',
-    getParentRoute: () => AuthenticatedRouteRoute,
+const AuthenticatedSettingsAppearanceRoute =
+  AuthenticatedSettingsAppearanceRouteImport.update({
+    id: '/appearance',
+    path: '/appearance',
+    getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
-const AuthenticatedRapportPtbaIndexRoute =
-  AuthenticatedRapportPtbaIndexRouteImport.update({
-    id: '/rapport/ptba/',
-    path: '/rapport/ptba/',
-    getParentRoute: () => AuthenticatedRouteRoute,
+const AuthenticatedSettingsDisplayRoute =
+  AuthenticatedSettingsDisplayRouteImport.update({
+    id: '/display',
+    path: '/display',
+    getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
-const AuthenticatedRapportIndicateursIndexRoute =
-  AuthenticatedRapportIndicateursIndexRouteImport.update({
-    id: '/rapport/indicateurs/',
-    path: '/rapport/indicateurs/',
-    getParentRoute: () => AuthenticatedRouteRoute,
+const AuthenticatedSettingsNotificationsRoute =
+  AuthenticatedSettingsNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
-const AuthenticatedRapportEtatDesActivitesIndexRoute =
-  AuthenticatedRapportEtatDesActivitesIndexRouteImport.update({
-    id: '/rapport/etat-des-activites/',
-    path: '/rapport/etat-des-activites/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedRapportDecaissementIndexRoute =
-  AuthenticatedRapportDecaissementIndexRouteImport.update({
-    id: '/rapport/decaissement/',
-    path: '/rapport/decaissement/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute =
-  AuthenticatedProjetProgrammeZoneDeCollecteIndexRouteImport.update({
-    id: '/projet-programme/zone-de-collecte/',
-    path: '/projet-programme/zone-de-collecte/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute =
-  AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport.update({
-    id: '/projet-programme/unites-de-gestion/',
-    path: '/projet-programme/unites-de-gestion/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProjetProgrammeProjetsIndexRoute =
-  AuthenticatedProjetProgrammeProjetsIndexRouteImport.update({
-    id: '/projet-programme/projets/',
-    path: '/projet-programme/projets/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammePagesTestIndexRoute =
-  AuthenticatedProgrammePagesTestIndexRouteImport.update({
-    id: '/programme/pagesTest/',
-    path: '/programme/pagesTest/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammeListeIndexRoute =
-  AuthenticatedProgrammeListeIndexRouteImport.update({
-    id: '/programme/liste/',
-    path: '/programme/liste/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammeIndicateursPerformanceIndexRoute =
-  AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport.update({
-    id: '/programme/indicateurs-performance/',
-    path: '/programme/indicateurs-performance/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammeIndicateursCmrIndexRoute =
-  AuthenticatedProgrammeIndicateursCmrIndexRouteImport.update({
-    id: '/programme/indicateurs-cmr/',
-    path: '/programme/indicateurs-cmr/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammeCadreStrategiqueIndexRoute =
-  AuthenticatedProgrammeCadreStrategiqueIndexRouteImport.update({
-    id: '/programme/cadre-strategique/',
-    path: '/programme/cadre-strategique/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammeCadreAnalytiqueIndexRoute =
-  AuthenticatedProgrammeCadreAnalytiqueIndexRouteImport.update({
-    id: '/programme/cadre-analytique/',
-    path: '/programme/cadre-analytique/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationPtbaIndexRoute =
-  AuthenticatedProgrammationPtbaIndexRouteImport.update({
-    id: '/programmation/ptba/',
-    path: '/programmation/ptba/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationProjetsIndexRoute =
-  AuthenticatedProgrammationProjetsIndexRouteImport.update({
-    id: '/programmation/projets/',
-    path: '/programmation/projets/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationPpmsIndexRoute =
-  AuthenticatedProgrammationPpmsIndexRouteImport.update({
-    id: '/programmation/ppms/',
-    path: '/programmation/ppms/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationIndicateursPerformanceIndexRoute =
-  AuthenticatedProgrammationIndicateursPerformanceIndexRouteImport.update({
-    id: '/programmation/indicateurs-performance/',
-    path: '/programmation/indicateurs-performance/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationIndicateursActivitesPtbaIndexRoute =
-  AuthenticatedProgrammationIndicateursActivitesPtbaIndexRouteImport.update({
-    id: '/programmation/indicateurs-activites-ptba/',
-    path: '/programmation/indicateurs-activites-ptba/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationContratPerformanceIndexRoute =
-  AuthenticatedProgrammationContratPerformanceIndexRouteImport.update({
-    id: '/programmation/contrat-performance/',
-    path: '/programmation/contrat-performance/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationActivitesProjetIndexRoute =
-  AuthenticatedProgrammationActivitesProjetIndexRouteImport.update({
-    id: '/programmation/activites-projet/',
-    path: '/programmation/activites-projet/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedProgrammationActivitesProgrammeIndexRoute =
-  AuthenticatedProgrammationActivitesProgrammeIndexRouteImport.update({
-    id: '/programmation/activites-programme/',
-    path: '/programmation/activites-programme/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedParametrageUtilisateursIndexRoute =
-  AuthenticatedParametrageUtilisateursIndexRouteImport.update({
-    id: '/parametrage/utilisateurs/',
-    path: '/parametrage/utilisateurs/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedParametrageUnitesDeGestionIndexRoute =
-  AuthenticatedParametrageUnitesDeGestionIndexRouteImport.update({
-    id: '/parametrage/unites-de-gestion/',
-    path: '/parametrage/unites-de-gestion/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedParametragePlansDeSiteIndexRoute =
-  AuthenticatedParametragePlansDeSiteIndexRouteImport.update({
-    id: '/parametrage/plans-de-site/',
-    path: '/parametrage/plans-de-site/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedParametragePartenaireFinancierIndexRoute =
-  AuthenticatedParametragePartenaireFinancierIndexRouteImport.update({
-    id: '/parametrage/partenaire-financier/',
-    path: '/parametrage/partenaire-financier/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedParametrageLocalitesIndexRoute =
-  AuthenticatedParametrageLocalitesIndexRouteImport.update({
-    id: '/parametrage/localites/',
-    path: '/parametrage/localites/',
+const AuthenticatedUsersIndexRoute = AuthenticatedUsersIndexRouteImport.update({
+  id: '/users/',
+  path: '/users/',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const authSetPasswordUidTokenRoute = authSetPasswordUidTokenRouteImport.update({
+  id: '/(auth)/set-password/$uid/$token',
+  path: '/set-password/$uid/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedParametrageActeursIndexRoute =
+  AuthenticatedParametrageActeursIndexRouteImport.update({
+    id: '/parametrage/acteurs/',
+    path: '/parametrage/acteurs/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedParametrageDictionnaireIndicateursIndexRoute =
@@ -387,28 +218,52 @@ const AuthenticatedParametrageDictionnaireIndicateursIndexRoute =
     path: '/parametrage/dictionnaire-indicateurs/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedParametrageActeursIndexRoute =
-  AuthenticatedParametrageActeursIndexRouteImport.update({
-    id: '/parametrage/acteurs/',
-    path: '/parametrage/acteurs/',
+const AuthenticatedParametrageLocalitesIndexRoute =
+  AuthenticatedParametrageLocalitesIndexRouteImport.update({
+    id: '/parametrage/localites/',
+    path: '/parametrage/localites/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedSuiviResultatsSuiviIndicateursIdRoute =
-  AuthenticatedSuiviResultatsSuiviIndicateursIdRouteImport.update({
-    id: '/suivi-resultats/suivi-indicateurs/$id',
-    path: '/suivi-resultats/suivi-indicateurs/$id',
+const AuthenticatedParametragePartenaireFinancierIndexRoute =
+  AuthenticatedParametragePartenaireFinancierIndexRouteImport.update({
+    id: '/parametrage/partenaire-financier/',
+    path: '/parametrage/partenaire-financier/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedProjetProgrammeProjetsIdRoute =
-  AuthenticatedProjetProgrammeProjetsIdRouteImport.update({
-    id: '/projet-programme/projets/$id',
-    path: '/projet-programme/projets/$id',
+const AuthenticatedParametragePlansDeSiteIndexRoute =
+  AuthenticatedParametragePlansDeSiteIndexRouteImport.update({
+    id: '/parametrage/plans-de-site/',
+    path: '/parametrage/plans-de-site/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedProgrammationProjetsIdRoute =
-  AuthenticatedProgrammationProjetsIdRouteImport.update({
-    id: '/programmation/projets/$id',
-    path: '/programmation/projets/$id',
+const AuthenticatedParametrageUnitesDeGestionIndexRoute =
+  AuthenticatedParametrageUnitesDeGestionIndexRouteImport.update({
+    id: '/parametrage/unites-de-gestion/',
+    path: '/parametrage/unites-de-gestion/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedParametrageUtilisateursIndexRoute =
+  AuthenticatedParametrageUtilisateursIndexRouteImport.update({
+    id: '/parametrage/utilisateurs/',
+    path: '/parametrage/utilisateurs/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationActivitesProgrammeIndexRoute =
+  AuthenticatedProgrammationActivitesProgrammeIndexRouteImport.update({
+    id: '/programmation/activites-programme/',
+    path: '/programmation/activites-programme/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationActivitesProjetIndexRoute =
+  AuthenticatedProgrammationActivitesProjetIndexRouteImport.update({
+    id: '/programmation/activites-projet/',
+    path: '/programmation/activites-projet/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationContratPerformanceIndexRoute =
+  AuthenticatedProgrammationContratPerformanceIndexRouteImport.update({
+    id: '/programmation/contrat-performance/',
+    path: '/programmation/contrat-performance/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedProgrammationContratPerformanceIdRoute =
@@ -417,11 +272,156 @@ const AuthenticatedProgrammationContratPerformanceIdRoute =
     path: '/programmation/contrat-performance/$id',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const authSetPasswordUidTokenRoute = authSetPasswordUidTokenRouteImport.update({
-  id: '/(auth)/set-password/$uid/$token',
-  path: '/set-password/$uid/$token',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const AuthenticatedProgrammationIndicateursActivitesPtbaIndexRoute =
+  AuthenticatedProgrammationIndicateursActivitesPtbaIndexRouteImport.update({
+    id: '/programmation/indicateurs-activites-ptba/',
+    path: '/programmation/indicateurs-activites-ptba/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationIndicateursPerformanceIndexRoute =
+  AuthenticatedProgrammationIndicateursPerformanceIndexRouteImport.update({
+    id: '/programmation/indicateurs-performance/',
+    path: '/programmation/indicateurs-performance/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationPpmsIndexRoute =
+  AuthenticatedProgrammationPpmsIndexRouteImport.update({
+    id: '/programmation/ppms/',
+    path: '/programmation/ppms/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationProjetsIndexRoute =
+  AuthenticatedProgrammationProjetsIndexRouteImport.update({
+    id: '/programmation/projets/',
+    path: '/programmation/projets/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationProjetsIdRoute =
+  AuthenticatedProgrammationProjetsIdRouteImport.update({
+    id: '/programmation/projets/$id',
+    path: '/programmation/projets/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammationPtbaIndexRoute =
+  AuthenticatedProgrammationPtbaIndexRouteImport.update({
+    id: '/programmation/ptba/',
+    path: '/programmation/ptba/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammeCadreAnalytiqueIndexRoute =
+  AuthenticatedProgrammeCadreAnalytiqueIndexRouteImport.update({
+    id: '/programme/cadre-analytique/',
+    path: '/programme/cadre-analytique/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammeCadreStrategiqueIndexRoute =
+  AuthenticatedProgrammeCadreStrategiqueIndexRouteImport.update({
+    id: '/programme/cadre-strategique/',
+    path: '/programme/cadre-strategique/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammeIndicateursCmrIndexRoute =
+  AuthenticatedProgrammeIndicateursCmrIndexRouteImport.update({
+    id: '/programme/indicateurs-cmr/',
+    path: '/programme/indicateurs-cmr/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammeIndicateursPerformanceIndexRoute =
+  AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport.update({
+    id: '/programme/indicateurs-performance/',
+    path: '/programme/indicateurs-performance/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammeListeIndexRoute =
+  AuthenticatedProgrammeListeIndexRouteImport.update({
+    id: '/programme/liste/',
+    path: '/programme/liste/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProgrammePagesTestIndexRoute =
+  AuthenticatedProgrammePagesTestIndexRouteImport.update({
+    id: '/programme/pagesTest/',
+    path: '/programme/pagesTest/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProjetProgrammeProjetsIndexRoute =
+  AuthenticatedProjetProgrammeProjetsIndexRouteImport.update({
+    id: '/projet-programme/projets/',
+    path: '/projet-programme/projets/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProjetProgrammeProjetsIdRoute =
+  AuthenticatedProjetProgrammeProjetsIdRouteImport.update({
+    id: '/projet-programme/projets/$id',
+    path: '/projet-programme/projets/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute =
+  AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport.update({
+    id: '/projet-programme/unites-de-gestion/',
+    path: '/projet-programme/unites-de-gestion/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute =
+  AuthenticatedProjetProgrammeZoneDeCollecteIndexRouteImport.update({
+    id: '/projet-programme/zone-de-collecte/',
+    path: '/projet-programme/zone-de-collecte/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedRapportDecaissementIndexRoute =
+  AuthenticatedRapportDecaissementIndexRouteImport.update({
+    id: '/rapport/decaissement/',
+    path: '/rapport/decaissement/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedRapportEtatDesActivitesIndexRoute =
+  AuthenticatedRapportEtatDesActivitesIndexRouteImport.update({
+    id: '/rapport/etat-des-activites/',
+    path: '/rapport/etat-des-activites/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedRapportIndicateursIndexRoute =
+  AuthenticatedRapportIndicateursIndexRouteImport.update({
+    id: '/rapport/indicateurs/',
+    path: '/rapport/indicateurs/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedRapportPtbaIndexRoute =
+  AuthenticatedRapportPtbaIndexRouteImport.update({
+    id: '/rapport/ptba/',
+    path: '/rapport/ptba/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedSuiviResultatsCartographieIndexRoute =
+  AuthenticatedSuiviResultatsCartographieIndexRouteImport.update({
+    id: '/suivi-resultats/cartographie/',
+    path: '/suivi-resultats/cartographie/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedSuiviResultatsSuiviIndicateursIndexRoute =
+  AuthenticatedSuiviResultatsSuiviIndicateursIndexRouteImport.update({
+    id: '/suivi-resultats/suivi-indicateurs/',
+    path: '/suivi-resultats/suivi-indicateurs/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedSuiviResultatsSuiviIndicateursIdRoute =
+  AuthenticatedSuiviResultatsSuiviIndicateursIdRouteImport.update({
+    id: '/suivi-resultats/suivi-indicateurs/$id',
+    path: '/suivi-resultats/suivi-indicateurs/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedSuiviResultatsSuiviPpmIndexRoute =
+  AuthenticatedSuiviResultatsSuiviPpmIndexRouteImport.update({
+    id: '/suivi-resultats/suivi-ppm/',
+    path: '/suivi-resultats/suivi-ppm/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedSuiviResultatsSuiviPtbaIndexRoute =
+  AuthenticatedSuiviResultatsSuiviPtbaIndexRouteImport.update({
+    id: '/suivi-resultats/suivi-ptba/',
+    path: '/suivi-resultats/suivi-ptba/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedProjetProgrammeProjetsIdIndexRoute =
   AuthenticatedProjetProgrammeProjetsIdIndexRouteImport.update({
     id: '/',
@@ -833,67 +833,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/': {
-      id: '/_authenticated/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof AuthenticatedIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/(errors)/503': {
-      id: '/(errors)/503'
-      path: '/503'
-      fullPath: '/503'
-      preLoaderRoute: typeof errors503RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(errors)/500': {
-      id: '/(errors)/500'
-      path: '/500'
-      fullPath: '/500'
-      preLoaderRoute: typeof errors500RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(errors)/404': {
-      id: '/(errors)/404'
-      path: '/404'
-      fullPath: '/404'
-      preLoaderRoute: typeof errors404RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(errors)/403': {
-      id: '/(errors)/403'
-      path: '/403'
-      fullPath: '/403'
-      preLoaderRoute: typeof errors403RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(errors)/401': {
-      id: '/(errors)/401'
-      path: '/401'
-      fullPath: '/401'
-      preLoaderRoute: typeof errors401RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(auth)/sign-up': {
-      id: '/(auth)/sign-up'
-      path: '/sign-up'
-      fullPath: '/sign-up'
-      preLoaderRoute: typeof authSignUpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(auth)/sign-in': {
-      id: '/(auth)/sign-in'
-      path: '/sign-in'
-      fullPath: '/sign-in'
-      preLoaderRoute: typeof authSignInRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(auth)/reset-password': {
-      id: '/(auth)/reset-password'
-      path: '/reset-password'
-      fullPath: '/reset-password'
-      preLoaderRoute: typeof authResetPasswordRouteImport
+    '/(auth)/forgot-password': {
+      id: '/(auth)/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof authForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(auth)/otp': {
@@ -903,39 +847,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authOtpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/(auth)/forgot-password': {
-      id: '/(auth)/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/forgot-password'
-      preLoaderRoute: typeof authForgotPasswordRouteImport
+    '/(auth)/reset-password': {
+      id: '/(auth)/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof authResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/(auth)/sign-in': {
+      id: '/(auth)/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof authSignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(auth)/sign-up': {
+      id: '/(auth)/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof authSignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(errors)/401': {
+      id: '/(errors)/401'
+      path: '/401'
+      fullPath: '/401'
+      preLoaderRoute: typeof errors401RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(errors)/403': {
+      id: '/(errors)/403'
+      path: '/403'
+      fullPath: '/403'
+      preLoaderRoute: typeof errors403RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(errors)/404': {
+      id: '/(errors)/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof errors404RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(errors)/500': {
+      id: '/(errors)/500'
+      path: '/500'
+      fullPath: '/500'
+      preLoaderRoute: typeof errors500RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(errors)/503': {
+      id: '/(errors)/503'
+      path: '/503'
+      fullPath: '/503'
+      preLoaderRoute: typeof errors503RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/': {
+      id: '/_authenticated/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/settings': {
       id: '/_authenticated/settings'
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof AuthenticatedSettingsRouteRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/users/': {
-      id: '/_authenticated/users/'
-      path: '/users'
-      fullPath: '/users/'
-      preLoaderRoute: typeof AuthenticatedUsersIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/settings/': {
-      id: '/_authenticated/settings/'
-      path: '/'
-      fullPath: '/settings/'
-      preLoaderRoute: typeof AuthenticatedSettingsIndexRouteImport
-      parentRoute: typeof AuthenticatedSettingsRouteRoute
-    }
-    '/_authenticated/help-center/': {
-      id: '/_authenticated/help-center/'
-      path: '/help-center'
-      fullPath: '/help-center/'
-      preLoaderRoute: typeof AuthenticatedHelpCenterIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/apps/': {
@@ -945,34 +924,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAppsIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/settings/notifications': {
-      id: '/_authenticated/settings/notifications'
-      path: '/notifications'
-      fullPath: '/settings/notifications'
-      preLoaderRoute: typeof AuthenticatedSettingsNotificationsRouteImport
-      parentRoute: typeof AuthenticatedSettingsRouteRoute
-    }
-    '/_authenticated/settings/display': {
-      id: '/_authenticated/settings/display'
-      path: '/display'
-      fullPath: '/settings/display'
-      preLoaderRoute: typeof AuthenticatedSettingsDisplayRouteImport
-      parentRoute: typeof AuthenticatedSettingsRouteRoute
-    }
-    '/_authenticated/settings/appearance': {
-      id: '/_authenticated/settings/appearance'
-      path: '/appearance'
-      fullPath: '/settings/appearance'
-      preLoaderRoute: typeof AuthenticatedSettingsAppearanceRouteImport
-      parentRoute: typeof AuthenticatedSettingsRouteRoute
-    }
-    '/_authenticated/settings/account': {
-      id: '/_authenticated/settings/account'
-      path: '/account'
-      fullPath: '/settings/account'
-      preLoaderRoute: typeof AuthenticatedSettingsAccountRouteImport
-      parentRoute: typeof AuthenticatedSettingsRouteRoute
-    }
     '/_authenticated/errors/$error': {
       id: '/_authenticated/errors/$error'
       path: '/errors/$error'
@@ -980,11 +931,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedErrorsErrorRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/programmation/parametrage-marches': {
-      id: '/_authenticated/programmation/parametrage-marches'
-      path: '/programmation/parametrage-marches'
-      fullPath: '/programmation/parametrage-marches'
-      preLoaderRoute: typeof AuthenticatedProgrammationParametrageMarchesRouteRouteImport
+    '/_authenticated/help-center/': {
+      id: '/_authenticated/help-center/'
+      path: '/help-center'
+      fullPath: '/help-center/'
+      preLoaderRoute: typeof AuthenticatedHelpCenterIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/parametrage/autres': {
@@ -994,214 +945,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedParametrageAutresRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/suivi-resultats/suivi-ptba/': {
-      id: '/_authenticated/suivi-resultats/suivi-ptba/'
-      path: '/suivi-resultats/suivi-ptba'
-      fullPath: '/suivi-resultats/suivi-ptba/'
-      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviPtbaIndexRouteImport
+    '/_authenticated/programmation/parametrage-marches': {
+      id: '/_authenticated/programmation/parametrage-marches'
+      path: '/programmation/parametrage-marches'
+      fullPath: '/programmation/parametrage-marches'
+      preLoaderRoute: typeof AuthenticatedProgrammationParametrageMarchesRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/suivi-resultats/suivi-ppm/': {
-      id: '/_authenticated/suivi-resultats/suivi-ppm/'
-      path: '/suivi-resultats/suivi-ppm'
-      fullPath: '/suivi-resultats/suivi-ppm/'
-      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviPpmIndexRouteImport
+    '/_authenticated/settings/': {
+      id: '/_authenticated/settings/'
+      path: '/'
+      fullPath: '/settings/'
+      preLoaderRoute: typeof AuthenticatedSettingsIndexRouteImport
+      parentRoute: typeof AuthenticatedSettingsRouteRoute
+    }
+    '/_authenticated/settings/account': {
+      id: '/_authenticated/settings/account'
+      path: '/account'
+      fullPath: '/settings/account'
+      preLoaderRoute: typeof AuthenticatedSettingsAccountRouteImport
+      parentRoute: typeof AuthenticatedSettingsRouteRoute
+    }
+    '/_authenticated/settings/appearance': {
+      id: '/_authenticated/settings/appearance'
+      path: '/appearance'
+      fullPath: '/settings/appearance'
+      preLoaderRoute: typeof AuthenticatedSettingsAppearanceRouteImport
+      parentRoute: typeof AuthenticatedSettingsRouteRoute
+    }
+    '/_authenticated/settings/display': {
+      id: '/_authenticated/settings/display'
+      path: '/display'
+      fullPath: '/settings/display'
+      preLoaderRoute: typeof AuthenticatedSettingsDisplayRouteImport
+      parentRoute: typeof AuthenticatedSettingsRouteRoute
+    }
+    '/_authenticated/settings/notifications': {
+      id: '/_authenticated/settings/notifications'
+      path: '/notifications'
+      fullPath: '/settings/notifications'
+      preLoaderRoute: typeof AuthenticatedSettingsNotificationsRouteImport
+      parentRoute: typeof AuthenticatedSettingsRouteRoute
+    }
+    '/_authenticated/users/': {
+      id: '/_authenticated/users/'
+      path: '/users'
+      fullPath: '/users/'
+      preLoaderRoute: typeof AuthenticatedUsersIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/suivi-resultats/suivi-indicateurs/': {
-      id: '/_authenticated/suivi-resultats/suivi-indicateurs/'
-      path: '/suivi-resultats/suivi-indicateurs'
-      fullPath: '/suivi-resultats/suivi-indicateurs/'
-      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviIndicateursIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/(auth)/set-password/$uid/$token': {
+      id: '/(auth)/set-password/$uid/$token'
+      path: '/set-password/$uid/$token'
+      fullPath: '/set-password/$uid/$token'
+      preLoaderRoute: typeof authSetPasswordUidTokenRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/suivi-resultats/cartographie/': {
-      id: '/_authenticated/suivi-resultats/cartographie/'
-      path: '/suivi-resultats/cartographie'
-      fullPath: '/suivi-resultats/cartographie/'
-      preLoaderRoute: typeof AuthenticatedSuiviResultatsCartographieIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/rapport/ptba/': {
-      id: '/_authenticated/rapport/ptba/'
-      path: '/rapport/ptba'
-      fullPath: '/rapport/ptba/'
-      preLoaderRoute: typeof AuthenticatedRapportPtbaIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/rapport/indicateurs/': {
-      id: '/_authenticated/rapport/indicateurs/'
-      path: '/rapport/indicateurs'
-      fullPath: '/rapport/indicateurs/'
-      preLoaderRoute: typeof AuthenticatedRapportIndicateursIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/rapport/etat-des-activites/': {
-      id: '/_authenticated/rapport/etat-des-activites/'
-      path: '/rapport/etat-des-activites'
-      fullPath: '/rapport/etat-des-activites/'
-      preLoaderRoute: typeof AuthenticatedRapportEtatDesActivitesIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/rapport/decaissement/': {
-      id: '/_authenticated/rapport/decaissement/'
-      path: '/rapport/decaissement'
-      fullPath: '/rapport/decaissement/'
-      preLoaderRoute: typeof AuthenticatedRapportDecaissementIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/projet-programme/zone-de-collecte/': {
-      id: '/_authenticated/projet-programme/zone-de-collecte/'
-      path: '/projet-programme/zone-de-collecte'
-      fullPath: '/projet-programme/zone-de-collecte/'
-      preLoaderRoute: typeof AuthenticatedProjetProgrammeZoneDeCollecteIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/projet-programme/unites-de-gestion/': {
-      id: '/_authenticated/projet-programme/unites-de-gestion/'
-      path: '/projet-programme/unites-de-gestion'
-      fullPath: '/projet-programme/unites-de-gestion/'
-      preLoaderRoute: typeof AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/projet-programme/projets/': {
-      id: '/_authenticated/projet-programme/projets/'
-      path: '/projet-programme/projets'
-      fullPath: '/projet-programme/projets/'
-      preLoaderRoute: typeof AuthenticatedProjetProgrammeProjetsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programme/pagesTest/': {
-      id: '/_authenticated/programme/pagesTest/'
-      path: '/programme/pagesTest'
-      fullPath: '/programme/pagesTest/'
-      preLoaderRoute: typeof AuthenticatedProgrammePagesTestIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programme/liste/': {
-      id: '/_authenticated/programme/liste/'
-      path: '/programme/liste'
-      fullPath: '/programme/liste/'
-      preLoaderRoute: typeof AuthenticatedProgrammeListeIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programme/indicateurs-performance/': {
-      id: '/_authenticated/programme/indicateurs-performance/'
-      path: '/programme/indicateurs-performance'
-      fullPath: '/programme/indicateurs-performance/'
-      preLoaderRoute: typeof AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programme/indicateurs-cmr/': {
-      id: '/_authenticated/programme/indicateurs-cmr/'
-      path: '/programme/indicateurs-cmr'
-      fullPath: '/programme/indicateurs-cmr/'
-      preLoaderRoute: typeof AuthenticatedProgrammeIndicateursCmrIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programme/cadre-strategique/': {
-      id: '/_authenticated/programme/cadre-strategique/'
-      path: '/programme/cadre-strategique'
-      fullPath: '/programme/cadre-strategique/'
-      preLoaderRoute: typeof AuthenticatedProgrammeCadreStrategiqueIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programme/cadre-analytique/': {
-      id: '/_authenticated/programme/cadre-analytique/'
-      path: '/programme/cadre-analytique'
-      fullPath: '/programme/cadre-analytique/'
-      preLoaderRoute: typeof AuthenticatedProgrammeCadreAnalytiqueIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/ptba/': {
-      id: '/_authenticated/programmation/ptba/'
-      path: '/programmation/ptba'
-      fullPath: '/programmation/ptba/'
-      preLoaderRoute: typeof AuthenticatedProgrammationPtbaIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/projets/': {
-      id: '/_authenticated/programmation/projets/'
-      path: '/programmation/projets'
-      fullPath: '/programmation/projets/'
-      preLoaderRoute: typeof AuthenticatedProgrammationProjetsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/ppms/': {
-      id: '/_authenticated/programmation/ppms/'
-      path: '/programmation/ppms'
-      fullPath: '/programmation/ppms/'
-      preLoaderRoute: typeof AuthenticatedProgrammationPpmsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/indicateurs-performance/': {
-      id: '/_authenticated/programmation/indicateurs-performance/'
-      path: '/programmation/indicateurs-performance'
-      fullPath: '/programmation/indicateurs-performance/'
-      preLoaderRoute: typeof AuthenticatedProgrammationIndicateursPerformanceIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/indicateurs-activites-ptba/': {
-      id: '/_authenticated/programmation/indicateurs-activites-ptba/'
-      path: '/programmation/indicateurs-activites-ptba'
-      fullPath: '/programmation/indicateurs-activites-ptba/'
-      preLoaderRoute: typeof AuthenticatedProgrammationIndicateursActivitesPtbaIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/contrat-performance/': {
-      id: '/_authenticated/programmation/contrat-performance/'
-      path: '/programmation/contrat-performance'
-      fullPath: '/programmation/contrat-performance/'
-      preLoaderRoute: typeof AuthenticatedProgrammationContratPerformanceIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/activites-projet/': {
-      id: '/_authenticated/programmation/activites-projet/'
-      path: '/programmation/activites-projet'
-      fullPath: '/programmation/activites-projet/'
-      preLoaderRoute: typeof AuthenticatedProgrammationActivitesProjetIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/programmation/activites-programme/': {
-      id: '/_authenticated/programmation/activites-programme/'
-      path: '/programmation/activites-programme'
-      fullPath: '/programmation/activites-programme/'
-      preLoaderRoute: typeof AuthenticatedProgrammationActivitesProgrammeIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/parametrage/utilisateurs/': {
-      id: '/_authenticated/parametrage/utilisateurs/'
-      path: '/parametrage/utilisateurs'
-      fullPath: '/parametrage/utilisateurs/'
-      preLoaderRoute: typeof AuthenticatedParametrageUtilisateursIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/parametrage/unites-de-gestion/': {
-      id: '/_authenticated/parametrage/unites-de-gestion/'
-      path: '/parametrage/unites-de-gestion'
-      fullPath: '/parametrage/unites-de-gestion/'
-      preLoaderRoute: typeof AuthenticatedParametrageUnitesDeGestionIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/parametrage/plans-de-site/': {
-      id: '/_authenticated/parametrage/plans-de-site/'
-      path: '/parametrage/plans-de-site'
-      fullPath: '/parametrage/plans-de-site/'
-      preLoaderRoute: typeof AuthenticatedParametragePlansDeSiteIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/parametrage/partenaire-financier/': {
-      id: '/_authenticated/parametrage/partenaire-financier/'
-      path: '/parametrage/partenaire-financier'
-      fullPath: '/parametrage/partenaire-financier/'
-      preLoaderRoute: typeof AuthenticatedParametragePartenaireFinancierIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/parametrage/localites/': {
-      id: '/_authenticated/parametrage/localites/'
-      path: '/parametrage/localites'
-      fullPath: '/parametrage/localites/'
-      preLoaderRoute: typeof AuthenticatedParametrageLocalitesIndexRouteImport
+    '/_authenticated/parametrage/acteurs/': {
+      id: '/_authenticated/parametrage/acteurs/'
+      path: '/parametrage/acteurs'
+      fullPath: '/parametrage/acteurs/'
+      preLoaderRoute: typeof AuthenticatedParametrageActeursIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/parametrage/dictionnaire-indicateurs/': {
@@ -1211,32 +1015,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedParametrageDictionnaireIndicateursIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/parametrage/acteurs/': {
-      id: '/_authenticated/parametrage/acteurs/'
-      path: '/parametrage/acteurs'
-      fullPath: '/parametrage/acteurs/'
-      preLoaderRoute: typeof AuthenticatedParametrageActeursIndexRouteImport
+    '/_authenticated/parametrage/localites/': {
+      id: '/_authenticated/parametrage/localites/'
+      path: '/parametrage/localites'
+      fullPath: '/parametrage/localites/'
+      preLoaderRoute: typeof AuthenticatedParametrageLocalitesIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/suivi-resultats/suivi-indicateurs/$id': {
-      id: '/_authenticated/suivi-resultats/suivi-indicateurs/$id'
-      path: '/suivi-resultats/suivi-indicateurs/$id'
-      fullPath: '/suivi-resultats/suivi-indicateurs/$id'
-      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviIndicateursIdRouteImport
+    '/_authenticated/parametrage/partenaire-financier/': {
+      id: '/_authenticated/parametrage/partenaire-financier/'
+      path: '/parametrage/partenaire-financier'
+      fullPath: '/parametrage/partenaire-financier/'
+      preLoaderRoute: typeof AuthenticatedParametragePartenaireFinancierIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/projet-programme/projets/$id': {
-      id: '/_authenticated/projet-programme/projets/$id'
-      path: '/projet-programme/projets/$id'
-      fullPath: '/projet-programme/projets/$id'
-      preLoaderRoute: typeof AuthenticatedProjetProgrammeProjetsIdRouteImport
+    '/_authenticated/parametrage/plans-de-site/': {
+      id: '/_authenticated/parametrage/plans-de-site/'
+      path: '/parametrage/plans-de-site'
+      fullPath: '/parametrage/plans-de-site/'
+      preLoaderRoute: typeof AuthenticatedParametragePlansDeSiteIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/programmation/projets/$id': {
-      id: '/_authenticated/programmation/projets/$id'
-      path: '/programmation/projets/$id'
-      fullPath: '/programmation/projets/$id'
-      preLoaderRoute: typeof AuthenticatedProgrammationProjetsIdRouteImport
+    '/_authenticated/parametrage/unites-de-gestion/': {
+      id: '/_authenticated/parametrage/unites-de-gestion/'
+      path: '/parametrage/unites-de-gestion'
+      fullPath: '/parametrage/unites-de-gestion/'
+      preLoaderRoute: typeof AuthenticatedParametrageUnitesDeGestionIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/parametrage/utilisateurs/': {
+      id: '/_authenticated/parametrage/utilisateurs/'
+      path: '/parametrage/utilisateurs'
+      fullPath: '/parametrage/utilisateurs/'
+      preLoaderRoute: typeof AuthenticatedParametrageUtilisateursIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/activites-programme/': {
+      id: '/_authenticated/programmation/activites-programme/'
+      path: '/programmation/activites-programme'
+      fullPath: '/programmation/activites-programme/'
+      preLoaderRoute: typeof AuthenticatedProgrammationActivitesProgrammeIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/activites-projet/': {
+      id: '/_authenticated/programmation/activites-projet/'
+      path: '/programmation/activites-projet'
+      fullPath: '/programmation/activites-projet/'
+      preLoaderRoute: typeof AuthenticatedProgrammationActivitesProjetIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/contrat-performance/': {
+      id: '/_authenticated/programmation/contrat-performance/'
+      path: '/programmation/contrat-performance'
+      fullPath: '/programmation/contrat-performance/'
+      preLoaderRoute: typeof AuthenticatedProgrammationContratPerformanceIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/programmation/contrat-performance/$id': {
@@ -1246,12 +1078,180 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedProgrammationContratPerformanceIdRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/(auth)/set-password/$uid/$token': {
-      id: '/(auth)/set-password/$uid/$token'
-      path: '/set-password/$uid/$token'
-      fullPath: '/set-password/$uid/$token'
-      preLoaderRoute: typeof authSetPasswordUidTokenRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_authenticated/programmation/indicateurs-activites-ptba/': {
+      id: '/_authenticated/programmation/indicateurs-activites-ptba/'
+      path: '/programmation/indicateurs-activites-ptba'
+      fullPath: '/programmation/indicateurs-activites-ptba/'
+      preLoaderRoute: typeof AuthenticatedProgrammationIndicateursActivitesPtbaIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/indicateurs-performance/': {
+      id: '/_authenticated/programmation/indicateurs-performance/'
+      path: '/programmation/indicateurs-performance'
+      fullPath: '/programmation/indicateurs-performance/'
+      preLoaderRoute: typeof AuthenticatedProgrammationIndicateursPerformanceIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/ppms/': {
+      id: '/_authenticated/programmation/ppms/'
+      path: '/programmation/ppms'
+      fullPath: '/programmation/ppms/'
+      preLoaderRoute: typeof AuthenticatedProgrammationPpmsIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/projets/': {
+      id: '/_authenticated/programmation/projets/'
+      path: '/programmation/projets'
+      fullPath: '/programmation/projets/'
+      preLoaderRoute: typeof AuthenticatedProgrammationProjetsIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/projets/$id': {
+      id: '/_authenticated/programmation/projets/$id'
+      path: '/programmation/projets/$id'
+      fullPath: '/programmation/projets/$id'
+      preLoaderRoute: typeof AuthenticatedProgrammationProjetsIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programmation/ptba/': {
+      id: '/_authenticated/programmation/ptba/'
+      path: '/programmation/ptba'
+      fullPath: '/programmation/ptba/'
+      preLoaderRoute: typeof AuthenticatedProgrammationPtbaIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programme/cadre-analytique/': {
+      id: '/_authenticated/programme/cadre-analytique/'
+      path: '/programme/cadre-analytique'
+      fullPath: '/programme/cadre-analytique/'
+      preLoaderRoute: typeof AuthenticatedProgrammeCadreAnalytiqueIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programme/cadre-strategique/': {
+      id: '/_authenticated/programme/cadre-strategique/'
+      path: '/programme/cadre-strategique'
+      fullPath: '/programme/cadre-strategique/'
+      preLoaderRoute: typeof AuthenticatedProgrammeCadreStrategiqueIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programme/indicateurs-cmr/': {
+      id: '/_authenticated/programme/indicateurs-cmr/'
+      path: '/programme/indicateurs-cmr'
+      fullPath: '/programme/indicateurs-cmr/'
+      preLoaderRoute: typeof AuthenticatedProgrammeIndicateursCmrIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programme/indicateurs-performance/': {
+      id: '/_authenticated/programme/indicateurs-performance/'
+      path: '/programme/indicateurs-performance'
+      fullPath: '/programme/indicateurs-performance/'
+      preLoaderRoute: typeof AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programme/liste/': {
+      id: '/_authenticated/programme/liste/'
+      path: '/programme/liste'
+      fullPath: '/programme/liste/'
+      preLoaderRoute: typeof AuthenticatedProgrammeListeIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/programme/pagesTest/': {
+      id: '/_authenticated/programme/pagesTest/'
+      path: '/programme/pagesTest'
+      fullPath: '/programme/pagesTest/'
+      preLoaderRoute: typeof AuthenticatedProgrammePagesTestIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/projet-programme/projets/': {
+      id: '/_authenticated/projet-programme/projets/'
+      path: '/projet-programme/projets'
+      fullPath: '/projet-programme/projets/'
+      preLoaderRoute: typeof AuthenticatedProjetProgrammeProjetsIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/projet-programme/projets/$id': {
+      id: '/_authenticated/projet-programme/projets/$id'
+      path: '/projet-programme/projets/$id'
+      fullPath: '/projet-programme/projets/$id'
+      preLoaderRoute: typeof AuthenticatedProjetProgrammeProjetsIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/projet-programme/unites-de-gestion/': {
+      id: '/_authenticated/projet-programme/unites-de-gestion/'
+      path: '/projet-programme/unites-de-gestion'
+      fullPath: '/projet-programme/unites-de-gestion/'
+      preLoaderRoute: typeof AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/projet-programme/zone-de-collecte/': {
+      id: '/_authenticated/projet-programme/zone-de-collecte/'
+      path: '/projet-programme/zone-de-collecte'
+      fullPath: '/projet-programme/zone-de-collecte/'
+      preLoaderRoute: typeof AuthenticatedProjetProgrammeZoneDeCollecteIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/rapport/decaissement/': {
+      id: '/_authenticated/rapport/decaissement/'
+      path: '/rapport/decaissement'
+      fullPath: '/rapport/decaissement/'
+      preLoaderRoute: typeof AuthenticatedRapportDecaissementIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/rapport/etat-des-activites/': {
+      id: '/_authenticated/rapport/etat-des-activites/'
+      path: '/rapport/etat-des-activites'
+      fullPath: '/rapport/etat-des-activites/'
+      preLoaderRoute: typeof AuthenticatedRapportEtatDesActivitesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/rapport/indicateurs/': {
+      id: '/_authenticated/rapport/indicateurs/'
+      path: '/rapport/indicateurs'
+      fullPath: '/rapport/indicateurs/'
+      preLoaderRoute: typeof AuthenticatedRapportIndicateursIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/rapport/ptba/': {
+      id: '/_authenticated/rapport/ptba/'
+      path: '/rapport/ptba'
+      fullPath: '/rapport/ptba/'
+      preLoaderRoute: typeof AuthenticatedRapportPtbaIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/suivi-resultats/cartographie/': {
+      id: '/_authenticated/suivi-resultats/cartographie/'
+      path: '/suivi-resultats/cartographie'
+      fullPath: '/suivi-resultats/cartographie/'
+      preLoaderRoute: typeof AuthenticatedSuiviResultatsCartographieIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/suivi-resultats/suivi-indicateurs/': {
+      id: '/_authenticated/suivi-resultats/suivi-indicateurs/'
+      path: '/suivi-resultats/suivi-indicateurs'
+      fullPath: '/suivi-resultats/suivi-indicateurs/'
+      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviIndicateursIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/suivi-resultats/suivi-indicateurs/$id': {
+      id: '/_authenticated/suivi-resultats/suivi-indicateurs/$id'
+      path: '/suivi-resultats/suivi-indicateurs/$id'
+      fullPath: '/suivi-resultats/suivi-indicateurs/$id'
+      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviIndicateursIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/suivi-resultats/suivi-ppm/': {
+      id: '/_authenticated/suivi-resultats/suivi-ppm/'
+      path: '/suivi-resultats/suivi-ppm'
+      fullPath: '/suivi-resultats/suivi-ppm/'
+      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviPpmIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/suivi-resultats/suivi-ptba/': {
+      id: '/_authenticated/suivi-resultats/suivi-ptba/'
+      path: '/suivi-resultats/suivi-ptba'
+      fullPath: '/suivi-resultats/suivi-ptba/'
+      preLoaderRoute: typeof AuthenticatedSuiviResultatsSuiviPtbaIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/projet-programme/projets/$id/': {
       id: '/_authenticated/projet-programme/projets/$id/'

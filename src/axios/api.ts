@@ -4,9 +4,7 @@ import { useAuthStore } from '@/stores/auth-store'
 import { useSessionStore } from '@/stores/others/session.store'
 import { getConfigDuration } from '@/lib/session-config'
 
-const BASE_URL =
-  (import.meta.env.VITE_API_BASE_URL as string) ||
-  'https://api.sise-mali.net/api/'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL as string
 
 export const api = axios.create({
   baseURL: BASE_URL,
@@ -16,7 +14,6 @@ export const api = axios.create({
     Accept: 'application/json',
   },
 
-  // 'https://api.sise-mali.net/api/'
   timeout: 30000,
   withCredentials: true,
 })
