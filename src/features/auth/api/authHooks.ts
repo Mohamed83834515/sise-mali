@@ -27,7 +27,37 @@ export function useMe() {
   })
 }
 
-// ✅ Version corrigée avec redirection selon le niveau
+export function sanitizeRedirectPath(redirect?: string | null): string {
+  if (!redirect || typeof redirect !== 'string') return '/'
+
+  const trimmed = redirect.trim()
+  if (!trimmed || trimmed === '/' || trimmed.startsWith('/sign-in')) {
+    return '/'
+  }
+
+  // Si c'est une URL absolue (ex: http://localhost:5173 ou https://.../path)
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    try {
+      const url = new URL(trimmed)
+      if (typeof window !== 'undefined' && url.origin === window.location.origin) {
+        const path = url.pathname + url.search
+        return path === '/sign-in' || path.startsWith('/sign-in') ? '/' : (path || '/')
+      }
+      return '/'
+    } catch {
+      return '/'
+    }
+  }
+
+  // Si c'est un chemin relatif valide commençant par '/' (sans double slash)
+  if (trimmed.startsWith('/') && !trimmed.startsWith('//')) {
+    return trimmed
+  }
+
+  return '/'
+}
+
+// ✅ Version corrigée avec redirection propre et sécurisée selon le niveau
 export function useLogin() {
   const queryClient = useQueryClient()
   const navigate = useNavigate()
@@ -42,10 +72,10 @@ export function useLogin() {
       // ✅ Mettre à jour le store
       login()
       // data contient probablement l'utilisateur avec niveau_perso
-      const userLevel =   data.personnel.niveau_perso  || 1
+      const userLevel = data.personnel.niveau_perso || 1
 
-      // ✅ Déterminer la redirection selon le niveau
-      let redirectPath = search.redirect ?? '/'
+      // ✅ Déterminer la redirection assainie
+      let redirectPath = sanitizeRedirectPath(search.redirect)
 
       // Si l'utilisateur est niveau 3 (Consultant), rediriger vers la liste des projets
       if (userLevel === 3) {
