@@ -11,10 +11,10 @@ import { NavUser } from './nav-user'
 
 import { useLayout } from '@/stores/others/layout-store'
 import { CHART_COLORS, useColor } from '@/stores/others/color-store'
-import { useMe } from '@/simadou/allHooks/auth/authHooks'
+import { useMe } from '@/features/auth'
 import logoMali from '@/assets/images/logo-mali.png'
-import { useGeneralParamsQuery } from '@/simadou/allHooks/generalParams/queries'
-import { useFilteredSidebar } from '@/simadou/allHooks/admin/use-filtered-sidebar'
+import { useGeneralParamsQuery } from '@/shared/api/hooks/generalParams/queries'
+import { useFilteredSidebar } from '@/components/layout/others/use-filtered-sidebar'
 export function AppSidebar() {
   const { collapsible, variant } = useLayout()
   const { color } = useColor()

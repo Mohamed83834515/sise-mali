@@ -1,8 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
+import { PageRouteLayout } from '@/shared'
 import { BookOpen } from 'lucide-react'
-import ListeDictionnaireIndicateurs from '@/simadou/allfonctionalities/parametrage/dictionnaire-indicateurs/ListeDictionnaireIndicateurs'
-import DictionnaireIndicateurDialog from '@/simadou/allfonctionalities/parametrage/dictionnaire-indicateurs/DictionnaireIndicateurDialog'
+import {
+  ListeDictionnaireIndicateurs,
+  DictionnaireIndicateurDialog,
+} from '@/features/parametrage'
 
 export const Route = createFileRoute(
   '/_authenticated/parametrage/dictionnaire-indicateurs/',

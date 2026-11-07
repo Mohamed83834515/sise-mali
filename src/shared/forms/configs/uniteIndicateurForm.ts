@@ -1,0 +1,27 @@
+import type { FormConfig } from "@/shared/types/formConfig";
+
+export const getUniteIndicateurFormConfig = (): FormConfig => ({
+
+    fields: [
+        // texte - Unité
+        {
+            name: "unite_ui",
+            label: "Unité",
+            type: "text",
+            placeholder: "Ex: Kg, %, Nbre, FR...",
+            required: true,
+            gridCols: 1,
+        },
+        // textarea - Définition
+        {
+            name: "definition_ui",
+            label: "Définition",
+            type: "textarea",
+            placeholder: "Définition de l'unité de mesure...",
+            rows: 3,
+            required: true,
+            gridCols: 1,
+        },
+    ]
+
+})

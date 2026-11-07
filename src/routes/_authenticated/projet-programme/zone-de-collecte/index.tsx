@@ -1,6 +1,5 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddZoneCollecte from '@/simadou/allfonctionalities/parametrage/zone-collecte/AddZoneCollecte'
-import { ListeZoneCollecte } from '@/simadou/allfonctionalities/parametrage/zone-collecte/ListeZoneCollecte'
+import { PageRouteLayout } from '@/shared'
+import { AddZoneCollecte, ListeZoneCollecte } from '@/features/projets'
 import { createFileRoute } from '@tanstack/react-router'
 import { MapPin } from 'lucide-react'
 

@@ -1,4 +1,4 @@
-import CartographieView from '@/simadou/allfonctionalities/cartographie/CartographieView'
+import { CartographieView } from '@/features/suivi-resultats'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute(

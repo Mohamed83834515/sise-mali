@@ -1,530 +1,174 @@
 # SISE-MALI
 
-# Comment créer une fonctionnalité dans l'application
+Système d'Information de Suivi-Évaluation (SISE) du Mali.
 
-Dans authenticated :
+Application Web moderne développée en React, TypeScript, TanStack Router, TanStack Query et Tailwind CSS.
 
-1) créer fichier :  localites/index.tsx  (la route se crée automatiquement)
+---
+
+## 🛠️ Stack Technique
+
+- **Package Manager** : [pnpm](https://pnpm.io/) (`>= 10.x`) — *npm et yarn sont strictement bloqués via `only-allow pnpm`*.
+- **Framework & Bundler** : React 18, Vite.
+- **Routage** : [TanStack Router](https://tanstack.com/router) (file-based routing typé).
+- **Gestion d'état serveur** : [TanStack Query](https://tanstack.com/query) v5.
+- **Gestion d'état client** : Zustand.
+- **Composants UI & Styling** : Tailwind CSS, Shadcn UI, Radix UI, Lucide Icons.
+- **Formulaires & Validation** : React Hook Form, Zod, Formulaires Dynamiques (`@/shared/forms`).
+- **Tableaux de données** : TanStack Table (`@/shared/tables`).
+
+---
+
+## 🚀 Démarrage Rapide
+
+### Prérequis
+- Node.js `>= 18`
+- `pnpm` (`npm install -g pnpm` si non présent)
+
+### Commandes usuelles
+
+```bash
+# Installation des dépendances
+pnpm install
+
+# Démarrage du serveur de développement (port 5173)
+pnpm dev
+
+# Vérification TypeScript (0 erreur)
+pnpm exec tsc -b
+
+# Build de production
+pnpm run build
+
+# Prévisualisation du build de production
+pnpm run preview
+```
+
+> ⚠️ **Variables d'environnement (`.env`)** :
+> Assurez-vous d'avoir le protocole HTTP dans l'URL de base :
+> `VITE_API_BASE_URL=http://localhost:8000/api/` (ou `https://api.sise-mali.net/api/`)
+
+---
+
+## 🏛️ Architecture du Projet : Feature-Driven
+
+Le projet suit la méthodologie **Feature-Driven Architecture** (inspirée de *Bulletproof React*) où le code métier est organisé par grands domaines d'affaires, avec un socle transverse unifié (`@/shared/`).
 
 ```
-── routes
-│   │   ├── _authenticated
-│   │   │   ├── localites
-│   │   │   │   └── index.tsx
+src/
+├── features/               # 📦 Modules métiers isolés
+│   ├── auth/               # Authentification, sessions, permissions, profils
+│   ├── dashboard/          # Tableaux de bord PAO, graphiques, KPIs
+│   ├── parametrage/        # Référentiels (acteurs, localités, plan site, UGL, etc.)
+│   ├── politique/          # Politiques sectorielles, CDMT, cadres stratégiques, indicateurs
+│   ├── programmation/      # PTBA, contrats de performance, marchés PPM
+│   ├── projets/            # Gestion des projets, conventions, financements, suivi
+│   ├── suivi-resultats/    # Suivi physique/financier PTBA, PPM, étapes, indicateurs
+│   ├── rapport/            # Rapports d'activités, décaissements, exports Excel/Word/PDF
+│   ├── settings/           # Paramètres utilisateur, sécurité, préférences
+│   ├── users/              # Administration des utilisateurs et rôles
+│   └── apps/               # Applications & intégrations
+│
+├── shared/                 # 🧱 Socle transverse unifié
+│   ├── api/                # Client Axios instance, gestionnaires d'erreurs, services, hooks
+│   ├── forms/              # DynamicForm, FormField, validateurs, configs, resetFields
+│   ├── tables/             # GenericTable, column-builder, GenericRowActions, colonnes
+│   ├── types/              # Types TypeScript & entités d'affaires (`@/shared/types`)
+│   ├── schemas/            # Schémas de validation Zod (`@/shared/schemas`)
+│   ├── utils/              # Fonctions de calcul, formatage, relations d'API
+│   ├── routes/             # PageRouteLayout pour TanStack Router
+│   ├── detail/             # Composants de visualisation de détails
+│   ├── errors/             # Pages d'états d'erreurs, 404, offline
+│   └── components/         # Composants partagés (ex: SessionProvider)
+│
+├── routes/                 # 🧭 Arborescence de routes TanStack Router (fichiers légers)
+│   ├── __root.tsx
+│   ├── (auth)/             # Routes publiques (connexion, mot de passe oublié)
+│   └── _authenticated/     # Routes protégées par l'AuthGuard
+│
+├── components/             # 🎨 Composants UI réutilisables (shadcn/ui, layout app-sidebar)
+└── stores/                 # 🗄️ Stores globaux légers Zustand (auth, thème, programme actif)
 ```
 
-2) Dans SIMADOU :
-   Dans allfonctionalities, on part de l'exemple de users, vous créez un autre dossier : localités qui contiendra tous les composants (fichiers necessaires)
+---
+
+## 💡 Guide : Comment créer une nouvelle fonctionnalité
+
+Prenons l'exemple de l'ajout d'une fonctionnalité **`partenaires-techniques`** dans le domaine **`parametrage`** :
+
+### Étape 1 : Créer la Feature dans `src/features/`
+
+Créez le sous-dossier `src/features/parametrage/partenaires-techniques/` :
 
 ```
-── simadou
-│   │   ├── allfonctionalities
-│   │   │   └── users
-│   │   │       ├── AddUser.tsx
-│   │   │       ├── EditUser.tsx
-│   │   │       └── ListeUsers.tsx
+src/features/parametrage/partenaires-techniques/
+├── components/             # Composants d'interface (dialog, formulaires, liste)
+│   ├── AddPartenaireTechnique.tsx
+│   └── ListePartenairesTechniques.tsx
+├── api/                    # Hooks React Query et services spécifiques
+│   └── partenaireTechniqueHooks.ts
+├── config/                 # Colonnes de tableau et config de formulaire
+│   └── partenaireTechniqueColumns.tsx
+└── index.ts                # Point d'entrée public de la feature
 ```
 
-3) Revenir dans la route crée au niveau de _authenticated puis :
+### Étape 2 : Créer le composant de Liste et d'Ajout
 
-```js
-import { createFileRoute } from '@tanstack/react-router'
+```tsx
+// src/features/parametrage/partenaires-techniques/components/ListePartenairesTechniques.tsx
+import { GenericTable } from '@/shared/tables'
+import { PageRouteLayout } from '@/shared/routes'
+import { Handshake } from 'lucide-react'
+import { useGetPartenairesTechniques } from '../api/partenaireTechniqueHooks'
+import { buildPartenaireTechniqueColumns } from '../config/partenaireTechniqueColumns'
 
-export const Route = createFileRoute('/_authenticated/parametrage/localites/')({
-  component: RouteComponent,
-})
+export function ListePartenairesTechniques() {
+  const { data = [], isLoading } = useGetPartenairesTechniques()
+  const columns = buildPartenaireTechniqueColumns()
 
-// c'est uniquement cette partie qu'il faut changer
-function RouteComponent() {
-  return <div>Hello "/_authenticated/parametrage/localites/"!</div>
-}
-```
-
-comme suit (on se base sur : #user)
-
-```js
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddUser from '@/simadou/allfonctionalities/users/AddUser'
-import ListeUsers from '@/simadou/allfonctionalities/users/ListeUsers'
-import { createFileRoute } from '@tanstack/react-router'
-import { Users } from 'lucide-react'
-
-export const Route = createFileRoute('/_authenticated/users/')({
-  component: RouteComponent,
-})
-
-function RouteComponent() {
   return (
-  // route géneric
-    <PageRouteLayout
-    // titre qui va s'affichier sur le tableau des users
-      title="Listes utilisateurs"
-      // icons du bouton d'ajout
-      icon={Users}
-      // le modal du formulaire d'ajout
-      addDialogComponent={AddUser}
-      // la liste des utilisateurs affichers dans le tableau
-      listComponent={ListeUsers}
+    <GenericTable
+      data={data}
+      columns={columns}
+      isLoading={isLoading}
+      searchPlaceholder="Rechercher un partenaire..."
     />
   )
 }
 ```
 
-4) Ajout de la route de la fonctionnalité crée
-   Dans #sidebar-data.ts  il y a toutes les routes
+### Étape 3 : Exporter la feature via `index.ts`
 
-```
-├── simadou
-│   │   ├── routescontantes
-│   │   │   └── sidebar-data.ts
+```ts
+// src/features/parametrage/partenaires-techniques/index.ts
+export { ListePartenairesTechniques } from './components/ListePartenairesTechniques'
 ```
 
-```js
-import {
-  LayoutDashboard,
-  Users,
-} from 'lucide-react'
-import { type SidebarData } from '../../components/layout/others/types'
+### Étape 4 : Déclarer la Route TanStack Router
 
-export const sidebarData: SidebarData = {
-  user: {
-    name: 'simadou',
-    email: 'simadou.com',
-    avatar: '/avatars/shadcn.jpg',
-  },
-  teams: [
-    {
-      name: 'SIMADOU',
-      logo: Command,
-      plan: 'simadou',
-    },
-  ],
-  navGroups: [
-    {
-      title: 'General',
-      items: [
-        {
-          title: 'Users',
-          url: '/users',
-          icon: Users,
-        },
+Dans `src/routes/_authenticated/parametrage/partenaires-techniques/index.tsx` :
 
-        // ── Paramétrage ──────────────────────────────────────
-        {
-          title: 'Paramétrage',
-          icon: Settings,
-          items: [
-          // ajout de la locatité
-            {
-              title: 'Localités',
-              url: '/localites',
-              icon: MapPin,
-            },
-          ],
-        },
-      ],
-    },
-}
-```
+```tsx
+import { createFileRoute } from '@tanstack/react-router'
+import { PageRouteLayout } from '@/shared/routes'
+import { ListePartenairesTechniques } from '@/features/parametrage'
+import { Handshake } from 'lucide-react'
 
-# Comment manipuler le formulaire
+export const Route = createFileRoute('/_authenticated/parametrage/partenaires-techniques/')({
+  component: RouteComponent,
+})
 
-Partons de l'exemple du formulaire d'ajout d'un utilisateur
-
-1) Formulaire d'ajout d'utilisateur
-
-```js
-
-// ici y a les importes que j'ai effacé
-
-const AddUser = ({ open, onOpenChange }: OpenProps) => {
-  const { mutate, isPending } = useAddUser();
-  const formConfig = getUserFormConfig()
-
-  const onSubmit = () => {
-    mutate(data, {
-       onSuccess: () => {
-         onOpenChange(false);
-       },
-     });
-  }
-
+function RouteComponent() {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className={DIALOG_SIZES.md}>
-        <DialogHeader>
-          <DialogTitle>Ajouter un utilisateur</DialogTitle>
-          <DialogDescription>Créer un nouvel utilisateur</DialogDescription>
-        </DialogHeader>
-        <DynamicForm
-        //1a) config des champs
-          config={formConfig}
-        //1b) configuration de zod 
-          schema={userSchema}
-        //1c) configuration des champs de renitialisation
-          defaultValues={STAFF}
-  
-          onSubmit={onSubmit}
-          submitText="Ajouter l'utilisateur"
-          loadingText='Ajout en cours...'
-        />
-      </DialogContent>
-    </Dialog>
+    <PageRouteLayout
+      title="Partenaires Techniques"
+      description="Gestion des partenaires techniques d'exécution"
+      icon={Handshake}
+    >
+      <ListePartenairesTechniques />
+    </PageRouteLayout>
   )
 }
-
-export default AddUser
 ```
 
-### Regardons de plus prêt
-
-### 1a) Config des champs
-
-Donc ici comme prévu chacun créera un fichier correspondant a la classe qu'il voudra manipuler
-
-```
-├── simadou
-│   │   ├── allfieldsConfig
-│   │   │   └── userFormConfig.ts
-```
-
-Dans userFormConfig.ts
-
-### Ce premier cas concerne que le DynamicForm
-
-```js
-import type { FormConfig } from "../../Global/types/formConfig";
-export const getUserFormConfig = (): FormConfig => ({
-  // premier cas
-
-
-  //----------------------
-  fields: [
-    // text
-    {
-      name: "nom",
-      label: "Nom",
-      type: "text",
-      placeholder: "Nom de famille",
-      required: true,
-      gridCols:1,
-    },
-  ],
-});
-```
-
-### Ce deuxième cas concerne le StepDynamicForm
-
-```js
-import type { FormConfig } from "../../Global/types/formConfig";
-export const getUserFormConfig = (): FormConfig => ({
-  // 2eme cas
-
-  // vous definissez le nombre de step ici
-   steps: [
-     {
-       step: 1,
-       title: "Identité",
-       description: "Informations personnelles de base",
-     },
-   ],
-
-  // et vous associez chaque champ à un step
-
-  // fields: [
-  //   // ── Step 1 : Identité ────────────────────────────────────────
-     {
-       name: "nom",
-       label: "Nom",
-       type: "text",
-       placeholder: "Ex: Diallo",
-       required: true,
-       gridCols: 1,
-       formStep: 1,
-     },
-  ],
-});
-```
-
-### Gestion des select (question posée hier pendant la présentation)
-
-prenons juste un exemple (elèves et matière)
-
-```js
-import type { FormConfig } from "";
-
-export const getAbsenceFormConfig = (
-// on passe en paramètres ici les eleves et matieres
-  eleves: any[] = [],
-  matieres: any[] = [],
-  
-): FormConfig => ({
-  fields: [
-    {
-      name: "eleveId",
-      label: "Élève",
-      type: "select",
-      placeholder: "Sélectionner un élève (optionnel)",
-      required: false,
-      options: eleves.map((eleve) => ({
-        value: eleve.id,
-        label: `${eleve.nom} ${eleve.prenom}`,
-      })),
-    },
-    {
-      name: "matiereId",
-      label: "Matière",
-      type: "select",
-      placeholder: "Sélectionner une matière",
-      required: true,
-      options: matieres.map((matiere) => ({
-        value: matiere.id,
-        label: matiere.libelle,
-      })),
-    },
-  ],
-});
-```
-
-### 1b) Gestion du champs de validation (zod)
-
-Chacun viendra donc dans schemas créer propres schemas
-
-```
-├── simadou
-│   │   └── schemas
-│   │       └── allSchema.ts
-```
-
-### 1c) configuration des champs de renitialisation
-
-sa ce fais ici donc
-
-```
-├── simadou
-│   │   ├── allResetFields
-│   │   │   └── resetField.ts
-```
-
-exemple :
-
-### Interface
-
-```js
-//====================Absence======================
-export interface Absence {
-  id: number;
-  dateDebut: string;
-  dateFin: string;
-  motif: string;
-  justification: boolean;
-  eleveId: number | null;
-  staffId: number | null;
-  matiereId: number;
-  classeId: number;
-  eleve?: Eleve | null;
-  staff?: Staff | null;
-  matiere?: Matiere;
-  classe?: Classe;
-}
-
-export interface AbsenceForm {
-  dateDebut: string;
-  dateFin: string;
-  motif: string;
-  justification: boolean;
-  eleveId: number | null;
-  staffId: number | null;
-  matiereId: number;
-  classeId: number;
-}
-```
-
-### reset fields
-
-```js
-//==========absence==================
-export const ABSENCE: AbsenceFormSchema = {
-  dateDebut: "",
-  dateFin: "",
-  motif: "",
-  justification: false,
-  eleveId: 0,
-  matiereId: 0,
-  classeId: 0,
-};
-```
-
-### zod
-
-```js
-//================= AbsenceForm =================//
-export const absenceFormSchema = z.object({
-  dateDebut: z.string().min(1, "La date de début est obligatoire"),
-  dateFin: z.string().min(1, "La date de fin est obligatoire"),
-  motif: z.string().min(3, "Le motif doit contenir au moins 3 caractères"),
-  justification: z.boolean().default(false),
-  eleveId: z.coerce.number().positive("L'élève est obligatoire"),
-  matiereId: z.coerce.number().positive("La matière est obligatoire"),
-  classeId: z.coerce.number().positive("La classe est obligatoire"),
-});
-export type AbsenceFormSchema = z.infer<typeof absenceFormSchema>;
-```
-
-### Formulaire
-
-ici comme le formulaire d'absence est trop long je vais juste prend un autre exemple et expliquer ici
-
-```js
-const AddUser = ({ open, onOpenChange }: OpenProps) => {
-// le mutate pour la création d'un user
-  const { mutate, isPending } = useAddUser();
-  
-// mais avant il faut recupérer les roles (qui seront dans un champs select)
-  const { data: listesRoles } = useGetRoles();
-
-// ici on avait dans le allfieldsconfig (passer l'object en paramètre)
-  const formConfig = getUserFormConfig(listesRoles || []);
-
-  const onSubmit = (data: any) => {
-    mutate(data, {
-      onSuccess: () => {
-        onOpenChange(false);
-      },
-    });
-  };
-
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-    //------------
-    </Dialog>
-  );
-};
-
-export default AddUser;
-```
-
-# Gestion des hooks pour chaque fonctionnalité (contacter des apis)
-
-### 1) Manipulation d'un hook simple
-
-```js
-import { axiosInstance } from "@/axios/axiosInstance";
-import type { ProduitLocal, ProduitLocalForm } from "@/interfaces/interfaceTable";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {toast} from "sonner";
-
-//========================CRUD PRODUITS LOCAUX========================
-
-export const useAddProduitLocal = () => {
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: async (data: ProduitLocalForm) => {
-      const res = await axiosInstance.post("/produit", data);
-      return res.data;
-    },
-    onSuccess: () => {
-      toast.success("Produit local ajouté avec succès");
-      queryClient.invalidateQueries({ queryKey: ["produitsLocaux"] });
-    },
-    onError: () => {
-      toast.error("Erreur lors de l'ajout du produit local");
-    },
-  });
-};
-
-export const useGetProduitsLocaux = () => {
-  return useQuery<ProduitLocal[]>({
-    queryKey: ["produitsLocaux"],
-    queryFn: async () => {
-      const res = await axiosInstance.get("/produit");
-      return res.data;
-    },
-  });
-};
-
-export const useGetProduitLocalById = (id: number) => {
-  return useQuery<ProduitLocal>({
-    queryKey: ["produitsLocaux", id],
-    queryFn: async () => {
-      const res = await axiosInstance.get(`/produit/${id}`);
-      return res.data;
-    },
-    enabled: !!id,
-  });
-};
-
-export const useGetProduitsBySpeculation = (idSpeculation: number) => {
-  return useQuery<ProduitLocal[]>({
-    queryKey: ["produitsLocaux", "speculation", idSpeculation],
-    queryFn: async () => {
-      const res = await axiosInstance.get(`/produit/speculation/${idSpeculation}`);
-      return res.data;
-    },
-    enabled: !!idSpeculation,
-  });
-};
-
-export const useUpdateProduitLocal = () => {
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: async ({ id, data }: { id: number; data: ProduitLocalForm }) => {
-      const res = await axiosInstance.put("/produit/${id}", data);
-      return res.data;
-    },
-    onSuccess: () => {
-      toast.success("Produit local mis à jour avec succès");
-      queryClient.invalidateQueries({ queryKey: ["produitsLocaux"] });
-    },
-    onError: () => {
-      toast.error("Erreur lors de la mise à jour");
-    },
-  });
-};
-
-export const useDeleteProduitLocal = () => {
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: async (id: number) => {
-      const res = await axiosInstance.delete(`/produit/${id}`);
-      return res.data;
-    },
-    onSuccess: () => {
-      toast.success("Produit local supprimé avec succès");
-      queryClient.invalidateQueries({ queryKey: ["produitsLocaux"] });
-    },
-    onError: () => {
-      toast.error("Erreur lors de la suppression");
-    },
-  });
-};
-```
-
-### 2) Manipulation de hook Generic
-
-* [ ]  ETAT DE CHARGEMENT (GENERIC AU NIVEAU DU DATABASE ET REUTILISABLE)
-
-Pour ce faire il y a trois choses a faire très simple.
-
-1) S'assurez dans le tableau qu'on manipule qu'on n'a pas ajouter une animation ou animation manuell
-2) Prenons exemple sur le composant : ListePtba.tsx
-   Dans ce composant on doit appéler les données pour les affichées, donc dans le corps de la requêtte ajouter : isLoading
-
-```js
-//isLoading extrait de  NavigationProgress global s'en charge visuellement
-  const { data: ptbas = [], isLoading } = useGetPtbas()
-```
-
-### Puisque "Ptba" hérite du GenericTable alors ajouter donc isLoading
-
-```js
- <GenericTable<Ptba>
-        data={filteredPtbas}
-        columns={columns}
-        search={search}
-        navigate={navigate}
-      
-        isLoading={isLoading} // ✅ déclenche NavigationProgress global
-```
-
-c'est tout.......
+Le code de routage reste ainsi ultra-léger et découplé, toute la logique métier résidant au sein de sa feature dédiée.

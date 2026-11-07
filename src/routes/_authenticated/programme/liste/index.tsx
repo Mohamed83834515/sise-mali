@@ -1,8 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { FileStack } from 'lucide-react'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import ListeProgrammes from '@/simadou/allfonctionalities/politique/liste/ListeProgrammes'
-import ProgrammeDialog from '@/simadou/allfonctionalities/politique/liste/ProgrammeDialog'
+import { PageRouteLayout } from '@/shared'
+import { ListeProgrammes, ProgrammeDialog } from '@/features/politique'
 
 export const Route = createFileRoute('/_authenticated/programme/liste/')({
   component: RouteComponent,

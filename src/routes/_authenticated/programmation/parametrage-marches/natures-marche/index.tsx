@@ -1,6 +1,8 @@
-import AddNatureMarche from '@/simadou/allfonctionalities/ppm/natures-marche/AddNatureMarche'
-import ListeNatureMarche from '@/simadou/allfonctionalities/ppm/natures-marche/ListeNatureMarche'
-import type { NatureMarche } from '@/simadou/allTypes/natureMarche'
+import {
+  AddNatureMarche,
+  ListeNatureMarche,
+} from '@/features/programmation'
+import type { NatureMarche } from '@/shared/types/entities/natureMarche'
 import { Tags } from 'lucide-react'
 import { useState } from 'react'
 

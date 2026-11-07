@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from '@tanstack/react-router'
 import { ConfirmDialog } from '@/components/others/confirm-dialog'
-import { useLogout } from '@/simadou/allHooks/auth/authHooks'
+import { useLogout } from '@/features/auth'
 
 interface SignOutDialogProps {
   open: boolean

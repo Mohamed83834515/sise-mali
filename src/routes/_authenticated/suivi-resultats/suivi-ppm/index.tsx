@@ -1,6 +1,5 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import ListeSuiviPpm from '@/simadou/allfonctionalities/ppm/suivi-ppm/ListeSuiviPpm'
-import { PpmVersionProvider } from '@/simadou/allfonctionalities/ppm/suivi-ppm/PpmVersionContext'
+import { PageRouteLayout } from '@/shared'
+import { ListeSuiviPpm, PpmVersionProvider } from '@/features/suivi-resultats'
 import { createFileRoute } from '@tanstack/react-router'
 import { FileStack } from 'lucide-react'
 

@@ -1,6 +1,8 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddContratPerformance from '@/simadou/allfonctionalities/programmation/contrat-performance/AddContratPerformance'
-import ListeContratPerformance from '@/simadou/allfonctionalities/programmation/contrat-performance/ListeContratPerformance'
+import { PageRouteLayout } from '@/shared'
+import {
+  AddContratPerformance,
+  ListeContratPerformance,
+} from '@/features/programmation'
 import { createFileRoute } from '@tanstack/react-router'
 import { FileSignature } from 'lucide-react'
 

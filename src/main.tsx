@@ -15,7 +15,7 @@ import { routeTree } from './routeTree.gen'
 import { DirectionProvider } from './stores/others/direction-provider'
 // Styles
 import './styles/index.css'
-import { AuthProvider } from './simadou/allContext/authProvider'
+import { AuthProvider } from '@/features/auth'
 import { useAuthStore } from './stores/auth-store'
 
 const queryClient = new QueryClient({

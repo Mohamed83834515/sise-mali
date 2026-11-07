@@ -1,5 +1,5 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import { ListePartenaireFinancier } from '@/simadou/allfonctionalities/parametrage/partenaire-financier/ListePartenaireFinancier'
+import { PageRouteLayout } from '@/shared'
+import { ListePartenaireFinancier } from '@/features/parametrage'
 import { createFileRoute } from '@tanstack/react-router'
 import { UserStar } from 'lucide-react'
 

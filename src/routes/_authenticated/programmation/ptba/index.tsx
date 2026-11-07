@@ -1,8 +1,10 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddPtba from '@/simadou/allfonctionalities/ptba/AddPtba'
-import ListePtbas from '@/simadou/allfonctionalities/ptba/ListePtba'
-import TypeActiviteDialog from '@/simadou/allfonctionalities/ptba/type-activite/ModalTypeActivite'
-import VersionPtbaDialog from '@/simadou/allfonctionalities/ptba/version-ptba/VersionPtbaDialog'
+import { PageRouteLayout } from '@/shared'
+import {
+  AddPtba,
+  ListePtba as ListePtbas,
+  TypeActiviteDialog,
+  VersionPtbaDialog,
+} from '@/features/programmation'
 import { createFileRoute } from '@tanstack/react-router'
 import { ClipboardList, GitBranch, Layers3 } from 'lucide-react'
 

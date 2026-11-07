@@ -1,5 +1,4 @@
-import AddTypeZone from '@/simadou/allfonctionalities/parametrage/autres/type-zones/AddTypeZone'
-import ListeTypeZone from '@/simadou/allfonctionalities/parametrage/autres/type-zones/ListeTypeZone'
+import { AddTypeZone, ListeTypeZone } from '@/features/parametrage'
 import { MapPin } from 'lucide-react'
 import { useState } from 'react'
 

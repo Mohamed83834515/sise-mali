@@ -1,6 +1,6 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddUser from '@/simadou/allfonctionalities/users/AddUser'
-import ListeUsers from '@/simadou/allfonctionalities/users/ListeUsers'
+import { PageRouteLayout } from '@/shared'
+import AddUser from '@/features/users/AddUser'
+import ListeUsers from '@/features/users/ListeUsers'
 import { createFileRoute } from '@tanstack/react-router'
 import { Users } from 'lucide-react'
 

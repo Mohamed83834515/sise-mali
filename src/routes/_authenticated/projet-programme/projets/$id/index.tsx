@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import ProjetDetail from '@/simadou/allfonctionalities/projets/detail/ProjetDetail'
+import { ProjetDetail } from '@/features/projets'
 
 export const Route = createFileRoute(
   '/_authenticated/projet-programme/projets/$id/'

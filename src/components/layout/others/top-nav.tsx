@@ -23,8 +23,8 @@ import { SignOutDialog } from '@/components/others/sign-out-dialog'
 import useDialogState from '@/hooks/use-dialog-state'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useGeneralParamsQuery } from '@/simadou/allHooks/generalParams/queries'
-import { useFilteredSidebar } from '@/simadou/allHooks/admin/use-filtered-sidebar'
+import { useGeneralParamsQuery } from '@/shared/api/hooks/generalParams/queries'
+import { useFilteredSidebar } from '@/components/layout/others/use-filtered-sidebar'
 
 const t = (key: string) => key
 

@@ -1,6 +1,8 @@
-import AddModePassation from '@/simadou/allfonctionalities/ppm/modes-passation/AddModePassation'
-import ListeModePassation from '@/simadou/allfonctionalities/ppm/modes-passation/ListeModePassation'
-import type { ModePassation } from '@/simadou/allTypes/modePassation'
+import {
+  AddModePassation,
+  ListeModePassation,
+} from '@/features/programmation'
+import type { ModePassation } from '@/shared/types/entities/modePassation'
 import { FileText } from 'lucide-react'
 import { useState } from 'react'
 type Mode = 'list' | 'add' | 'edit'

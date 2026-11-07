@@ -1,0 +1,2 @@
+export { PageRouteLayout } from './genericRoute'
+

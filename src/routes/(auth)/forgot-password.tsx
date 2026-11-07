@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { ForgotPassword } from '@/simadou/allfonctionalities/auth/forgot-password'
+import { ForgotPassword } from '@/features/auth'
 import { z } from 'zod'
 
 const searchSchema = z.object({

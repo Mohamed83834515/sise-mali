@@ -1,6 +1,5 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddProjet from '@/simadou/allfonctionalities/projets/AddProjet'
-import ListeProjets from '@/simadou/allfonctionalities/projets/ListeProjets'
+import { PageRouteLayout } from '@/shared'
+import { AddProjet, ListeProjets } from '@/features/projets'
 import { createFileRoute } from '@tanstack/react-router'
 import { FolderOpen } from 'lucide-react'
 

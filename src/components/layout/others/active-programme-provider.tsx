@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { programmeService } from '@/simadou/allSercices/programmeService'
+import { programmeService } from '@/shared/api/services/programmeService'
 import { useProgrammeStore } from '@/stores/programme-store'
 
 function isPersistedProgramme(

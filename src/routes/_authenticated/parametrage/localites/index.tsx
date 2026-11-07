@@ -1,6 +1,6 @@
  
 import { createFileRoute } from '@tanstack/react-router'
-import ListeLocalite from '@/simadou/allfonctionalities/parametrage/localite/ListeLocalite'
+import { ListeLocalite } from '@/features/parametrage'
 
 export const Route = createFileRoute('/_authenticated/parametrage/localites/')({
   component: ListeLocalite,

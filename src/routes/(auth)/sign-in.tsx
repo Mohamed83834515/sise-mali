@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import { SignIn } from '@/simadou/allfonctionalities/auth/sign-in'
+import { SignIn } from '@/features/auth'
 import { useAuthStore } from '@/stores/auth-store'
 
 const searchSchema = z.object({

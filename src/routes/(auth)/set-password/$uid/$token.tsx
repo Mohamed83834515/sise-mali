@@ -1,4 +1,4 @@
-import { ResetPassword } from '@/simadou/allfonctionalities/auth/reset-password'
+import { ResetPassword } from '@/features/auth'
 
 import { createFileRoute } from '@tanstack/react-router'
 import z from 'zod'

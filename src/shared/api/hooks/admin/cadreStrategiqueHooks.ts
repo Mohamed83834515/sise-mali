@@ -1,0 +1,173 @@
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { handleServerError } from '@/lib/handle-server-error'
+import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
+import { cadreStrategiqueService } from '@/shared/api/services/cadreStrategiqueService'
+import {
+  niveauCadreStrategiqueService,
+  type NiveauCadreStrategiqueFormData,
+} from '@/shared/api/services/niveauCadreStrategiqueService'
+import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
+import type { NiveauCadreStrategique } from '@/shared/types/entities/niveauCadreStrategique'
+import type {
+  CadreStrategiqueWriteData,
+  NiveauCadreStrategiqueWriteData,
+} from '@/shared/schemas/cadreStrategiqueSchemas'
+import { useActiveProgrammeCode, useActiveProgrammeId } from '@/hooks/use-active-programme'
+
+export const niveauCadreStrategiqueQueryKeys = {
+  all: ['niveaux-cadre-strategique'] as const,
+} as const
+
+export const cadreStrategiqueQueryKeys = {
+  all: ['cadres-strategiques'] as const,
+  byProgramme: (programmeId: number) =>
+    ['cadres-strategiques', programmeId] as const,
+} as const
+
+export function useGetNiveauxCadreStrategique() {
+  const activeProgrammeCode = useActiveProgrammeCode()
+  return useQuery({
+    queryKey: [niveauCadreStrategiqueQueryKeys.all, activeProgrammeCode],
+    queryFn: () => niveauCadreStrategiqueService.getAll(activeProgrammeCode),
+  })
+}
+
+export function useCreateNiveauCadreStrategique() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (data: NiveauCadreStrategiqueWriteData) =>
+      niveauCadreStrategiqueService.create(
+        data as NiveauCadreStrategiqueFormData
+      ),
+    meta: { suppressGlobalErrorToast: true },
+    onError: (error) => handleServerError(error),
+    onSuccess: async () => {
+      await invalidateAndRefetch(
+        queryClient,
+        niveauCadreStrategiqueQueryKeys.all
+      )
+    },
+  })
+}
+
+export function useUpdateNiveauCadreStrategique() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: ({
+      id,
+      data,
+    }: {
+      id: number
+      data: NiveauCadreStrategiqueWriteData
+    }) =>
+      niveauCadreStrategiqueService.update(
+        id,
+        data as NiveauCadreStrategiqueFormData
+      ),
+    meta: { suppressGlobalErrorToast: true },
+    onError: (error) => handleServerError(error),
+    onSuccess: async () => {
+      await invalidateAndRefetch(
+        queryClient,
+        niveauCadreStrategiqueQueryKeys.all
+      )
+    },
+  })
+}
+
+export function useDeleteNiveauCadreStrategique() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (id: number) => niveauCadreStrategiqueService.delete(id),
+    meta: { suppressGlobalErrorToast: true },
+    onError: (error) => handleServerError(error),
+    onSuccess: async (_data, id) => {
+      await invalidateAndRefetch(
+        queryClient,
+        niveauCadreStrategiqueQueryKeys.all
+      )
+      // Guard against a stale list response that still includes the deleted row.
+      queryClient.setQueriesData<NiveauCadreStrategique[]>(
+        { queryKey: niveauCadreStrategiqueQueryKeys.all },
+        (old) => (old ?? []).filter((n) => n.id_nsc !== id)
+      )
+    },
+  })
+}
+
+export function useGetCadresStrategique() {
+  const programmeId = useActiveProgrammeId()
+  return useQuery({
+    queryKey: cadreStrategiqueQueryKeys.byProgramme(programmeId ?? 0),
+    queryFn: () => cadreStrategiqueService.getAll(programmeId),
+    enabled: programmeId != null && programmeId > 0,
+  })
+}
+
+export function useCreateCadreStrategique() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (data: CadreStrategiqueWriteData) =>
+      cadreStrategiqueService.create(data as CadreStrategique),
+    meta: { suppressGlobalErrorToast: true },
+    onError: (error) => handleServerError(error),
+    onSuccess: async (_, variables) => {
+      if (variables.programme_cs) {
+        await invalidateAndRefetch(
+          queryClient,
+          cadreStrategiqueQueryKeys.byProgramme(variables.programme_cs)
+        )
+      }
+    },
+  })
+}
+
+export function useUpdateCadreStrategique(programmeId: number | undefined) {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: ({
+      id,
+      data,
+    }: {
+      id: number
+      data: CadreStrategiqueWriteData
+    }) => cadreStrategiqueService.update(id, data),
+    meta: { suppressGlobalErrorToast: true },
+    onError: (error) => handleServerError(error),
+    onSuccess: async () => {
+      if (programmeId) {
+        await invalidateAndRefetch(
+          queryClient,
+          cadreStrategiqueQueryKeys.byProgramme(programmeId)
+        )
+      }
+    },
+  })
+}
+
+export function useDeleteCadreStrategique(programmeId: number | undefined) {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (id: number) => cadreStrategiqueService.delete(id),
+    meta: { suppressGlobalErrorToast: true },
+    onError: (error) => handleServerError(error),
+    onSuccess: async () => {
+      if (programmeId) {
+        await invalidateAndRefetch(
+          queryClient,
+          cadreStrategiqueQueryKeys.byProgramme(programmeId)
+        )
+      }
+    },
+  })
+}
+
+/** Liste globale (ex. options formulaires). */
+export function useGetCadreStrategiques(idProgramme: number | undefined) {
+  return useQuery({
+    queryKey: cadreStrategiqueQueryKeys.all,
+    queryFn: () => cadreStrategiqueService.getAll(idProgramme),
+  })
+}
+
+export const getCadreStrategiques = () => cadreStrategiqueService.getAll()

@@ -1,8 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Target, Layers3 } from 'lucide-react'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import ListeCadreStrategique from '@/simadou/allfonctionalities/politique/cadre-strategique/ListeCadreStrategique'
-import NiveauCadreStrategiqueDialog from '@/simadou/allfonctionalities/politique/cadre-strategique/NiveauCadreStrategiqueDialog'
+import { PageRouteLayout } from '@/shared'
+import {
+  ListeCadreStrategique,
+  NiveauCadreStrategiqueDialog,
+} from '@/features/politique'
 
 export const Route = createFileRoute('/_authenticated/programme/cadre-strategique/')({
   component: RouteComponent,

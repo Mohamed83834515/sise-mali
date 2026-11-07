@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { TrendingUp } from 'lucide-react'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import ListeIndicateursCmr from '@/simadou/allfonctionalities/politique/indicateurs-cmr/ListeIndicateursCmr'
+import { PageRouteLayout } from '@/shared'
+import { ListeIndicateursCmr } from '@/features/politique'
 
 export const Route = createFileRoute('/_authenticated/programme/indicateurs-cmr/')({
   component: RouteComponent,

@@ -10,7 +10,7 @@ import {
   CommandList,
   CommandSeparator,
 } from '@/components/ui/command'
-import { sidebarData } from '../../simadou/routescontantes/sidebar-data'
+import { sidebarData } from '@/components/layout/others/sidebar-data'
 import { ScrollArea } from '../ui/scroll-area'
 import { useTheme } from '@/stores/others/theme-store'
 import { useSearch } from '@/stores/others/search-store'

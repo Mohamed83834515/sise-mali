@@ -1,6 +1,8 @@
-import AddTypeFinancementPPM from '@/simadou/allfonctionalities/ppm/type-financement/AddTypeFinancementPPM'
-import ListeTypeFinancementPPM from '@/simadou/allfonctionalities/ppm/type-financement/ListeTypeFinancementPPM'
-import { TypeFinancementPPM } from '@/simadou/allTypes/typeFinancementPPM'
+import {
+  AddTypeFinancementPPM,
+  ListeTypeFinancementPPM,
+} from '@/features/programmation'
+import { TypeFinancementPPM } from '@/shared/types/entities/typeFinancementPPM'
 import { FileText } from 'lucide-react'
 import { useState } from 'react'
 

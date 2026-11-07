@@ -1,4 +1,4 @@
-import RapportEtatActivitesPage from '@/simadou/allfonctionalities/rapport/etat-des-activites/RapportEtatActivitesPage'
+import { RapportEtatActivitesPage } from '@/features/rapport'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute(

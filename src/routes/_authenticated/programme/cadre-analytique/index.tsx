@@ -1,8 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { BarChart2, Layers3 } from 'lucide-react'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import ListeCadreAnalytique from '@/simadou/allfonctionalities/politique/cadre-analytique/ListeCadreAnalytique'
-import NiveauCadreAnalytiqueDialog from '@/simadou/allfonctionalities/politique/cadre-analytique/NiveauCadreAnalytiqueDialog'
+import { PageRouteLayout } from '@/shared'
+import {
+  ListeCadreAnalytique,
+  NiveauCadreAnalytiqueDialog,
+} from '@/features/politique'
 
 export const Route = createFileRoute('/_authenticated/programme/cadre-analytique/')({
   component: RouteComponent,

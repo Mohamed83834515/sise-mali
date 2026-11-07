@@ -1,5 +1,7 @@
-import AddVersionPPM from '@/simadou/allfonctionalities/ppm/version-ppm/AddVersionPPM'
-import ListeVersionPPM from '@/simadou/allfonctionalities/ppm/version-ppm/ListeVersionPPM'
+import {
+  AddVersionPPM,
+  ListeVersionPPM,
+} from '@/features/programmation'
 import { Briefcase } from 'lucide-react'
 import { useState } from 'react'
 

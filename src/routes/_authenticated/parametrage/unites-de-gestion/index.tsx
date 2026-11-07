@@ -1,6 +1,5 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddUgl from '@/simadou/allfonctionalities/parametrage/ugl/AddUgl'
-import { ListeUgl } from '@/simadou/allfonctionalities/parametrage/ugl/ListeUgl'
+import { PageRouteLayout } from '@/shared'
+import { AddUgl, ListeUgl } from '@/features/parametrage'
 import { createFileRoute } from '@tanstack/react-router'
 import { LayoutGrid } from 'lucide-react'
 

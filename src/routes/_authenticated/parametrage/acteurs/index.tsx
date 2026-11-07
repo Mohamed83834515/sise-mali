@@ -1,7 +1,5 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddActeur from '@/simadou/allfonctionalities/parametrage/acteur/AddActeur'
-import CategorieActeurDialog from '@/simadou/allfonctionalities/parametrage/acteur/categorie/ModalCategorie'
-import { ListeActeur } from '@/simadou/allfonctionalities/parametrage/acteur/ListeActeur'
+import { PageRouteLayout } from '@/shared'
+import { AddActeur, CategorieActeurDialog, ListeActeur } from '@/features/parametrage'
 import { createFileRoute } from '@tanstack/react-router'
 import { GitBranch, User } from 'lucide-react'
 

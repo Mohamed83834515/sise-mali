@@ -1,8 +1,7 @@
 
 
 
-import AddUniteIndicateur from '@/simadou/allfonctionalities/parametrage/autres/unite-indicateurs/AddUniteIndicateur'
-import ListeUniteIndicateur from '@/simadou/allfonctionalities/parametrage/autres/unite-indicateurs/ListeUniteIndicateur'
+import { AddUniteIndicateur, ListeUniteIndicateur } from '@/features/parametrage'
 import {  Ruler, } from 'lucide-react'
 import { useState } from 'react'
 

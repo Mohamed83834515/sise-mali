@@ -1,9 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
+import { PageRouteLayout } from '@/shared'
 import { Settings, Users } from 'lucide-react'
-import ListeUtilisateurs from '@/simadou/allfonctionalities/parametrage/utilisateurs/ListeUtilisateurs'
-import UtilisateurDialog from '@/simadou/allfonctionalities/parametrage/utilisateurs/UtilisateurDialog'
-import GererTitresPersonnelDialog from '@/simadou/allfonctionalities/parametrage/utilisateurs/titres-personnel/GererTitresPersonnelDialog'
+import {
+  ListeUtilisateurs,
+  UtilisateurDialog,
+  GererTitresPersonnelDialog,
+} from '@/features/parametrage'
 
 export const Route = createFileRoute(
   '/_authenticated/parametrage/utilisateurs/',

@@ -1,10 +1,8 @@
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import AddProjet from '@/simadou/allfonctionalities/projets/AddProjet'
-import ListeProjets from '@/simadou/allfonctionalities/projets/ListeProjets'
-import TypeProjetDialog from '@/simadou/allfonctionalities/projets/type-projet/ModalType'
+import { PageRouteLayout } from '@/shared'
+import { AddProjet, ListeProjets, TypeProjetDialog } from '@/features/projets'
 import { createFileRoute } from '@tanstack/react-router'
 import { FolderOpen, GitBranch } from 'lucide-react'
-import { useMe } from '@/simadou/allHooks/auth/authHooks'
+import { useMe } from '@/features/auth'
 
 export const Route = createFileRoute('/_authenticated/projet-programme/projets/')({
   component: RouteComponent,

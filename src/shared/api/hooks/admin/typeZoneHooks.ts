@@ -1,0 +1,58 @@
+// simadou/allHooks/admin/typeZoneHooks.ts
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { typeZoneService } from '@/shared/api/services/typeZoneService'
+import { TypeZoneFormData } from '@/shared/schemas/typeZoneSchema'
+import { toast } from 'sonner'
+import { getApiErrorMessage } from '@/lib/api-error-message'
+
+export const typeZoneQueryKeys = {
+  all: ['type-zone'] as const,
+  list: () => [...typeZoneQueryKeys.all, 'list'] as const,
+}
+
+export const useGetTypeZones = () => {
+  return useQuery({
+    queryKey: typeZoneQueryKeys.list(),
+    queryFn: () => typeZoneService.getAll(),
+  })
+}
+
+export const useSaveTypeZone = (isEdit: boolean, currentRow?: any, onSuccess?: () => void) => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: (data: TypeZoneFormData) =>
+      isEdit && currentRow?.id_type_zone
+        ? typeZoneService.update(currentRow.id_type_zone, data)
+        : typeZoneService.create(data),
+
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: typeZoneQueryKeys.list(),
+      })
+      toast.success(isEdit ? 'Type de zone modifié' : 'Type de zone créé')
+      onSuccess?.()
+    },
+
+    onError: (error: unknown) => {
+      toast.error(getApiErrorMessage(error, 'Une erreur est survenue'))
+    },
+  })
+}
+
+export const useDeleteTypeZone = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: (id: number) => typeZoneService.delete(id),
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: typeZoneQueryKeys.list(),
+      })
+      toast.success('Type de zone supprimé')
+    },
+    onError: (error: unknown) => {
+      toast.error(getApiErrorMessage(error, 'Erreur lors de la suppression'))
+    },
+  })
+}

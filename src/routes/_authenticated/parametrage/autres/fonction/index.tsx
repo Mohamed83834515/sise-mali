@@ -1,5 +1,4 @@
-import AddFonction from '@/simadou/allfonctionalities/parametrage/autres/fonction/AddFonction'
-import ListeFOnction from '@/simadou/allfonctionalities/parametrage/autres/fonction/ListeFonction'
+import { AddFonction, ListeFonction as ListeFOnction } from '@/features/parametrage'
 import { Briefcase } from 'lucide-react'
 import { useState } from 'react'
 

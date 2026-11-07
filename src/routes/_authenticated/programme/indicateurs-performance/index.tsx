@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { LineChart } from 'lucide-react'
-import { PageRouteLayout } from '@/Global/HookRoute/genericRoute'
-import ListeIndicateursStrategique from '@/simadou/allfonctionalities/politique/indicateurs-strategique/ListeIndicateursStrategique'
+import { PageRouteLayout } from '@/shared'
+import { ListeIndicateursStrategique } from '@/features/politique'
 
 export const Route = createFileRoute(
   '/_authenticated/programme/indicateurs-performance/',
