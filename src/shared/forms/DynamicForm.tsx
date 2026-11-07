@@ -221,8 +221,10 @@ export const DynamicForm = forwardRef<DynamicFormHandle, DynamicFormProps>(
             {!hideFormFooter && (
               <div
                 className={cn(
-                  'flex items-center gap-4',
-                  embedded ? 'justify-end pt-3' : 'justify-between px-2 pt-3'
+                  'flex gap-3',
+                  embedded
+                    ? 'justify-end pt-3 items-center'
+                    : 'flex-col-reverse sm:flex-row sm:items-center justify-between px-2 pt-3'
                 )}
               >
                 {/* Indicateur de statut (masqué en modal embarqué sauf erreurs) */}

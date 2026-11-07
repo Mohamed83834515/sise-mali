@@ -477,12 +477,10 @@ export function AppTopbar({ user }: UserProps) {
           </div>
 
           {/* ══ TITRE CENTRÉ — redesigné ══ */}
-          <div style={{ textAlign: 'center' }}>
+          <div className="text-center min-w-0 px-1">
             <div
+              className="text-xs sm:text-base md:text-lg font-extrabold tracking-wide sm:tracking-wider truncate max-w-[140px] xs:max-w-[200px] sm:max-w-none"
               style={{
-                fontWeight: 800,
-                fontSize: 18,
-                letterSpacing: '2px',
                 background: 'linear-gradient(135deg, #fff 0%, #FCD116 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -493,14 +491,7 @@ export function AppTopbar({ user }: UserProps) {
               {config?.systemTitle || "SISE CPS/SEEUDE"}
             </div>
             <div
-              style={{
-                fontSize: 10,
-                color: 'rgba(255,255,255,0.85)',
-                letterSpacing: '1px',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                marginTop: 1,
-              }}
+              className="hidden sm:block text-[10px] tracking-widest font-semibold uppercase mt-0.5 text-white/85 truncate"
             >
               CPS/SEEUDE — PRTD-Mali
             </div>
@@ -531,8 +522,10 @@ export function AppTopbar({ user }: UserProps) {
               <SearchDesktop />
             </div>
             <ProgrammeSwitcher onHeader />
-            <ThemeSwitch />
-            <ConfigDrawer />
+            <div className="hidden sm:flex items-center gap-1">
+              <ThemeSwitch />
+              <ConfigDrawer />
+            </div>
             {user && (
               <ProfileDropdown
                 user={user}

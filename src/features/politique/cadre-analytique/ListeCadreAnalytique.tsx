@@ -338,8 +338,8 @@ export default function ListeCadreAnalytique() {
         value={String(currentNiveauCode)}
         onValueChange={handleTabChange}
       >
-        <div className='flex items-center justify-between gap-2'>
-          <div className='flex-1 overflow-x-auto'>
+        <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2.5'>
+          <div className='w-full lg:flex-1 overflow-x-auto min-w-0'>
             <NiveauTabsList>
               {niveaux.map((n) => (
                 <NiveauTabTrigger
@@ -353,8 +353,8 @@ export default function ListeCadreAnalytique() {
             </NiveauTabsList>
           </div>
 
-          <div className='flex shrink-0 flex-col gap-1 sm:flex-row sm:items-center'>
-            <div className='relative'>
+          <div className='flex shrink-0 flex-col sm:flex-row sm:items-center gap-2 w-full lg:w-auto'>
+            <div className='relative w-full sm:w-auto'>
               <Search className='absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
               <Input
                 value={searchTerm}
@@ -363,7 +363,7 @@ export default function ListeCadreAnalytique() {
                 className='w-full pl-9 sm:w-64'
               />
             </div>
-            <Button type='button' onClick={handleAddForm}>
+            <Button type='button' className='w-full sm:w-auto' onClick={handleAddForm}>
               <Plus className='h-4 w-4' />
               Ajout des {currentNiveauLibelle}s
             </Button>

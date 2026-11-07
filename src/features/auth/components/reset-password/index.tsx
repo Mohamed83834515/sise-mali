@@ -22,7 +22,7 @@ export function ResetPassword() {
   const ctx = mode === 'reset' ? CONTENT.reset : CONTENT.setup
   return (
     <AuthLayout>
-      <div className='flex min-h-screen w-screen overflow-hidden'>
+      <div className='flex min-h-svh w-full overflow-hidden'>
 
         {/* ── Panneau gauche – Branding Mali & SISE CPS/SEEUDE ── */}
         <AuthMaliHero />

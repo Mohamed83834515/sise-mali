@@ -141,8 +141,8 @@ export default function ListePlanSite() {
           value={String(currentNiveauId)}
           onValueChange={setActiveNiveauId}
         >
-          <div className='flex items-center justify-between gap-4'>
-            <div className='overflow-x-auto flex-1'>
+          <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5'>
+            <div className='overflow-x-auto flex-1 min-w-0'>
               <NiveauTabsList>
                 {sortedNiveaux.map((n: any) => (
                   <NiveauTabTrigger
@@ -158,6 +158,7 @@ export default function ListePlanSite() {
 
             <Button
               type='button'
+              className='w-full sm:w-auto shrink-0'
               onClick={() => {
                 setSelectedPlan(null)
                 setShowModal('form')

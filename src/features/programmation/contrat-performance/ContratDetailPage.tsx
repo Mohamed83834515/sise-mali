@@ -194,7 +194,32 @@ export default function ContratDetailPage() {
             </CardContent>
           </Card>
 
-          <Card className='shrink-0 gap-0 py-3 pl-3'>
+          {/* Navigation mobile sous forme de ruban horizontal défilant */}
+          <div className='lg:hidden -mx-1 flex items-center gap-1.5 overflow-x-auto px-1 py-1 scrollbar-none'>
+            {contratDetailTabs.map((tab) => {
+              const isActive = selectedTab.key === tab.key
+              const TabIcon = tab.icon
+              return (
+                <Button
+                  key={tab.key}
+                  type='button'
+                  size='sm'
+                  variant={isActive ? 'default' : 'outline'}
+                  className={cn(
+                    'h-9 shrink-0 gap-1.5 rounded-lg px-3 text-xs font-semibold whitespace-nowrap',
+                    isActive && 'shadow-sm'
+                  )}
+                  onClick={() => setSelectedTab(tab)}
+                >
+                  <TabIcon className='h-3.5 w-3.5 shrink-0' />
+                  <span>{tab.name}</span>
+                </Button>
+              )
+            })}
+          </div>
+
+          {/* Navigation desktop verticale */}
+          <Card className='hidden lg:block shrink-0 gap-0 py-3 pl-3'>
             <CardHeader className='border-b px-2 pb-2'>
               <CardTitle className='text-[9px] font-bold tracking-widest text-muted-foreground uppercase'>
                 Navigation

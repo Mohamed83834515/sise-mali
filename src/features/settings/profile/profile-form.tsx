@@ -118,7 +118,7 @@ const canChangePassword = config?.passwordChangeDelayMonths
        <div className="rounded-3xl border bg-card shadow-sm overflow-hidden">
         
 
-       <div className="grid grid-cols-1 gap-4  md:grid-cols-3 py-4 px-6">
+       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 py-4 px-3.5 sm:px-6">
   {details.map((detail) => {
     const Icon = detail.icon;
 
@@ -128,21 +128,21 @@ const canChangePassword = config?.passwordChangeDelayMonths
         className="
           group
           relative
-          flex items-start gap-4
+          flex items-start gap-3 sm:gap-4
           rounded-2xl border
-          p-5
+          p-3.5 sm:p-5
           transition-colors
           hover:bg-muted/40
         "
       >
         {/* ICON */}
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
           <Icon className="w-5 h-5 text-primary" />
         </div>
 
         {/* CONTENT */}
         <div className="flex-1 min-w-0">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             {detail.label}
           </p>
 
@@ -155,11 +155,12 @@ const canChangePassword = config?.passwordChangeDelayMonths
         {detail.isEditable && (
           <button
             type="button"
+            aria-label={`Modifier ${detail.label}`}
             className="
-              opacity-0
-              group-hover:opacity-100
+              opacity-100 sm:opacity-0
+              sm:group-hover:opacity-100
               transition-opacity
-              flex h-9 w-9 items-center justify-center
+              flex h-9 w-9 shrink-0 items-center justify-center
               rounded-lg
               hover:bg-primary/10
               text-muted-foreground

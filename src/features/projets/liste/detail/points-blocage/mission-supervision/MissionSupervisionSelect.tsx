@@ -23,7 +23,7 @@ export function MissionSupervisionSelect({
       value={options.find((opt) => opt.value === value) ?? null}
       onChange={(selected) => onChange(selected?.value ?? null)}
       isClearable
-      className='min-w-[280px] text-sm'
+      className='w-full sm:w-auto sm:min-w-[240px] max-w-full text-sm'
       classNamePrefix='mission-supervision'
     />
   )

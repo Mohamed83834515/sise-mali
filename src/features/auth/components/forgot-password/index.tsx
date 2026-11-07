@@ -22,7 +22,7 @@ export function ForgotPassword() {
   const ctx = mode === 'setup' ? CONTENT.setup : CONTENT.forgot
   return (
     <AuthLayout>
-      <div className='flex min-h-screen w-screen overflow-hidden'>
+      <div className='flex min-h-svh w-full overflow-hidden'>
         {/* ── Panneau gauche – Branding Mali & SISE CPS/SEEUDE ── */}
         <AuthMaliHero />
 

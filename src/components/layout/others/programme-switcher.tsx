@@ -61,7 +61,7 @@ export function ProgrammeSwitcher({ onHeader = false }: ProgrammeSwitcherProps) 
           variant='outline'
           size='sm'
           className={cn(
-            'flex max-w-[220px] items-center gap-2 shadow-sm transition-colors',
+            'flex max-w-[130px] sm:max-w-[220px] items-center gap-1.5 px-2 sm:px-3 shadow-sm transition-colors',
             onHeader ? 'hover:brightness-110' : 'hover:brightness-[0.98]'
           )}
           disabled={isLoading}
@@ -109,7 +109,7 @@ export function ProgrammeSwitcher({ onHeader = false }: ProgrammeSwitcherProps) 
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align='end' className='w-80'>
+      <DropdownMenuContent align='end' className='w-[calc(100vw-2rem)] sm:w-80 max-w-80'>
         <DropdownMenuLabel className='text-xs font-normal text-muted-foreground'>
           Programme actif
         </DropdownMenuLabel>

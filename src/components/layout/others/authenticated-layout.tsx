@@ -95,11 +95,13 @@ function AuthenticatedLayoutInner({
         )}
       >
         <Header fixed>
-          <LogoGroup logoHeight={30} className="flex py-0 gap-2 px-1" />
+          <LogoGroup logoHeight={28} className="flex py-0 gap-1.5 sm:gap-2 px-0.5 sm:px-1 shrink-0" />
           <Search />
           <div className="flex-1" />
-          <ThemeSwitch />
-          <ConfigDrawer />
+          <div className="hidden sm:flex items-center gap-1">
+            <ThemeSwitch />
+            <ConfigDrawer />
+          </div>
           {user && (
             <ProfileDropdown
               user={user}

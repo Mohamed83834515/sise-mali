@@ -160,9 +160,9 @@ export default function ListeProjets() {
   }
 
   return (
-    <div className='space-y-2 px-2'>
-      <div className='flex flex-wrap items-center gap-3'>
-        <div className='overflow-x-auto flex-1'>
+    <div className='space-y-3 px-1 sm:px-2'>
+      <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2.5'>
+        <div className='overflow-x-auto max-w-full flex-1'>
           <Tabs
             orientation='vertical'
             className='gap-1 space-y-1'
@@ -170,17 +170,17 @@ export default function ListeProjets() {
             value={activeTypeId !== null ? String(activeTypeId) : undefined}
             onValueChange={(val) => setSelectedTypeProjetId(Number(val))}
           >
-            <TabsList className='flex flex-wrap gap-1'>
+            <TabsList className='flex max-w-full flex-nowrap sm:flex-wrap overflow-x-auto gap-1 scrollbar-none'>
               {sortedTypes.map((type) => {
                 // const count = countByType.get(type.id_type_projet) || 0
                 return (
                   <TabsTrigger
-                    className='relative'
+                    className='relative shrink-0'
                     key={type.id_type_projet}
                     value={String(type.id_type_projet)}
                   >
                     {type.nom_type_projet.length > 20
-                      ? type.nom_type_projet.substring(0, 12) + '…'
+                      ? type.nom_type_projet.substring(0, 14) + '…'
                       : type.nom_type_projet}
                     {/* ✅ Afficher le compteur */}
                     {/* <span className='rounded-full bg-muted px-1.5 py-0.5 text-xs text-black'>
@@ -196,7 +196,7 @@ export default function ListeProjets() {
           value={filtreCloture}
           onValueChange={(value) => setFiltreCloture(value as FiltreCloture)}
         >
-          <SelectTrigger className='w-[160px] h-9 shrink-0'>
+          <SelectTrigger className='w-full sm:w-[160px] h-9 shrink-0'>
             <SelectValue placeholder='Statut' />
           </SelectTrigger>
           <SelectContent>

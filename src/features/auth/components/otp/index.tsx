@@ -6,7 +6,7 @@ import { Logo } from '@/assets/logo'
 export function Otp() {
   return (
     <AuthLayout>
-      <div className='flex min-h-screen w-screen'>
+      <div className='flex min-h-svh w-full'>
 
         {/* ── Panneau gauche – branding ── */}
         <div

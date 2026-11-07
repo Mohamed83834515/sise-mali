@@ -679,10 +679,10 @@ export const StepDynamicForm = forwardRef<
             </div>
 
             {/* Divider */}
-            <div className='mx-6 h-px bg-border/50' />
+            <div className='mx-3 sm:mx-6 h-px bg-border/50' />
 
             {/* ── Footer navigation ────────────────────────────────── */}
-            <div className='flex items-center justify-between gap-4 px-6 py-4'>
+            <div className='flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 px-3.5 sm:px-6 py-3 sm:py-4'>
               <div
                 className={cn(
                   'flex items-center gap-2 text-xs font-medium tracking-wide',
@@ -693,7 +693,7 @@ export const StepDynamicForm = forwardRef<
                 <span>{statusConfig.label}</span>
               </div>
 
-              <div className='flex items-center gap-2'>
+              <div className='flex items-center justify-end gap-2'>
                 {currentStep > 1 && (
                   <Button
                     type='button'

@@ -172,29 +172,29 @@ export function DataTablePagination<TData>({
   return (
     <div
       className={cn(
-        'flex flex-wrap items-center justify-between gap-3 px-2',
+        'flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 px-2 py-1',
         className
       )}
     >
       {/* Gauche : sélecteur + lignes par page */}
-      <div className='flex flex-wrap items-center gap-3'>
+      <div className='flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-muted-foreground'>
         <PageSizeSelect table={table} totalRows={totalRows} />
-        <span className='hidden text-sm font-medium sm:block whitespace-nowrap'>
+        <span className='hidden sm:inline font-medium text-foreground whitespace-nowrap'>
           Lignes par page
+        </span>
+        <span className='whitespace-nowrap'>
+          {affichageLabel}
         </span>
       </div>
 
-      {/* Centre : label affichage */}
-      <span className='text-sm text-muted-foreground whitespace-nowrap'>
-        {affichageLabel}
-      </span>
-
       {/* Droite : navigation */}
-      <PageNavButtons
-        table={table}
-        currentPage={currentPage}
-        pageNumbers={pageNumbers}
-      />
+      <div className='flex items-center overflow-x-auto max-w-full justify-center'>
+        <PageNavButtons
+          table={table}
+          currentPage={currentPage}
+          pageNumbers={pageNumbers}
+        />
+      </div>
     </div>
   )
 }

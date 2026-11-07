@@ -69,9 +69,9 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 w-full sm:w-auto">
         {/* Barre de recherche rapide */}
-        <div className="relative">
+        <div className="relative flex-1 sm:flex-initial">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500" />
           <input
             type="text"
@@ -79,7 +79,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             value={searchVal}
             onChange={(e) => setSearchVal(e.target.value)}
             onKeyDown={handleSearchKey}
-            className="pl-9 pr-10 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 w-56 shadow-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+            className="pl-9 pr-10 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-56 shadow-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500"
           />
           {searchVal && (
             <button
@@ -95,7 +95,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
         </div>
 
         {/* Cloche notifications */}
-        <div className="relative">
+        <div className="relative shrink-0">
           <button
             onClick={() => setShowNotif((v) => !v)}
             className="relative w-9 h-9 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm transition"
@@ -110,7 +110,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
 
           {/* Dropdown notifications */}
           {showNotif && (
-            <div className="absolute right-0 top-11 z-50 w-80 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden">
+            <div className="absolute right-0 top-11 z-50 w-[calc(100vw-2rem)] sm:w-80 max-w-80 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden">
               <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 dark:border-gray-700">
                 <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">
                   Notifications
