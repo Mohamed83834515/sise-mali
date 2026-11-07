@@ -2,8 +2,6 @@
 import { buildColumns } from '@/shared/tables/column-builder'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { Localite } from '@/shared/types/entities/localite'
-import type { NiveauLocalite } from '@/shared/types/entities/niveauLocalite'
 import { UserPen, Trash2 } from 'lucide-react'
 
 function getNiveauIdFromLocalite(loc: Localite): number | null {

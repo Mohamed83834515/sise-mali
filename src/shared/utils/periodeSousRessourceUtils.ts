@@ -1,9 +1,3 @@
-import type {
-  DocumentationCmrEnregistrement,
-  PeriodeSousRessourceEnregistrement,
-  PeriodeSousRessourceType,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
-
 export function resolvePeriodeEnregistrementId(
   row: PeriodeSousRessourceEnregistrement,
   resource: PeriodeSousRessourceType
@@ -41,3 +35,19 @@ export function resolvePeriodeEnregistrementLabel(
 
   return 'Enregistrement'
 }
+
+export const PERIODE_SOUS_RESSOURCE_LABELS: Record<
+  PeriodeSousRessourceType,
+  string
+> = {
+  documentations: 'documentation',
+  'fonds-carte': 'fonds de carte',
+  'tableaux-synthese': 'tableau de synthèse',
+}
+
+export function isSousRessourceWithDocuments(
+  resource: PeriodeSousRessourceType
+): resource is 'documentations' | 'fonds-carte' {
+  return resource === 'documentations' || resource === 'fonds-carte'
+}
+

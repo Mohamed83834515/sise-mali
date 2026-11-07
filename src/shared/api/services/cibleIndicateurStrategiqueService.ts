@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { CibleIndicateurStrategique } from "@/shared/types/entities/cibleIndicateurStrategique";
 
 const BASE_URL = "/cibles-indicateurs-strategiques/";
 

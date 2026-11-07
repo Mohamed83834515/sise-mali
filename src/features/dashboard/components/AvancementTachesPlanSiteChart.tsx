@@ -10,7 +10,6 @@ import {
   YAxis,
 } from 'recharts'
 import { CalendarIcon } from 'lucide-react'
-import type { AvancementTachesPlanSiteChartRow } from '@/shared/types/entities/dashboardType'
 import { formatDashboardPercent } from '@/shared/utils/dashboardPaoStatsUtils'
 
 interface AvancementTachesPlanSiteChartProps {

@@ -1,7 +1,4 @@
 import type { FormConfig, SelectOption } from '@/shared/types/formConfig'
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { Localite } from '@/shared/types/entities/localite'
-import type { Personnel, TypeActivite, UGL } from '@/shared/types'
 
 const chronogrammeOptions = [
   { label: 'Jan', value: 'Jan' },

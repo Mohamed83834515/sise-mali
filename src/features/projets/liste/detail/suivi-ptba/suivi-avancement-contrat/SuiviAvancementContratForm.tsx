@@ -9,11 +9,7 @@ import {
   suiviAvancementContratSuiviPtbaSchema,
   type SuiviAvancementContratSuiviPtbaFormData,
 } from '@/shared/schemas/suiviAvancementContratSchemas'
-import type { Ptba, SuiviAvancementContrat } from '@/shared/types'
-import {
-  resolveActivitePtbaId,
-  resolvePersonnelId,
-} from '@/shared/types/entities/suiviAvancementContrat'
+import { resolveActivitePtbaId, resolvePersonnelId } from '@/shared/utils'
 import { useMe } from '@/features/auth'
 import {
   useCreateSuiviAvancementProjetWithSources,

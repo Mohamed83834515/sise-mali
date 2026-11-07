@@ -2,8 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { acteurService } from '@/shared/api/services/acteurService';
 import { toast } from 'sonner';
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import { ActeurFormData } from '@/shared/types';
-
 
 export const acteurQueryKeys = {
   all: ['acteurs'] as const,

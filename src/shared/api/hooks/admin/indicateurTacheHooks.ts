@@ -1,5 +1,4 @@
 import indicateurTacheService from "@/shared/api/services/indicateurTacheService";
-import type { IndicateurTacheRequest } from "@/shared/types/entities/indicateurTache";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const BASE_URL = "/indicateurs-taches/"

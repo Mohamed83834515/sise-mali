@@ -22,7 +22,6 @@ import {
   useActiveProgramme,
   useActiveProgrammeCode,
 } from '@/hooks/use-active-programme'
-import type { CibleCmr, IndicateurCmr } from '@/shared/types'
 import {
   useCreateCibleCmr,
   useDeleteCibleCmr,

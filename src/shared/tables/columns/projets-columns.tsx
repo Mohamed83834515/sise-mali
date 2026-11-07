@@ -2,7 +2,6 @@ import { type ColumnDef } from '@tanstack/react-table'
 import { Eye, Trash2, UserPen, Lock, Unlock } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { LongText } from '@/components/others/long-text'
-import type { Projet } from '@/shared/types/entities/projet'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 
 type ProjetDialogType = 'add' | 'edit' | 'delete'

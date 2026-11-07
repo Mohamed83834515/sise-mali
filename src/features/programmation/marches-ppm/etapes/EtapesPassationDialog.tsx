@@ -8,8 +8,6 @@ import {
     DialogTitle,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import type { Ppm } from '@/shared/types/entities/ppm'
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
 import { useGetEtapesByPpm } from '@/shared/api/hooks/admin/etapePassationHooks'
 import EtapePassationForm from './EtapePassationForm'
 import EtapesPassationTable from './EtapesPassationTable'

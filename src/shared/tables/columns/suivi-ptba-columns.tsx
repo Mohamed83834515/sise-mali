@@ -3,7 +3,6 @@ import { ClipboardList, Eye } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildColumns } from '@/shared/tables/column-builder'
-import type { Ptba, TacheActivitePtba, SuiviAvancementContrat } from '@/shared/types'
 import TacheAvancementProgressBar from '@/features/suivi-resultats/suivi-ptba/TacheAvancementProgressBar'
 
 export type SuiviPtbaColumnHandlers = {

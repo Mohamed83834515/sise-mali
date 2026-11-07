@@ -13,9 +13,6 @@ import {
   niveauConfigClcpQueryKeys,
 } from '@/shared/api/hooks/admin/cadreLogiqueClcpHooks'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import {
   getNiveauClcpLabel,
   resolveNiveauClcId,

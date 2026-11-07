@@ -2,7 +2,6 @@ import {
   AddNatureMarche,
   ListeNatureMarche,
 } from '@/features/programmation'
-import type { NatureMarche } from '@/shared/types/entities/natureMarche'
 import { Tags } from 'lucide-react'
 import { useState } from 'react'
 

@@ -5,10 +5,8 @@ import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { SuiviDecaissementPtba } from '@/shared/types/entities/decaissementPtba'
 import { buildSuiviDecaissementPtbaColumns } from '@/shared/tables/columns/suivi-decaissement-ptba-columns'
 import { useDeleteSuiviDecaissement } from '@/shared/api/hooks/admin/suiviPtbaHooks'
-import { type Ptba } from '@/shared/types'
 
 type Props = {
   suivis: SuiviDecaissementPtba[]

@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { NiveauActiviteProjet } from "@/shared/types";
 import { normalizeApiList } from "./apiListUtils";
 
 const BASE_URL = "/niveaux-activites-config/";

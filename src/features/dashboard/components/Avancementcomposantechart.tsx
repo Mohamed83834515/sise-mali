@@ -10,7 +10,6 @@ import {
   YAxis,
 } from 'recharts'
 import { CalendarIcon } from 'lucide-react'
-import { CadreAnalytiqueComposante, NiveauCadreAnalytiqueComposante } from '@/shared/types/entities/composanteGraphe'
 
 // ─── Couleurs alignées sur la charte du dashboard ───────────────────────────
 const AVANCEMENT_COLOR = '#F59E0B'  // Jaune – Avancement technique

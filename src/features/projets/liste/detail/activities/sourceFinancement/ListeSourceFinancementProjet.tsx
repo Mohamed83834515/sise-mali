@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import { SourFinancementProjet } from '@/shared/types/entities/sourceFinancemanetProjet'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useDeleteSourceFinancement } from '@/shared/api/hooks/admin/sourceFinancementProjetHooks'
 import { toast } from 'sonner'

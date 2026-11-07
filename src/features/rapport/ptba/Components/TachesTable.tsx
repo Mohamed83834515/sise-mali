@@ -1,12 +1,7 @@
 import { useMemo } from 'react'
 import { type ColumnDef } from '@tanstack/react-table'
 import { GenericTable } from '@/shared/tables'
-import type {
-  TacheActivitePtba,
-  Ptba,
-  CadreAnalytique,
-} from '@/shared/types'
-import { resolveIdActivite } from '@/shared/types/entities/tacheActivitePtba'
+import { resolveIdActivite } from '@/shared/utils'
 import { resolveCadreAnalytiqueFormValue } from '@/shared/utils/ptbaFormUtils'
 import { useRapportExportRegistration } from '@/features/rapport/useRapportExportRegistration'
 import { Loader2, ListTodo } from 'lucide-react'

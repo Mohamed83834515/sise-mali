@@ -1,7 +1,6 @@
 import { useState, useMemo, useCallback, useRef } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
-import type { Ptba, TacheActivitePtba } from '@/shared/types'
 import { suiviPtbaQueryKeys } from '@/shared/api/hooks/admin/suiviPtbaHooks'
 import { useGetTachesByActivite } from '@/shared/api/hooks/admin/tacheActiviteHooks'
 import {

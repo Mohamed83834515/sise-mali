@@ -14,7 +14,6 @@ import { useSavePpm } from '@/shared/api/hooks/admin/ppmHooks'
 import { useGetTypeFinancementPPM } from '@/shared/api/hooks/admin/typeFinancementPPM'
 import { usePpmVersionContext } from './PpmVersionContext'
 import { getPpmFormConfig } from '@/shared/forms/configs/ppmForm'
-import type { Ppm } from '@/shared/types/entities/ppm'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import {
   ppmFormSchema,

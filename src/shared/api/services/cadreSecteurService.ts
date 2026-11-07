@@ -1,6 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import { CadreSecteur, CadreSecteurFormData } from "@/shared/types/entities/entities";
 
 class CadreSecteurService {
   private baseUrl = "/cadres-secteurs";

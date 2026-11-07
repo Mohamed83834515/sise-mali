@@ -77,7 +77,7 @@ export default function RapportPtbaPage() {
     const activiteIdSet = new Set(activiteIds)
     return allIndicateurs
       .map(normalizeIndicateurTache)
-      .filter((indicateur) => activiteIdSet.has(indicateur.id_activite))
+      .filter((indicateur) => activiteIdSet.has(Number(indicateur.id_activite)))
   }, [allIndicateurs, activiteIds])
 
   // ✅ Filtrer les coûts par activité

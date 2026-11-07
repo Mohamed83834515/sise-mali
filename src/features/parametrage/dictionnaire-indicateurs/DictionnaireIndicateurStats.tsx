@@ -1,6 +1,5 @@
 import { BookOpen, BarChart3, Target, TrendingUp } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
-import type { DictionnaireIndicateur } from '@/shared/types'
 
 function StatCard({
   title,

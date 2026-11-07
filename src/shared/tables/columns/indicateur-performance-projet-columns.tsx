@@ -2,7 +2,6 @@ import { type ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildColumns } from '@/shared/tables/column-builder'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { IndicateurPerformanceProjet } from '@/shared/types'
 
 export function buildIndicateurPerformanceProjetColumns({
   getUniteLabel,

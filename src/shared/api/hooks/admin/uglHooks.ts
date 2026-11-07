@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { uglService } from '@/shared/api/services/uglService';
-import { UGLFormData } from '@/shared/types/entities/entities';
 import { toast } from 'sonner';
 import { getApiErrorMessage } from '@/lib/api-error-message'
 

@@ -5,8 +5,6 @@ import {
   indicateurTacheSchema,
   type IndicateurTacheFormData,
 } from '@/shared/schemas/indicateurTacheSchemas'
-import type {  PtbaProjet } from '@/shared/types'
-import { IndicateurTache } from '@/shared/types/entities/indicateurTache'
 import {
   useCreateIndicateurTacheProjet,
   useUpdateIndicateurTacheProjet,
@@ -78,7 +76,10 @@ export default function IndicateurTacheProjetForm({
       trimestre_2: indicateur?.trimestre_2 || 0,
       trimestre_3: indicateur?.trimestre_3 || 0,
       trimestre_4: indicateur?.trimestre_4 || 0,
-      id_activite: indicateur?.id_activite || Number(idActivite),
+      id_activite:
+        typeof indicateur?.id_activite === 'object' && indicateur.id_activite
+          ? indicateur.id_activite.id_ptba
+          : (Number(indicateur?.id_activite) || Number(idActivite)),
     }),
     [indicateur, idActivite]
   )

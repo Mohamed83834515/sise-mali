@@ -4,7 +4,6 @@ import { DynamicForm } from '@/shared/forms'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import { buildAnneeCibleOptions } from '@/shared/forms/configs/cibleCmrProjetForm'
 import { getCibleIndicateurStrategiqueFormConfigForDialog } from '@/shared/forms/configs/indicateurStrategiqueForm'
-import type { CibleIndicateurStrategique } from '@/shared/types/entities/cibleIndicateurStrategique'
 import {
   cibleIndicateurStrategiqueWriteSchema,
   type CibleIndicateurStrategiquePayload,

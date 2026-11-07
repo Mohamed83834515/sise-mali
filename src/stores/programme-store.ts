@@ -1,6 +1,5 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { Programme } from '@/shared/types/entities/programme'
 
 interface ProgrammeStore {
   activeProgramme: Programme | null

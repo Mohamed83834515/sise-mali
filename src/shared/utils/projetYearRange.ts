@@ -1,5 +1,3 @@
-import type { Projet } from '@/shared/types'
-
 export function getProjetYearRangeFromMonths(projet?: Projet | null): number[] {
   if (!projet?.date_demarrage_projet) return []
 

@@ -3,7 +3,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { niveauLocaliteService } from '@/shared/api/services/niveauLocaliteService'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import { NiveauLocalite } from '@/shared/types/entities/niveauLocalite'
 
 export const niveauLocaliteQueryKeys = {
   all: ['niveaux-localites'] as const,

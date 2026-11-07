@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { IndicateurPerformanceProjet } from "@/shared/types";
 
 const prefix = "/indicateurs-performance-projet/"
 

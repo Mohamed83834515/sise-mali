@@ -11,7 +11,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Badge } from '@/components/ui/badge'
-import type { Programme } from '@/shared/types/entities/programme'
 import { useProgrammeStore } from '@/stores/programme-store'
 
 interface ProgrammeSwitcherProps {

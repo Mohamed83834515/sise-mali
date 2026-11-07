@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviTacheActivite } from '@/shared/types'
 import type { SuiviTacheActiviteProjetPayload } from '@/shared/schemas/suiviTacheActiviteProjetSchemas'
 import { mapSuiviTacheActiviteFromApi } from './suiviTacheActiviteService'
 

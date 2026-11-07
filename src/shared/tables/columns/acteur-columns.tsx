@@ -3,7 +3,6 @@ import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { Trash2, UserPen } from 'lucide-react'
-import { Acteur } from '@/shared/types/entities/acteur'
 import { Badge } from '@/components/ui/badge'
 
 type ActeurDialogType = 'add' | 'edit' | 'delete'

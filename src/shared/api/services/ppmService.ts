@@ -1,5 +1,4 @@
 import { api, apiClient } from '@/shared/api'
-import type { Ppm } from '@/shared/types/entities/ppm'
 import type { PpmFormData } from '@/shared/schemas/ppmSchema'
 
 const ENDPOINT = '/ppms/'

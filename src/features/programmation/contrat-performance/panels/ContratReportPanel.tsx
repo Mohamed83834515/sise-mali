@@ -3,7 +3,6 @@ import {
   useGetNiveauxConfigClcp,
 } from '@/shared/api/hooks/admin/cadreLogiqueClcpHooks'
 import { useGetIndicateursContrat } from '@/shared/api/hooks/admin/indicateurContratHooks'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 import RapportExportButton from '@/features/rapport/RapportExportButton'
 import { RapportExportProvider } from '@/features/rapport/RapportExportContext'
 import { ContratPerformanceReportTable } from '@/features/rapport/contrat-performance/ContratPerformanceReportTable'

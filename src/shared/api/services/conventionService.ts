@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { Convention, ConventionApiPayload } from '@/shared/types/entities/convention'
 import { filterConventionsByProjet } from '@/shared/utils/conventionUtils'
 import { normalizeApiList } from './apiListUtils'
 

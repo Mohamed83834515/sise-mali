@@ -2,7 +2,6 @@ import {
   AddModePassation,
   ListeModePassation,
 } from '@/features/programmation'
-import type { ModePassation } from '@/shared/types/entities/modePassation'
 import { FileText } from 'lucide-react'
 import { useState } from 'react'
 type Mode = 'list' | 'add' | 'edit'

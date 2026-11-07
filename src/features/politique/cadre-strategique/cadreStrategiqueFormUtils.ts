@@ -1,5 +1,3 @@
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
 import type { CadreStrategiqueWriteData } from '@/shared/schemas/cadreStrategiqueSchemas'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import {

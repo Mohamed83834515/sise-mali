@@ -1,6 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import { TitrePersonnel } from "@/shared/types";
 
 export const titrePersonnelService = {
   // Récupérer tous les titres

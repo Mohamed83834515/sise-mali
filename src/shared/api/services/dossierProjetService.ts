@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  DossierProjet,
-  DossierProjetWritePayload,
-} from '@/shared/types/entities/dossierProjet'
 import { filterDossiersByProjet } from '@/shared/utils/dossierProjetUtils'
 import { normalizeApiList } from './apiListUtils'
 

@@ -3,7 +3,6 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 import { DIALOG_SIZES } from "@/shared/forms"
-import { CategorieActeur } from "@/shared/types/entities/categorieActeur"
 import ListeCategorieActeur from "./ListeCategorie"
 import AddCategorieActeur from "./AddCategorie"
 

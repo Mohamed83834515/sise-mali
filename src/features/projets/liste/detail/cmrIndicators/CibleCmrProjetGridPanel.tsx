@@ -18,8 +18,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { CibleCmrProjet, Projet } from '@/shared/types'
-import type { IndicateurCmrProjet } from '@/shared/types/entities/indicateurCmrProjet'
 import {
   useCreateCibleCmrProjet,
   useDeleteCibleCmrProjet,

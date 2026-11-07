@@ -3,7 +3,6 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { DetailViewFooter, DetailViewHeader } from '@/shared/detail'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 import { contratDetailTabs, type ContratDetailTab } from './contratDetailTabs'
 import ContratDetailPanel from './ContratDetailPanel'
 

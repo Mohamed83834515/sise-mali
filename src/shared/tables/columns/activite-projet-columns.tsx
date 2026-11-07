@@ -1,7 +1,6 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { buildColumns } from '@/shared/tables/column-builder'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { ActiviteProjet, NiveauActiviteProjet } from '@/shared/types'
 import { Button } from '@/components/ui/button'
 import { List } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'

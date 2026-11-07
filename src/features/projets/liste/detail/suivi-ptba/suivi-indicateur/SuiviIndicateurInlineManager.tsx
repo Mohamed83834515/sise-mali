@@ -20,8 +20,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import type { SuiviIndicateurTacheProjet } from '@/shared/types/entities/suiviIndicateurTacheProjet'
-import { IndicateurTache } from '@/shared/types/entities/indicateurTache'
 import type { SuiviIndicateurTacheProjetPayload } from '@/shared/schemas/suiviIndicateurTacheProjetSchemas'
 import {
   useCreateSuiviIndicateurProjet,

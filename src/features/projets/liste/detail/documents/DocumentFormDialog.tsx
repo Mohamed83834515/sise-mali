@@ -1,9 +1,6 @@
 import { useMemo } from 'react'
 import { toast } from 'sonner'
 import { DynamicForm } from '@/shared/forms'
-import type { Projet } from '@/shared/types'
-import type { DossierProjet } from '@/shared/types/entities/dossierProjet'
-import type { DocumentProjet } from '@/shared/types/entities/documentProjet'
 import { getDocumentProjetFormConfig } from '@/shared/forms/configs/documentProjetForm'
 import {
   useCreateDocumentProjet,

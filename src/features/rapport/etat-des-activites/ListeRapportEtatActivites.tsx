@@ -5,8 +5,7 @@ import { Loader2 } from 'lucide-react'
 import { GenericTable } from '@/shared/tables'
 import { useActiveProgrammeCode } from '@/hooks/use-active-programme'
 import { TableCell, TableRow } from '@/components/ui/table'
-import type { CadreAnalytique, Ptba, TacheActivitePtba } from '@/shared/types'
-import { tauxAvancementGlobalTaches } from '@/shared/types/entities/suiviTacheActivite'
+import { tauxAvancementGlobalTaches } from '@/shared/utils'
 import {
   computeRetardAccuse,
   getLatestObservation,

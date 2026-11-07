@@ -17,7 +17,6 @@ import { useGetNiveauxLocalite } from '@/shared/api/hooks/admin/niveauLocaliteHo
 import AddLocalite from './AddLocalite'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
-import type { Localite } from '@/shared/types/entities/localite'
 import { LocaliteNiveauTable } from './localiteNiveauTableau'
 import NiveauLocaliteManager from './niveau/NiveauLocaliteManager'
 

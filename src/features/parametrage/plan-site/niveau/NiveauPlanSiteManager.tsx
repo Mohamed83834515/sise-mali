@@ -13,7 +13,6 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { DialogDescription, DialogTitle } from '@/components/ui/dialog'
-import { type NiveauStructureConfigFormData } from '@/shared/types/entities/entities'
 import {
   useDeleteNiveauPlanSite,
   useGetNiveauxPlanSite,

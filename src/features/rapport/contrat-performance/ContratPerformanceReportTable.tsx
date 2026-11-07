@@ -1,10 +1,6 @@
 import { useMemo } from 'react'
 import { type ColumnDef } from '@tanstack/react-table'
 import { GenericTable } from '@/shared/tables'
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
-import type { SuiviContrat } from '@/shared/types/entities/suiviContrat'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import { useRapportExportRegistration } from '@/features/rapport/useRapportExportRegistration'
 import {
@@ -15,7 +11,6 @@ import {
 import { resolveClcpId } from '@/shared/utils/indicateurContratUtils'
 import { getUniteSymbole } from '@/shared/utils/uniteIndicateurUtils'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
-import type { UniteIndicateur } from '@/shared/types/entities/uniteIndicateur'
 import { FileSignature, Loader2 } from 'lucide-react'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
 import { Badge } from '@/components/ui/badge'

@@ -2,7 +2,6 @@
 import { useMemo, useState } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import { Acteur } from '@/shared/types'
 import useDialogState from '@/hooks/use-dialog-state'
 import { GenericDeleteDialog } from '@/shared/tables'
 import { useDeleteActeur, useGetActeurs } from '@/shared/api/hooks/admin/acteurHooks'

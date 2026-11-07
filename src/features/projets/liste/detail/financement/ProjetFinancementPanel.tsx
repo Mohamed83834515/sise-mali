@@ -13,8 +13,6 @@ import { DIALOG_SIZES } from '@/shared/forms'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { Projet } from '@/shared/types'
-import type { FinancementProjet } from '@/shared/types/entities/financementProjet'
 import { buildFinancementProjetColumns } from '@/shared/tables/columns/financement-projet-columns'
 import {
   useDeleteFinancementProjet,

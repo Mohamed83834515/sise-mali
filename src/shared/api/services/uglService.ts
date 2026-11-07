@@ -1,6 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type { UGL } from "@/shared/types";
 
 const endpoint = "/ugl/";
 

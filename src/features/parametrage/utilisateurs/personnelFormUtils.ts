@@ -1,4 +1,3 @@
-import type { Personnel } from '@/shared/types'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import type { PersonnelWriteData } from '@/shared/schemas/personnelWriteSchema'
 

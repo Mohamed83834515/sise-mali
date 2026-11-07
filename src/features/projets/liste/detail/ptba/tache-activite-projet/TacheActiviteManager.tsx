@@ -1,6 +1,5 @@
 import { useState, useMemo, useCallback, useRef } from 'react'
 import { Loader2 } from 'lucide-react'
-import type { Ptba, TacheActivitePtba } from '@/shared/types'
 import { DataTableToolbarOutlineButton } from '@/components/data-table/toolbar-outline-button'
 import {
   ActiviteTabbedSubViewHeader,

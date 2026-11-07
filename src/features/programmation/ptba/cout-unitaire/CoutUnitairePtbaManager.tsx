@@ -14,7 +14,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import type { CoutUnitairePtba, Ptba } from '@/shared/types'
 import {
   coutUnitairePtbaQueryKeys,
   useCreateCoutUnitairePtba,

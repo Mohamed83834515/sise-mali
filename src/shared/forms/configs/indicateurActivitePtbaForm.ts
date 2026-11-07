@@ -1,5 +1,4 @@
 import type { FormConfig } from '@/shared/types/formConfig'
-import type { UniteIndicateur } from '@/shared/types/entities/uniteIndicateur'
 
 export const getIndicateurActivitePtbaFormConfig = (): FormConfig => ({
   fields: [

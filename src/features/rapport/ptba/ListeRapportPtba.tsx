@@ -8,8 +8,7 @@ import { useGetPtbas } from '@/shared/api/hooks/admin/ptbaHooks'
 import { useGetAllTachesActivite } from '@/shared/api/hooks/admin/suiviPtbaHooks'
 import { usePtbaVersionSelection } from '@/shared/api/hooks/admin/versionHooks'
 import { useGeneralParamsQuery } from '@/shared/api/hooks/generalParams/queries'
-import type { Ptba } from '@/shared/types'
-import { resolveIdActivite } from '@/shared/types/entities/tacheActivitePtba'
+import { resolveIdActivite } from '@/shared/utils'
 import { PtbaVersionSelect } from '@/features/programmation/ptba/PtbaVersionSelect'
 import {
   mapTableColumnsToExportIds,
@@ -96,8 +95,9 @@ export default function ListeRapportPtba() {
 
     for (const raw of allIndicateurs) {
       const item = normalizeIndicateurTache(raw)
-      if (!activiteIdSet.has(item.id_activite)) continue
-      map.set(item.id_activite, (map.get(item.id_activite) ?? 0) + 1)
+      const idAct = Number(item.id_activite)
+      if (!activiteIdSet.has(idAct)) continue
+      map.set(idAct, (map.get(idAct) ?? 0) + 1)
     }
 
     return map

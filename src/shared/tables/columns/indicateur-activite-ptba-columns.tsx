@@ -3,7 +3,6 @@ import { Trash2, UserPen } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { cn } from '@/lib/utils'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { IndicateurActivitePtba } from '@/shared/types'
 
 export type IndicateurActivitePtbaTableRow = IndicateurActivitePtba
 

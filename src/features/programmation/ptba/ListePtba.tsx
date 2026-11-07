@@ -5,7 +5,6 @@ import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useActiveProgrammeCode } from '@/hooks/use-active-programme'
-import { Ptba } from '@/shared/types'
 import { buildPtbasColumns } from '@/shared/tables/columns/ptbas-columns'
 import { useDeletePtba, useGetPtbas } from '@/shared/api/hooks/admin/ptbaHooks'
 import { useGetPersonnels } from '@/shared/api/hooks/admin/personnelHooks'
@@ -59,7 +58,6 @@ function ListePtbas() {
 
   const [open, setOpen] = useDialogState<'add' | 'edit' | 'delete'>(null)
   const [currentRow, setCurrentRow] = useState<Ptba | null>(null)
-
 
   const { data: config } = useGeneralParamsQuery()
   const currencyCode = config?.currencyCode

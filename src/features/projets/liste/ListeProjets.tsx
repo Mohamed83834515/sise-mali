@@ -6,7 +6,6 @@ import { useActiveProgramme } from '@/hooks/use-active-programme'
 import { buildProjetsColumns } from '@/shared/tables/columns/projets-columns'
 import {  useDeleteProjet, useGetProjets } from '@/shared/api/hooks/admin/projetHooks'
 import { useGetTypeProjet } from '@/shared/api/hooks/admin/typeProjetHooks'
-import type { Projet } from '@/shared/types/entities/projet'
 import useDialogState from '@/hooks/use-dialog-state'
 import { GenericDialogs } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
@@ -90,7 +89,6 @@ export default function ListeProjets() {
     setOpen('cloture')
   }
 
-
   const columns = useMemo(
     () => buildProjetsColumns({
       setOpen,
@@ -144,7 +142,6 @@ export default function ListeProjets() {
       return true
     })
   }, [filteredByType, filtreCloture])
-
 
   if (!activeProgramme) {
     return (

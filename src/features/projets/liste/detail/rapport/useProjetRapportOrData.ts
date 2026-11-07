@@ -11,8 +11,6 @@ import { useGetPersonnels } from '@/shared/api/hooks/admin/personnelHooks'
 import { useGetPtbasProjet } from '@/shared/api/hooks/admin/ptbaProjetHooks'
 import { useGetTauxGlobalActiviteProjet } from '@/shared/api/hooks/admin/projetHooks'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
-import type { Personnel, Projet } from '@/shared/types'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
 
 const EMPTY_PTBAS: PtbaProjet[] = []
 

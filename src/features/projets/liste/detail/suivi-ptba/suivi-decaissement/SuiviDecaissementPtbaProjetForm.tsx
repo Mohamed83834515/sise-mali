@@ -7,8 +7,6 @@ import {
   suiviDecaissementPtbaProjetSchema,
   type SuiviDecaissementPtbaProjetFormData,
 } from '@/shared/schemas/suiviDecaissementPtbaProjetSchemas'
-import type { Projet } from '@/shared/types/entities/projet'
-import type { SuiviDecaissementPtbaProjet } from '@/shared/types/entities/suiviDecaissementPtbaProjet'
 import {
   useCreateSuiviDecaissementProjet,
   useUpdateSuiviDecaissementProjet,

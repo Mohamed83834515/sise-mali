@@ -7,7 +7,6 @@ import {
   suiviDecaissementConventionSchema,
   type SuiviDecaissementConventionFormData,
 } from '@/shared/schemas/suiviDecaissementConventionSchemas'
-import type { SuiviDecaissementConvention } from '@/shared/types/entities/suiviDecaissementConvention'
 import {
   useCreateSuiviDecaissementConvention,
   useUpdateSuiviDecaissementConvention,

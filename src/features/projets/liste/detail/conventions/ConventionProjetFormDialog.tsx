@@ -1,7 +1,5 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
-import type { Projet } from '@/shared/types'
-import type { Convention, ConventionApiPayload } from '@/shared/types/entities/convention'
 import { getConventionFormConfig } from '@/shared/forms/configs/conventionForm'
 import {
   useCreateConventionProjet,

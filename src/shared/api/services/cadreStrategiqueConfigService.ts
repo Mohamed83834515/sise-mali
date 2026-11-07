@@ -1,9 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type {
-  CadreStrategiqueConfig,
-  CadreStrategiqueConfigFormData,
-} from "@/shared/types";
 
 export const cadreStrategiqueConfigService = {
   // Get all configurations

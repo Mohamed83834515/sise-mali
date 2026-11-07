@@ -2,7 +2,6 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
 import { useSaveActeur } from '@/shared/api/hooks/admin/acteurHooks'
-import { Acteur, ActeurFormData } from '@/shared/types/entities/acteur'
 import { getActeurFormConfig } from '@/shared/forms/configs/acteurForm'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { DIALOG_SIZES } from '@/shared/forms'

@@ -3,8 +3,6 @@ import { toast } from 'sonner'
 import { DynamicForm, type DynamicFormHandle } from '@/shared/forms'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import { getIndicateurCmrProjetFormConfigForDialog } from '@/shared/forms/configs/indicateurCmrForm'
-import type { CadreResultat, IndicateurCadreResultat } from '@/shared/types'
-import type { IndicateurCmrProjet } from '@/shared/types/entities/indicateurCmrProjet'
 import {
   indicateurCmrProjetCreateSchema,
   type IndicateurCmrProjetCreateData,

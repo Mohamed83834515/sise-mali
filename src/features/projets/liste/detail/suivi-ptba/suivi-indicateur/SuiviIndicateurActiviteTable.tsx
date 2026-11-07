@@ -5,8 +5,6 @@ import {
   type SuiviIndicateurTableRow,
 } from '@/shared/tables/columns/suivi-indicateur-columns'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
-import type { IndicateurTache } from '@/shared/types/entities/indicateurTache'
-import type { SuiviIndicateurTacheProjet } from '@/shared/types/entities/suiviIndicateurTacheProjet'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
 
 type SuiviIndicateurActiviteTableProps = {

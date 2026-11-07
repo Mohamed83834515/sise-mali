@@ -3,7 +3,6 @@ import { DataTableColumnHeader } from '@/components/data-table'
 import { Badge } from '@/components/ui/badge'
 import { buildColumns } from '@/shared/tables/column-builder'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 
 export function buildIndicateurStrategiqueColumns({
   getResponsableLabel,

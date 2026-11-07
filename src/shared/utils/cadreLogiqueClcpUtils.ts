@@ -1,5 +1,3 @@
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 const NIVEAU_CLCP_SEP = '::'

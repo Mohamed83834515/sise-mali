@@ -3,9 +3,6 @@ import { toast } from 'sonner'
 import { DynamicForm, type DynamicFormHandle } from '@/shared/forms'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import { getIndicateurCmrProgrammeFormConfigForDialog } from '@/shared/forms/configs/indicateurCmrForm'
-import type { IndicateurCmr } from '@/shared/types'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 import {
   indicateurCmrProgrammeCreateSchema,
   type IndicateurCmrProgrammeCreateData,

@@ -18,9 +18,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { PartBailleur } from '@/shared/types/entities/partBailleur'
-import type { Projet } from '@/shared/types/entities/projet'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
 import { useMe } from '@/features/auth'
 import { useGetFinancementsProjet } from '@/shared/api/hooks/admin/financementProjetHooks'
 import {

@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { Nbc } from "@/shared/types/entities/nbc";
 
 const BASE_URL = "/ugl/"; // Note: Les fonctions d'origine utilisaient cet endpoint
 

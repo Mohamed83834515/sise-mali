@@ -5,7 +5,6 @@ import { buildTypeActiviteColumns } from "@/shared/tables/columns/typeActivites-
 import { GenericTable } from "@/shared/tables";
 import { GenericDialogs } from "@/shared/tables";
 import { GenericDeleteDialog } from "@/shared/tables";
-import { TypeActivite } from "@/shared/types/entities/entities";
 import { useEmbeddedTableState } from "@/hooks/use-embedded-table-state";
 import { DataTableToolbarOutlineButton } from "@/components/data-table/toolbar-outline-button";
 

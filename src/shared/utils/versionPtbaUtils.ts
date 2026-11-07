@@ -1,5 +1,3 @@
-import type { VersionPtba } from '@/shared/types'
-
 export function getAnneesDisponiblesFromVersions(
   versions: VersionPtba[]
 ): number[] {

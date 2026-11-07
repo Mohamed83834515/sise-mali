@@ -11,8 +11,6 @@ import {
 import { DIALOG_SIZES } from '@/shared/forms'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
-import type { Projet } from '@/shared/types'
-import type { DossierProjet } from '@/shared/types/entities/dossierProjet'
 import {
   useDeleteDossierProjet,
   useGetDossiersProjet,

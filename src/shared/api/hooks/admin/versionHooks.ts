@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useActiveProgrammeCode } from '@/hooks/use-active-programme'
-import type { Programme } from '@/shared/types/entities/programme'
-import type { Projet, VersionPtba } from '@/shared/types'
 import versionPtbaService from '@/shared/api/services/versionPtbaService'
 import {
   filterVersionOptionsByProjetYears,

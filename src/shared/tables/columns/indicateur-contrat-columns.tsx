@@ -3,8 +3,6 @@ import { ClipboardList } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { Button } from '@/components/ui/button'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
 import { resolveClcpLabel } from '@/shared/utils/indicateurContratUtils'
 
 export function buildIndicateurContratColumns({

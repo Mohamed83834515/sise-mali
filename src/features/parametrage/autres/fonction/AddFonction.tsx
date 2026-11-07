@@ -2,7 +2,6 @@ import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
 import { fonctionSchema, FonctionFormData } from '@/shared/schemas/fonctionSchema'
 import { useSaveFonction } from '@/shared/api/hooks/admin/fonctionHooks'
-import { Fonction } from '@/shared/types/entities/fonction'
 import { getFonctionFormConfig } from '@/shared/forms/configs/fonctionForm'
 
 type Props = {

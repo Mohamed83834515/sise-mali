@@ -2,7 +2,6 @@
 import { useMemo, useState } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import { ZoneCollecte } from '@/shared/types/entities/zoneCollecte'
 import useDialogState from '@/hooks/use-dialog-state'
 import { GenericDeleteDialog } from '@/shared/tables'
 import { useDeleteZoneCollecte, useGetZonesCollecte } from '@/shared/api/hooks/admin/zoneCollecteHooks'

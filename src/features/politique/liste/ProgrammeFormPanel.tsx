@@ -3,7 +3,6 @@ import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import { DynamicForm } from '@/shared/forms'
 import { getProgrammeFormConfigForDialog } from '@/shared/forms/configs/programmeFormDialog'
-import type { Programme } from '@/shared/types/entities/programme'
 import {
   programmeWriteSchema,
   type ProgrammeWriteData,

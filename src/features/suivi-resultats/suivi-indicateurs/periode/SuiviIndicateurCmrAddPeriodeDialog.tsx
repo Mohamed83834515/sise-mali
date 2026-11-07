@@ -15,7 +15,6 @@ import { formPrimaryButtonClassName } from '@/shared/forms'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import { useMe } from '@/features/auth'
 import { useCreatePeriodeIndicateur } from '@/shared/api/hooks/admin/periodeIndicateurHooks'
-import type { PeriodeIndicateurFormData } from '@/shared/types/entities/periodeIndicateur'
 import {
   buildPeriodeIndicateurWritePayload,
   emptyPeriodeIndicateurFormValues,

@@ -1,7 +1,5 @@
 import { useMemo, useState } from 'react'
 import { Loader2 } from 'lucide-react'
-import type { Convention } from '@/shared/types/entities/convention'
-import type { SuiviDecaissementConvention } from '@/shared/types/entities/suiviDecaissementConvention'
 import { sumSuiviDecaissementConventionMontant } from '@/shared/tables/columns/suivi-decaissement-convention-columns'
 import { useGetSuiviDecaissementByConvention } from '@/shared/api/hooks/admin/suiviConventionHooks'
 import {

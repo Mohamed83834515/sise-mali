@@ -1,6 +1,5 @@
 import { toast } from 'sonner'
 import { apiClient } from '@/shared/api'
-import type { DictionnaireIndicateur, DictionnaireIndicateurWritePayload } from '@/shared/types'
 
 export const dictionnaireIndicateurService = {
   // Get all indicateurs du dictionnaire

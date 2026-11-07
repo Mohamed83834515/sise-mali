@@ -6,7 +6,6 @@ import {
     DialogHeader,
     DialogTitle,
 } from '@/components/ui/dialog'
-import type { Ppm } from '@/shared/types/entities/ppm'
 import { useGetEtapesByPpm } from '@/shared/api/hooks/admin/etapePassationHooks'
 import SuiviEtapesPassationTable from './SuiviEtapesPassationTable'
 

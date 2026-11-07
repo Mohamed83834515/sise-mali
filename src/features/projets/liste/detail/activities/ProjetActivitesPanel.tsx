@@ -19,7 +19,6 @@ import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { ActiviteProjet, NiveauActiviteProjet, Projet } from '@/shared/types'
 import { buildActiviteProjetColumns } from '@/shared/tables/columns/activite-projet-columns'
 import {
   useDeleteActiviteProjet,
@@ -291,7 +290,6 @@ export default function ProjetActivitesPanel({ projet }: { projet: Projet }) {
       label: `${p.code_activite_projet} — ${p.intitule_activite_projet}`,
     }))
   }, [activites, currentNiveauNumber, sortedNiveaux])
-
 
   const handleAdd = () => {
     if (!hasNiveaux) {

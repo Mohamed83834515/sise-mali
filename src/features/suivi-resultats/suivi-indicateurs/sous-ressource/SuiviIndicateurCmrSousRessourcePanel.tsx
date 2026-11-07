@@ -12,11 +12,7 @@ import {
   useGetPeriodeSousRessources,
 } from '@/shared/api/hooks/admin/periodeIndicateurSousRessourceHooks'
 import { buildPeriodeIndicateurSousRessourceColumns } from '@/shared/tables/columns/periode-indicateur-sous-ressource-columns'
-import {
-  PERIODE_SOUS_RESSOURCE_LABELS,
-  type PeriodeSousRessourceEnregistrement,
-  type PeriodeSousRessourceType,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
+import { PERIODE_SOUS_RESSOURCE_LABELS } from '@/shared/utils'
 import {
   resolvePeriodeEnregistrementId,
   resolvePeriodeEnregistrementLabel,

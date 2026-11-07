@@ -8,7 +8,6 @@ import { useGetTypeFinancementPPM } from '@/shared/api/hooks/admin/typeFinanceme
 import { usePpmVersionContext } from './PpmVersionContext'
 import { PtbaVersionSelect } from '@/features/programmation/ptba/PtbaVersionSelect'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
-import type { Ppm } from '@/shared/types/entities/ppm'
 import { buildSuiviPpmColumns } from '@/shared/tables/columns/suivi-ppm-columns'
 import SuiviEtapesPassationDialog from '../suivi-etapes/SuiviEtapesPassationDialog'
 

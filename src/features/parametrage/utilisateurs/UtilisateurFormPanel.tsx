@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
 import { getPersonnelFormConfigForDialog } from '@/shared/forms/configs/personnelForm'
-import type { Personnel } from '@/shared/types'
 import { useGetFonctions } from '@/shared/api/hooks/admin/fonctionHooks'
 import {
   useCreatePersonnel,

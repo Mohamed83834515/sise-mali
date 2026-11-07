@@ -1,6 +1,5 @@
 import { apiClient } from "@/shared/api";
 import { ActiviteProgrammeFormData } from "@/shared/schemas/activiteProgrammeSchemas";
-import type { ActiviteProgramme } from "@/shared/types/entities/activiteProgramme";
 
 const BASE_URL = "/activites-programmes/";
 

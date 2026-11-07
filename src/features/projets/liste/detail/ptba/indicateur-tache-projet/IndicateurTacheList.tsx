@@ -4,7 +4,6 @@ import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
 import useDialogState from '@/hooks/use-dialog-state'
 import { GenericDeleteDialog } from '@/shared/tables'
-import { IndicateurTache } from '@/shared/types/entities/indicateurTache'
 import { buildIndicateurTacheColumns } from '@/shared/tables/columns/indicateur-taches-columns'
 import { useDeleteSuiviIndicateurProjet } from '@/shared/api/hooks/admin/indicateurTacheProjetHooks'
 

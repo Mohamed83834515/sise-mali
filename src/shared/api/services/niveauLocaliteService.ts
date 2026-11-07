@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { NiveauLocalite } from "@/shared/types/entities/niveauLocalite";
 
 const BASE_URL = "/niveaux-localite-config/";
 

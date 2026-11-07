@@ -1,7 +1,4 @@
 import type { SelectOption } from '@/shared/types/formConfig'
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { CadreAnalytique, NiveauCadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
-import type { Programme } from '@/shared/types/entities/programme'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export function resolveProgrammeCode(

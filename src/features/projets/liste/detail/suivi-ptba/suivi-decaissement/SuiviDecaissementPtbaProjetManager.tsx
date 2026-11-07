@@ -1,8 +1,5 @@
 import { useMemo, useState } from 'react'
 import { Loader2 } from 'lucide-react'
-import type { Projet } from '@/shared/types'
-import type { Ptba } from '@/shared/types'
-import type { SuiviDecaissementPtbaProjet } from '@/shared/types/entities/suiviDecaissementPtbaProjet'
 import { sumSuiviDecaissementMontant } from '@/shared/tables/columns/suivi-decaissement-ptba-projet-columns'
 import { useGetSuiviDecaissementProjetByActivite } from '@/shared/api/hooks/admin/suiviPtbaProjetHooks'
 import { useGetFinancementsProjet } from '@/shared/api/hooks/admin/financementProjetHooks'

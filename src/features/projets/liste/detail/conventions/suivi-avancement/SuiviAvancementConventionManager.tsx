@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
-import type { Convention } from '@/shared/types/entities/convention'
-import type { SuiviAvancementConvention } from '@/shared/types/entities/suiviAvancementConvention'
 import {
   suiviConventionQueryKeys,
   useGetSuiviAvancementByConvention,

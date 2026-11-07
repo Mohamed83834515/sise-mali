@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { CoutUnitairePtba } from '@/shared/types/entities/coutUnitairePtba'
 import {
   filterCoutsUnitairesByActivite,
   type CoutUnitairePtbaApiPayload,

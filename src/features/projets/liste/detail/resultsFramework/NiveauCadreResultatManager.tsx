@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Plus, Save, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
-import type { NiveauCadreResultat } from '@/shared/types'
 import type { NiveauCadreResultatCreateData } from '@/shared/schemas/cadreResultatSchemas'
 import {
   useCreateNiveauCadreResultat,

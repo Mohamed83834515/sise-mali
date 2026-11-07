@@ -9,10 +9,6 @@ import {
   useGetNiveauxCadreAnalytique,
 } from '@/shared/api/hooks/admin/cadreAnalytiqueHooks'
 import { useGetAllIndicateursPerformanceProgramme } from '@/shared/api/hooks/admin/indicateurPerformanceProgrammeHooks'
-import type {
-  CadreAnalytique,
-  NiveauCadreAnalytique,
-} from '@/shared/types/entities/cadreAnalytique'
 import {
   getNiveauCadreAnalytiqueLibelle,
   resolveNiveauCaNumber,

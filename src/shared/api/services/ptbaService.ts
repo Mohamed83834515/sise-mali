@@ -1,6 +1,5 @@
 import { apiClient } from "@/shared/api";
 import { PtbaFormData } from "@/shared/schemas/ptbaSchemas";
-import type { Ptba } from "@/shared/types";
 import { buildPtbaApiPayload } from "@/shared/utils/ptbaFormUtils";
 
 const ENDPOINT = "/ptbas/";

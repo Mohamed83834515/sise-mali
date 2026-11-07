@@ -1,12 +1,3 @@
-import type {
-  Ptba,
-  TacheActivitePtba,
-  CoutUnitairePtba,
-  CadreAnalytique,
-  NiveauCadreAnalytique,
-} from '@/shared/types'
-import { type IndicateurTache } from '@/shared/types/entities/indicateurTache'
-
 export interface RapportPtbaData {
   niveaux: NiveauCadreAnalytique[]
   cadresAnalaytiques: CadreAnalytique[]

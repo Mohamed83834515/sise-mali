@@ -11,7 +11,6 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Loader2 } from 'lucide-react'
-import type { CibleIndicateurPerformanceProjet } from '@/shared/types'
 import { getProjetYearRangeFromMonths } from '@/shared/utils/projetYearRange'
 
 export type CibleAnnuelleFormValue = {

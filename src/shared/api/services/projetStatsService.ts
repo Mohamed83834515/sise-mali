@@ -1,10 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  ProjetAvancementAnnuelPoint,
-  TauxGlobalPrevuAn,
-  ViewRealiseAnActivite,
-  ViewTauxAnActivite,
-} from '@/shared/types/entities/projetStats'
 
 function filterByProjet<T extends { projet: number }>(
   items: T[],

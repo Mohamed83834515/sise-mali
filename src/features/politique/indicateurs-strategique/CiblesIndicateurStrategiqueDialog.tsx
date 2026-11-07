@@ -13,7 +13,6 @@ import { GenericDeleteDialog } from '@/shared/tables'
 import { buildCibleIndicateurStrategiqueColumns } from '@/shared/tables/columns/cible-indicateur-strategique-columns'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { CibleIndicateurStrategique } from '@/shared/types/entities/cibleIndicateurStrategique'
 import {
   useDeleteCibleIndicateurStrategique,
   useGetCiblesIndicateurStrategique,

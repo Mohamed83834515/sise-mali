@@ -2,8 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 import { cadreLogiqueClcpService } from '@/shared/api/services/cadreLogiqueClcpService'
 import { niveauConfigClcpService } from '@/shared/api/services/niveauConfigClcpService'
-import type { CadreLogiqueClcpPayload } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { NiveauConfigClcpPayload } from '@/shared/types/entities/niveauConfigClcp'
 import type {
   CadreLogiqueClcpCreateData,
   CadreLogiqueClcpUpdateData,

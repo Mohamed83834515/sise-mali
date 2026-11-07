@@ -1,6 +1,5 @@
 import { apiClient } from '@/shared/api'
 import { toast } from 'sonner'
-import { type TypeProjet } from '@/shared/types/entities/typeProjet'
 import { type TypeProjetFormData } from '@/shared/schemas/typeProjetSchema'
 
 const BASE_URL = '/types-projets/'

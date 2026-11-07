@@ -12,7 +12,6 @@ import {
   useNiveauTabsTheme,
 } from '@/components/ui/NiveauTabs'
 import { DIALOG_SIZES, type DialogSize } from '@/shared/forms'
-import type { Convention } from '@/shared/types/entities/convention'
 import {
   conventionModalTitle,
   ConventionTableHeading,

@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { DocumentProjet } from '@/shared/types/entities/documentProjet'
 import type { DocumentProjetApiPayload } from '@/shared/utils/documentProjetUtils'
 import { normalizeApiList } from './apiListUtils'
 

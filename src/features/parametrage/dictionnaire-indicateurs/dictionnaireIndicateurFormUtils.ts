@@ -1,4 +1,3 @@
-import type { DictionnaireIndicateur } from '@/shared/types'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import type { DictionnaireIndicateurWriteData } from '@/shared/schemas/dictionnaireIndicateurSchemas'
 

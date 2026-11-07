@@ -7,8 +7,6 @@ import {
 import { CHART_COLORS, useColor } from "@/stores/others/color-store";
 import { formatNumber } from "@/shared/utils/montantFormater";
 
-import type { ProjetDashboardRow } from '@/shared/types/entities/dashboardProjet'
-
 export type ProjetRow = ProjetDashboardRow
 
 interface ProjectTableProps {

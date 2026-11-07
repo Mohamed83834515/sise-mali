@@ -8,8 +8,7 @@ import {
   suiviAvancementConventionSchema,
   type SuiviAvancementConventionFormData,
 } from '@/shared/schemas/suiviAvancementConventionSchemas'
-import type { SuiviAvancementConvention } from '@/shared/types/entities/suiviAvancementConvention'
-import { resolvePersonnelId } from '@/shared/types/entities/suiviAvancementConvention'
+import { resolvePersonnelId } from '@/shared/utils'
 import { useMe } from '@/features/auth'
 import {
   useCreateSuiviAvancementConvention,

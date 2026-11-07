@@ -1,6 +1,3 @@
-import type { SuiviAvancementContrat } from '@/shared/types'
-import type { SuiviTacheActivite } from '@/shared/types/entities/suiviTacheActivite'
-
 export type RetardAccuseInfo =
   | { kind: 'none' }
   | { kind: 'today' }

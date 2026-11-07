@@ -5,7 +5,6 @@ import { toast } from 'sonner'
 import { GenericDeleteDialog } from '@/shared/tables'
 import { GenericRowActions } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
-import type { ObservationPtba } from '@/shared/types'
 import {
   useDeleteObservationPtba,
   useGetObservationsByActivite,

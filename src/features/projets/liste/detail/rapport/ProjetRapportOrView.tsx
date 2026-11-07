@@ -5,7 +5,6 @@ import { RapportExportProvider } from '@/features/rapport/RapportExportContext'
 import { useRapportExportRegistration } from '@/features/rapport/useRapportExportRegistration'
 import { RAPPORT_EXPORT_THEME as theme } from '@/features/rapport/export/rapportExportTheme'
 import { formatNumber } from '@/shared/utils/montantFormater'
-import type { Projet } from '@/shared/types'
 import {
   formatTypeFinancementLabel,
   resolveBailleurLabel,

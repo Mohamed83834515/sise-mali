@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  RecommandationMissionProjet,
-  RecommandationMissionProjetApiPayload,
-} from '@/shared/types/entities/recommandationMissionProjet'
 import { filterRecommandationsByProjet } from '@/shared/utils/missionRecommandationUtils'
 
 const ENDPOINT = '/recommandations-missions-projets/'

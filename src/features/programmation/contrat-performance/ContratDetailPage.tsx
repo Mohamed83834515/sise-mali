@@ -19,7 +19,6 @@ import { useGetContratPerformance } from '@/shared/api/hooks/admin/contratPerfor
 import ContratDetailPanel from './ContratDetailPanel'
 import { contratDetailTabs, type ContratDetailTab } from './contratDetailTabs'
 import { useGetPlanSites } from '@/shared/api/hooks/admin/planSiteHooks'
-import { PlanSite } from '@/shared/types'
 
 const APPRECIATION_LABELS: Record<string, string> = {
   excellent: 'Excellent',

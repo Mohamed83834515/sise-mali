@@ -1,5 +1,4 @@
 import type { FormConfig, SelectOption } from '@/shared/types/formConfig'
-import type { Acteur, TypeZone, UniteIndicateur } from '@/shared/types'
 import {
   fonctionAgregatOptions,
   typologieOptions,

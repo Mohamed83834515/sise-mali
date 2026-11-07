@@ -1,5 +1,4 @@
 import { niveauStructureConfigService } from '@/shared/api/services/niveauStructureConfigService'
-import { NiveauStructureConfigFormData } from '@/shared/types/entities/entities'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'

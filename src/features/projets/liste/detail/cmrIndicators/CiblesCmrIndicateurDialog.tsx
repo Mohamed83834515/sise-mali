@@ -5,8 +5,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import type { Projet } from '@/shared/types'
-import type { IndicateurCmrProjet } from '@/shared/types/entities/indicateurCmrProjet'
 import CibleCmrProjetGridPanel from './CibleCmrProjetGridPanel'
 
 type Props = {

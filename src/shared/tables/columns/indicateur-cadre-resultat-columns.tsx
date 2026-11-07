@@ -2,7 +2,6 @@ import { type ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { LongText } from '@/components/others/long-text'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { IndicateurCadreResultat } from '@/shared/types'
 import { resolveRelationCode } from '@/shared/utils/resolveApiRelation'
 
 function displayValue(value: string | null | undefined): string {

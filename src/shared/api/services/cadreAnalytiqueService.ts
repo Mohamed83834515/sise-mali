@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { type CadreAnalytique } from "@/shared/types/entities/cadreAnalytique";
 
 const BASE_URL = "/cadres-analytiques/";
 

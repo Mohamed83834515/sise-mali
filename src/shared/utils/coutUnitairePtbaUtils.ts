@@ -1,4 +1,3 @@
-import type { CoutUnitairePtba } from '@/shared/types/entities/coutUnitairePtba'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export type CoutUnitairePtbaApiPayload = {

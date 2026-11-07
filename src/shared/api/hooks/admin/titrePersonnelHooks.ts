@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { titrePersonnelService } from '@/shared/api/services/titrePersonnelService'
-import type { TitrePersonnel } from '@/shared/types'
 import type { TitrePersonnelFormData } from '@/shared/schemas/titrePersonnelSchema'
 
 export const titrePersonnelQueryKeys = {
@@ -53,4 +52,3 @@ export function useDeleteTitrePersonnel() {
   })
 }
 
-export type { TitrePersonnel }

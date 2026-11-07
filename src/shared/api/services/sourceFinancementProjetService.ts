@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { SourFinancementProjet } from "@/shared/types/entities/sourceFinancemanetProjet";
 import { SourceFinancementProjetFormData } from "@/shared/schemas/sourceFinancementProjet";
 
 const ENDPOINT = "/sources-financement-projet/";

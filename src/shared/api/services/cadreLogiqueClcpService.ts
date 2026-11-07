@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  CadreLogiqueClcp,
-  CadreLogiqueClcpPayload,
-} from '@/shared/types/entities/cadreLogiqueClcp'
 import { normalizeApiList } from './apiListUtils'
 
 const ENDPOINT = '/cadres-logiques-contrats-performance/'

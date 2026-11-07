@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { NiveauActiviteProjet } from "@/shared/types";
 
 const BASE_URL = "/niveau_activite_config/";
 

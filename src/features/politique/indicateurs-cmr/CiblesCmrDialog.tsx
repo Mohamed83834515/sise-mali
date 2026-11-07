@@ -5,7 +5,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import type { IndicateurCmr } from '@/shared/types'
 import CibleCmrGridPanel from './CibleCmrGridPanel'
 
 type OpenProps = {

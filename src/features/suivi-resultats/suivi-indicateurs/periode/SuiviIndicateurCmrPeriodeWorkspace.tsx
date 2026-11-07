@@ -8,7 +8,6 @@ import {
   NiveauTabsList,
   useNiveauTabsTheme,
 } from '@/components/ui/NiveauTabs'
-import type { PeriodeIndicateur } from '@/shared/types/entities/periodeIndicateur'
 import SuiviIndicateurCmrSousRessourcePanel from '../sous-ressource/SuiviIndicateurCmrSousRessourcePanel'
 import SuiviIndicateurCmrSourceResultatPanel, {
   type SuiviIndicateurCmrSourceResultatPanelHandle,

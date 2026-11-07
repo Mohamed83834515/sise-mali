@@ -1,6 +1,5 @@
 import { apiClient } from "@/shared/api";
 import { TypeActiviteFormData } from "@/shared/schemas/ptbaSchemas";
-import type { TypeActivite } from "@/shared/types";
 
 const ENDPOINT = "/types-activites/";
 

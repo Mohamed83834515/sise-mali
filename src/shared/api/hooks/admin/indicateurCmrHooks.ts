@@ -1,9 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import type { IndicateurCmrFormData } from '@/shared/types'
-import type {
-  IndicateurCmrProjet,
-  IndicateurCmrProjetFormData,
-} from '@/shared/types/entities/indicateurCmrProjet'
 import { indicateurCmrService } from '@/shared/api/services/indicateurCmrService'
 import { indicateurCmrProjetService } from '@/shared/api/services/indicateurCmrProjetService'
 import {

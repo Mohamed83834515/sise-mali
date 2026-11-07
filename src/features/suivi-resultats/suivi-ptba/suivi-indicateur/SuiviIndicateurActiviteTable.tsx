@@ -2,8 +2,6 @@ import { useMemo } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
-import type { IndicateurTache } from '@/shared/types/entities/indicateurTache'
-import type { SuiviIndicateurTache } from '@/shared/types/entities/suiviIndicateurTacheProjet'
 import {
   buildSuiviIndicateurColumns,
   type SuiviIndicateurTableRow,

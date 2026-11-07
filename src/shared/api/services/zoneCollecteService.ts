@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { ZoneCollecte } from "@/shared/types/entities/zoneCollecte";
 
 const BASE_URL = "/zones-collectes/";
 

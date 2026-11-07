@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { TitrePersonnel } from '@/shared/types'
 import {
   useDeleteTitrePersonnel,
   useGetTitresPersonnel,

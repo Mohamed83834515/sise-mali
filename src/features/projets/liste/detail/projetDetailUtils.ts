@@ -1,4 +1,3 @@
-import type { Projet } from '@/shared/types/entities/projet'
 import {
   computeDateCloture,
   computeDateClotureIso,

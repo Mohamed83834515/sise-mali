@@ -2,7 +2,6 @@ import { useMemo } from 'react'
 import { toast } from 'sonner'
 import { DynamicForm } from '@/shared/forms'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import type { Ptba, TacheActivitePtba } from '@/shared/types'
 import {
   createTacheActivitePtbaProjetSchema,
   type TacheActivitePtbaProjetFormData,

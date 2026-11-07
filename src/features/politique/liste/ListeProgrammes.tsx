@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/dialog'
 import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
-import type { Programme } from '@/shared/types/entities/programme'
 import {
   useDeleteProgramme,
   useGetProgrammes,

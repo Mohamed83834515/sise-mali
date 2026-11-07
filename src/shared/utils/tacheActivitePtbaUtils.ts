@@ -1,11 +1,41 @@
-import type { TacheActivitePtba } from '@/shared/types/entities/tacheActivitePtba'
-import { resolveIdActivite } from '@/shared/types/entities/tacheActivitePtba'
-import { parseProportionPercent } from '@/shared/types/entities/suiviTacheActivite'
 import type {
   TacheActivitePtbaFormData,
   TacheActivitePtbaProjetFormData,
 } from '@/shared/schemas/tacheActivitePtbaSchemas'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
+import { parseProportionPercent } from './suiviTacheActiviteUtils'
+
+export function resolveIdActivite(
+  tache: Pick<TacheActivitePtba, 'id_activite'>
+): number | undefined {
+  const raw = tache.id_activite
+  if (typeof raw === 'number' && Number.isFinite(raw)) return raw
+  if (typeof raw === 'object' && raw !== null && 'id_ptba' in raw) {
+    const n = Number((raw as Ptba).id_ptba)
+    return Number.isFinite(n) ? n : undefined
+  }
+  if (typeof raw === 'string') {
+    const n = Number(raw)
+    return Number.isFinite(n) ? n : undefined
+  }
+  return undefined
+}
+
+export function tacheBelongsToActivite(
+  tache: TacheActivitePtba,
+  activite: Pick<Ptba, 'id_ptba'>
+): boolean {
+  const tacheActiviteId = resolveIdActivite(tache)
+  const activiteId =
+    typeof activite.id_ptba === 'number'
+      ? activite.id_ptba
+      : Number(activite.id_ptba)
+  return (
+    tacheActiviteId != null &&
+    Number.isFinite(activiteId) &&
+    tacheActiviteId === activiteId
+  )
+}
 
 export const TACHE_PROPORTION_TOTAL_MAX = 100
 

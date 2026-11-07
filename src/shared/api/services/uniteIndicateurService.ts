@@ -1,7 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type { UniteIndicateur } from "@/shared/types";
-import { UniteIndicateurFormData } from "@/shared/types/entities/entities";
  
 const BASE_URL = "/unite-indicateurs/"
 

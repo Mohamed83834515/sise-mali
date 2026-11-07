@@ -3,7 +3,6 @@ import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { Trash2, UserPen } from 'lucide-react'
-import { UGL } from '@/shared/types/entities/ugl'
 import { Badge } from '@/components/ui/badge'
 
 type UglDialogType = 'delete' | 'edit'

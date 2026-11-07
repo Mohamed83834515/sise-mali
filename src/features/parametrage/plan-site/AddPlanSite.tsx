@@ -4,7 +4,6 @@ import { planSiteSchema } from '@/shared/schemas/planSiteSchema'
 import { useSavePlanSite, useGetAllPlansSite } from '@/shared/api/hooks/admin/planSiteHooks'
 import { getPlanSiteFormConfig } from '@/shared/forms/configs/planSiteForm'
 import { useGetNiveauxPlanSite } from '@/shared/api/hooks/admin/niveauPlanSiteHooks'
-import { PlanSite } from '@/shared/types'
 
 type Props = {
   currentRow?: any | null

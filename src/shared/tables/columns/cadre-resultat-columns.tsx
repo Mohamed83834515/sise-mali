@@ -1,7 +1,5 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { CadreResultat } from '@/shared/types'
-import type { NiveauCadreResultat } from '@/shared/types/entities/niveauCadreResultat'
 import { resolveProjetCr } from '@/shared/utils/cadreResultatUtils'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import { BarChart3 } from 'lucide-react'

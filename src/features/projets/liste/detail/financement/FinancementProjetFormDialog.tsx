@@ -1,7 +1,5 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
-import type { Projet } from '@/shared/types'
-import type { FinancementProjet } from '@/shared/types/entities/financementProjet'
 import { getFinancementProjetFormConfig } from '@/shared/forms/configs/financementProjetForm'
 import {
   useCreateFinancementProjet,

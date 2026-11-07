@@ -1,6 +1,5 @@
 import { apiClient } from "@/shared/api";
 import { SuiviIndicateurActiviteFormData } from "@/shared/schemas/suiviIndicateurSchemas";
-import type { SuiviIndicateurActivite } from "@/shared/types";
 
 const ENDPOINT = "/suivis-indicateurs-activites/";
 

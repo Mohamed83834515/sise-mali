@@ -11,7 +11,6 @@ import { useDeleteContratPerformance } from '@/shared/api/hooks/admin/contratPer
 import { usePtbaVersionSelection } from '@/shared/api/hooks/admin/versionHooks'
 import { PtbaVersionSelect } from '@/features/programmation/ptba/PtbaVersionSelect'
 import AddContratPerformance from './AddContratPerformance'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 import { buildContratPerformanceColumns } from '@/shared/tables/columns/contrat-performance-columns'
 
 export default function ListeContratPerformance() {

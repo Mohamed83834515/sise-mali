@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { ActiviteProjet } from "@/shared/types";
 import { normalizeApiList } from "./apiListUtils";
 
 const BASE_URL = "/activites-projet/";
@@ -23,7 +22,6 @@ export const activiteProjetService = {
       `${BASE_URL}?code_activite_projet=${code}`,
     );
   },
-
 
   // Récupérer une activité projet par code
   getLAstNiveauByProjet: async (code: string): Promise<ActiviteProjet[]> => {

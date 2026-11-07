@@ -7,7 +7,6 @@ import { useEmbeddedTableState } from "@/hooks/use-embedded-table-state"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DataTableToolbarOutlineButton } from "@/components/data-table"
 import { useDeleteTypeFinancementPPM, useGetTypeFinancementPPM } from "@/shared/api/hooks/admin/typeFinancementPPM"
-import { TypeFinancementPPM } from "@/shared/types/entities/typeFinancementPPM"
 import { buildTypeFinancementPPMColumns } from "@/shared/tables/columns/type-financement-ppm-columns"
 
 export default function ListeTypeFinancementPPM({
@@ -81,7 +80,6 @@ export default function ListeTypeFinancementPPM({
                         }}
                     />
                 )}
-
 
             </CardContent>
         </Card>

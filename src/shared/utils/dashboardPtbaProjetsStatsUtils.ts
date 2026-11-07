@@ -1,8 +1,3 @@
-import type { PaoMinagriDashboardStats } from '@/shared/types/entities/dashboardProjet'
-import type {
-  PtbaProjet,
-  VersionPtbasProjetsResponse,
-} from '@/shared/types/entities/ptbaProjet'
 import { computeDashboardRate } from '@/shared/utils/dashboardPaoStatsUtils'
 
 function sumPtbaProjetMontant(

@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import { SuiviIndicateurTacheProjet } from '@/shared/types/entities/suiviIndicateurTacheProjet'
 import type { SuiviIndicateurTacheProjetPayload } from '@/shared/schemas/suiviIndicateurTacheProjetSchemas'
 import { normalizeApiList } from './apiListUtils'
 

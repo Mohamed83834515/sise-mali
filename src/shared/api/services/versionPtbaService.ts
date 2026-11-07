@@ -1,6 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { VersionPtba } from "@/shared/types";
-import type { VersionPtbasProjetsResponse } from "@/shared/types/entities/ptbaProjet";
 import type { VersionPtbaFormData } from "@/shared/schemas/ptbaSchemas";
 
 const ENDPOINT = "/versions-ptbas/";

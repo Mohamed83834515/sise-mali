@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
 import { getDictionnaireIndicateurFormConfigForDialog } from '@/shared/forms/configs/dictionnaireIndicateurForm'
-import type { DictionnaireIndicateur } from '@/shared/types'
 import { useGetActeurs } from '@/shared/api/hooks/admin/sharedHooks'
 import { useGetTypeZones } from '@/shared/api/hooks/admin/typeZoneHooks'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'

@@ -1,7 +1,5 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviDecaissementPtba } from '@/shared/types/entities/decaissementPtba'
-import type { Ptba } from '@/shared/types/entities/ptba'
-import { resolveActivitePtbaId } from '@/shared/types/entities/suiviAvancementContrat'
+import { resolveActivitePtbaId } from '@/shared/utils'
 import type { SuiviDecaissementPtbaFormData } from '@/shared/schemas/suiviDecaissementPtbaSchemas'
 import { normalizeApiList } from './apiListUtils'
 

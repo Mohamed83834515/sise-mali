@@ -1,8 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { } from "@/shared/types";
-import { AvancementDirection } from "@/shared/types/entities/dashboardType";
-import { NiveauCadreAnalytiqueComposante } from "@/shared/types/entities/composanteGraphe";
-
 
 export const dashboardService = {
     // Get all acteurs

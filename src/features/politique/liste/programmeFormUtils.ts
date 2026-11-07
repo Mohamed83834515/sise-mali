@@ -1,4 +1,3 @@
-import type { Programme } from '@/shared/types/entities/programme'
 import type { ProgrammeWriteData } from '@/shared/schemas/programmeSchemas'
 
 function asFormText(value: unknown): string {

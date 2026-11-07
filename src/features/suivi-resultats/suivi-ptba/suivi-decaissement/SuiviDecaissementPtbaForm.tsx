@@ -7,7 +7,6 @@ import {
   suiviDecaissementPtbaSchema,
   type SuiviDecaissementPtbaFormData,
 } from '@/shared/schemas/suiviDecaissementPtbaSchemas'
-import type { SuiviDecaissementPtba } from '@/shared/types/entities/decaissementPtba'
 import {
   useCreateSuiviDecaissement,
   useUpdateSuiviDecaissement,

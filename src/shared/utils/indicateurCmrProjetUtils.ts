@@ -1,4 +1,3 @@
-import type { IndicateurCmrProjet } from '@/shared/types/entities/indicateurCmrProjet'
 import { resolveRelationCode, resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export function resolveIndicateurCmrProjetCode(

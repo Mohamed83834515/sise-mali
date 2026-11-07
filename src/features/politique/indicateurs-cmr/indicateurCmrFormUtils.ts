@@ -1,7 +1,4 @@
 import type { SelectOption } from '@/shared'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
-import type { DictionnaireIndicateur, IndicateurCmr } from '@/shared/types'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 import type { IndicateurCmrProgrammeCreateData } from '@/shared/schemas/indicateurCmrProgrammeSchemas'
 import {
   resolveRelationCode,

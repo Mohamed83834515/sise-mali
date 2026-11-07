@@ -1,7 +1,3 @@
-import type { CibleCmr } from '@/shared/types/entities/cibleCmr'
-import type { Localite } from '@/shared/types/entities/localite'
-import type { NiveauLocalite } from '@/shared/types/entities/niveauLocalite'
-import type { Programme } from '@/shared/types/entities/programme'
 import {
   resolveRelationCode,
   resolveRelationId,

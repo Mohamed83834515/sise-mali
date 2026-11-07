@@ -2,7 +2,6 @@
 import { buildColumns } from "@/shared/tables/column-builder"
 import { GenericRowActions } from "@/shared/tables/GenericRowActions"
 import { UserPen, Trash2 } from "lucide-react"
-import { CategorieActeur } from "@/shared/types/entities/categorieActeur"
 
 type CategorieDialogType = 'add' | 'edit' | 'delete'
 

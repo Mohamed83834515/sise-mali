@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { IndicateurActivitePtba } from "@/shared/types";
 import { IndicateurActivitePtbaFormData } from "@/shared/schemas/activiteProjetSchemas";
 
 const ENDPOINT = "/indicateurs-activites-ptbas/";

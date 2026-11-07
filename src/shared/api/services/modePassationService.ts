@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { ModePassation } from '@/shared/types/entities/modePassation'
 import type { ModePassationFormData } from '@/shared/schemas/modePassationSchema'
 
 const ENDPOINT = '/modes-passation/'

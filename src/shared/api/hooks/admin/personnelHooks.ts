@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { personnelService } from '@/shared/api/services/personnelService'
-import type { Personnel } from '@/shared/types'
 import type { PersonnelWriteData } from '@/shared/schemas/personnelWriteSchema'
 
 export const personnelQueryKeys = {
@@ -89,4 +88,3 @@ export function useDisablePersonnel() {
 
 export const getPersonnels = () => personnelService.getAll()
 
-export type { Personnel }

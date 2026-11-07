@@ -8,8 +8,6 @@ import {
   useGetCadresStrategique,
   useGetNiveauxCadreStrategique,
 } from '@/shared/api/hooks/admin/cadreStrategiqueHooks'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
-import type { NiveauCadreStrategique } from '@/shared/types/entities/niveauCadreStrategique'
 import { resolveNiveauCsNumber } from '@/shared/utils/cadreStrategiqueUtils'
 import { Plus, Search, Settings } from 'lucide-react'
 import { toast } from 'sonner'

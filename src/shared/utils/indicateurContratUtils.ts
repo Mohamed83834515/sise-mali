@@ -1,5 +1,3 @@
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import { resolveNiveauClcId } from './cadreLogiqueClcpUtils'
 
@@ -42,3 +40,11 @@ export function resolveClcpLabel(
   if (!cadre) return String(id)
   return `${cadre.code_clc} — ${cadre.intitule_clc}`
 }
+
+export const TRIMESTRE_OPTIONS = [
+  { value: 'trimestre_1', label: 'Trimestre 1' },
+  { value: 'trimestre_2', label: 'Trimestre 2' },
+  { value: 'trimestre_3', label: 'Trimestre 3' },
+  { value: 'trimestre_4', label: 'Trimestre 4' },
+] as const
+

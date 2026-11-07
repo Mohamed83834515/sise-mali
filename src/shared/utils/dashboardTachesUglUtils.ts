@@ -1,7 +1,3 @@
-import type {
-  AvancementTachesPlanSiteChartRow,
-  TacheActiviteByUglGroup,
-} from '@/shared/types/entities/dashboardType'
 import { computeDashboardRate } from '@/shared/utils/dashboardPaoStatsUtils'
 
 export function buildAvancementTachesUglChartData(

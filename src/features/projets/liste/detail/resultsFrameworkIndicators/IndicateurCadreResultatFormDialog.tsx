@@ -7,7 +7,6 @@ import {
   indicateurCadreResultatCreateSchema,
   type IndicateurCadreResultatCreateData,
 } from '@/shared/schemas/indicateursSchemas'
-import type { IndicateurCadreResultat } from '@/shared/types'
 import { useGetActeurs } from '@/shared/api/hooks/admin/acteurHooks'
 import {
   useGetCadresResultat,

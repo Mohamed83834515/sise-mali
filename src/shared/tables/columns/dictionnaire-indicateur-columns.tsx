@@ -1,7 +1,6 @@
 import type { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { DictionnaireIndicateur } from '@/shared/types'
 
 function safeText(v: unknown): string {
   return typeof v === 'string' && v.trim() ? v : '—'

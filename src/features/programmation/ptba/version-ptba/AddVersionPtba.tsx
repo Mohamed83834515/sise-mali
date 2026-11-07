@@ -4,7 +4,6 @@ import { getVersionPtbaFormConfig } from "@/shared/forms/configs/versionPtbaForm
 
 import { useSaveVersion } from "@/shared/api/hooks/admin/versionHooks"
 import { versionPtbaSchema } from "@/shared/schemas/ptbaSchemas"
-import { VersionPtba } from "@/shared/types"
 import { useActiveProgrammeCode } from "@/hooks/use-active-programme"
 import { useMe } from "@/features/auth"
 

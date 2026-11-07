@@ -3,8 +3,6 @@ import { Trash2, UserPen } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
-import type { GroupeEtapePassation } from '@/shared/types/entities/groupeEtapePassation'
 
 type EtapeDialogType = 'delete'
 

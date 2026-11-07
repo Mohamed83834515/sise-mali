@@ -1,9 +1,7 @@
 // simadou/allColonnes/acteur-columns.tsx
 import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
-import { Acteur } from '@/shared/types/entities/acteur'
 import { Badge } from '@/components/ui/badge'
-
 
 export const buildPartenaireFinancierColumns = (
 ): ColumnDef<Acteur>[] => {

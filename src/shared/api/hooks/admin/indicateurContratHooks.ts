@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 import { indicateurContratService } from '@/shared/api/services/indicateurContratService'
-import type { IndicateurContratPayload } from '@/shared/types/entities/indicateurContrat'
 import type { IndicateurContratFormData } from '@/shared/schemas/indicateurContratSchemas'
 
 export const indicateurContratQueryKeys = {

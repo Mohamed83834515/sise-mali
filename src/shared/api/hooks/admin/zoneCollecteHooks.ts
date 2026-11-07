@@ -2,7 +2,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { zoneCollecteService } from '@/shared/api/services/zoneCollecteService'
 import { toast } from 'sonner'
-import { ZoneCollecte } from '@/shared/types/entities/zoneCollecte'
 
 export const zoneCollecteQueryKeys = {
   all: ['zones-collecte'] as const,

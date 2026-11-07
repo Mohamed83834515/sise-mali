@@ -1,7 +1,6 @@
 import { DynamicForm } from '@/shared/forms'
 import { getNatureMarcheFormConfig } from '@/shared/forms/configs/natureMarcheForm'
 import { useSaveNatureMarche } from '@/shared/api/hooks/admin/natureMarcheHooks'
-import type { NatureMarche } from '@/shared/types/entities/natureMarche'
 import {
   natureMarcheSchema,
   type NatureMarcheFormData,

@@ -1,10 +1,3 @@
-import type {
-  ProjetDashboardRow,
-  ProjetDashboardSource,
-  ProjetDashboardStatut,
-  ProjetProgrammeDashboardStats,
-} from '@/shared/types/entities/dashboardProjet'
-import type { Projet } from '@/shared/types/entities/projet'
 import { computeDateCloture } from '@/shared/utils/projetUtils'
 
 function computeDelaiConsommePercent(

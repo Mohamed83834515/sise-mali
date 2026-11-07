@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  NiveauConfigClcp,
-  NiveauConfigClcpPayload,
-} from '@/shared/types/entities/niveauConfigClcp'
 import { normalizeApiList } from './apiListUtils'
 
 const ENDPOINT = '/niveaux-config-clcp/'

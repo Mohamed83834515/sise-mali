@@ -3,7 +3,6 @@ import { ClipboardList } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildColumns } from '@/shared/tables/column-builder'
-import type { Ptba } from '@/shared/types'
 import TacheAvancementProgressBar from '@/features/suivi-resultats/suivi-ptba/TacheAvancementProgressBar'
 
 export type SuiviPtbaColumnHandlers = {
@@ -89,7 +88,6 @@ export function buildSuiviPtbaProjetColumns(
     enableSorting: false,
     enableHiding: false,
   }
-
 
   const observationsColumn: ColumnDef<Ptba> = {
     id: 'observations',

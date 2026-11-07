@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import type { FinancementProjetApiPayload } from '@/shared/types/entities/financementProjet'
 import financementProjetService from '@/shared/api/services/financementProjetService'
 
 export const financementProjetQueryKeys = {

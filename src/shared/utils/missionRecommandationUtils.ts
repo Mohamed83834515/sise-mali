@@ -1,8 +1,3 @@
-import type { MissionSupervisionProjet } from '@/shared/types/entities/missionSupervisionProjet'
-import type {
-  RecommandationMissionProjet,
-  RecommandationMissionProjetApiPayload,
-} from '@/shared/types/entities/recommandationMissionProjet'
 import type { RecommandationMissionProjetFormData } from '@/shared/schemas/missionRecommandationSchemas'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 

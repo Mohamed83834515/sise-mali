@@ -1,5 +1,4 @@
 import { DetailSection } from '@/shared/detail'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 
 export default function ContratFollowupPanel({ contrat }: { contrat: ContratPerformance }) {
   return (

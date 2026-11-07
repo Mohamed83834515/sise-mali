@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviDecaissementPtbaProjet } from '@/shared/types/entities/suiviDecaissementPtbaProjet'
 import type { SuiviDecaissementPtbaProjetFormData } from '@/shared/schemas/suiviDecaissementPtbaProjetSchemas'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import { normalizeApiList } from './apiListUtils'

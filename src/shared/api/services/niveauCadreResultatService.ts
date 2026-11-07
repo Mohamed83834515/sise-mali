@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  NiveauCadreResultat,
-  NiveauCadreResultatFormData,
-} from '@/shared/types'
 import { normalizeApiList } from './apiListUtils'
 const BASE_URL = '/niveaux-cadres-resultats/'
 export const niveauCadreResultatService = {

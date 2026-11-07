@@ -1,6 +1,3 @@
-import type { ProjetDecaissementAnnuelPoint } from '@/shared/types/entities/projetStats'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
-
 /**
  * Agrège les montants PTBA projet par année.
  * Si plusieurs versions existent pour la même année, ne conserve que celle

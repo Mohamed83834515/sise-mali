@@ -3,7 +3,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import versionPPMService from '@/shared/api/services/versionPPMService'
-import type { VersionPPM } from '@/shared/types/entities/versionPPM'
 import { VersionPPMFormData } from '@/shared/schemas/ppmShema'
 
 export const versionPPMQueryKeys = {

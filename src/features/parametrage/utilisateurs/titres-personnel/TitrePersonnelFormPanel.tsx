@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
 import { getTitrePersonnelFormConfig } from '@/shared/forms/configs/titrePersonnelForm'
-import type { TitrePersonnel } from '@/shared/types'
 import {
   useCreateTitrePersonnel,
   useUpdateTitrePersonnel,

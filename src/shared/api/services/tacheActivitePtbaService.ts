@@ -1,9 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type {
-  TacheActiviteByPlanSiteGroup,
-  TacheActiviteByUglGroup,
-} from "@/shared/types/entities/dashboardType";
-import type { TacheActivitePtba } from "@/shared/types/entities/tacheActivitePtba";
 import {
   filterTachesByActivite,
   type TacheActivitePtbaApiPayload,

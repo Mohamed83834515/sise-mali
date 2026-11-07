@@ -8,8 +8,6 @@ import {
 import { GenericTable } from '@/shared/tables'
 import { DIALOG_SIZES } from '@/shared/forms'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { Projet, Ptba } from '@/shared/types'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
 import { useGetPtbasProjetsByVersion } from '@/shared/api/hooks/admin/ptbaProjetHooks'
 import { useProjetPtbaVersionSelection } from '@/shared/api/hooks/admin/versionHooks'
 import ActiviteTabbedDialog from '@/features/suivi-resultats/suivi-ptba/ActiviteTabbedDialog'

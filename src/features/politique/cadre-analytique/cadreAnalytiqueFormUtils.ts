@@ -1,5 +1,3 @@
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { CadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
 import type { CadreAnalytiqueWriteData } from '@/shared/schemas/cadreAnalytiqueSchemas'
 import {
   resolveNiveauCaNumber,

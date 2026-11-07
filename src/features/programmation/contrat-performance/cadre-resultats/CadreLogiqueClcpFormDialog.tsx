@@ -7,8 +7,6 @@ import {
   useCreateCadreLogiqueClcp,
   useUpdateCadreLogiqueClcp,
 } from '@/shared/api/hooks/admin/cadreLogiqueClcpHooks'
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import { getCadreLogiqueClcpFormConfig } from '@/shared/forms/configs/cadreLogiqueClcpForm'
 import {
   buildCadreParentClcpOptions,

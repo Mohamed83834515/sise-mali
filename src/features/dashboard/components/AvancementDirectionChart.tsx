@@ -12,7 +12,6 @@ import {
   Cell,
 } from "recharts";
 import { CalendarIcon } from "lucide-react";
-import { AvancementDirection } from "@/shared/types/entities/dashboardType";
 
 interface AvancementDirectionChartProps {
   data: AvancementDirection[];

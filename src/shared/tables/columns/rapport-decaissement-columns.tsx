@@ -7,7 +7,6 @@ import {
   formatRapportTaux,
 } from '@/shared/tables/columns/rapport-format-utils'
 import { resolvePtbaActiviteId } from '@/features/rapport/rapportTableUtils'
-import type { Ptba } from '@/shared/types'
 
 type RapportDecaissementColumnsProps = {
   decaissementByActivite: Map<number, number>

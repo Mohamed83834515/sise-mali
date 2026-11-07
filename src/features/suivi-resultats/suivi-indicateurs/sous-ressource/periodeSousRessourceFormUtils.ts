@@ -1,14 +1,3 @@
-import type {
-  DocumentationCmrEnregistrement,
-  DocumentationCmrFormData,
-  DocumentationCmrWritePayload,
-  FondCarteEnregistrement,
-  FondCarteFormData,
-  FondCarteWritePayload,
-  SimpleSousRessourceFormData,
-  SousRessourceDocumentsFormData,
-  TableauSyntheseWritePayload,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
 import { resolveDocumentList } from '@/shared/utils/documentProjetUtils'
 
 export function emptySimpleSousRessourceFormValues(): SimpleSousRessourceFormData {

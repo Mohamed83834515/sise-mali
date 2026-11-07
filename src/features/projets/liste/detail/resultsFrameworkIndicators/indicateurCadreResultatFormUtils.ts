@@ -1,9 +1,3 @@
-import type {
-  CadreResultat,
-  IndicateurCadreResultat,
-  NiveauCadreResultat,
-  Personnel,
-} from '@/shared/types'
 import { resolveNiveauCrId } from '@/shared/utils/cadreResultatUtils'
 import {
   resolveRelationCode,

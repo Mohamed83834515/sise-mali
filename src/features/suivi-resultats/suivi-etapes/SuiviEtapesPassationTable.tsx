@@ -3,7 +3,6 @@ import { toast } from 'sonner'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
 import { buildSuiviEtapePassationColumns } from '@/shared/tables/columns/suivi-etape-passation-columns'
 import {
     useCancelEtapePassation,

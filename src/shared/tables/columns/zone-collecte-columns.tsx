@@ -1,7 +1,6 @@
 // simadou/allColonnes/zoneCollecte-columns.tsx
 import { GenericRowActions } from "@/shared/tables/GenericRowActions"
 import { UserPen, Trash2, Download } from "lucide-react"
-import { TypeZone, ZoneCollecte } from "@/shared/types"
 import { DataTableColumnHeader } from "@/components/data-table/column-header"
 import { ColumnDef } from "@tanstack/react-table"
 import { Button } from "@/components/ui/button"

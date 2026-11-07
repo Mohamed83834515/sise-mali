@@ -5,7 +5,6 @@ import {
   useCreateCadreResultat,
   useUpdateCadreResultat,
 } from '@/shared/api/hooks/admin/cadreResultatHooks'
-import type { CadreResultat, NiveauCadreResultat } from '@/shared/types'
 import { getCadreResultatFormConfigForDialog } from '@/shared/forms/configs/cadreResultatForm'
 import {
   buildCadreParentOptions,

@@ -1,7 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import { Fonction } from "@/shared/types";
-import { FonctionFormData } from "@/shared/types/entities/entities";
 
 export const fonctionService = {
   // Récupérer toutes les fonctions

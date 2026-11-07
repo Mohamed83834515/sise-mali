@@ -2,7 +2,6 @@ import type { ColumnDef } from '@tanstack/react-table'
 import {  Trash2, UserPen } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table/column-header'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { RecommandationMissionProjet } from '@/shared/types/entities/recommandationMissionProjet'
 import {  formatTypeRecommandation } from '@/shared/utils/missionRecommandationUtils'
 
 type RecommandationDialogType = 'edit' | 'delete'

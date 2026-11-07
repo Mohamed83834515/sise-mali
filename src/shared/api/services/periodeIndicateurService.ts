@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  PeriodeIndicateur,
-  PeriodeIndicateurWritePayload,
-} from '@/shared/types/entities/periodeIndicateur'
 import { filterPeriodesByIndicateur } from '@/shared/utils/periodeIndicateurUtils'
 import { normalizeApiList } from './apiListUtils'
 

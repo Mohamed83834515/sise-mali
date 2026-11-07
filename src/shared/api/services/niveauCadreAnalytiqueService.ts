@@ -1,6 +1,5 @@
 import { apiClient } from '@/shared/api'
 import { toast } from 'sonner'
-import type { NiveauCadreAnalytique } from '@/shared/types'
 
 export interface NiveauCadreAnalytiqueFormData {
   nombre_nca: number

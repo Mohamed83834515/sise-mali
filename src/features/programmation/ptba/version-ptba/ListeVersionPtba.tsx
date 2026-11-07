@@ -11,7 +11,6 @@ import {
     useValiderVersion,
     useArchiverVersion
 } from '@/shared/api/hooks/admin/versionHooks'
-import type { VersionPtba } from '@/shared/types'
 import { GenericDeleteDialog } from '@/shared/tables'
 import { buildVersionPtbaColumns } from '@/shared/tables/columns/versions-columns'
 import { useNiveauTabsTheme } from '@/components/ui/NiveauTabs'

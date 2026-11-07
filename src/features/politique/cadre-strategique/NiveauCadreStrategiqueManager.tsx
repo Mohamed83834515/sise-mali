@@ -8,7 +8,6 @@ import {
   useUpdateNiveauCadreStrategique,
 } from '@/shared/api/hooks/admin/cadreStrategiqueHooks'
 import { niveauCadreStrategiqueService } from '@/shared/api/services/niveauCadreStrategiqueService'
-import type { NiveauCadreStrategique } from '@/shared/types/entities/niveauCadreStrategique'
 import { typeNiveauOptions } from '@/shared/schemas/niveauCadreStrategiqueSchema'
 import { Plus, Save, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'

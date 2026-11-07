@@ -1,5 +1,3 @@
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
 import type { IndicateurContratFormData } from '@/shared/schemas/indicateurContratSchemas'
 import { resolveClcpId } from '@/shared/utils/indicateurContratUtils'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'

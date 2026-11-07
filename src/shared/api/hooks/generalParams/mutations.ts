@@ -2,7 +2,6 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiClient } from '@/shared/api'
 import { generalParamsKeys } from './queries'
 import type { GeneralParamsInput, GeneralParamsRaw } from '@/shared/schemas/generalParams.schema'
-import type { GeneralParamsPatch } from '@/shared/types/entities/generalParams'
 import { toast } from 'sonner'
 
 export function useUpdateGeneralParams() {
@@ -26,7 +25,6 @@ export function useUpdateGeneralParams() {
     },
   })
 }
-
 
 export function useUploadStructureLogo() {
   const queryClient = useQueryClient()

@@ -1,8 +1,6 @@
 import { useMemo } from 'react'
 import { toast } from 'sonner'
 import { DynamicForm } from '@/shared/forms'
-import { ActiviteProjet } from '@/shared/types'
-import { SourFinancementProjet } from '@/shared/types/entities/sourceFinancemanetProjet'
 import {
   useCreateSourceFinancement,
   useUpdateSourceFinancement,

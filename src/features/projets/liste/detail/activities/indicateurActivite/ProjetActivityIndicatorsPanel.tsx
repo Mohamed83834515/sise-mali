@@ -3,8 +3,6 @@ import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
-import { ActiviteProjet } from '@/shared/types'
-import { IndicateurPerformanceProjet } from '@/shared/types'
 import {
   indicateurPerformanceProjetQueryKeys,
   useGetIndicateurPerformanceByActiviteProjet,

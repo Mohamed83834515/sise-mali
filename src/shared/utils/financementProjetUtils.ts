@@ -1,8 +1,3 @@
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type {
-  FinancementProjet,
-  TypeFinancement,
-} from '@/shared/types/entities/financementProjet'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export const TYPE_FINANCEMENT_OPTIONS: {

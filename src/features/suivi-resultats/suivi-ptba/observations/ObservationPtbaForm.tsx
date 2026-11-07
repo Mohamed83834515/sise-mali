@@ -6,7 +6,6 @@ import {
   observationPtbaSchema,
   type ObservationPtbaFormData,
 } from '@/shared/schemas/observationPtbaSchemas'
-import type { ObservationPtba, Ptba } from '@/shared/types'
 import {
   useCreateObservationPtba,
   useUpdateObservationPtba,

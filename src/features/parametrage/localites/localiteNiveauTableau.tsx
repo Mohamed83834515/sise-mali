@@ -2,7 +2,6 @@
 import { useMemo } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { Localite } from '@/shared/types/entities/localite'
 import { buildLocaliteColumns } from '@/shared/tables/columns/localite-columns'
 import { useGetNiveauxLocalite } from '@/shared/api/hooks/admin/niveauLocaliteHooks'
 

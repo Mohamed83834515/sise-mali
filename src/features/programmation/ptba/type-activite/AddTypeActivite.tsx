@@ -1,7 +1,6 @@
 import { DynamicForm } from "@/shared/forms"
 import { getTypeActiviteFormConfig } from "@/shared/forms/configs/typeActiviteForm"
 import { useSaveTypeActivite } from "@/shared/api/hooks/admin/typeActivitesHooks"
-import { TypeActivite } from "@/shared/types/entities/entities"
 import { typeActiviteSchema } from "@/shared/schemas/ptbaSchemas"
 import { useMemo } from "react"
 

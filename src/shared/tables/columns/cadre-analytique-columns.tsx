@@ -4,11 +4,6 @@ import { Button } from '@/components/ui/button'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { LongText } from '@/components/others/long-text'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type {
-  CadreAnalytique,
-  NiveauCadreAnalytique,
-} from '@/shared/types/entities/cadreAnalytique'
 import {
   buildAggregatedBudgetByCadreId,
   buildChildCountByParentCaId,
@@ -17,7 +12,6 @@ import {
   resolvePartenaireCaIds,
 } from '@/shared/utils/cadreAnalytiqueUtils'
 import { formatNumber } from '@/shared/utils/montantFormater'
-
 
 export function buildCadreAnalytiqueColumns({
   cadres,

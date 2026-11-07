@@ -10,11 +10,6 @@ import {
   useGetNiveauxCadreResultat,
 } from '@/shared/api/hooks/admin/cadreResultatHooks'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
-import type {
-  CadreResultat,
-  NiveauCadreResultat,
-  Projet,
-} from '@/shared/types'
 import { resolveNiveauCrId } from '@/shared/utils/cadreResultatUtils'
 import { Plus, Settings } from 'lucide-react'
 import { toast } from 'sonner'

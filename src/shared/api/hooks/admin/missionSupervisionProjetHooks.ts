@@ -2,10 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import type {
-  MissionSupervisionProjet,
-  MissionSupervisionProjetApiPayload,
-} from '@/shared/types/entities/missionSupervisionProjet'
 import {
   filterMissionsByProjet,
   formatMissionLabel,

@@ -5,7 +5,6 @@ import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { SuiviAvancementConvention } from '@/shared/types/entities/suiviAvancementConvention'
 import { buildSuiviAvancementConventionColumns } from '@/shared/tables/columns/suivi-avancement-convention-columns'
 import { useDeleteSuiviAvancementConvention } from '@/shared/api/hooks/admin/suiviConventionHooks'
 

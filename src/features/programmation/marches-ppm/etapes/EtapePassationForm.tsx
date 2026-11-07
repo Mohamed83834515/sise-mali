@@ -7,7 +7,6 @@ import {
     etapePassationSchema,
     type EtapePassationFormData,
 } from '@/shared/schemas/etapePassationSchemas'
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
 import {
     useGetGroupesEtapesPassation,
     useSaveEtapePassation,

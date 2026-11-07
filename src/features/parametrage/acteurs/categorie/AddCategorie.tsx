@@ -2,7 +2,6 @@
 import { DynamicForm } from "@/shared/forms"
 import { getCategorieActeurFormConfig } from "@/shared/forms/configs/categorieActeurForm"
 import { useSaveCategorieActeur } from "@/shared/api/hooks/admin/categorieActeurHooks"
-import { CategorieActeur } from "@/shared/types/entities/categorieActeur"
 import { categorieActeurSchema } from "@/shared/schemas/categorieShema"
 
 type Props = {

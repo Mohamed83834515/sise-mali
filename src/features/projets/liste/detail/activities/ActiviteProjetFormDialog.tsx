@@ -6,7 +6,6 @@ import {
   getActiviteProjetFormSchema,
   type ActiviteProjetFormData,
 } from '@/shared/schemas/activiteProjetSchemas'
-import type { ActiviteProjet, NiveauActiviteProjet, Projet } from '@/shared/types'
 import {
   useCreateActiviteProjet,
   useUpdateActiviteProjet,

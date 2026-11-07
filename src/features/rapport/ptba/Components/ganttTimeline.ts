@@ -1,5 +1,3 @@
-import type { TacheActivitePtba } from '@/shared/types'
-
 export type GanttUnit = 'month' | 'quarter'
 
 export type GanttBucket = {

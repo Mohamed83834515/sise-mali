@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import indicateurActivitePtbaService from '@/shared/api/services/indicateurActivitePtbaService'
-import type { Ptba } from '@/shared/types'
 import type { IndicateurActivitePtbaFormData } from '@/shared/schemas/activiteProjetSchemas'
 
 export const indicateurActivitePtbaQueryKeys = {

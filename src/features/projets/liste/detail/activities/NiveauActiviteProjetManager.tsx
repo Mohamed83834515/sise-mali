@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Plus, Save, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
-import type { NiveauActiviteProjet } from '@/shared/types'
 import type { NiveauActiviteProjetFormData } from '@/shared/schemas/activiteProjetSchemas'
 import {
   useCreateNiveauActiviteProjet,

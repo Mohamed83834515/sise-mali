@@ -1,9 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type {
-  NiveauStructureConfig,
-} from "@/shared/types";
-import { NiveauStructureConfigFormData } from "@/shared/types/entities/entities";
 
 export const niveauStructureConfigService = {
   // Récupérer toutes les configurations de niveau de structure

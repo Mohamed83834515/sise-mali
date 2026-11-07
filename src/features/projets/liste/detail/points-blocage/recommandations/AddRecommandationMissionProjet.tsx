@@ -17,8 +17,6 @@ import {
   useCreateRecommandationMissionProjet,
   useUpdateRecommandationMissionProjet,
 } from '@/shared/api/hooks/admin/recommandationMissionProjetHooks'
-import type { Projet } from '@/shared/types'
-import type { RecommandationMissionProjet } from '@/shared/types/entities/recommandationMissionProjet'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import {
   buildRecommandationMissionProjetPayload,

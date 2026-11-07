@@ -1,9 +1,4 @@
 import type { FormConfig, SelectOption } from '@/shared/types/formConfig'
-import { Personnel, Programme, UGL } from '@/shared/types'
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { CategorieActeur } from '@/shared/types/entities/categorieActeur'
-import type { Localite } from '@/shared/types/entities/localite'
-import { TypeProjet } from '@/shared/types/entities/typeProjet'
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 

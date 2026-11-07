@@ -2,7 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 import { cadreResultatService } from '@/shared/api/services/cadreResultatService'
 import { niveauCadreResultatService } from '@/shared/api/services/niveauCadreResultatService'
-import type { NiveauCadreResultat } from '@/shared/types'
 import type {
   CadreResultatCreateData,
   CadreResultatUpdateData,

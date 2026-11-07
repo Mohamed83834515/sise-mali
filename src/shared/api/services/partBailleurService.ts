@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { PartBailleur, PartBailleurApiPayload } from '@/shared/types/entities/partBailleur'
 import { normalizeApiList } from './apiListUtils'
 
 const ENDPOINT = '/parts-bailleurs/'

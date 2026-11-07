@@ -1,8 +1,5 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
-import type { NiveauCadreStrategique } from '@/shared/types/entities/niveauCadreStrategique'
 import { resolvePartenaireCsIds } from '@/shared/utils/cadreStrategiqueUtils'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { LongText } from '@/components/others/long-text'

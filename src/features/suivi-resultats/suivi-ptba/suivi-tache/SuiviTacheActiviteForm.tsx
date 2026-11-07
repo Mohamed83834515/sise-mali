@@ -7,7 +7,6 @@ import {
   suiviTacheActiviteSchema,
   type SuiviTacheActiviteFormData,
 } from '@/shared/schemas/suiviTacheActiviteSchemas'
-import type { SuiviTacheActivite, TacheActivitePtba } from '@/shared/types'
 import {
   useCreateSuiviTache,
   useUpdateSuiviTache,

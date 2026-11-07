@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
 import type { PtbaProjetFormData } from '@/shared/schemas/ptbaProjetSchemas'
 import { buildPtbaProjetApiPayload } from '@/shared/utils/ptbaFormUtils'
 
@@ -12,7 +11,7 @@ function resolveCodeProjet(ptba: PtbaProjet): string | null {
     ptba.code_projet &&
     'code_projet' in ptba.code_projet
   ) {
-    return ptba.code_projet.code_projet
+    return (ptba.code_projet as Projet).code_projet
   }
   return null
 }

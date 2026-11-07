@@ -1,6 +1,5 @@
 import { apiClient } from "@/shared/api";
 import { VersionPPMFormData } from "@/shared/schemas/ppmShema";
-import { VersionPPM } from "@/shared/types/entities/versionPPM";
 const ENDPOINT = "/versions-ppm/";
 
 const versionPPMService = {

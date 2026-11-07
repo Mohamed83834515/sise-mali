@@ -1,10 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type {
-  Programme,
-  ProgrammeFormData,
-  ProgrammeSelectOption,
-} from "@/shared/types/entities/programme";
 
 const endpoint = "/programmes/";
 

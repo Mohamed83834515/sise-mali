@@ -1,8 +1,6 @@
-
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { apiClient } from '@/shared/api'
 
-import type { Acteur, Localite, Personnel, TitrePersonnel } from '@/shared/types'
 import { PersonnelCreateData } from '@/shared/schemas/personnelSchema'
 import { personnelService } from '@/shared/api/services/personnelService'
 import { fonctionService } from '@/shared/api/services/fonctionService'
@@ -83,8 +81,6 @@ export function useUpdatePersonnel(id: number | undefined) {
   })
 }
 
-
-
 export function useCreatePersonnel ({id , isEdit, onSuccess} : {id : number, isEdit : boolean,  onSuccess?: () => void}){
  const queryClient = useQueryClient()
   return useMutation({
@@ -98,10 +94,6 @@ export function useCreatePersonnel ({id , isEdit, onSuccess} : {id : number, isE
         },
   })
 }
-
-
-
-
 
 // Titles
 export function useTitres() {
@@ -117,7 +109,6 @@ export function useRegions() {
     queryFn:  async () => await apiClient.request<Localite[]>('/localite/'),
   })
 }
-
 
 // =========================
 // STRUCTURES
@@ -147,7 +138,6 @@ export function useFonctions() {
   })
 }
 
-
 // =========================
 // PLAN SITES
 // =========================
@@ -159,9 +149,6 @@ export function usePlanSites() {
   })
 }
 
-
-
-
 export const useUpdateProfilePicture = (n_personel: number) => {
   const queryClient = useQueryClient()
 
@@ -172,7 +159,6 @@ export const useUpdateProfilePicture = (n_personel: number) => {
     },
   })
 }
-
 
 export const useDeleteProfilPicture = (n_personel : number)=> {
   const queryClient = useQueryClient()

@@ -1,8 +1,5 @@
 import { apiClient } from "@/shared/api";
-import type { CadreResultat, CadreResultatFormData } from "@/shared/types";
 import { normalizeApiList } from "./apiListUtils";
-
-
 
 export const cadreResultatService = {
   getAll: async (): Promise<CadreResultat[]> => {

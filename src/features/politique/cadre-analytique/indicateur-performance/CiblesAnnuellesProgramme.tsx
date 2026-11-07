@@ -9,7 +9,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import type { CibleIndicateurPerformanceProgramme } from '@/shared/types/entities/cibleIndicateurPerformanceProgramme'
 import { getProgrammeYearRange } from '@/shared/utils/cibleCmrGridUtils'
 import type { CibleAnnuelleProgrammeFormValue } from '@/shared/utils/indicateurPerformanceProgrammeUtils'
 

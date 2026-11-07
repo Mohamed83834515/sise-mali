@@ -1,10 +1,3 @@
-import type {
-  ActiviteProjet,
-  CibleIndicateurPerformanceProjet,
-  IndicateurPerformanceProjet,
-  UniteIndicateur,
-} from '@/shared/types'
-
 export function normalizeIndicateurPerformanceCibles(
   cibles: IndicateurPerformanceProjet['cibles']
 ): CibleIndicateurPerformanceProjet[] {

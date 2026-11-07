@@ -1,8 +1,6 @@
 import type { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table/column-header'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { Acteur } from '@/shared/types/entities/acteur'
-import type { FinancementProjet } from '@/shared/types/entities/financementProjet'
 import {
   formatTypeFinancementLabel,
   resolveBailleurLabel,

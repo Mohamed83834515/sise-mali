@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import cibleIndicateurPerformanceProgrammeService from '@/shared/api/services/cibleIndicateurPerformanceProgrammeService'
-import type { CibleIndicateurPerformanceProgrammePayload } from '@/shared/types/entities/cibleIndicateurPerformanceProgramme'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 
 export const cibleIndicateurPerformanceProgrammeQueryKeys = {

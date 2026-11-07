@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { PlanSite } from '@/shared/types/entities/planSite'
 import { buildPlanSiteColumns } from '@/shared/tables/columns/plan-site-columns'
 import { useGetNiveauxPlanSite } from '@/shared/api/hooks/admin/niveauPlanSiteHooks'
 

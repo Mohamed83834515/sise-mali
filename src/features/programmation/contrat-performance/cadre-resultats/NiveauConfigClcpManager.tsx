@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Plus, Save, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import { useMe } from '@/features/auth'
 import {
   useCreateNiveauConfigClcp,

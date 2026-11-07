@@ -7,7 +7,6 @@ import {
 } from '@tanstack/react-query'
 import { projetService } from '@/shared/api/services/projetService'
 import { projetStatsService } from '@/shared/api/services/projetStatsService'
-import type { Projet, ProjetClotureForm } from '@/shared/types/entities/projet'
 import { ProjectCreateData } from '@/shared/schemas/projetSchema'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'

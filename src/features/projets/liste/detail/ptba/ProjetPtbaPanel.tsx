@@ -6,8 +6,6 @@ import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { Projet } from '@/shared/types'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
 import {
   useDeletePtbaProjet,
   useGetPtbasProjetsByVersion,

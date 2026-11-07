@@ -7,7 +7,6 @@ import {
   useUpdateIndicateurStrategique,
 } from '@/shared/api/hooks/admin/indicateurStrategiqueHooks'
 import { useGetPersonnels } from '@/shared/api/hooks/admin/personnelHooks'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 import { getIndicateurStrategiqueFormConfigForDialog } from '@/shared/forms/configs/indicateurStrategiqueForm'
 
 import {

@@ -2,12 +2,6 @@ import type { ColumnDef } from '@tanstack/react-table'
 import { ExternalLink } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type {
-  DocumentationCmrEnregistrement,
-  FondCarteEnregistrement,
-  PeriodeSousRessourceEnregistrement,
-  PeriodeSousRessourceType,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
 import {
   resolveDocumentFileName,
   resolveDocumentList,

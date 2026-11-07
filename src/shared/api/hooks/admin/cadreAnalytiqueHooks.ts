@@ -5,7 +5,6 @@ import {
   niveauCadreAnalytiqueService,
   type NiveauCadreAnalytiqueFormData,
 } from '@/shared/api/services/niveauCadreAnalytiqueService'
-import type { CadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
 import type {
   CadreAnalytiqueWriteData,
   NiveauCadreAnalytiqueWriteData,

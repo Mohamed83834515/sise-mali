@@ -7,8 +7,6 @@ import {
   getMostRecentDateRealisation,
 } from '@/shared/tables/columns/rapport-etat-activites-utils'
 import { resolvePtbaActiviteId } from '@/features/rapport/rapportTableUtils'
-import type { Ptba, SuiviAvancementContrat, TacheActivitePtba } from '@/shared/types'
-import type { SuiviTacheActivite } from '@/shared/types/entities/suiviTacheActivite'
 
 type RapportEtatActivitesColumnHandlers = {
   tachesByActivite: Map<number, TacheActivitePtba[]>

@@ -1,7 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type { TypeZone } from "@/shared/types";
-import { TypeZoneFormData } from "@/shared/types/entities/entities";
 
 export const typeZoneService = {
   // Récupérer tous les types de zone

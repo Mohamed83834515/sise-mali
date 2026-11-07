@@ -16,7 +16,6 @@ import {
   useActiveProgrammeCode,
   useActiveProgrammeId,
 } from '@/hooks/use-active-programme'
-import type { NiveauCadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
 import {
   niveauCadreAnalytiqueQueryKeys,
   useCreateNiveauCadreAnalytique,

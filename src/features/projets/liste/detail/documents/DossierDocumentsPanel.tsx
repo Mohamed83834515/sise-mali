@@ -14,9 +14,6 @@ import { GenericDeleteDialog } from '@/shared/tables'
 import { DataTableToolbarOutlineButton } from '@/components/data-table/toolbar-outline-button'
 import useDialogState from '@/hooks/use-dialog-state'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { Projet } from '@/shared/types'
-import type { DossierProjet } from '@/shared/types/entities/dossierProjet'
-import type { DocumentProjet } from '@/shared/types/entities/documentProjet'
 import { buildDocumentProjetColumns } from '@/shared/tables/columns/document-projet-columns'
 import {
     useDeleteDocumentProjet,

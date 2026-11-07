@@ -1,8 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import type {
-  PeriodeSousRessourceType,
-  PeriodeSousRessourceWritePayload,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
 import {
   createPeriodeSousRessourceService,
   type SousRessourceDocumentsInput,

@@ -1,8 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type {
-  IndicateurCadreResultat,
-  IndicateurCadreResultatFormData,
-} from "@/shared/types";
 import { normalizeApiList } from "./apiListUtils";
 
 export const indicateurCadreResultatService = {

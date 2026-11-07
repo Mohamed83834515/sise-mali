@@ -1,4 +1,3 @@
-import type { Convention } from '@/shared/types/entities/convention'
 import { cn } from '@/lib/utils'
 
 export function conventionModalTitle(

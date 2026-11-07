@@ -12,7 +12,6 @@ import {
   useNiveauTabsTheme,
 } from '@/components/ui/NiveauTabs'
 import { DIALOG_SIZES } from '@/shared/forms'
-import type { Ptba } from '@/shared/types'
 import {
   activiteModalTitle,
   ActiviteTableHeading,

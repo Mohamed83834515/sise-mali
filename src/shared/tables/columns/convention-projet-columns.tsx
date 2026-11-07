@@ -3,7 +3,6 @@ import { ClipboardList } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { Convention } from '@/shared/types/entities/convention'
 import { formatNumber } from '@/shared/api/services/montantFormater'
 
 function formatDate(value: string | null | undefined): string {

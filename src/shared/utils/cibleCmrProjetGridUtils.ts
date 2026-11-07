@@ -1,7 +1,3 @@
-import type { CibleCmrProjet } from '@/shared/types/entities/cibleCmrProjet'
-import type { Localite } from '@/shared/types/entities/localite'
-import type { NiveauLocalite } from '@/shared/types/entities/niveauLocalite'
-import type { Projet } from '@/shared/types/entities/projet'
 import { formatAnneeCibleForApi } from '@/shared/schemas/cibleCmrProjetSchema'
 import { resolveRelationCode } from '@/shared/utils/resolveApiRelation'
 import {

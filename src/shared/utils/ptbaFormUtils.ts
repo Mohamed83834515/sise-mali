@@ -1,4 +1,3 @@
-import type { CadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
 import {
   resolveRelationCode,
   resolveRelationId,

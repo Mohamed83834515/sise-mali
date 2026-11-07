@@ -1,12 +1,8 @@
 import { useMemo, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
-import type { Ptba, SuiviTacheActivite, TacheActivitePtba } from '@/shared/types'
-import { tacheBelongsToActivite } from '@/shared/types/entities/tacheActivitePtba'
-import {
-  filterSuivisForTaches,
-  tauxAvancementGlobalTaches,
-} from '@/shared/types/entities/suiviTacheActivite'
+import { tacheBelongsToActivite } from '@/shared/utils'
+import { filterSuivisForTaches, tauxAvancementGlobalTaches } from '@/shared/utils'
 import {
   suiviPtbaQueryKeys,
   useGetSuiviTachesByActivite,

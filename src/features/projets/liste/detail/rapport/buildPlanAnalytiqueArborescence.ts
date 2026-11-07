@@ -1,7 +1,4 @@
 import { formatNumber } from '@/shared/utils/montantFormater'
-import type { ActiviteProjet } from '@/shared/types'
-import type { IndicateurPerformanceProjet } from '@/shared/types/entities/indicateurPerformanceProjet'
-import type { UniteIndicateur } from '@/shared/types/entities/uniteIndicateur'
 import {
   formatIndicateurUniteLabel,
   normalizeIndicateurPerformanceCibles,

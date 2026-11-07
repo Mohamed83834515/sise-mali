@@ -1,7 +1,6 @@
 import { Row, type ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { cn } from '@/lib/utils'
-import type { TacheActivitePtba } from '@/shared/types'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { Trash2, UserPen } from 'lucide-react'
 

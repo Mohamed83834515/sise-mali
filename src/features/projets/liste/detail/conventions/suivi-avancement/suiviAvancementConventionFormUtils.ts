@@ -2,7 +2,6 @@ import {
   STATUT_ACTIVITE_VALUES,
   type SuiviAvancementConventionFormData,
 } from '@/shared/schemas/suiviAvancementConventionSchemas'
-import type { SuiviAvancementConvention } from '@/shared/types/entities/suiviAvancementConvention'
 
 export function asFormText(value: unknown): string {
   if (value == null) return ''

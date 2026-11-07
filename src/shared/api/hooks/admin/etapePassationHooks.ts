@@ -1,9 +1,9 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import { groupeEtapePassationService } from '@/shared/types/entities/groupeEtapePassationService'
+import { groupeEtapePassationService } from '@/shared/api/services/groupeEtapePassationService'
 import { EtapePassationPayload, etapePassationService } from '@/shared/api/services/etapePassationService'
-import { sourceVerificationEtapePassationService } from '@/shared/types/entities/sourceVerificationEtapePassationService'
+import { sourceVerificationEtapePassationService } from '@/shared/api/services/sourceVerificationEtapePassationService'
 
 export const etapePassationQueryKeys = {
     all: ['etapes-passation'] as const,

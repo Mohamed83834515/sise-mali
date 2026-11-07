@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { CibleCmr } from '@/shared/types/entities/cibleCmr'
 import { normalizeApiList } from './apiListUtils'
 
 export interface CibleCmrFormData {

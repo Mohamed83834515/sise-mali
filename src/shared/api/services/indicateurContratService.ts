@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  IndicateurContrat,
-  IndicateurContratPayload,
-} from '@/shared/types/entities/indicateurContrat'
 import { resolveClcpId } from '@/shared/utils/indicateurContratUtils'
 import { normalizeApiList } from './apiListUtils'
 

@@ -3,7 +3,6 @@ import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { Trash2, UserPen } from 'lucide-react'
-import { VersionPPM } from '@/shared/types/entities/versionPPM'
 
 type VersionPPMDialogType = 'delete' | 'edit'
 

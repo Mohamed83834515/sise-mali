@@ -1,7 +1,6 @@
 import { DynamicForm } from '@/shared/forms'
 // import { useAddUser } from "@/hooks/admin/userHooks";
 import { getUserFormConfig } from '@/shared/forms/configs/exempleFormConfig'
-import type { OpenProps } from '@/shared/types'
 import { userSchema } from '@/shared/schemas/allSchema'
 import {
   Dialog,

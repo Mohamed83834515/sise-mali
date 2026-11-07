@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import type { PeriodeIndicateurWritePayload } from '@/shared/types/entities/periodeIndicateur'
 import { periodeIndicateurService } from '@/shared/api/services/periodeIndicateurService'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 

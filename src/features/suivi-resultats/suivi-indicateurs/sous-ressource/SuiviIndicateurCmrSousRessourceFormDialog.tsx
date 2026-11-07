@@ -18,22 +18,7 @@ import {
   useCreatePeriodeSousRessource,
   useUpdatePeriodeSousRessource,
 } from '@/shared/api/hooks/admin/periodeIndicateurSousRessourceHooks'
-import {
-  PERIODE_SOUS_RESSOURCE_LABELS,
-  type DocumentationCmrEnregistrement,
-  type DocumentationCmrFormData,
-  type DocumentationCmrWritePayload,
-  type FondCarteEnregistrement,
-  type FondCarteFormData,
-  type FondCarteWritePayload,
-  type PeriodeSousRessourceEnregistrement,
-  type PeriodeSousRessourceType,
-  type PeriodeSousRessourceWritePayload,
-  type SimpleSousRessourceFormData,
-  type SousRessourceDocumentsFormData,
-  type TableauSyntheseEnregistrement,
-  type TableauSyntheseWritePayload,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
+import { PERIODE_SOUS_RESSOURCE_LABELS } from '@/shared/utils'
 import { resolvePeriodeEnregistrementId } from '@/shared/utils/periodeSousRessourceUtils'
 import {
   buildDocumentationCmrWritePayload,

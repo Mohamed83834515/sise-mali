@@ -1,7 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
-import type { GroupeEtapePassation } from '@/shared/types/entities/groupeEtapePassation'
 import { Loader2, XCircle, Eye } from 'lucide-react'
 import { diffDays } from '@/shared/utils/suiviEtapesCalcul'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'

@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils"
 import { DIALOG_SIZES } from "@/shared/forms"
 import AddTypeProjet from "./AddType"
 import ListeTypeProjet from "./ListeType"
-import { TypeProjet } from "@/shared/types/entities/typeProjet"
 
 export default function TypeProjetDialog({
   open,

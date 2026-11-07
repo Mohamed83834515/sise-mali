@@ -7,10 +7,6 @@ import {
   indicateurPerformanceProgrammeFormSchema,
   type IndicateurPerformanceProgrammeFormData,
 } from '@/shared/schemas/indicateurPerformanceProgrammeSchemas'
-import type {
-  CadreAnalytique,
-  IndicateurPerformanceProgramme,
-} from '@/shared/types'
 import {
   normalizeIndicateurPerformanceProgrammeCibles,
 } from '@/shared/utils/indicateurPerformanceProgrammeUtils'

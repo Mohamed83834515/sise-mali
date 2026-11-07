@@ -9,7 +9,6 @@ import {
 import { ConfirmDialog } from '@/components/others/confirm-dialog'
 import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
-import type { Personnel } from '@/shared/types'
 import {
   useDeletePersonnel,
   useDisablePersonnel,

@@ -2,7 +2,6 @@ import type { ColumnDef } from '@tanstack/react-table'
 import {  Trash2, UserPen } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table/column-header'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { MissionSupervisionProjet } from '@/shared/types/entities/missionSupervisionProjet'
 import { Badge } from '@/components/ui/badge'
 import { typeMissionSupervisionOptions } from '@/shared/schemas/missionRecommandationSchemas'
 

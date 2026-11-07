@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { PartenaireFinancier } from "@/shared/types/entities/partenaireFinancier";
 
 const BASE_URL = "/partenaire_financier/";
 

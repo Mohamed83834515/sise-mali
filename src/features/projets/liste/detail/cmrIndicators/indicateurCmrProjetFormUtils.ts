@@ -1,6 +1,4 @@
 import type { SelectOption } from '@/shared'
-import type { CadreResultat, IndicateurCadreResultat } from '@/shared/types'
-import type { IndicateurCmrProjet } from '@/shared/types/entities/indicateurCmrProjet'
 import type { IndicateurCmrProjetCreateData } from '@/shared/schemas/indicateurCmrProjetSchemas'
 import { filterIndicateursForCadreResultat } from '@/features/projets/liste/detail/resultsFrameworkIndicators/indicateurCadreResultatFormUtils'
 import { resolveNiveauCrId } from '@/shared/utils/cadreResultatUtils'

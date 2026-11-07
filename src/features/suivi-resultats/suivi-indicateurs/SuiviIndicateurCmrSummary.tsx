@@ -1,4 +1,3 @@
-import type { IndicateurCmr } from '@/shared/types'
 import { Card, CardContent } from '@/components/ui/card'
 import { resolveRelationCode } from '@/shared/utils/resolveApiRelation'
 

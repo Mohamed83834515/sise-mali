@@ -6,7 +6,6 @@ import indicateurPerformanceProjetService from '@/shared/api/services/indicateur
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 import { useGetActivitesProjet } from './activiteProjetHooks'
 import { useMemo } from 'react'
-import type { IndicateurPerformanceProjet, CibleIndicateurPerformanceProjet, Projet } from '@/shared/types'
 
 export const indicateurPerformanceProjetQueryKeys = {
   all: ['indicateurs-performance-projet'] as const,
@@ -22,7 +21,6 @@ export function useGetAllIndicateursPerformanceProjet() {
     queryFn: () => indicateurPerformanceProjetService.getAll(),
   })
 }
-
 
 export function useIndicateursPerformanceByProjet(
   projet: Projet | undefined

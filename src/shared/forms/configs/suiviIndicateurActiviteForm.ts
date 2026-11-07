@@ -1,5 +1,4 @@
 import { FormConfig } from '@/shared/types/formConfig'
-import type { Localite } from '@/shared/types'
 
 export const getSuiviIndicateurActiviteFormConfigForSuivi = ({
   localites,

@@ -1,8 +1,6 @@
 import { useMemo } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { TacheActivitePtba } from '@/shared/types'
-import type { SuiviTacheActivite } from '@/shared/types/entities/suiviTacheActivite'
 import {
   buildSuiviTacheColumns,
   type SuiviTacheTableRow,

@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 import type { ContratDetailTab, ContratDetailTabKey } from './contratDetailTabs'
 import ContratOverviewPanel from './panels/ContratOverviewPanel'
 import ContratResultsFrameworkPanel from './panels/ContratResultsFrameworkPanel'

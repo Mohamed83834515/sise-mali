@@ -1,4 +1,3 @@
-import type { Projet } from '@/shared/types'
 import type { ProjetDetailTab } from './projetDetailTabs'
 import { renderProjetDetailTabPanel } from './projetDetailTabPanels'
 

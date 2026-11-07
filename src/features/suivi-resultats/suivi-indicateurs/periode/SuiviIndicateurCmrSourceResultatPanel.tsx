@@ -5,10 +5,6 @@ import {
   useDeletePeriodeIndicateur,
   useUpdatePeriodeIndicateur,
 } from '@/shared/api/hooks/admin/periodeIndicateurHooks'
-import type {
-  PeriodeIndicateur,
-  PeriodeIndicateurFormData,
-} from '@/shared/types/entities/periodeIndicateur'
 import {
   buildPeriodeIndicateurWritePayload,
   periodeIndicateurToFormValues,

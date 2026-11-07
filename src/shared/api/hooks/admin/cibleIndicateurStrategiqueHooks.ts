@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { cibleIndicateurStrategiqueService } from '@/shared/api/services/cibleIndicateurStrategiqueService'
-import type { CibleIndicateurStrategique } from '@/shared/types/entities/cibleIndicateurStrategique'
 import type { CibleIndicateurStrategiquePayload } from '@/shared/schemas/indicateurStrategiqueSchemas'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 

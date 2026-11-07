@@ -1,13 +1,4 @@
 import { formatNumber } from '@/shared/utils/montantFormater'
-import type { ActiviteProjet, Projet } from '@/shared/types'
-import type { CadreResultat } from '@/shared/types/entities/cadreResultat'
-import type { DossierProjet } from '@/shared/types/entities/dossierProjet'
-import type { FinancementProjet } from '@/shared/types/entities/financementProjet'
-import type { IndicateurPerformanceProjet } from '@/shared/types/entities/indicateurPerformanceProjet'
-import type { NiveauCadreResultat } from '@/shared/types/entities/niveauCadreResultat'
-import type { Personnel } from '@/shared/types/entities/personnel'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
-import type { UniteIndicateur } from '@/shared/types/entities/uniteIndicateur'
 import {
   formatTypeFinancementLabel,
   resolveBailleurLabel,

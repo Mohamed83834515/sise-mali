@@ -3,7 +3,6 @@ import { useMemo } from 'react'
 import { Shield } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { useIndicateursPerformanceByProjet } from '@/shared/api/hooks/admin/indicateurPerformanceProjetHooks'
-import type { Projet } from '@/shared/types'
 
 type KpiIndicateursProps = {
   projet: Projet | undefined

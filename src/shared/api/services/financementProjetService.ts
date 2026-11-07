@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  FinancementProjet,
-  FinancementProjetApiPayload,
-} from '@/shared/types/entities/financementProjet'
 import { filterFinancementsByProjet } from '@/shared/utils/financementProjetUtils'
 import { normalizeApiList } from './apiListUtils'
 

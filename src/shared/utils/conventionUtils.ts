@@ -1,4 +1,3 @@
-import type { Convention } from '@/shared/types/entities/convention'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export function resolveConventionProjetId(
@@ -23,3 +22,12 @@ export function resolvePartenaireConventionId(
 ): number | null {
   return resolveRelationId(value, 'id_acteur')
 }
+
+export function resolveConventionId(
+  ref: number | Convention | undefined | null
+): number | undefined {
+  if (ref == null) return undefined
+  if (typeof ref === 'object') return (ref as Convention).id_convention
+  return ref
+}
+

@@ -3,7 +3,6 @@ import type { Dispatch, SetStateAction } from 'react'
 import { Eye, Pencil, Trash2 } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 
 export function buildContratPerformanceColumns(
     setOpen: (dialog: 'add' | 'edit' | 'delete' | null) => void,

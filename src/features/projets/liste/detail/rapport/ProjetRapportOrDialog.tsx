@@ -6,7 +6,6 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { DIALOG_SIZES } from '@/shared/forms'
-import type { Projet } from '@/shared/types'
 import ProjetRapportOrView from './ProjetRapportOrView'
 
 type ProjetRapportOrDialogProps = {

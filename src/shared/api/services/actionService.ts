@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { Action } from "@/shared/types/entities/action";
 
 const BASE_URL = "/activites-programmes/";
 

@@ -2,11 +2,6 @@ import { useMemo } from 'react'
 import { type ColumnDef } from '@tanstack/react-table'
 import { resolveCadreAnalytiqueFormValue } from '@/shared/utils/ptbaFormUtils'
 import { GenericTable } from '@/shared/tables'
-import type {
-  CoutUnitairePtba,
-  Ptba,
-  CadreAnalytique,
-} from '@/shared/types'
 import { Loader2, Receipt } from 'lucide-react'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
 import { Badge } from '@/components/ui/badge'

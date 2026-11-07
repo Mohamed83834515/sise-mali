@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  CibleIndicateurPerformanceProgramme,
-  CibleIndicateurPerformanceProgrammePayload,
-} from '@/shared/types/entities/cibleIndicateurPerformanceProgramme'
 import { normalizeApiList } from './apiListUtils'
 
 const ENDPOINT = '/cibles-indicateurs-performances-programmes/'

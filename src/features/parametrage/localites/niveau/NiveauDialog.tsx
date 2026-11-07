@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button'
 import { PlusIcon, Trash2 } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { NiveauLocalite } from '@/shared/types/entities/niveauLocalite'
 
 type Props = {
     open: boolean
@@ -112,7 +111,6 @@ export default function NiveauLocaliteDialog({ open, onOpenChange, onSuccess }: 
                     </DialogHeader>
 
                     <div className="space-y-2">
-
 
                         {/* Formulaire d'ajout de nouveaux niveaux (inline) */}
                         <div className="border-t pt-2">

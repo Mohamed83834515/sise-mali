@@ -1,8 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type {
-  IndicateurCmrProjet,
-  IndicateurCmrProjetFormData,
-} from '@/shared/types/entities/indicateurCmrProjet'
 import { normalizeIndicateurCmrProjetFromApi } from '@/shared/utils/indicateurCmrProjetUtils'
 import { normalizeApiList } from './apiListUtils'
 

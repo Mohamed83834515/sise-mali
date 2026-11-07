@@ -1,6 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { Acteur, ActeurFormData } from "@/shared/types";
-
 
   const BASE_URL = "/acteurs/"
 export const acteurService = {

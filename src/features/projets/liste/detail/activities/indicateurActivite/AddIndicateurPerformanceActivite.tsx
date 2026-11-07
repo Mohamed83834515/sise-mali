@@ -6,7 +6,6 @@ import {
   indicateurPerformanceFormSchema,
   type IndicateurPerformanceFormData,
 } from '@/shared/schemas/indicateurPerformanceProjetSchemas'
-import type { ActiviteProjet, IndicateurPerformanceProjet } from '@/shared/types'
 import { normalizeIndicateurPerformanceCibles } from '@/shared/utils/indicateurPerformanceUtils'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
 import {

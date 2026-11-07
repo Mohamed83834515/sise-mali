@@ -1,10 +1,7 @@
 import { type ColumnDef } from '@tanstack/react-table'
-import type { IndicateurTache } from '@/shared/types/entities/indicateurTache'
-import type { SuiviIndicateurTache } from '@/shared/types/entities/suiviIndicateurTacheProjet'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { DataTableColumnHeader } from '@/components/data-table'
-import { type UniteIndicateur } from '@/shared/types'
 
 export type SuiviIndicateurTableRow = IndicateurTache
 

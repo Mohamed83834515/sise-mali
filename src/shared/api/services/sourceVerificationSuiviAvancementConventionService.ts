@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SourceVerificationSuiviAvancementConvention } from '@/shared/types/entities/sourceVerificationSuiviAvancementConvention'
 
 const ENDPOINT = '/sources-verification-suivi-avancement-conventions/'
 

@@ -7,8 +7,6 @@ import {
 } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 import { DIALOG_SIZES } from '@/shared/forms'
-import type { Projet } from '@/shared/types'
-import type { MissionSupervisionProjet } from '@/shared/types/entities/missionSupervisionProjet'
 import AddMissionSupervisionProjet from './AddMissionSupervisionProjet'
 import ListeMissionSupervisionProjet from './ListeMissionSupervisionProjet'
 

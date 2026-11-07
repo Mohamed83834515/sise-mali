@@ -5,11 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { TableCell, TableRow } from '@/components/ui/table'
 import { cn } from '@/lib/utils'
-import type { Ptba, TacheActivitePtba } from '@/shared/types'
-import {
-  findSuiviForTache,
-  type SuiviTacheActivite,
-} from '@/shared/types/entities/suiviTacheActivite'
+import { findSuiviForTache } from '@/shared/utils'
 
 type SuiviTacheActiviteListProps = {
   activite: Ptba

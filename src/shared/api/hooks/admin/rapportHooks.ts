@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { useQueries } from '@tanstack/react-query'
-import type { SuiviAvancementContrat } from '@/shared/types'
 import suiviAvancementContratService from '@/shared/api/services/suiviAvancementContratService'
 import { suiviPtbaQueryKeys } from './suiviPtbaHooks'
 

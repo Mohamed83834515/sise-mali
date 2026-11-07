@@ -1,5 +1,3 @@
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
-
 const MS_PER_DAY = 1000 * 60 * 60 * 24
 
 export type EtapeCalcul = {

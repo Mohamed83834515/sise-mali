@@ -6,8 +6,6 @@ import { cn } from '@/lib/utils'
 import { DIALOG_SIZES } from '@/shared/forms'
 import ListeSourceFinancement from './ListeSourceFinancementProjet'
 import AddSourceFinancement from './AddSourceFinancementProjet'
-import { ActiviteProjet } from '@/shared/types'
-import { SourFinancementProjet } from '@/shared/types/entities/sourceFinancemanetProjet'
 import {
   sourceFinancementQueryKeys,
   useGetSourcesByActivite,

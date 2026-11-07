@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { CibleCmrProjet } from "@/shared/types";
 import { normalizeApiList } from "./apiListUtils";
 
 export interface CibleCmrProjetFormData {

@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import { TypeFinancementPPM } from '@/shared/types/entities/typeFinancementPPM'
 import { TypeFinancementPPMFormData } from '@/shared/schemas/typeFinancementPPM'
 
 const ENDPOINT = '/types-financement-ppm/'

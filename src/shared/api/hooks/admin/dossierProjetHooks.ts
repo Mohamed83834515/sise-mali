@@ -2,7 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import dossierProjetService from '@/shared/api/services/dossierProjetService'
-import type { DossierProjetWritePayload } from '@/shared/types/entities/dossierProjet'
 
 export const dossierProjetQueryKeys = {
   all: ['dossiers-projets'] as const,

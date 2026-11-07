@@ -2,7 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
 import contratPerformanceService from '@/shared/api/services/contratPerformanceService'
-import type { ContratPerformancePayload } from '@/shared/types/entities/contratPerformance'
 
 export const contratPerformanceQueryKeys = {
   all: (programmeId?: number) => ['contrats-performance', programmeId ?? 'all'] as const,

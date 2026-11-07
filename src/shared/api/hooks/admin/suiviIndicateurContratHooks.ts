@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 import { suiviIndicateurContratService } from '@/shared/api/services/suiviIndicateurContratService'
-import type { SuiviIndicateurContratPayload } from '@/shared/types/entities/suiviIndicateurContrat'
 
 export const suiviIndicateurContratQueryKeys = {
   byIndicateur: (idIndicateur: number) =>

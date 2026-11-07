@@ -1,5 +1,3 @@
-import type { UniteIndicateur } from '@/shared/types/entities/uniteIndicateur'
-
 /**
  * Symbole d'affichage d'une unité d'indicateur : `unite_ui` est déjà le
  * symbole (« % », « kg »…). Seule l'unité « Nombre » ne s'affiche pas.

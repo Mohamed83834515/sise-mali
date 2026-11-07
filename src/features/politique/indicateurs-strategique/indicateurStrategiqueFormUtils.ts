@@ -1,6 +1,4 @@
 import type { SelectOption } from '@/shared'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 import type { IndicateurStrategiqueWriteData } from '@/shared/schemas/indicateurStrategiqueSchemas'
 import {
   resolveRelationCode,

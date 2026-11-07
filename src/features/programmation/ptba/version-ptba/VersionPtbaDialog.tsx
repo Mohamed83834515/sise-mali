@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import {
   Dialog,
@@ -11,7 +10,6 @@ import { DIALOG_SIZES } from "@/shared/forms"
 
 import AddVersionPtba from "./AddVersionPtba"
 import ListeVersionPtba from "./ListeVersionPtba"
-import { VersionPtba } from "@/shared/types"
 
 type Mode = "list" | "add" | "edit"
 

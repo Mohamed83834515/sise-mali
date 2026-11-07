@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { Activite } from "@/shared/types/entities/activite";
 
 export const activiteService = {
   // Récupérer toutes les activités (filtrées par projet)

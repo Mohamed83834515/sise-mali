@@ -12,8 +12,6 @@ import {
   useGetRecommandationsMissionProjet,
 } from '@/shared/api/hooks/admin/recommandationMissionProjetHooks'
 import { useMissionSupervisionSelection } from '@/shared/api/hooks/admin/missionSupervisionProjetHooks'
-import type { Projet } from '@/shared/types'
-import type { RecommandationMissionProjet } from '@/shared/types/entities/recommandationMissionProjet'
 import { filterRecommandationsByMission, filterRecommandationsByProjet } from '@/shared/utils/missionRecommandationUtils'
 import MissionSupervisionDialog from './mission-supervision/MissionSupervisionDialog'
 import { MissionSupervisionSelect } from './mission-supervision/MissionSupervisionSelect'
@@ -36,7 +34,6 @@ export default function ProjetPointsBlocagePanel({
     handleChangeMission,
     missionOptions,
   } = useMissionSupervisionSelection(idProjet)
-
 
   const [open, setOpen] = useDialogState<'add' | 'edit' | 'delete'>(null)
   const [currentRow, setCurrentRow] =

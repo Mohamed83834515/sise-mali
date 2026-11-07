@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { toast } from 'sonner'
 import { DynamicForm } from '@/shared/forms'
-import type { Ptba, TacheActivitePtba } from '@/shared/types'
 import {
   createTacheActivitePtbaSchema,
   type TacheActivitePtbaFormData,

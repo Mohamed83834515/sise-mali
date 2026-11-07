@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviAvancementConvention } from '@/shared/types/entities/suiviAvancementConvention'
 import type {
   ETAT_SUIVI_VALUES,
   STATUT_ACTIVITE_VALUES,

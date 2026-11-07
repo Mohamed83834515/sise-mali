@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { Loader2 } from 'lucide-react'
-import type { Ptba } from '@/shared/types'
-import { IndicateurTache } from '@/shared/types/entities/indicateurTache'
 import { getValeurCibleIndicateur } from '@/shared/tables/columns/suivi-indicateur-columns'
 import {
   useGetAllSuivisIndicateursProjet,

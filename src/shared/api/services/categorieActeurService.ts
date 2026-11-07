@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { CategorieActeur } from "@/shared/types/entities/categorieActeur";
 
 const BASE_URL = "/categories-acteurs/";
 

@@ -1,4 +1,3 @@
-import type { PartBailleur } from '@/shared/types/entities/partBailleur'
 import {
   resolveRelationCode,
   resolveRelationId,

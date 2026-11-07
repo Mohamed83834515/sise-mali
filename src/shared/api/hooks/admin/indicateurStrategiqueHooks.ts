@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { indicateurStrategiqueService } from '@/shared/api/services/indicateurStrategiqueService'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 
 export const indicateurStrategiqueQueryKeys = {

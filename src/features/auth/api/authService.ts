@@ -1,6 +1,5 @@
 import { apiClient } from '@/shared/api'
 import { toast } from 'sonner'
-import type { Personnel } from '@/shared/types'
 
 export interface LoginCredentials {
   id_personnel_perso: string

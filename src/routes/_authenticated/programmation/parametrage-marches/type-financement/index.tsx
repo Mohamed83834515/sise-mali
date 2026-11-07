@@ -2,7 +2,6 @@ import {
   AddTypeFinancementPPM,
   ListeTypeFinancementPPM,
 } from '@/features/programmation'
-import { TypeFinancementPPM } from '@/shared/types/entities/typeFinancementPPM'
 import { FileText } from 'lucide-react'
 import { useState } from 'react'
 

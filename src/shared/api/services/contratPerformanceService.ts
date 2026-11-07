@@ -1,9 +1,5 @@
 import { apiClient } from '@/shared/api'
 import { normalizeApiList } from './apiListUtils'
-import type {
-  ContratPerformance,
-  ContratPerformancePayload,
-} from '@/shared/types/entities/contratPerformance'
 
 const ENDPOINT = '/contrats-performance/'
 

@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import type { ConventionApiPayload } from '@/shared/types/entities/convention'
 import { conventionService } from '@/shared/api/services/conventionService'
 
 export const conventionQueryKeys = {

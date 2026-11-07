@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { NiveauStructure, PlanSite } from "@/shared/types";
 const BASE_URL = '/plan-sites/'
 
 export const planSiteService = {
@@ -31,7 +30,6 @@ export const planSiteService = {
     })
   },
 }
-
 
 const BASE_URL_NIVEAU = '/niveaux-niveaux-structure-config/'
 

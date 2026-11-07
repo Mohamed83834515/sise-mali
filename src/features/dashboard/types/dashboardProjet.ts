@@ -1,5 +1,3 @@
-import type { Projet } from '@/shared/types/entities/projet'
-
 export type ProjetDashboardStatut =
   | 'actif'
   | 'critique'

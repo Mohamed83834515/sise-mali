@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/dialog'
 import { GenericTable } from '@/shared/tables'
 import { GenericDeleteDialog } from '@/shared/tables'
-import type { DictionnaireIndicateur } from '@/shared/types'
 import {
   useDeleteDictionnaireIndicateur,
   useGetDictionnaireIndicateurs,

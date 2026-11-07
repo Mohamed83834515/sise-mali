@@ -4,7 +4,6 @@ import { type ColumnDef } from '@tanstack/react-table'
 import { GenericTable } from '@/shared/tables'
 import { useActiveProgrammeCode } from '@/hooks/use-active-programme'
 import { TableCell, TableRow } from '@/components/ui/table'
-import type { CadreAnalytique, Ptba } from '@/shared/types'
 import { RapportMontantCell } from '@/shared/tables/columns/RapportMontantCell'
 import {
   computeTauxDecaissement,

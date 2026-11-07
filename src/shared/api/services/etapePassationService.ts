@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { EtapePassation } from '@/shared/types/entities/etapePassation'
 
 const ENDPOINT = '/etapes-passation/'
 

@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { Localite } from "@/shared/types/entities/localite";
 
 const LOCALITE_URL = "/localites/";
 export const localiteService = {
@@ -44,7 +43,6 @@ export const localiteService = {
     })
     return { localites: filtered }
   },
-
 
   // Récupérer les localités de premier niveau (parent === null)
   async getOneLevel(): Promise<Localite[]> {

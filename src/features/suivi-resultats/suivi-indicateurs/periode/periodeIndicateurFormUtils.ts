@@ -1,9 +1,3 @@
-import type {
-  PeriodeIndicateur,
-  PeriodeIndicateurFormData,
-  PeriodeIndicateurWritePayload,
-} from '@/shared/types/entities/periodeIndicateur'
-
 export function resolvePeriodeIndicateurSelectValue(
   periode: PeriodeIndicateur
 ): string {

@@ -15,7 +15,6 @@ import {
 } from '@/shared/api/hooks/admin/dashboardProgrammeHooks'
 import { useGetPtbasProjetsByVersionWithStats } from '@/shared/api/hooks/admin/ptbaProjetHooks'
 import { formatNumber } from '@/shared/utils/montantFormater'
-import type { ProjetDashboardSource } from '@/shared/types/entities/dashboardProjet'
 import {
     buildProjetDashboardRows,
     buildProjetProgrammeDashboardStats,
@@ -34,7 +33,6 @@ import AvancementTachesPlanSiteChart from './AvancementTachesPlanSiteChart'
 import AvancementComposanteChart from './Avancementcomposantechart'
 import { useGetNiveauxCadreAnalytique } from '@/shared/api/hooks/admin/cadreAnalytiqueHooks'
 import { TableLoadingOverlay } from '@/shared'
-
 
 // ─── Dashboard principal ───────────────────────────────────────────────────────
 const DashboardPage: React.FC = () => {
@@ -95,7 +93,6 @@ const DashboardPage: React.FC = () => {
     const { data: ptbasProjetsData } = useGetPtbasProjetsByVersionWithStats(selectedVersionId, codeProgramme)
     const { data: tachesByUgl = [] } =
         useGetTachesActiviteByUgl(activitesDirectionVersionId)
-
 
     const activitesDirectionChartData = useMemo(
         () => buildAvancementTachesUglChartData(tachesByUgl),

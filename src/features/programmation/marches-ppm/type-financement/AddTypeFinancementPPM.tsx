@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
 import { getTypeFinancementPPMFormConfig } from '@/shared/forms/configs/typeFinancementPPM'
-import { TypeFinancementPPM } from '@/shared/types/entities/typeFinancementPPM'
 import { TypeFinancementPPMFormData, typeFinancementPPMSchema } from '@/shared/schemas/typeFinancementPPM'
 import { useSaveTypeFinancementPPM } from '@/shared/api/hooks/admin/typeFinancementPPM'
 

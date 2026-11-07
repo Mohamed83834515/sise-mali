@@ -9,7 +9,6 @@ import {
   useGetIndicateursCmr,
 } from '@/shared/api/hooks/admin/indicateurCmrHooks'
 import { useGetIndicateursStrategique } from '@/shared/api/hooks/admin/indicateurStrategiqueHooks'
-import type { IndicateurCmr } from '@/shared/types'
 import IndicateurCmrDetailView from '@/features/projets/liste/detail/cmrIndicators/IndicateurCmrDetailView'
 import { toast } from 'sonner'
 import {

@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import type { PartBailleurApiPayload } from '@/shared/types/entities/partBailleur'
 import partBailleurService, {
   type PartBailleurActiviteQuery,
 } from '@/shared/api/services/partBailleurService'

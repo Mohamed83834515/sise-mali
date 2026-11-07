@@ -3,7 +3,6 @@ import { buildColumns } from '@/shared/tables/column-builder'
 import { RapportMontantCell } from '@/shared/tables/columns/RapportMontantCell'
 import { resolvePtbaActiviteId } from '@/features/rapport/rapportTableUtils'
 import { DataTableColumnHeader } from '@/components/data-table/column-header'
-import type { Ptba } from '@/shared/types'
 
 type RapportPtbasColumnsProps = {
   getResponsableLabel: (ptba: Ptba) => string | null

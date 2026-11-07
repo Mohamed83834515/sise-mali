@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type { NiveauActiviteProgramme } from "@/shared/types/entities/niveauActiviteProgramme";
 import type { NiveauActiviteProgrammeFormData } from "@/shared/schemas/niveauActiviteProgrammeSchemas";
 
 const BASE_URL = "/niveau_activites_programme_config/";

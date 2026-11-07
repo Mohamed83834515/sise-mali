@@ -5,8 +5,6 @@ import {
   useCreateMissionSupervisionProjet,
   useUpdateMissionSupervisionProjet,
 } from '@/shared/api/hooks/admin/missionSupervisionProjetHooks'
-import type { Projet } from '@/shared/types'
-import type { MissionSupervisionProjet } from '@/shared/types/entities/missionSupervisionProjet'
 import {
   missionSupervisionProjetSchema,
   type MissionSupervisionProjetFormData,

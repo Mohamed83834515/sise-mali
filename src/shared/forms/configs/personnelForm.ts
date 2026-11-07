@@ -1,11 +1,4 @@
 import type { FormConfig, SelectOption } from '@/shared/types/formConfig'
-import type {
-  Acteur,
-  Fonction,
-  Localite,
-  PlanSite,
-  TitrePersonnel,
-} from '@/shared/types'
 import { NIVEAU_ACCES_OPTIONS } from '@/shared/schemas/personnelWriteSchema'
 
 type PersonnelFormDeps = {

@@ -3,7 +3,6 @@ import { DataTableColumnHeader } from '@/components/data-table'
 import { cn } from '@/lib/utils'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { Trash2, UserPen } from 'lucide-react'
-import { IndicateurTache } from '@/shared/types/entities/indicateurTache'
 
 export type IndicateurTacheTableRow = IndicateurTache
 
@@ -81,9 +80,14 @@ export function buildIndicateurTacheColumns(
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title='Unité' />
         ),
-        cell: ({ row }) => (
-            <span className='tabular-nums'>{row.original.unite_ind_tache}</span>
-        ),
+        cell: ({ row }) => {
+            const val = row.original.unite_ind_tache
+            const label =
+                typeof val === 'object' && val
+                    ? (val.unite_ui || val.definition_ui)
+                    : (val ?? '—')
+            return <span className='tabular-nums'>{label}</span>
+        },
         meta: { thClassName: 'text-center', className: 'text-center' },
         enableSorting: false,
         enableHiding: false,
@@ -154,7 +158,6 @@ export function buildIndicateurTacheColumns(
         enableSorting: false,
         enableHiding: false,
     }
-
 
     const ActionColumn: ColumnDef<IndicateurTache> = {
         id: 'actions',

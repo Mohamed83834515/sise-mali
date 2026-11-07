@@ -1,7 +1,6 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { SuiviDecaissementPtbaProjet } from '@/shared/types/entities/suiviDecaissementPtbaProjet'
 import {
   resolveSuiviDecaissementRegionLabel,
   resolveSuiviDecaissementTypePartLabel,

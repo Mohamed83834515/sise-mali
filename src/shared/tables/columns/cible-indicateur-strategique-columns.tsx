@@ -1,8 +1,6 @@
 import type { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { CibleIndicateurStrategique } from '@/shared/types/entities/cibleIndicateurStrategique'
-import type { UGL } from '@/shared/types'
 import {
   formatAnneeCible,
   formatValeurCible,

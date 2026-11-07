@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-import type { Ptba } from '@/shared/types'
 
 /** Titre accessible du modal (sans code activité). */
 export function activiteModalTitle(

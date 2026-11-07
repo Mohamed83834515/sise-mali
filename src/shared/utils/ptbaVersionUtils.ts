@@ -1,4 +1,3 @@
-import type { Projet } from '@/shared/types'
 import { getProjetYearRangeFromMonths } from '@/shared/utils/projetYearRange'
 
 export type PtbaVersionOption = {

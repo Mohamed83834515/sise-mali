@@ -1,3 +1,10 @@
 export * from './resolveApiRelation'
 export * from './montantFormater'
+export * from './projetUtils'
+export * from './conventionUtils'
+export * from './suiviAvancementContratUtils'
+export * from './suiviTacheActiviteUtils'
+export * from './tacheActivitePtbaUtils'
+export * from './periodeSousRessourceUtils'
+export * from './indicateurContratUtils'
 

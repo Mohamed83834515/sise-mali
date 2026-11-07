@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { DataTableToolbarOutlineButton } from '@/components/data-table/toolbar-outline-button'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
-import type { IndicateurPerformanceProgramme } from '@/shared/types'
 import {
   formatCibleDisplayValue,
   formatIndicateurUniteLabel,

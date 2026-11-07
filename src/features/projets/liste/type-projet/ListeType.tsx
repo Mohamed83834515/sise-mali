@@ -7,7 +7,6 @@ import { GenericDeleteDialog } from "@/shared/tables"
 import { useEmbeddedTableState } from "@/hooks/use-embedded-table-state"
 import { DataTableToolbarOutlineButton } from "@/components/data-table/toolbar-outline-button"
 import { useDeleteTypeProjet, useGetTypeProjet } from "@/shared/api/hooks/admin/typeProjetHooks"
-import { TypeProjet } from "@/shared/types/entities/typeProjet"
 import { buildTypeProjetColumns } from "@/shared/tables/columns/type-projet-columns"
 
 export default function ListeTypeProjet({

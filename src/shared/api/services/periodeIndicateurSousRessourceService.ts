@@ -1,12 +1,5 @@
 import { apiClient } from '@/shared/api'
-import {
-  isSousRessourceWithDocuments,
-  type DocumentationCmrWritePayload,
-  type FondCarteWritePayload,
-  type PeriodeSousRessourceEnregistrement,
-  type PeriodeSousRessourceType,
-  type PeriodeSousRessourceWritePayload,
-} from '@/shared/types/entities/periodeIndicateurSousRessource'
+import { isSousRessourceWithDocuments } from '@/shared/utils'
 import { buildSousRessourceDocumentsFormData } from '@/features/suivi-resultats/suivi-indicateurs/sous-ressource/periodeSousRessourceFormUtils'
 import { normalizeApiList } from './apiListUtils'
 

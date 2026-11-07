@@ -1,12 +1,6 @@
 import type { SelectOption } from '@/shared/types/formConfig'
-import type {
-  IndicateurTache,
-  IndicateurTacheRequest,
-} from '@/shared/types/entities/indicateurTache'
-import type { UniteIndicateur } from '@/shared/types/entities/uniteIndicateur'
 import type { IndicateurTacheFormData } from '@/shared/schemas/indicateurTacheSchemas'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
-import { IndicateurPerformanceProgramme, IndicateurPerformanceProjet } from '@/shared/types'
 
 function normalizeTrimestre(value: unknown): number {
   if (value == null) return 0

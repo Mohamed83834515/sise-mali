@@ -9,9 +9,6 @@ import {
 } from '@/shared/api/hooks/admin/indicateurContratHooks'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
 import { useMe } from '@/features/auth'
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import { filterCadresByNiveauClcp } from '@/shared/utils/indicateurContratUtils'
 import {
   indicateurContratCreateSchema,

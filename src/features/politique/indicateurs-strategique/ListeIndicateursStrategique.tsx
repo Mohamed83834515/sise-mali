@@ -9,7 +9,6 @@ import {
   useGetIndicateursStrategique,
 } from '@/shared/api/hooks/admin/indicateurStrategiqueHooks'
 import { useGetPersonnels } from '@/shared/api/hooks/admin/personnelHooks'
-import type { IndicateurStrategique } from '@/shared/types/entities/indicateurStrategique'
 import { Search } from 'lucide-react'
 import { toast } from 'sonner'
 import {

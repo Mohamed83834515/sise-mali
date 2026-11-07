@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviAvancementContrat } from '@/shared/types'
 import type {
   SourceVerificationInput,
   SuiviAvancementContratPayload,

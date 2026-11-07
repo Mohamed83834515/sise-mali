@@ -1,6 +1,3 @@
-import type { CadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
-import type { CibleIndicateurPerformanceProgramme } from '@/shared/types/entities/cibleIndicateurPerformanceProgramme'
-import type { IndicateurPerformanceProgramme } from '@/shared/types/entities/indicateurPerformanceProgramme'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export type CibleAnnuelleProgrammeFormValue = {

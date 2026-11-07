@@ -1,7 +1,6 @@
 import { useMemo, useState, useCallback } from 'react'
 import { GenericTable } from '@/shared/tables'
 import { useEmbeddedTableState } from '@/hooks/use-embedded-table-state'
-import type { TacheActivitePtba } from '@/shared/types'
 import { buildTachePtbaColumns, TachePtbaTableRow } from '@/shared/tables/columns/tache-activites-columns'
 import useDialogState from '@/hooks/use-dialog-state'
 import { toast } from 'sonner'
@@ -53,7 +52,6 @@ export default function TacheActiviteProjetList({
   )
 
   const deleteMutation = useDeleteTachePtbaProjet(idActivite)
-
 
   const handleConfirmDelete = (row: TacheActivitePtba) => {
     deleteMutation.mutate(row.id_groupe_tache, {

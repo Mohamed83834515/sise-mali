@@ -1,6 +1,3 @@
-import type { FinancementProjet } from '@/shared/types/entities/financementProjet'
-import type { Localite } from '@/shared/types/entities/localite'
-import type { PartBailleur } from '@/shared/types/entities/partBailleur'
 import {
   type CibleCmrGridCell,
 } from '@/shared/utils/cibleCmrGridUtils'

@@ -1,7 +1,6 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { SuiviDecaissementConvention } from '@/shared/types/entities/suiviDecaissementConvention'
 
 function formatDate(value: string | null | undefined): string {
   if (!value) return '—'

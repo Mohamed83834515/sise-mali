@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import type { Projet } from '@/shared/types'
 import type { ProjetDetailTab, ProjetDetailTabKey } from './projetDetailTabs'
 import ProjetDashboard from './ProjetDashboard'
 import ProjetActivitesPanel from './activities/ProjetActivitesPanel'
@@ -13,7 +12,6 @@ import ProjetIndicateursCmrPanel from './cmrIndicators/ProjetIndicateursCmrPanel
 import ProjetDocumentsPanel from './documents/ProjetDocumentsPanel'
 import ProjetPointsBlocagePanel from './points-blocage/ProjetPointsBlocagePanel'
 import ProjetDetailPlaceholder from './ProjetDetailPlaceholder'
-
 
 type TabPanelRenderer = (projet: Projet) => ReactNode
 

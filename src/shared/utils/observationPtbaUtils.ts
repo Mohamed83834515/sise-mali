@@ -1,5 +1,3 @@
-import type { ObservationPtba, Ptba } from '@/shared/types'
-
 export function resolveObservationPtbaCode(
   value: ObservationPtba['ptba']
 ): string | null {

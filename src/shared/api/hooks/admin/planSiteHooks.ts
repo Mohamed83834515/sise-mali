@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { planSiteService } from '@/shared/api/services/planSiteService';
-import { PlanSite } from '@/shared/types';
 import { toast } from 'sonner';
 import { getApiErrorMessage } from '@/lib/api-error-message'
 
@@ -17,7 +16,6 @@ export const getPlanSites = async () => {
   const response = await planSiteService.getAll();
   return response;
 };
-
 
 export const planSiteQueryKeys = {
   all: ['plans-site'] as const,

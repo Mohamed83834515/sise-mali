@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import { ProjetClotureForm, type Projet } from '@/shared/types/entities/projet'
 
 const BASE_URL = '/projets/'
 

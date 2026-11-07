@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/dialog'
 import { GenericTable } from '@/shared/tables'
 import { DIALOG_SIZES } from '@/shared/forms'
-import type { Ptba, SuiviAvancementContrat } from '@/shared/types'
 import { buildSuiviPtbaColumns } from '@/shared/tables/columns/suivi-ptba-columns'
 import { useActiveProgrammeCode } from '@/hooks/use-active-programme'
 import { useGetPtbas } from '@/shared/api/hooks/admin/ptbaHooks'

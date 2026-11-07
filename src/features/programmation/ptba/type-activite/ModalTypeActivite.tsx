@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import AddTypeActivite from "./AddTypeActivite"
 import { DIALOG_SIZES } from "@/shared/forms"
-import { TypeActivite } from "@/shared/types/entities/entities"
 import ListeTypeActivite from "./ListeTypeActivite"
 
 export default function TypeActiviteDialog({

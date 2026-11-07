@@ -1,10 +1,8 @@
 import type { FormConfig, SelectOption } from '@/shared/types/formConfig'
-import type { PlanSite } from '@/shared/types'
 
 function structureOptions(plan_sites: PlanSite[]): SelectOption[] {
   return plan_sites.map((item) => ({ value: item.id_ds || 0, label: item.code_ds + ':' + item.intutile_ds }))
 }
-
 
 export const getContratPerformanceFormConfig = (
   plan_sites: PlanSite[] = [],

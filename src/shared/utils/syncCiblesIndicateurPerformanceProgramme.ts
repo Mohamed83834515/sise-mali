@@ -1,5 +1,4 @@
 import cibleIndicateurPerformanceProgrammeService from '@/shared/api/services/cibleIndicateurPerformanceProgrammeService'
-import type { CibleIndicateurPerformanceProgramme } from '@/shared/types/entities/cibleIndicateurPerformanceProgramme'
 import type { CibleAnnuelleProgrammeFormValue } from '@/shared/utils/indicateurPerformanceProgrammeUtils'
 
 export async function syncCiblesIndicateurPerformanceProgramme({

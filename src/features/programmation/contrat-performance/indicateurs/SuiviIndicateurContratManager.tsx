@@ -8,12 +8,7 @@ import {
   useGetSuivisIndicateurContrat,
   useUpdateSuiviIndicateurContrat,
 } from '@/shared/api/hooks/admin/suiviIndicateurContratHooks'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
-import {
-  TRIMESTRE_OPTIONS,
-  type SuiviIndicateurContrat,
-  type TrimestreSuiviIndicateurContrat,
-} from '@/shared/types/entities/suiviIndicateurContrat'
+import { TRIMESTRE_OPTIONS } from '@/shared/utils'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {

@@ -1,6 +1,5 @@
 import { apiClient } from "@/shared/api";
 import { ObservationPtbaFormData } from "@/shared/schemas/observationPtbaSchemas";
-import type { ObservationPtba } from "@/shared/types";
 import { filterObservationsByActiviteCode } from "@/shared/utils/observationPtbaUtils";
 
 const ENDPOINT = "/observations-ptbas/";

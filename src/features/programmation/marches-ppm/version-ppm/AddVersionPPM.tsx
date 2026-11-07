@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { DynamicForm } from '@/shared/forms'
-import { VersionPPM } from '@/shared/types/entities/versionPPM'
 import { getVersionPPMFormConfig } from '@/shared/forms/configs/versionPPMForm'
 import { VersionPPMFormData, versionPPMSchema } from '@/shared/schemas/ppmShema'
 import { useSaveVersionPPM } from '@/shared/api/hooks/admin/versionPPMHooks'

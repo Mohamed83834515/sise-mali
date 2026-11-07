@@ -3,7 +3,6 @@ import { DataTableColumnHeader } from '@/components/data-table'
 import { LongText } from '@/components/others/long-text'
 import { Badge } from '@/components/ui/badge'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { Programme } from '@/shared/types/entities/programme'
 
 function formatPeriode(debut: string, fin: string): string {
   const yearDebut = debut?.slice(0, 4) ?? '—'

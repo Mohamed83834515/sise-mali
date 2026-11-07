@@ -3,7 +3,6 @@ import { z } from 'zod'
 import { toast } from 'sonner'
 import { DynamicForm } from '@/shared/forms'
 import { getCadreAnalytiqueFormConfigForDialog } from '@/shared/forms/configs/cadreAnalytiqueForm'
-import type { CadreAnalytique, NiveauCadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
 import {
   cadreAnalytiqueWriteSchema,
   type CadreAnalytiqueWriteData,

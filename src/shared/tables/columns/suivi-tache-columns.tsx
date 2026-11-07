@@ -2,11 +2,7 @@ import { type ColumnDef } from '@tanstack/react-table'
 import { Button } from '@/components/ui/button'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { cn } from '@/lib/utils'
-import type { TacheActivitePtba } from '@/shared/types'
-import {
-  findSuiviForTache,
-  type SuiviTacheActivite,
-} from '@/shared/types/entities/suiviTacheActivite'
+import { findSuiviForTache } from '@/shared/utils'
 import { Badge } from '@/components/ui/badge'
 
 export type SuiviTacheTableRow = TacheActivitePtba

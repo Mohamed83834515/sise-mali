@@ -1,8 +1,6 @@
 import { useState, useMemo, useCallback } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
-import type { Ptba } from '@/shared/types'
-import { IndicateurTache } from '@/shared/types/entities/indicateurTache'
 import { DataTableToolbarOutlineButton } from '@/components/data-table/toolbar-outline-button'
 import {
   ActiviteTabbedSubViewHeader,

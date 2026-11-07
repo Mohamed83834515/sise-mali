@@ -1,4 +1,3 @@
-import type { DossierProjet } from '@/shared/types/entities/dossierProjet'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export function resolveDossierProjetId(

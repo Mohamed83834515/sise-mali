@@ -1,6 +1,3 @@
-import type { PaoMinagriDashboardStats } from '@/shared/types/entities/dashboardProjet'
-import type { Ptba } from '@/shared/types/entities/ptba'
-
 export function filterPtbasByVersionId(
   ptbas: Ptba[],
   versionId: number | null | undefined

@@ -5,7 +5,6 @@ import { localiteSchema } from '@/shared/schemas/localiteSchema'
 import { useSaveLocalite, useGetLocalitesByParent } from '@/shared/api/hooks/admin/localiteHooks'
 import { useGetNiveauxLocalite } from '@/shared/api/hooks/admin/niveauLocaliteHooks'
 import { getLocaliteFormConfig } from '@/shared/forms/configs/localiteForm'
-import { Localite } from '@/shared/types'
 
 type Props = {
   currentRow?: any | null

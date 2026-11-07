@@ -6,8 +6,6 @@ import {
   niveauCadreStrategiqueService,
   type NiveauCadreStrategiqueFormData,
 } from '@/shared/api/services/niveauCadreStrategiqueService'
-import type { CadreStrategique } from '@/shared/types/entities/cadreStrategique'
-import type { NiveauCadreStrategique } from '@/shared/types/entities/niveauCadreStrategique'
 import type {
   CadreStrategiqueWriteData,
   NiveauCadreStrategiqueWriteData,

@@ -1,8 +1,5 @@
 import { toast } from "sonner";
 import { apiClient } from "@/shared/api";
-import type { Personnel } from "@/shared/types";
-import { PersonnelFormData } from "@/shared/types/entities/entities";
-
 
 interface UpdateProfilePictureResponse {
    personnel_profile_picture: "string"
@@ -145,7 +142,6 @@ export const personnelService = {
     }
   },
 
-
   // Delete profile picture
   async deleteProfilePicture (n_personel : number) : Promise<void> {
     try {
@@ -160,9 +156,5 @@ export const personnelService = {
     }
   }
 
-
-
 };
-
-
 

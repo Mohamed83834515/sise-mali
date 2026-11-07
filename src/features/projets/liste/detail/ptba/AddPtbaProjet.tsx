@@ -19,10 +19,6 @@ import {
   getPtbaProjetFormConfig,
   resolveActiviteProjetId,
 } from '@/shared/forms/configs/ptbaProjetForm'
-import type { ActiviteProjet, Projet } from '@/shared/types'
-import type { PtbaProjet } from '@/shared/types/entities/ptbaProjet'
-import { Localite } from '@/shared/types/entities/localite'
-import type { Acteur } from '@/shared/types/entities/acteur'
 import {
   ptbaProjetSchema,
   type PtbaProjetFormData,

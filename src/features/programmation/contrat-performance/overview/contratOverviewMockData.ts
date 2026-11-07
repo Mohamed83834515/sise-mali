@@ -1,5 +1,3 @@
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
-
 export type ContratKpiIndicateurMock = {
   id: number
   label: string

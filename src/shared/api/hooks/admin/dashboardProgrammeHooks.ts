@@ -4,7 +4,6 @@ import tacheActivitePtbaService from "@/shared/api/services/tacheActivitePtbaSer
 import { useQuery } from "@tanstack/react-query"
 
 import { useMemo, useState } from 'react'
-import type { VersionPtba } from '@/shared/types'
 import {
   buildLatestVersionByAnneeMap,
   getAnneesDisponiblesFromVersions,

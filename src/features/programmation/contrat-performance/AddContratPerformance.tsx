@@ -7,11 +7,8 @@ import { getContratPerformanceFormConfig } from '@/shared/forms/configs/contratP
 import { contratPerformanceSchema } from '@/shared/schemas/contratPerformanceSchema'
 import { useCreateContratPerformance, useUpdateContratPerformance } from '@/shared/api/hooks/admin/contratPerformanceHooks'
 import { toast } from 'sonner'
-import type { ContratPerformance, ContratPerformancePayload } from '@/shared/types/entities/contratPerformance'
 import { useMe } from '@/features/auth'
 import { usePtbaVersionSelection } from '@/shared/api/hooks/admin/versionHooks'
-import { VersionPtba } from '@/shared/types/entities/entities'
-import { Programme } from '@/shared/types'
 import { useGetPlanSites } from '@/shared/api/hooks/admin/planSiteHooks'
 
 interface AddContratPerformanceProps {

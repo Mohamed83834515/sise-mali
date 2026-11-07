@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { handleServerError } from '@/lib/handle-server-error'
 import { dictionnaireIndicateurService } from '@/shared/api/services/dictionnaireIndicateurService'
-import type { DictionnaireIndicateur } from '@/shared/types'
 import type { DictionnaireIndicateurWriteData } from '@/shared/schemas/dictionnaireIndicateurSchemas'
 
 export const dictionnaireIndicateurQueryKeys = {
@@ -69,6 +68,4 @@ export function useDeleteDictionnaireIndicateur() {
     },
   })
 }
-
-export type { DictionnaireIndicateur }
 

@@ -1,5 +1,3 @@
-import type { Projet } from '@/shared/types/entities/projet'
-
 export function computeDateCloture(
   projet: Pick<Projet, 'date_demarrage_projet' | 'duree_projet'>
 ): Date | null {
@@ -40,3 +38,25 @@ export function computeDureeConsommee(projet: Projet) {
   const percent = Math.min(100, Math.round((elapsedMonths / totalMonths) * 100))
   return { elapsedMonths, totalMonths, percent }
 }
+
+export function resolveProgrammeProjetId(
+  ref: Programme | number | undefined | null,
+): number | undefined {
+  if (ref == null) return undefined
+  if (typeof ref === 'number' && Number.isFinite(ref)) return ref
+  if (typeof ref === 'object' && 'id_programme' in ref) {
+    const id = Number((ref as unknown as Record<string, unknown>).id_programme)
+    return Number.isFinite(id) ? id : undefined
+  }
+  return undefined
+}
+
+/** Filtre les projets du programme actif (sélecteur Projet en en-tête). */
+export function projetBelongsToProgramme(
+  projet: Projet,
+  idProgramme: number | undefined,
+): boolean {
+  if (idProgramme == null) return false
+  return resolveProgrammeProjetId(projet.programme_projet) === idProgramme
+}
+

@@ -1,4 +1,3 @@
-import type { PeriodeIndicateur } from '@/shared/types/entities/periodeIndicateur'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export function resolvePeriodeIndicateurRefIndicateur(

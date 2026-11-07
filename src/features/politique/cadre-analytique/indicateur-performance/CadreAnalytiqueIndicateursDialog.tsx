@@ -3,14 +3,12 @@ import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
-import type { CadreAnalytique } from '@/shared/types'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 import { cibleIndicateurPerformanceProgrammeQueryKeys } from '@/shared/api/hooks/admin/cibleIndicateurPerformanceProgrammeHooks'
 import {
   indicateurPerformanceProgrammeQueryKeys,
   useGetIndicateursPerformanceByCadreAnalytique,
 } from '@/shared/api/hooks/admin/indicateurPerformanceProgrammeHooks'
-import type { IndicateurPerformanceProgramme } from '@/shared/types/entities/indicateurPerformanceProgramme'
 import ListeIndicateurPerformanceCadreAnalytique from './ListeIndicateurPerformanceCadreAnalytique'
 import AddIndicateurPerformanceCadreAnalytique from './AddIndicateurPerformanceCadreAnalytique'
 

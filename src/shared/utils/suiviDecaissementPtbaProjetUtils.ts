@@ -1,6 +1,3 @@
-import type { FinancementProjet } from '@/shared/types/entities/financementProjet'
-import type { Localite } from '@/shared/types/entities/localite'
-import type { SuiviDecaissementPtbaProjet } from '@/shared/types/entities/suiviDecaissementPtbaProjet'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 
 export type SelectOption = { value: number; label: string }

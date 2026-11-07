@@ -3,7 +3,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { categorieActeurService } from '@/shared/api/services/categorieActeurService'
 import { toast } from 'sonner'
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import { CategorieActeur } from '@/shared/types'
 
 export const categorieActeurQueryKeys = {
   all: ['categories-acteurs'] as const,

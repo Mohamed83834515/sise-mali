@@ -3,7 +3,6 @@ import { Check, Pencil, Trash2, X } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { Personnel } from '@/shared/types'
 import {
   formatPersonnelNom,
   formatStatutPersonnel,

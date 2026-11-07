@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import type { IndicateurCadreResultatFormData } from '@/shared/types'
 import { indicateurCadreResultatService } from '@/shared/api/services/indicateurCadreResultatService'
 import { invalidateAndRefetch } from '@/shared/api/hooks/admin/queryInvalidation'
 

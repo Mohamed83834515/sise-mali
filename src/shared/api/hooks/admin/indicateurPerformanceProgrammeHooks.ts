@@ -8,7 +8,6 @@ import {
   attachCiblesToIndicateursProgramme,
   filterIndicateursByCadreAnalytique,
 } from '@/shared/utils/indicateurPerformanceProgrammeUtils'
-import type { CadreAnalytique } from '@/shared/types/entities/cadreAnalytique'
 import { useGetCiblesIndicateurPerformanceProgramme } from './cibleIndicateurPerformanceProgrammeHooks'
 
 export const indicateurPerformanceProgrammeQueryKeys = {

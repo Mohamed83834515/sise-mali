@@ -41,11 +41,13 @@ export default function RapportIndicateursPage() {
 
   const indicateurs = useMemo(() => {
     const activiteIdSet = new Set(activiteIds)
-    return allIndicateurs.filter(
-      (indicateur) =>
-        indicateur.id_activite != null &&
-        activiteIdSet.has(indicateur.id_activite)
-    )
+    return allIndicateurs.filter((indicateur) => {
+      const id =
+        typeof indicateur.id_activite === 'object' && indicateur.id_activite
+          ? indicateur.id_activite.id_ptba
+          : Number(indicateur.id_activite)
+      return Number.isFinite(id) && activiteIdSet.has(id)
+    })
   }, [allIndicateurs, activiteIds])
 
   const isLoading = ptbasLoading || indicateursLoading || caLoading

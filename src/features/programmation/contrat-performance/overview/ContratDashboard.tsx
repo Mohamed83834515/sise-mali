@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
 import { formatNumber } from '@/shared/utils/montantFormater'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
 import {
   Activity,
   BarChart3,

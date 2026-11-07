@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { PeriodeIndicateur } from '@/shared/types/entities/periodeIndicateur'
 import {
   formatPeriodeSuiviDate,
   resolvePeriodeIndicateurLabel,

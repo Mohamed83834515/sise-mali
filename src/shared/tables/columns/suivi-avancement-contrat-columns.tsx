@@ -3,7 +3,6 @@ import { Pencil, Trash2 } from 'lucide-react'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildColumns } from '@/shared/tables/column-builder'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
-import type { SuiviAvancementContrat } from '@/shared/types'
 
 type AvancementDialogType = 'delete'
 

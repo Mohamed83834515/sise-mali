@@ -1,5 +1,4 @@
 import type { ColumnFilterConfig } from '@/shared/tables'
-import type { CadreAnalytique, Ptba } from '@/shared/types'
 import { SECTION_LABEL_SEPARATOR } from './export/rapportExportUtils'
 
 export const EMPTY_PTBA_LIST: Ptba[] = []

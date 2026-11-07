@@ -7,7 +7,6 @@ import {
   useDeleteIndicateurCadreResultat,
   useGetIndicateursCadreResultat,
 } from '@/shared/api/hooks/admin/indicateurCadreResultatHooks'
-import type { CadreResultat, IndicateurCadreResultat } from '@/shared/types'
 import { Plus } from 'lucide-react'
 import { toast } from 'sonner'
 import useDialogState from '@/hooks/use-dialog-state'
@@ -102,7 +101,6 @@ export default function IndicateurCadreResultatCadreDialog({
     },
     [setDeleteOpen]
   )
-
 
   const columns = useMemo(
     () =>

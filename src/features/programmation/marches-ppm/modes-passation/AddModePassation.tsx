@@ -1,7 +1,6 @@
 import { DynamicForm } from '@/shared/forms'
 import { getModePassationFormConfig } from '@/shared/forms/configs/modePassationForm'
 import { useSaveModePassation } from '@/shared/api/hooks/admin/modePassationHooks'
-import type { ModePassation } from '@/shared/types/entities/modePassation'
 import {
   modePassationSchema,
   type ModePassationFormData,

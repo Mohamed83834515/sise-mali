@@ -2,7 +2,6 @@ import {
   STATUT_ACTIVITE_VALUES,
   type SuiviAvancementContratSuiviPtbaFormData,
 } from '@/shared/schemas/suiviAvancementContratSchemas'
-import type { SuiviAvancementContrat } from '@/shared/types'
 
 export function asFormText(value: unknown): string {
   if (value == null) return ''

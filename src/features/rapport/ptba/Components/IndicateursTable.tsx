@@ -2,8 +2,6 @@ import { useMemo } from 'react'
 import { type ColumnDef } from '@tanstack/react-table'
 import { GenericTable } from '@/shared/tables'
 import { useGetUnitesIndicateur } from '@/shared/api/hooks/admin/uniteIndicateurHooks'
-import type { CadreAnalytique, Ptba } from '@/shared/types'
-import { type IndicateurTache } from '@/shared/types/entities/indicateurTache'
 import { resolveCadreAnalytiqueFormValue } from '@/shared/utils/ptbaFormUtils'
 import { useRapportExportRegistration } from '@/features/rapport/useRapportExportRegistration'
 import { LineChart, Loader2 } from 'lucide-react'
@@ -113,7 +111,10 @@ export function IndicateursTable({
     }
 
     for (const ind of indicateurs) {
-      const id = ind.id_activite
+      const id =
+        typeof ind.id_activite === 'object' && ind.id_activite
+          ? ind.id_activite.id_ptba
+          : Number(ind.id_activite)
       if (id && map.has(id)) {
         map.get(id)!.push(ind)
       }
@@ -381,9 +382,14 @@ export function IndicateursTable({
                 </TableCell>
 
                 <TableCell className={cellClassName(2)}>
-                  {unite
-                    ? `${unite.definition_ui} (${unite.unite_ui})`
-                    : row.ind?.unite_ind_tache}
+                  {(() => {
+                    if (unite) return `${unite.definition_ui} (${unite.unite_ui})`
+                    const raw = row.ind?.unite_ind_tache
+                    if (raw && typeof raw === 'object') {
+                      return `${raw.definition_ui} (${raw.unite_ui})`
+                    }
+                    return raw != null ? String(raw) : '—'
+                  })()}
                 </TableCell>
 
                 <TableCell className={cellClassName(3)}>

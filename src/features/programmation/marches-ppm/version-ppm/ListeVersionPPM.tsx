@@ -6,7 +6,6 @@ import { GenericDeleteDialog } from "@/shared/tables"
 import { useEmbeddedTableState } from "@/hooks/use-embedded-table-state"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DataTableToolbarOutlineButton } from "@/components/data-table"
-import { VersionPPM } from "@/shared/types/entities/versionPPM"
 import { useDeleteVersionPPM, useGetVersionsPPM } from "@/shared/api/hooks/admin/versionPPMHooks"
 import { buildVersionPPMColumns } from "@/shared/tables/columns/version-ppm-columns"
 
@@ -81,7 +80,6 @@ export default function ListeVersionPPM({
                         }}
                     />
                 )}
-
 
             </CardContent>
         </Card>

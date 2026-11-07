@@ -3,9 +3,6 @@ import type {
   ETAT_SUIVI_VALUES,
   STATUT_ACTIVITE_VALUES,
 } from "@/shared/schemas/suiviAvancementContratSchemas";
-import {
-  SuiviAvancementContrat,
-} from "@/shared/types";
 
 const ENDPOINT = "/suivi-avancement-contrat/";
 const WITH_SOURCES_ENDPOINT = "/suivi-avancement-contrat/with-sources/";

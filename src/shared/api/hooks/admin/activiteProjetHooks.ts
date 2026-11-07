@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import type { ActiviteProjet, NiveauActiviteProjet } from '@/shared/types'
 import type {
   ActiviteProjetFormData,
   NiveauActiviteProjetFormData,

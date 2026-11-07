@@ -12,9 +12,6 @@ import {
   useDeleteIndicateurContrat,
   useGetIndicateursContrat,
 } from '@/shared/api/hooks/admin/indicateurContratHooks'
-import type { ContratPerformance } from '@/shared/types/entities/contratPerformance'
-import type { IndicateurContrat } from '@/shared/types/entities/indicateurContrat'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import { getNiveauClcpLabel } from '@/shared/utils/cadreLogiqueClcpUtils'
 import {
   filterCadresByNiveauClcp,

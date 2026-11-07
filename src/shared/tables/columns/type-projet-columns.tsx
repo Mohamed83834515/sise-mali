@@ -1,7 +1,6 @@
 import { buildColumns } from "@/shared/tables/column-builder"
 import { GenericRowActions } from "@/shared/tables/GenericRowActions"
 import { UserPen, Trash2 } from "lucide-react"
-import { TypeProjet } from "@/shared/types/entities/typeProjet"
 
 type TypeProjetDialogType = 'add' | 'edit' | 'delete'
 

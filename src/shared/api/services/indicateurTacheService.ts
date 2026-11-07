@@ -1,8 +1,4 @@
 import { apiClient } from "@/shared/api";
-import type {
-  IndicateurTache,
-  IndicateurTacheRequest,
-} from "@/shared/types/entities/indicateurTache";
 import { filterIndicateursByActivite } from "@/shared/utils/indicateurTacheUtils";
 
 class IndicateurTacheService {

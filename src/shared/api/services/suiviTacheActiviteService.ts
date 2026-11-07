@@ -1,10 +1,6 @@
 import { apiClient } from "@/shared/api";
 import type { SuiviTacheActiviteFormData } from "@/shared/schemas/suiviTacheActiviteSchemas";
-import type { SuiviTacheActivite } from "@/shared/types";
-import {
-  resolveIdActivitePtba,
-  parseSuiviValide,
-} from "@/shared/types/entities/suiviTacheActivite";
+import { resolveIdActivitePtba, parseSuiviValide } from '@/shared/utils'
 
 const ENDPOINT = "/suivi-tache-activites/";
 const WITH_LIVRABLES_ENDPOINT = "/suivi-tache-activites/with-livrables/";

@@ -1,5 +1,4 @@
 import { apiClient } from "@/shared/api";
-import { NiveauStructure } from "@/shared/types/entities/niveauStructure";
 
 const BASE_URL = "/niveaux-structure-config/";
 

@@ -1,7 +1,6 @@
 import type { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { TitrePersonnel } from '@/shared/types'
 
 export function buildTitrePersonnelColumns({
   onEdit,

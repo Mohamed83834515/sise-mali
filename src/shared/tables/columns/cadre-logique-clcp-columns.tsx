@@ -1,7 +1,5 @@
 import { type ColumnDef } from '@tanstack/react-table'
 import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteActionsColumn'
-import type { CadreLogiqueClcp } from '@/shared/types/entities/cadreLogiqueClcp'
-import type { NiveauConfigClcp } from '@/shared/types/entities/niveauConfigClcp'
 import {
   getNiveauClcpLabel,
   resolveNiveauClcId,

@@ -1,4 +1,3 @@
-import type { CadreResultat, NiveauCadreResultat } from '@/shared/types'
 import {
   resolveRelationCode,
   resolveRelationId,

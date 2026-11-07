@@ -6,7 +6,6 @@ import { GenericTable } from "@/shared/tables"
 import { GenericDialogs } from "@/shared/tables"
 import { GenericDeleteDialog } from "@/shared/tables"
 import { useEmbeddedTableState } from "@/hooks/use-embedded-table-state"
-import { Fonction } from "@/shared/types"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DataTableToolbarOutlineButton } from "@/components/data-table"
 
@@ -82,7 +81,6 @@ export default function ListeFOnction({
                         }}
                     />
                 )}
-
 
             </CardContent>
         </Card>

@@ -8,20 +8,17 @@ import observationPtbaService from '@/shared/api/services/observationPtbaService
 import suiviDecaissementPtbaService from '@/shared/api/services/suiviDecaissementPtbaService'
 export { useGetLocalites } from './sharedHooks'
 export { useGetIndicateursByActivite } from './indicateurTacheHooks'
-import type { SuiviTacheActivite, TacheActivitePtba } from '@/shared/types'
-import { resolveIdActivite } from '@/shared/types/entities/tacheActivitePtba'
-import { tauxAvancementGlobalTaches } from '@/shared/types/entities/suiviTacheActivite'
+import { resolveIdActivite } from '@/shared/utils'
+import { tauxAvancementGlobalTaches } from '@/shared/utils'
 import type { SuiviTacheActiviteFormData } from '@/shared/schemas/suiviTacheActiviteSchemas'
 import type { ObservationPtbaFormData } from '@/shared/schemas/observationPtbaSchemas'
 import type { SuiviDecaissementPtbaFormData } from '@/shared/schemas/suiviDecaissementPtbaSchemas'
-import type { SuiviDecaissementPtba } from '@/shared/types/entities/decaissementPtba'
 import type {
   SuiviAvancementContratPayload,
   SuiviAvancementWithSourcesInput,
 } from '@/shared/api/services/suiviAvancementContratService'
 import type { SuiviIndicateurTachePayload } from '@/shared/schemas/suiviIndicateurTacheProjetSchemas'
 import suiviIndicateurTacheService from '@/shared/api/services/suiviIndicateurTacheService'
-
 
 const BASE_URL = "/taches-activites-ptbas/"
 

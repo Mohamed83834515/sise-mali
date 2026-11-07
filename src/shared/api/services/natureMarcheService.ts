@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { NatureMarche } from '@/shared/types/entities/natureMarche'
 import type { NatureMarcheFormData } from '@/shared/schemas/natureMarcheSchema'
 
 const ENDPOINT = '/natures-marche/'

@@ -2,7 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { localiteService } from '@/shared/api/services/localiteService';
 import { toast } from 'sonner';
 import { getApiErrorMessage } from '@/lib/api-error-message'
-import { Localite } from '@/shared/types';
 
 // Gardez votre hook existant pour les composants React
 export const useGetLocalites = () => {

@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviContrat } from '@/shared/types/entities/suiviContrat'
 import { normalizeApiList } from './apiListUtils'
 
 const ENDPOINT = '/suivis-contrats/'

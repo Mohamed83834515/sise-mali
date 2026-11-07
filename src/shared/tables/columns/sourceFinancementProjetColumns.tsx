@@ -2,7 +2,6 @@ import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from '@/components/data-table'
 import { GenericRowActions } from '@/shared/tables/GenericRowActions'
 import { Trash2, UserPen } from 'lucide-react'
-import { SourFinancementProjet } from '@/shared/types/entities/sourceFinancemanetProjet'
 
 type SourceFinancementDialogType = 'delete'
 

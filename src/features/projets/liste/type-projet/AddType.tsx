@@ -1,7 +1,6 @@
 import { DynamicForm } from "@/shared/forms"
 import { getTypeProjetFormConfig } from "@/shared/forms/configs/typeProjetForm"
 import { useSaveTypeProjet } from "@/shared/api/hooks/admin/typeProjetHooks"
-import { TypeProjet } from "@/shared/types/entities/typeProjet"
 import { typeProjetSchema } from "@/shared/schemas/typeProjetSchema"
 
 type Props = {

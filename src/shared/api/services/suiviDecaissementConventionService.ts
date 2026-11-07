@@ -1,5 +1,4 @@
 import { apiClient } from '@/shared/api'
-import type { SuiviDecaissementConvention } from '@/shared/types/entities/suiviDecaissementConvention'
 import type { SuiviDecaissementConventionFormData } from '@/shared/schemas/suiviDecaissementConventionSchemas'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
 import { normalizeApiList } from './apiListUtils'

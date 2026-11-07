@@ -8,7 +8,6 @@ import {
 } from '@/shared/api/hooks/admin/cadreAnalytiqueHooks'
 import { usePtbaVersionSelection } from '@/shared/api/hooks/admin/versionHooks'
 import ptbaService from '@/shared/api/services/ptbaService'
-import { type Ptba } from '@/shared/types/entities/entities'
 import { getPtbaFormConfig } from '@/shared/forms/configs/ptbaForm'
 import {
   buildCadreAnalytiqueSelectOptions,

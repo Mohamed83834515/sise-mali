@@ -10,7 +10,6 @@ import { DataTableColumnHeader } from "@/components/data-table/column-header"
 
 import { buildColumns } from "@/shared/tables/column-builder"
 import { GenericRowActions } from "@/shared/tables/GenericRowActions"
-import type { VersionPtba } from "@/shared/types"
 
 // Mapping des statuts pour l'affichage
 const getStatusBadge = (statut: number | undefined) => {

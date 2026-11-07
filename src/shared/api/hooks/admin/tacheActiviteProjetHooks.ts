@@ -1,5 +1,4 @@
 import tacheActivitePtbaService from "@/shared/api/services/tacheActivitePtbaService";
-import type { TacheActivitePtba } from "@/shared/types/entities/tacheActivitePtba";
 import {
   mergeTacheActivitePtbaInCache,
   type TacheActivitePtbaApiPayload,
@@ -27,7 +26,6 @@ export const useGetTachesByActiviteProjet = (idActivite: number) =>
         queryFn: () => tacheActivitePtbaService.getByActivite(BASE_URL, idActivite),
         enabled: Number.isFinite(idActivite),
     })
-
 
 export const useCreateTacheActiviteProjet = (idActivite: number) => {
   const queryClient = useQueryClient()
@@ -87,7 +85,6 @@ export const useUpdateTacheActiviteProjet = (idActivite: number) => {
     },
   })
 }
-
 
 export const useDeleteTachePtbaProjet = (id_ptba: number) => {
   const queryClient = useQueryClient()
