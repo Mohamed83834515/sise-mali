@@ -64,7 +64,7 @@ export function buildFinancementProjetColumns({
       id: 'montant',
       accessorKey: 'montant',
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title='Montant(FR)' />
+        <DataTableColumnHeader column={column} title='Montant (FCFA)' />
       ),
       cell: ({ row }) => (
         <span className='text-end block'>{formatMontant(row.original.montant)}</span>

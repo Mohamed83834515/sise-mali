@@ -47,7 +47,7 @@ export function buildConventionProjetColumns({
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title='Montant (FR)'
+          title='Montant (FCFA)'
           className='justify-center'
         />
       ),

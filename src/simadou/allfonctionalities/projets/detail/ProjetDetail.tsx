@@ -25,6 +25,7 @@ import {
   computeDateFin,
   computeDureeConsommee,
   formatDateFr,
+  formatCompactCurrency,
 } from './projetDetailUtils'
 import {
   projetDetailTabs,
@@ -191,13 +192,7 @@ export default function ProjetDetail() {
                     Coût
                   </span>
                   <span className='text-[11px] font-semibold'>
-                    {new Intl.NumberFormat('fr-FR', {
-                      notation: 'compact',
-                      compactDisplay: 'short',
-                      style: 'currency',
-                      currency: 'FR',
-                      maximumFractionDigits: 1,
-                    }).format(0)}
+                    {formatCompactCurrency(projet.budget_projet)}
                   </span>
                 </div>
               </div>

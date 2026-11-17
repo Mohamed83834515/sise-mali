@@ -44,7 +44,7 @@ export function CoutActiviteTable({
   ptbas,
   couts,
   isLoading,
-  currencyCode = 'FR',
+  currencyCode = 'FCFA',
 }: Props) {
   const { navigate } = useEmbeddedTableState()
 

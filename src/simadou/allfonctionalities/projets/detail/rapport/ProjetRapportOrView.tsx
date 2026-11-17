@@ -329,7 +329,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
             'Intitulé',
             'Type',
             'Bailleur',
-            'Montant (FR)',
+            'Montant (FCFA)',
             "Date d'accord",
           ]}
           rows={data.financements.map((f) => [
@@ -352,7 +352,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
           title='Plan analytique (arborescence)'
           headers={[
             'Activité',
-            'Budget (FR)',
+            'Budget (FCFA)',
             'Intitulé indicateur',
             'Unité',
             'Valeur cible',

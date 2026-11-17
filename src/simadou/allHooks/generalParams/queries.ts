@@ -14,9 +14,19 @@ export function useGeneralParamsQuery() {
   return useQuery({
     queryKey: generalParamsKeys.single(),
     queryFn:  async () => {
-      const raw = await apiClient.request<GeneralParamsRaw>('/configuration/')
-      
-      return GeneralParamsSchema.parse(raw)
+      try {
+        const raw = await apiClient.request<GeneralParamsRaw>('/configuration/')
+        return GeneralParamsSchema.parse(raw)
+      } catch (err: any) {
+        if (err?.response?.status === 404 || err?.status === 404) {
+          return null
+        }
+        throw err
+      }
+    },
+    retry: (failureCount, error: any) => {
+      if (error?.response?.status === 404 || error?.status === 404) return false
+      return failureCount < 2
     },
     staleTime: 1000 * 60 * 10,
   })

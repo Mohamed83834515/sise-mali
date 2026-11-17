@@ -262,12 +262,12 @@ const DashboardPage: React.FC = () => {
                         {
                             label: 'Montant Total Prévu',
                             value: formatNumber(ptbaProjetsStats.montantTotalPrevu),
-                            suffix: 'FR',
+                            suffix: 'FCFA',
                         },
                         {
                             label: 'Montant Total Décaissé',
                             value: formatNumber(ptbaProjetsStats.montantTotalDecaisse),
-                            suffix: `(${formatDashboardPercent(ptbaProjetsStats.tauxDecaissement)}%) FR`,
+                            suffix: `(${formatDashboardPercent(ptbaProjetsStats.tauxDecaissement)}%) FCFA`,
                             valueColor: 'emerald',
                         },
                         {
@@ -284,18 +284,18 @@ const DashboardPage: React.FC = () => {
 
                 {/* Carte 3 : PAO Département */}
                 <StatCard
-                    title={`PAO ${paoMinagriStats.annee} du MA`}
+                    title={`PAO ${paoMinagriStats.annee} du MEADD`}
                     color='purple'
                     rows={[
                         {
                             label: 'Montant Total Prévu',
                             value: formatNumber(paoMinagriStats.montantTotalPrevu),
-                            suffix: 'FR',
+                            suffix: 'FCFA',
                         },
                         {
                             label: 'Montant Total Décaissé',
                             value: formatNumber(paoMinagriStats.montantTotalDecaisse),
-                            suffix: `(${formatDashboardPercent(paoMinagriStats.tauxDecaissement)}%) FR`,
+                            suffix: `(${formatDashboardPercent(paoMinagriStats.tauxDecaissement)}%) FCFA`,
                             valueColor: 'purple',
                         },
                         {

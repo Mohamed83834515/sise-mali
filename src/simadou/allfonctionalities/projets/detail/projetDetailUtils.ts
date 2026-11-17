@@ -28,3 +28,19 @@ export function openDossierProjetInNewTab(projet: Projet, dossierId: number) {
   const url = `${window.location.origin}${path}`
   window.open(url, '_blank', 'noopener,noreferrer')
 }
+
+export function formatCompactCurrency(value: number | string | undefined | null): string {
+  const num = Number(value) || 0
+  try {
+    return new Intl.NumberFormat('fr-FR', {
+      notation: 'compact',
+      compactDisplay: 'short',
+      style: 'currency',
+      currency: 'XOF',
+      maximumFractionDigits: 1,
+    }).format(num)
+  } catch {
+    return `${new Intl.NumberFormat('fr-FR', { notation: 'compact', compactDisplay: 'short', maximumFractionDigits: 1 }).format(num)} FCFA`
+  }
+}
+

@@ -175,7 +175,7 @@ export function buildPlanAnalytiqueArboTable(
       'Activités du plan analytique en arborescence, avec indicateurs de performance (budget, unité, valeurs cibles).',
     headers: [
       'Activité',
-      'Budget (FR)',
+      'Budget (FCFA)',
       'Intitulé indicateur',
       'Unité',
       'Valeur cible',

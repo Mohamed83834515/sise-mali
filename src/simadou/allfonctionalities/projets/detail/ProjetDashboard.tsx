@@ -347,8 +347,8 @@ const avancementChartConfig = {
 } satisfies ChartConfig
 
 const decaissementChartConfig = {
-  realise: { label: 'Réalisé (FR)', color: 'var(--color-chart-1)' },
-  cible: { label: 'Prévu (FR)', color: 'var(--color-chart-2)' },
+  realise: { label: 'Réalisé (FCFA)', color: 'var(--color-chart-1)' },
+  cible: { label: 'Prévu (FCFA)', color: 'var(--color-chart-2)' },
 } satisfies ChartConfig
 
 // ─── Graphiques ──────────────────────────────────────────────────────────────
@@ -372,7 +372,7 @@ function DecaissementComparatifCard({ data, isLoading }: {
           </div>
           <div>
             <CardTitle className='text-sm font-semibold'>Décaissement par année</CardTitle>
-            <CardDescription className='text-xs'>Montant réalisé vs prévu (FR) — toutes années</CardDescription>
+            <CardDescription className='text-xs'>Montant réalisé vs prévu (FCFA) — toutes années</CardDescription>
           </div>
         </div>
       </CardHeader>
@@ -389,7 +389,7 @@ function DecaissementComparatifCard({ data, isLoading }: {
                   <CartesianGrid vertical={false} strokeDasharray='3 3' className='stroke-muted/40' />
                   <XAxis dataKey='annee' tickLine={false} tickMargin={10} axisLine={false} className='fill-muted-foreground text-xs' />
                   <YAxis tickLine={false} axisLine={false} tickMargin={8} tickFormatter={fmt} className='fill-muted-foreground text-[10px]' />
-                  <ChartTooltip cursor={{ fill: 'rgba(0,0,0,0.04)' }} content={<ChartTooltipContent formatter={(v) => `${formatNumber(Number(v))} FR`} />} />
+                  <ChartTooltip cursor={{ fill: 'rgba(0,0,0,0.04)' }} content={<ChartTooltipContent formatter={(v) => `${formatNumber(Number(v))} FCFA`} />} />
                   <Bar dataKey='cible' fill='#FCD116' radius={[4, 4, 0, 0]}>
                     <LabelList dataKey='cible' position='top' className='fill-muted-foreground text-[9px] font-bold' formatter={(v: any) => fmt(Number(v))} />
                   </Bar>
@@ -399,8 +399,8 @@ function DecaissementComparatifCard({ data, isLoading }: {
                 </BarChart>
               </ChartContainer>
               <CustomLegend items={[
-                { color: '#FCD116', label: 'Prévu (FR)' },
-                { color: '#10b981', label: 'Réalisé (FR) ' },
+                { color: '#FCD116', label: 'Prévu (FCFA)' },
+                { color: '#10b981', label: 'Réalisé (FCFA)' },
               ]} />
             </div>
           </div>
