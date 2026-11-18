@@ -139,7 +139,7 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
                 colSpan={3}
                 className="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider border-t-0 border-r border-b border-white/15"
               >
-                Budget (FR)
+                Budget (FCFA)
               </th>
               <th
                 rowSpan={2}
