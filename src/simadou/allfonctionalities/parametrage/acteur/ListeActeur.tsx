@@ -92,7 +92,7 @@ export function ListeActeur() {
           value={String(currentActiveId)}
           onValueChange={(val) => setSelectedCategorieId(Number(val))}
         >
-          <TabsList className='inline-flex w-full min-w-max gap-1 bg-transparent p-0'>
+          <TabsList className='flex flex-wrap gap-1'>
             {sortedCategories && sortedCategories.length > 0 ? (
               sortedCategories.map((categorie) => {
                 // Sécuriser chaque élément
