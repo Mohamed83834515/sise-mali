@@ -70,7 +70,7 @@ export const getProjetFormConfig = (
 
     {
       name: 'code_projet',
-      label: 'Code projet',
+      label: 'RNP du programme/projet',
       type: 'text',
       placeholder: 'Ex : PRJ001, PROJ01…',
       required: true,
@@ -79,7 +79,7 @@ export const getProjetFormConfig = (
     },
     {
       name: 'sigle_projet',
-      label: 'Sigle projet',
+      label: 'Sigle du programme/projet',
       type: 'text',
       placeholder: 'Ex : PAD, PEF, PAS…',
       required: true,
@@ -88,16 +88,16 @@ export const getProjetFormConfig = (
     },
     {
       name: 'intitule_projet',
-      label: 'Intitulé du projet',
+      label: 'Intitulé du programme/projet',
       type: 'textarea',
-      placeholder: 'Intitulé complet du projet',
+      placeholder: 'Intitulé complet du programme/projet',
       required: true,
       gridCols: 1,
       formStep: 1,
     },
     {
       name: 'date_signature_projet',
-      label: 'Date de signature',
+      label: 'Date signature programme/projet',
       type: 'date',
       required: true,
       gridCols: 2,
@@ -105,7 +105,7 @@ export const getProjetFormConfig = (
     },
     {
       name: 'date_demarrage_projet',
-      label: 'Date de démarrage',
+      label: 'Date démarrage du programme/projet',
       type: 'date',
       required: true,
       gridCols: 2,
@@ -113,7 +113,7 @@ export const getProjetFormConfig = (
     },
     {
       name: 'duree_projet',
-      label: 'Durée (en mois)',
+      label: 'Durée du programme/projet(en mois)',
       type: 'number',
       placeholder: 'Ex : 36',
       required: true,
@@ -146,9 +146,9 @@ export const getProjetFormConfig = (
     },
     {
       name: 'programme_projet',
-      label: 'Programme',
+      label: 'Politique',
       type: 'select',
-      placeholder: 'Sélectionner un programme',
+      placeholder: 'Sélectionner une politique',
       required: true,
       options: ProgrammeOptions(programmes),
       gridCols: 2,
