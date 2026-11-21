@@ -15,14 +15,14 @@ import {
   FileStack,
   BarChart2,
   Target,
-  FileSignature,
   LineChart,
   TrendingUp,
   FileBarChart,
   ListChecks,
   Wallet,
   ClipboardCheck,
-  List,
+  Layers,
+  WalletCards,
 } from 'lucide-react'
 import { type SidebarData } from './types'
 
@@ -57,6 +57,11 @@ export const sidebarData: SidebarData = {
               title: 'Localités',
               url: '/parametrage/localites',
               icon: MapPin,
+            },
+            {
+              title: 'Secteurs',
+              url: '/parametrage/secteurs',
+              icon: Layers,
             },
 
             {
@@ -103,12 +108,12 @@ export const sidebarData: SidebarData = {
           icon: FileStack,
           items: [
             {
-              title: 'Liste des plans stratégiques',
+              title: 'Liste des politiques',
               url: '/programme/liste',
               icon: FileStack,
             },
             {
-              title: 'CDMT',
+              title: 'Cadre Analytique',
               url: '/programme/cadre-analytique',
               icon: BarChart2,
             },
@@ -141,21 +146,21 @@ export const sidebarData: SidebarData = {
               url: '/programmation/ptba',
               icon: ClipboardList,
             },
-            {
-              title: 'Contrats de performance',
-              url: '/programmation/contrat-performance',
-              icon: FileSignature,
-            },
-            {
-              title: 'Paramétrage des marchés',
-              url: '/programmation/parametrage-marches',
-              icon: List,
-            },
-            {
-              title: 'Plan de passation des marchés',
-              url: '/programmation/ppms',
-              icon: FileStack,
-            },
+            // {
+            //   title: 'Contrats de performance',
+            //   url: '/programmation/contrat-performance',
+            //   icon: FileSignature,
+            // },
+            // {
+            //   title: 'Paramétrage des marchés',
+            //   url: '/programmation/parametrage-marches',
+            //   icon: List,
+            // },
+            // {
+            //   title: 'Plan de passation des marchés',
+            //   url: '/programmation/ppms',
+            //   icon: FileStack,
+            // },
           ],
         },
         // ── Projet ─────────────────────────────────────
@@ -173,6 +178,11 @@ export const sidebarData: SidebarData = {
               title: 'Zones agro-écologiques',
               url: '/projet-programme/zone-de-collecte',
               icon: MapPin,
+            },
+            {
+              title: 'Paramétrage financement',
+              url: '/projet-programme/parametrage-financement',
+              icon: WalletCards,
             },
 
           ],
@@ -193,11 +203,11 @@ export const sidebarData: SidebarData = {
               url: '/suivi-resultats/suivi-ptba',
               icon: Eye,
             },
-            {
-              title: "Suivi du Plan de passation des marchés",
-              url: "/suivi-resultats/suivi-ppm",
-              icon: FileStack,
-            },
+            // {
+            //   title: "Suivi du Plan de passation des marchés",
+            //   url: "/suivi-resultats/suivi-ppm",
+            //   icon: FileStack,
+            // },
             {
               title: 'Cartographie',
               url: '/suivi-resultats/cartographie',

@@ -253,7 +253,7 @@ export function buildProjetRapportOrExport(
             ],
             ['Date de fin', computeDateFin(projet)],
             ['Date de clôture', formatDateCloture(projet)],
-            ['Budget', `${formatMontant(projet.budget_projet)} FR`],
+            ['Budget', `${formatMontant(projet.budget_projet)} FCFA`],
             [
               'Signataires',
               (projet.signataires_projet ?? [])
@@ -292,7 +292,7 @@ export function buildProjetRapportOrExport(
             'Intitulé',
             'Type',
             'Bailleur',
-            'Montant (FR)',
+            'Montant (FCFA)',
             "Date d'accord",
           ],
           rows:
@@ -341,8 +341,8 @@ export function buildProjetRapportOrExport(
             'Nb activités',
             'Réalisées',
             'En cours',
-            'Coût total (FR)',
-            'Décaissé (FR)',
+            'Coût total (FCFA)',
+            'Décaissé (FCFA)',
             "Taux d'avancement technique",
             'Décaissement',
           ],
@@ -398,7 +398,7 @@ export function buildProjetRapportOrExport(
         },
         {
           label: 'Budget décaissé',
-          value: `${formatMontant(decaisse)} FR`,
+          value: `${formatMontant(decaisse)} FCFA`,
           accent: greenDark,
         },
         {
@@ -412,7 +412,7 @@ export function buildProjetRapportOrExport(
           accent: greenDark,
         },
       ],
-      narrative: `Le projet affiche un taux d’exécution physique de ${tauxGlobal} % (${realisees} activité(s) réalisée(s) sur ${tauxGlobalData.length} suivie(s)). Budget ${formatMontant(budget)} FR, décaissement ${formatMontant(decaisse)} FR (${budgetPct} %).`,
+      narrative: `Le projet affiche un taux d’exécution physique de ${tauxGlobal} % (${realisees} activité(s) réalisée(s) sur ${tauxGlobalData.length} suivie(s)). Budget ${formatMontant(budget)} FCFA, décaissement ${formatMontant(decaisse)} FCFA (${budgetPct} %).`,
       sections,
       footerCode: 'MA-RAPPORT-OR',
     },

@@ -4,7 +4,9 @@ import { useAuthStore } from '@/stores/auth-store'
 import { useSessionStore } from '@/stores/others/session.store'
 import { getConfigDuration } from '@/lib/session-config'
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL as string
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_API_URL ||
+  '') as string
 
 export const api = axios.create({
   baseURL: BASE_URL,

@@ -39,6 +39,7 @@ import { Route as AuthenticatedParametrageDictionnaireIndicateursIndexRouteImpor
 import { Route as AuthenticatedParametrageLocalitesIndexRouteImport } from './routes/_authenticated/parametrage/localites/index'
 import { Route as AuthenticatedParametragePartenaireFinancierIndexRouteImport } from './routes/_authenticated/parametrage/partenaire-financier/index'
 import { Route as AuthenticatedParametragePlansDeSiteIndexRouteImport } from './routes/_authenticated/parametrage/plans-de-site/index'
+import { Route as AuthenticatedParametrageSecteursIndexRouteImport } from './routes/_authenticated/parametrage/secteurs/index'
 import { Route as AuthenticatedParametrageUnitesDeGestionIndexRouteImport } from './routes/_authenticated/parametrage/unites-de-gestion/index'
 import { Route as AuthenticatedParametrageUtilisateursIndexRouteImport } from './routes/_authenticated/parametrage/utilisateurs/index'
 import { Route as AuthenticatedProgrammationActivitesProgrammeIndexRouteImport } from './routes/_authenticated/programmation/activites-programme/index'
@@ -57,6 +58,7 @@ import { Route as AuthenticatedProgrammeIndicateursCmrIndexRouteImport } from '.
 import { Route as AuthenticatedProgrammeIndicateursPerformanceIndexRouteImport } from './routes/_authenticated/programme/indicateurs-performance/index'
 import { Route as AuthenticatedProgrammeListeIndexRouteImport } from './routes/_authenticated/programme/liste/index'
 import { Route as AuthenticatedProgrammePagesTestIndexRouteImport } from './routes/_authenticated/programme/pagesTest/index'
+import { Route as AuthenticatedProjetProgrammeParametrageFinancementIndexRouteImport } from './routes/_authenticated/projet-programme/parametrage-financement/index'
 import { Route as AuthenticatedProjetProgrammeProjetsIndexRouteImport } from './routes/_authenticated/projet-programme/projets/index'
 import { Route as AuthenticatedProjetProgrammeProjetsIdRouteImport } from './routes/_authenticated/projet-programme/projets/$id'
 import { Route as AuthenticatedProjetProgrammeUnitesDeGestionIndexRouteImport } from './routes/_authenticated/projet-programme/unites-de-gestion/index'
@@ -236,6 +238,12 @@ const AuthenticatedParametragePlansDeSiteIndexRoute =
     path: '/parametrage/plans-de-site/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedParametrageSecteursIndexRoute =
+  AuthenticatedParametrageSecteursIndexRouteImport.update({
+    id: '/parametrage/secteurs/',
+    path: '/parametrage/secteurs/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedParametrageUnitesDeGestionIndexRoute =
   AuthenticatedParametrageUnitesDeGestionIndexRouteImport.update({
     id: '/parametrage/unites-de-gestion/',
@@ -342,6 +350,12 @@ const AuthenticatedProgrammePagesTestIndexRoute =
   AuthenticatedProgrammePagesTestIndexRouteImport.update({
     id: '/programme/pagesTest/',
     path: '/programme/pagesTest/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedProjetProgrammeParametrageFinancementIndexRoute =
+  AuthenticatedProjetProgrammeParametrageFinancementIndexRouteImport.update({
+    id: '/projet-programme/parametrage-financement/',
+    path: '/projet-programme/parametrage-financement/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedProjetProgrammeProjetsIndexRoute =
@@ -463,6 +477,7 @@ export interface FileRoutesByFullPath {
   '/parametrage/localites/': typeof AuthenticatedParametrageLocalitesIndexRoute
   '/parametrage/partenaire-financier/': typeof AuthenticatedParametragePartenaireFinancierIndexRoute
   '/parametrage/plans-de-site/': typeof AuthenticatedParametragePlansDeSiteIndexRoute
+  '/parametrage/secteurs/': typeof AuthenticatedParametrageSecteursIndexRoute
   '/parametrage/unites-de-gestion/': typeof AuthenticatedParametrageUnitesDeGestionIndexRoute
   '/parametrage/utilisateurs/': typeof AuthenticatedParametrageUtilisateursIndexRoute
   '/programmation/activites-programme/': typeof AuthenticatedProgrammationActivitesProgrammeIndexRoute
@@ -479,6 +494,7 @@ export interface FileRoutesByFullPath {
   '/programme/indicateurs-performance/': typeof AuthenticatedProgrammeIndicateursPerformanceIndexRoute
   '/programme/liste/': typeof AuthenticatedProgrammeListeIndexRoute
   '/programme/pagesTest/': typeof AuthenticatedProgrammePagesTestIndexRoute
+  '/projet-programme/parametrage-financement/': typeof AuthenticatedProjetProgrammeParametrageFinancementIndexRoute
   '/projet-programme/projets/': typeof AuthenticatedProjetProgrammeProjetsIndexRoute
   '/projet-programme/unites-de-gestion/': typeof AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute
   '/projet-programme/zone-de-collecte/': typeof AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute
@@ -524,6 +540,7 @@ export interface FileRoutesByTo {
   '/parametrage/localites': typeof AuthenticatedParametrageLocalitesIndexRoute
   '/parametrage/partenaire-financier': typeof AuthenticatedParametragePartenaireFinancierIndexRoute
   '/parametrage/plans-de-site': typeof AuthenticatedParametragePlansDeSiteIndexRoute
+  '/parametrage/secteurs': typeof AuthenticatedParametrageSecteursIndexRoute
   '/parametrage/unites-de-gestion': typeof AuthenticatedParametrageUnitesDeGestionIndexRoute
   '/parametrage/utilisateurs': typeof AuthenticatedParametrageUtilisateursIndexRoute
   '/programmation/activites-programme': typeof AuthenticatedProgrammationActivitesProgrammeIndexRoute
@@ -540,6 +557,7 @@ export interface FileRoutesByTo {
   '/programme/indicateurs-performance': typeof AuthenticatedProgrammeIndicateursPerformanceIndexRoute
   '/programme/liste': typeof AuthenticatedProgrammeListeIndexRoute
   '/programme/pagesTest': typeof AuthenticatedProgrammePagesTestIndexRoute
+  '/projet-programme/parametrage-financement': typeof AuthenticatedProjetProgrammeParametrageFinancementIndexRoute
   '/projet-programme/projets': typeof AuthenticatedProjetProgrammeProjetsIndexRoute
   '/projet-programme/unites-de-gestion': typeof AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute
   '/projet-programme/zone-de-collecte': typeof AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute
@@ -589,6 +607,7 @@ export interface FileRoutesById {
   '/_authenticated/parametrage/localites/': typeof AuthenticatedParametrageLocalitesIndexRoute
   '/_authenticated/parametrage/partenaire-financier/': typeof AuthenticatedParametragePartenaireFinancierIndexRoute
   '/_authenticated/parametrage/plans-de-site/': typeof AuthenticatedParametragePlansDeSiteIndexRoute
+  '/_authenticated/parametrage/secteurs/': typeof AuthenticatedParametrageSecteursIndexRoute
   '/_authenticated/parametrage/unites-de-gestion/': typeof AuthenticatedParametrageUnitesDeGestionIndexRoute
   '/_authenticated/parametrage/utilisateurs/': typeof AuthenticatedParametrageUtilisateursIndexRoute
   '/_authenticated/programmation/activites-programme/': typeof AuthenticatedProgrammationActivitesProgrammeIndexRoute
@@ -605,6 +624,7 @@ export interface FileRoutesById {
   '/_authenticated/programme/indicateurs-performance/': typeof AuthenticatedProgrammeIndicateursPerformanceIndexRoute
   '/_authenticated/programme/liste/': typeof AuthenticatedProgrammeListeIndexRoute
   '/_authenticated/programme/pagesTest/': typeof AuthenticatedProgrammePagesTestIndexRoute
+  '/_authenticated/projet-programme/parametrage-financement/': typeof AuthenticatedProjetProgrammeParametrageFinancementIndexRoute
   '/_authenticated/projet-programme/projets/': typeof AuthenticatedProjetProgrammeProjetsIndexRoute
   '/_authenticated/projet-programme/unites-de-gestion/': typeof AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute
   '/_authenticated/projet-programme/zone-de-collecte/': typeof AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute
@@ -654,6 +674,7 @@ export interface FileRouteTypes {
     | '/parametrage/localites/'
     | '/parametrage/partenaire-financier/'
     | '/parametrage/plans-de-site/'
+    | '/parametrage/secteurs/'
     | '/parametrage/unites-de-gestion/'
     | '/parametrage/utilisateurs/'
     | '/programmation/activites-programme/'
@@ -670,6 +691,7 @@ export interface FileRouteTypes {
     | '/programme/indicateurs-performance/'
     | '/programme/liste/'
     | '/programme/pagesTest/'
+    | '/projet-programme/parametrage-financement/'
     | '/projet-programme/projets/'
     | '/projet-programme/unites-de-gestion/'
     | '/projet-programme/zone-de-collecte/'
@@ -715,6 +737,7 @@ export interface FileRouteTypes {
     | '/parametrage/localites'
     | '/parametrage/partenaire-financier'
     | '/parametrage/plans-de-site'
+    | '/parametrage/secteurs'
     | '/parametrage/unites-de-gestion'
     | '/parametrage/utilisateurs'
     | '/programmation/activites-programme'
@@ -731,6 +754,7 @@ export interface FileRouteTypes {
     | '/programme/indicateurs-performance'
     | '/programme/liste'
     | '/programme/pagesTest'
+    | '/projet-programme/parametrage-financement'
     | '/projet-programme/projets'
     | '/projet-programme/unites-de-gestion'
     | '/projet-programme/zone-de-collecte'
@@ -779,6 +803,7 @@ export interface FileRouteTypes {
     | '/_authenticated/parametrage/localites/'
     | '/_authenticated/parametrage/partenaire-financier/'
     | '/_authenticated/parametrage/plans-de-site/'
+    | '/_authenticated/parametrage/secteurs/'
     | '/_authenticated/parametrage/unites-de-gestion/'
     | '/_authenticated/parametrage/utilisateurs/'
     | '/_authenticated/programmation/activites-programme/'
@@ -795,6 +820,7 @@ export interface FileRouteTypes {
     | '/_authenticated/programme/indicateurs-performance/'
     | '/_authenticated/programme/liste/'
     | '/_authenticated/programme/pagesTest/'
+    | '/_authenticated/projet-programme/parametrage-financement/'
     | '/_authenticated/projet-programme/projets/'
     | '/_authenticated/projet-programme/unites-de-gestion/'
     | '/_authenticated/projet-programme/zone-de-collecte/'
@@ -1036,6 +1062,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedParametragePlansDeSiteIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/parametrage/secteurs/': {
+      id: '/_authenticated/parametrage/secteurs/'
+      path: '/parametrage/secteurs'
+      fullPath: '/parametrage/secteurs/'
+      preLoaderRoute: typeof AuthenticatedParametrageSecteursIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/parametrage/unites-de-gestion/': {
       id: '/_authenticated/parametrage/unites-de-gestion/'
       path: '/parametrage/unites-de-gestion'
@@ -1160,6 +1193,13 @@ declare module '@tanstack/react-router' {
       path: '/programme/pagesTest'
       fullPath: '/programme/pagesTest/'
       preLoaderRoute: typeof AuthenticatedProgrammePagesTestIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/projet-programme/parametrage-financement/': {
+      id: '/_authenticated/projet-programme/parametrage-financement/'
+      path: '/projet-programme/parametrage-financement'
+      fullPath: '/projet-programme/parametrage-financement/'
+      preLoaderRoute: typeof AuthenticatedProjetProgrammeParametrageFinancementIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/projet-programme/projets/': {
@@ -1319,6 +1359,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedParametrageLocalitesIndexRoute: typeof AuthenticatedParametrageLocalitesIndexRoute
   AuthenticatedParametragePartenaireFinancierIndexRoute: typeof AuthenticatedParametragePartenaireFinancierIndexRoute
   AuthenticatedParametragePlansDeSiteIndexRoute: typeof AuthenticatedParametragePlansDeSiteIndexRoute
+  AuthenticatedParametrageSecteursIndexRoute: typeof AuthenticatedParametrageSecteursIndexRoute
   AuthenticatedParametrageUnitesDeGestionIndexRoute: typeof AuthenticatedParametrageUnitesDeGestionIndexRoute
   AuthenticatedParametrageUtilisateursIndexRoute: typeof AuthenticatedParametrageUtilisateursIndexRoute
   AuthenticatedProgrammationActivitesProgrammeIndexRoute: typeof AuthenticatedProgrammationActivitesProgrammeIndexRoute
@@ -1335,6 +1376,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedProgrammeIndicateursPerformanceIndexRoute: typeof AuthenticatedProgrammeIndicateursPerformanceIndexRoute
   AuthenticatedProgrammeListeIndexRoute: typeof AuthenticatedProgrammeListeIndexRoute
   AuthenticatedProgrammePagesTestIndexRoute: typeof AuthenticatedProgrammePagesTestIndexRoute
+  AuthenticatedProjetProgrammeParametrageFinancementIndexRoute: typeof AuthenticatedProjetProgrammeParametrageFinancementIndexRoute
   AuthenticatedProjetProgrammeProjetsIndexRoute: typeof AuthenticatedProjetProgrammeProjetsIndexRoute
   AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute: typeof AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute
   AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute: typeof AuthenticatedProjetProgrammeZoneDeCollecteIndexRoute
@@ -1377,6 +1419,8 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
     AuthenticatedParametragePartenaireFinancierIndexRoute,
   AuthenticatedParametragePlansDeSiteIndexRoute:
     AuthenticatedParametragePlansDeSiteIndexRoute,
+  AuthenticatedParametrageSecteursIndexRoute:
+    AuthenticatedParametrageSecteursIndexRoute,
   AuthenticatedParametrageUnitesDeGestionIndexRoute:
     AuthenticatedParametrageUnitesDeGestionIndexRoute,
   AuthenticatedParametrageUtilisateursIndexRoute:
@@ -1408,6 +1452,8 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedProgrammeListeIndexRoute: AuthenticatedProgrammeListeIndexRoute,
   AuthenticatedProgrammePagesTestIndexRoute:
     AuthenticatedProgrammePagesTestIndexRoute,
+  AuthenticatedProjetProgrammeParametrageFinancementIndexRoute:
+    AuthenticatedProjetProgrammeParametrageFinancementIndexRoute,
   AuthenticatedProjetProgrammeProjetsIndexRoute:
     AuthenticatedProjetProgrammeProjetsIndexRoute,
   AuthenticatedProjetProgrammeUnitesDeGestionIndexRoute:

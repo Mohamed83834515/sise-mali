@@ -74,10 +74,10 @@ export function ContratKpiIndicateurs({
                 </div>
                 <div className='mb-2 flex items-baseline gap-1'>
                   <span className='text-xl font-bold'>
-                    {ind.current.toLocaleString('fr-FR')}
+                    {ind.current.toLocaleString('fr-FCFA')}
                   </span>
                   <span className='text-xs text-muted-foreground'>
-                    / {ind.target.toLocaleString('fr-FR')} {ind.unit}
+                    / {ind.target.toLocaleString('fr-FCFA')} {ind.unit}
                   </span>
                 </div>
                 <div className='h-1.5 w-full overflow-hidden rounded-full bg-muted'>

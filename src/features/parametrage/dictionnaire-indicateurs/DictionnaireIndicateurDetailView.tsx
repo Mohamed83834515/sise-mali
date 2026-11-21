@@ -97,13 +97,13 @@ export default function DictionnaireIndicateurDetailView({
           {indicateur.created_at ? (
             <DetailField
               label='Créé le'
-              value={new Date(indicateur.created_at).toLocaleDateString('fr-FR')}
+              value={new Date(indicateur.created_at).toLocaleDateString('fr-FCFA')}
             />
           ) : null}
           {indicateur.updated_at ? (
             <DetailField
               label='Modifié le'
-              value={new Date(indicateur.updated_at).toLocaleDateString('fr-FR')}
+              value={new Date(indicateur.updated_at).toLocaleDateString('fr-FCFA')}
             />
           ) : null}
         </DetailFieldGrid>

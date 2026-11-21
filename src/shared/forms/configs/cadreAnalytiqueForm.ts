@@ -61,7 +61,7 @@ export function getCadreAnalytiqueFormConfigForDialog({
         ? [
           {
             name: 'cout_axe',
-            label: 'Budget (FR)',
+            label: 'Budget (FCFA)',
             type: 'number' as const,
             placeholder: 'Saisissez le budget ',
             required: true,

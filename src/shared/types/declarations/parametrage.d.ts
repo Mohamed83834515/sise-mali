@@ -36,6 +36,39 @@ declare interface Localite extends Record<string, unknown> {
   niveau_loca: NiveauLocalite | number
 }
 
+declare interface NiveauSecteur {
+  id_niveau_secteur?: number
+  nombre_niveau_secteur: number
+  libelle_niveau_secteur: string
+  code_niveau_secteur: string
+}
+
+declare interface Secteur extends Record<string, unknown> {
+  id_secteur: number
+  code_secteur: string
+  intitule_secteur: string
+  parent_secteur?: number | Secteur | null
+  niveau_secteur: number | NiveauSecteur
+}
+
+declare interface ModeFinancement extends Record<string, unknown> {
+  id_mode_financement: number
+  code_mode_financement: string
+  nom_mode_financement: string
+}
+
+declare interface EtatFinancement extends Record<string, unknown> {
+  id_etat_financement: number
+  code_etat_financement: string
+  nom_etat_financement: string
+}
+
+declare interface EnvergureProjet extends Record<string, unknown> {
+  id_envergure: number
+  code_envergure: string
+  nom_envergure: string
+}
+
 declare interface PlanSite extends Record<string, unknown> {
   id_ds?: number
   code_ds: string

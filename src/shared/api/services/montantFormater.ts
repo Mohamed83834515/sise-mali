@@ -41,7 +41,7 @@ export const parseMontant = (formattedValue: string): number => {
 }
 
 /**
- * Formate un nombre avec points et ajoute "FR" si demandé
+ * Formate un nombre avec points et ajoute "FCFA" si demandé
  */
 export const formatMontantAvecDevise = (value: number | string | null | undefined, includeDevise: boolean = false): string => {
   const formatted = formatNumber(value)
