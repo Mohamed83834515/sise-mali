@@ -64,7 +64,7 @@ export default function ListeProgrammes() {
         search={search}
         navigate={navigate}
         searchKey='nom_programme'
-        searchPlaceholder='Rechercher un plan stratégique'
+        searchPlaceholder='Rechercher une politique'
         urlFilterConfig={[
           {
             columnId: 'nom_programme',
@@ -87,9 +87,9 @@ export default function ListeProgrammes() {
           aria-describedby={undefined}
         >
           <DialogHeader className='space-y-1 border-b px-6 py-4 text-left'>
-            <DialogTitle>Modifier le plan stratégique du MA</DialogTitle>
+            <DialogTitle>Modifier la politique</DialogTitle>
             <DialogDescription>
-              Mettez à jour les informations du plan stratégique du MA sélectionné.
+              Mettez à jour les informations de la politique sélectionnée.
             </DialogDescription>
           </DialogHeader>
           <div className='px-6 py-4'>
@@ -110,16 +110,16 @@ export default function ListeProgrammes() {
           open={deleteOpen}
           onOpenChange={setDeleteOpen}
           currentRow={rowToDelete}
-          entityName='ce plan stratégique du MA'
+          entityName='cette politique'
           getEntityLabel={(row) => row.nom_programme}
           onDelete={(row) =>
             deleteMutation.mutate(row.id_programme, {
               onSuccess: () => {
-                toast.success('Plan stratégique du MA supprimé avec succès')
+                toast.success('Politique supprimée avec succès')
                 setRowToDelete(null)
               },
               onError: () =>
-                toast.error('Erreur lors de la suppression du plan stratégique du MA'),
+                toast.error('Erreur lors de la suppression de la politique'),
             })
           }
         />

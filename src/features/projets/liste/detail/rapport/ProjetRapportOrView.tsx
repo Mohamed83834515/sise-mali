@@ -239,7 +239,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
         },
         {
           label: 'Budget décaissé',
-          value: `${formatNumber(budgetDecaisse)} FR`,
+          value: `${formatNumber(budgetDecaisse)} FCFA`,
           accent: greenDark,
         },
         {
@@ -253,7 +253,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
           accent: greenDark,
         },
       ]}
-      narrative={`Le projet affiche un taux d’exécution physique de ${tauxGlobal} % (${realisees} activité(s) réalisée(s) sur ${data.tauxGlobalData.length} suivie(s)). Budget ${formatNumber(budget)} FR, décaissement ${formatNumber(budgetDecaisse)} FR (${budgetPct} %).`}
+      narrative={`Le projet affiche un taux d’exécution physique de ${tauxGlobal} % (${realisees} activité(s) réalisée(s) sur ${data.tauxGlobalData.length} suivie(s)). Budget ${formatNumber(budget)} FCFA, décaissement ${formatNumber(budgetDecaisse)} FCFA (${budgetPct} %).`}
       actions={<RapportExportButton formats={['word', 'pdf']} />}
     >
       <FicheSection
@@ -284,7 +284,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
               'Date de clôture',
               dateCloture === '—' ? 'Non clôturé' : dateCloture,
             ],
-            ['Budget', `${formatNumber(projet.budget_projet)} FR`],
+            ['Budget', `${formatNumber(projet.budget_projet)} FCFA`],
             [
               'Signataires',
               (projet.signataires_projet ?? [])
@@ -328,7 +328,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
             'Intitulé',
             'Type',
             'Bailleur',
-            'Montant (FR)',
+            'Montant (FCFA)',
             "Date d'accord",
           ]}
           rows={data.financements.map((f) => [
@@ -351,7 +351,7 @@ function ProjetRapportOrBody({ projet }: { projet: Projet }) {
           title='Plan analytique (arborescence)'
           headers={[
             'Activité',
-            'Budget (FR)',
+            'Budget (FCFA)',
             'Intitulé indicateur',
             'Unité',
             'Valeur cible',

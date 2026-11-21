@@ -115,48 +115,50 @@ export function ProgrammeSwitcher({ onHeader = false }: ProgrammeSwitcherProps) 
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
 
-        {programmes.length === 0 && (
-          <div className='px-3 py-4 text-center text-sm text-muted-foreground'>
-            Aucun programme disponible
-          </div>
-        )}
+        <div className='max-h-72 overflow-y-auto overscroll-contain pr-1'>
+          {programmes.length === 0 && (
+            <div className='px-3 py-4 text-center text-sm text-muted-foreground'>
+              Aucun programme disponible
+            </div>
+          )}
 
-        {programmes.map((programme) => {
-          const isActive =
-            activeProgramme?.id_programme === programme.id_programme
-          return (
-            <DropdownMenuItem
-              key={programme.id_programme}
-              onClick={() => handleSelect(programme)}
-              className={cn(
-                'my-0.5 flex cursor-pointer flex-col items-start gap-1 rounded-md p-3',
-                isActive && 'bg-primary/10 ring-1 ring-primary/25'
-              )}
-            >
-              <div className='flex w-full items-center justify-between gap-2'>
-                <div className='flex min-w-0 items-center gap-2'>
-                  {isActive && (
-                    <Check className='h-3.5 w-3.5 shrink-0 text-primary' />
-                  )}
-                  <span className='truncate text-sm font-semibold'>
-                    {programme.sigle_programme} | {programme.code_programme}
-                  </span>
-                </div>
-                <Badge variant='outline' className='shrink-0 px-1.5 py-0 text-[10px]'>
-                  {programmePeriode(programme)}
-                </Badge>
-              </div>
-              <span
+          {programmes.map((programme) => {
+            const isActive =
+              activeProgramme?.id_programme === programme.id_programme
+            return (
+              <DropdownMenuItem
+                key={programme.id_programme}
+                onClick={() => handleSelect(programme)}
                 className={cn(
-                  'line-clamp-2 text-xs',
-                  isActive ? 'text-foreground' : 'text-muted-foreground'
+                  'my-0.5 flex cursor-pointer flex-col items-start gap-1 rounded-md p-3',
+                  isActive && 'bg-primary/10 ring-1 ring-primary/25'
                 )}
               >
-                {programme.nom_programme}
-              </span>
-            </DropdownMenuItem>
-          )
-        })}
+                <div className='flex w-full items-center justify-between gap-2'>
+                  <div className='flex min-w-0 items-center gap-2'>
+                    {isActive && (
+                      <Check className='h-3.5 w-3.5 shrink-0 text-primary' />
+                    )}
+                    <span className='truncate text-sm font-semibold'>
+                      {programme.sigle_programme} | {programme.code_programme}
+                    </span>
+                  </div>
+                  <Badge variant='outline' className='shrink-0 px-1.5 py-0 text-[10px]'>
+                    {programmePeriode(programme)}
+                  </Badge>
+                </div>
+                <span
+                  className={cn(
+                    'line-clamp-2 text-xs',
+                    isActive ? 'text-foreground' : 'text-muted-foreground'
+                  )}
+                >
+                  {programme.nom_programme}
+                </span>
+              </DropdownMenuItem>
+            )
+          })}
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   )

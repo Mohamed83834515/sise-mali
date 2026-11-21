@@ -89,7 +89,7 @@ export function buildCadreAnalytiqueColumns({
       aggregatedBudgetByCadreId.get(row.id_ca) ??
       (Number(row.cout_axe) || 0),
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Budget FR' />
+      <DataTableColumnHeader column={column} title='Budget FCFA' />
     ),
     cell: ({ row }) => (
       <span className='whitespace-nowrap tabular-nums text-sm'>

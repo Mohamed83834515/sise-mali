@@ -7,4 +7,5 @@ export { default as TypeProjetDialog } from './liste/type-projet/ModalType'
 
 export { default as AddZoneCollecte } from './zone-collecte/AddZoneCollecte'
 export { ListeZoneCollecte } from './zone-collecte/ListeZoneCollecte'
+export { default as ParametrageFinancementLayout } from './parametrage-financement/ParametrageFinancementLayout'
 

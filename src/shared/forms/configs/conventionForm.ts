@@ -31,9 +31,9 @@ export const getConventionFormConfig = (
     },
     {
       name: 'montant_conv',
-      label: 'Montant (FR)',
+      label: 'Montant (FCFA)',
       type: 'number',
-      placeholder: 'Montant en FR',
+      placeholder: 'Montant en FCFA',
       required: true,
       gridCols: 2,
     },

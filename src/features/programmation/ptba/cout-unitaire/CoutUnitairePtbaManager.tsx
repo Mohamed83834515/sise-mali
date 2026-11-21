@@ -279,8 +279,8 @@ export default function CoutUnitairePtbaManager({
               <TableHead className='min-w-48'>Intitulé tâche</TableHead>
               <TableHead className='min-w-24'>Unité</TableHead>
               <TableHead className='min-w-28'>Quantité</TableHead>
-              <TableHead className='min-w-28'>Prix unitaire (FR)</TableHead>
-              <TableHead className='min-w-28'>Montant (FR)</TableHead>
+              <TableHead className='min-w-28'>Prix unitaire (FCFA)</TableHead>
+              <TableHead className='min-w-28'>Montant (FCFA)</TableHead>
               <TableHead className='w-16 text-end'>Actions</TableHead>
             </TableRow>
           </TableHeader>

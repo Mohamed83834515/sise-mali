@@ -134,7 +134,7 @@ export default function SourceFinancementManager({
                       0
                     )
                   )}{' '}
-                  FR
+                  FCFA
                 </span>
               </div>
             </div>

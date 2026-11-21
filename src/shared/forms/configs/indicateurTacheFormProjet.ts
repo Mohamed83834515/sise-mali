@@ -29,7 +29,7 @@ export function getIndicateurTacheProjetFormConfigForDialog({
         label: 'Unité indicateur tâche',
         type: 'select',
         options: uniteIndicateurOptions,
-        placeholder: 'Ex: Kg, %, Nbre, FR...',
+        placeholder: 'Ex: Kg, %, Nbre, FCFA...',
         required: true,
         isLoading: isLoadingUnites,
         gridCols: 2,

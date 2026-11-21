@@ -10,9 +10,9 @@ export const Route = createFileRoute('/_authenticated/programme/liste/')({
 function RouteComponent() {
   return (
     <PageRouteLayout
-      title='Liste des plans stratégiques'
+      title='Liste des politiques'
       icon={FileStack}
-      boutonAddTitle='Ajouter un plan stratégique'
+      boutonAddTitle='Ajouter une politique'
       addDialogComponent={ProgrammeDialog}
       listComponent={ListeProgrammes}
     />

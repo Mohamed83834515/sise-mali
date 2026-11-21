@@ -4,6 +4,7 @@ export { default as CategorieActeurDialog } from './acteurs/categorie/ModalCateg
 export { ListeActeur } from './acteurs/ListeActeur'
 
 export { default as ListeLocalite } from './localites/ListeLocalite'
+export { default as ListeSecteur } from './secteurs/ListeSecteur'
 
 export { default as ListePlanSite } from './plan-site/ListePlanSite'
 export { default as AddPlanSite } from './plan-site/AddPlanSite'

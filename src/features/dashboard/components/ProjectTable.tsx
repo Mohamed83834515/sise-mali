@@ -53,7 +53,7 @@ const ProgressBar: React.FC<{ value: number; label?: string }> = ({ value }) => 
 const formatDate = (dateStr: string): string => {
   if (!dateStr) return "—";
   const date = new Date(dateStr);
-  return date.toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" });
+  return date.toLocaleDateString("fr-FCFA", { day: "2-digit", month: "short", year: "numeric" });
 };
 
 const ProjectTable: React.FC<ProjectTableProps> = ({
@@ -137,7 +137,7 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
                 colSpan={3}
                 className="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider border-t-0 border-r border-b border-white/15"
               >
-                Budget (FR)
+                Budget (FCFA)
               </th>
               <th
                 rowSpan={2}

@@ -3,10 +3,10 @@ name: CI/CD pipeline
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -33,6 +33,7 @@ jobs:
         run: pnpm run build
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_URL }}
 
       - name: Deploy to VPS
         uses: appleboy/scp-action@v0.1.7 
