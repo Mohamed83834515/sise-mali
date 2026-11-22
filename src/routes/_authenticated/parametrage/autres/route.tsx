@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Settings, Ruler, MapPin, Briefcase } from 'lucide-react'
+import {
+  Settings,
+  Ruler,
+  MapPin,
+  Briefcase,
+  Building,
+  HardHat,
+  Construction,
+} from 'lucide-react'
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Main } from '@/components/layout/others/main'
@@ -9,20 +17,34 @@ import { SystemPage } from './system'
 import { UnitesIndicateurPage } from './unites-indicateur'
 import { TypeZonePage } from './type-zone'
 import { FonctionPage } from './fonction'
-
+import {
+  BureauControlePage,
+  EntrepriseTravauxPage,
+  TypeInfrastructurePage,
+} from '@/features/parametrage'
 
 export const Route = createFileRoute('/_authenticated/parametrage/autres')({
   component: AutresParametrageLayout,
-}) 
+})
 
 // ── Tabs config ───────────────────────────────────────────────────────────────
-type TabId = 'system' | 'unity' | 'zone' | 'fonction'
+type TabId =
+  | 'system'
+  | 'unity'
+  | 'zone'
+  | 'fonction'
+  | 'bureau'
+  | 'entreprise'
+  | 'infrastructure'
 
 const TABS: { id: TabId; label: string; icon: React.ElementType }[] = [
   { id: 'system', label: 'Système', icon: Settings },
   { id: 'unity', label: 'Unités indicateurs', icon: Ruler },
   { id: 'zone', label: 'Type zone', icon: MapPin },
   { id: 'fonction', label: 'Fonction', icon: Briefcase },
+  { id: 'bureau', label: 'Bureaux de contrôle', icon: Building },
+  { id: 'entreprise', label: 'Entreprises de travaux', icon: HardHat },
+  { id: 'infrastructure', label: "Types d'infrastructures", icon: Construction },
 ]
 
 // ── Layout ────────────────────────────────────────────────────────────────────
@@ -57,7 +79,7 @@ function AutresParametrageLayout() {
             '--tab-active-font-weight': '700',
           } as React.CSSProperties}
         >
-          <TabsList>
+          <TabsList className='flex-wrap h-auto gap-1'>
             {TABS.map(({ id, label, icon: Icon }) => (
               <TabsTrigger key={id} value={id} className='flex items-center gap-1.5'>
                 <Icon className='size-3.5' aria-hidden />
@@ -78,6 +100,15 @@ function AutresParametrageLayout() {
             </TabsContent>
             <TabsContent value='fonction'>
               <FonctionPage />
+            </TabsContent>
+            <TabsContent value='bureau'>
+              <BureauControlePage />
+            </TabsContent>
+            <TabsContent value='entreprise'>
+              <EntrepriseTravauxPage />
+            </TabsContent>
+            <TabsContent value='infrastructure'>
+              <TypeInfrastructurePage />
             </TabsContent>
           </div>
         </Tabs>

@@ -30,5 +30,17 @@ export { default as ListeFonction } from './autres/fonction/ListeFonction'
 export { default as AddUniteIndicateur } from './autres/unite-indicateurs/AddUniteIndicateur'
 export { default as ListeUniteIndicateur } from './autres/unite-indicateurs/ListeUniteIndicateur'
 
+export { default as AddBureauControle } from './autres/bureaux-controle/AddBureauControle'
+export { default as ListeBureauControle } from './autres/bureaux-controle/ListeBureauControle'
+export { BureauControlePage } from './autres/bureaux-controle/BureauControlePage'
+
+export { default as AddEntrepriseTravaux } from './autres/entreprises-travaux/AddEntrepriseTravaux'
+export { default as ListeEntrepriseTravaux } from './autres/entreprises-travaux/ListeEntrepriseTravaux'
+export { EntrepriseTravauxPage } from './autres/entreprises-travaux/EntrepriseTravauxPage'
+
+export { default as AddTypeInfrastructure } from './autres/types-infrastructures/AddTypeInfrastructure'
+export { default as ListeTypeInfrastructure } from './autres/types-infrastructures/ListeTypeInfrastructure'
+export { TypeInfrastructurePage } from './autres/types-infrastructures/TypeInfrastructurePage'
+
 export * from './autres/system'
 
