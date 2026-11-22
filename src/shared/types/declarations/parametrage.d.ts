@@ -75,6 +75,27 @@ declare interface NiveauAvancementProjet extends Record<string, unknown> {
   nom_niveau_avancement: string
 }
 
+declare interface BureauControle extends Record<string, unknown> {
+  id_bureau: number
+  code_bureau: string
+  intitule_bureau: string
+  description_bureau?: string
+}
+
+declare interface EntrepriseTravaux extends Record<string, unknown> {
+  id_entreprise: number
+  code_entreprise: string
+  intitule_entreprise: string
+  description_entreprise?: string
+}
+
+declare interface TypeInfrastructure extends Record<string, unknown> {
+  id_type_infrastructure: number
+  code_type_infrastructure: string
+  intitule_type_infrastructure: string
+  description_type_infrastructure?: string
+}
+
 declare interface PlanSite extends Record<string, unknown> {
   id_ds?: number
   code_ds: string
