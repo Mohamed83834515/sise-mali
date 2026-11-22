@@ -1,18 +1,20 @@
 import { useState } from 'react'
-import { Coins, CheckCircle2, Maximize2, WalletCards } from 'lucide-react'
+import { Coins, CheckCircle2, Maximize2, WalletCards, Activity } from 'lucide-react'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Main } from '@/components/layout/others/main'
 import { useColor, HEADER_COLORS } from '@/stores/others/color-store'
 import { ModeFinancementPage } from './modes/ModeFinancementPage'
 import { EtatFinancementPage } from './etats/EtatFinancementPage'
 import { EnvergurePage } from './envergures/EnvergurePage'
+import { NiveauAvancementPage } from './niveaux-avancement/NiveauAvancementPage'
 
-type TabId = 'modes' | 'etats' | 'envergures'
+type TabId = 'modes' | 'etats' | 'envergures' | 'avancements'
 
 const TABS: { id: TabId; label: string; icon: React.ElementType }[] = [
   { id: 'modes', label: 'Modes de financement', icon: Coins },
   { id: 'etats', label: 'États de financement', icon: CheckCircle2 },
   { id: 'envergures', label: 'Envergures des projets', icon: Maximize2 },
+  { id: 'avancements', label: "Niveaux d'avancement", icon: Activity },
 ]
 
 export default function ParametrageFinancementLayout() {
@@ -66,6 +68,10 @@ export default function ParametrageFinancementLayout() {
 
           <TabsContent value='envergures'>
             <EnvergurePage />
+          </TabsContent>
+
+          <TabsContent value='avancements'>
+            <NiveauAvancementPage />
           </TabsContent>
         </Tabs>
       </div>

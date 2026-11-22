@@ -69,6 +69,12 @@ declare interface EnvergureProjet extends Record<string, unknown> {
   nom_envergure: string
 }
 
+declare interface NiveauAvancementProjet extends Record<string, unknown> {
+  id_niveau_avancement: number
+  code_niveau_avancement: string
+  nom_niveau_avancement: string
+}
+
 declare interface PlanSite extends Record<string, unknown> {
   id_ds?: number
   code_ds: string

@@ -62,3 +62,24 @@ export const getEnvergureProjetFormConfig = (): FormConfig => ({
     },
   ],
 })
+
+export const getNiveauAvancementFormConfig = (): FormConfig => ({
+  fields: [
+    {
+      name: 'code_niveau_avancement',
+      label: 'Code',
+      type: 'text',
+      placeholder: 'Ex: NIV01, DEM, CLOT...',
+      required: true,
+      gridCols: 2,
+    },
+    {
+      name: 'nom_niveau_avancement',
+      label: "Nom du niveau d'avancement",
+      type: 'text',
+      placeholder: 'Ex: Démarrage, En cours, Clôturé...',
+      required: true,
+      gridCols: 2,
+    },
+  ],
+})

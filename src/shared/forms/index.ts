@@ -1,5 +1,5 @@
 export { DynamicForm, type DynamicFormHandle } from './DynamicForm'
-export { StepDynamicForm } from './StepDynamicForm'
+export { StepDynamicForm, type StepDynamicFormHandle } from './StepDynamicForm'
 export { FormField, type RichSelectOption } from './FormField'
 export { DateRangeField } from './DateRangeField'
 export { FormStepIndicator } from './FormStepIndicator'

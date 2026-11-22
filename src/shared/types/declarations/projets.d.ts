@@ -6,20 +6,31 @@ declare interface Projet {
   duree_projet: number
   date_signature_projet: string
   date_demarrage_projet: string
-  date_cloture_projet: string
+  date_cloture_projet?: string | null
+  date_estimation?: string | null
+  avance_demarrage?: number | null
+  budget_projet?: number
+  envergure_projet?: number | EnvergureProjet | null
+  etat_financement?: number | EtatFinancement | null
+  niveau_avancement?: number | NiveauAvancementProjet | null
+  secteur_projet?: number | Secteur | null
+  recuperation_geolocation?: boolean
+  latitude?: number | string | null
+  longitude?: number | string | null
+  is_active?: boolean
+  is_cloture?: boolean
+  description_projet?: string | null
   partenaire_projet: PlanSite | null
   programme_projet?: Programme | number
-  structure_projet: number
+  structure_projet?: number | PlanSite | null
   signataires_projet: Acteur[]
   partenaires_execution_projet: Acteur[]
   zone_projet: Localite[]
-  budget_projet?: number
   nombre_ptbas?: number
   taux_execution_ptba?: number
   montant_total_decaisse?: number
   responsable_projet?: number | Personnel
   type_projet?: number | TypeProjet
-  is_cloture?: boolean
 }
 
 declare interface ProjetClotureForm {
