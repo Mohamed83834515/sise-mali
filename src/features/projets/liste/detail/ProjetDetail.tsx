@@ -6,7 +6,6 @@ import {
   Clock,
   DollarSign,
   Loader2,
-  TrendingUp,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Main } from '@/components/layout/others/main'
@@ -32,10 +31,6 @@ import {
 } from './projetDetailTabs'
 
 const route = getRouteApi('/_authenticated/projet-programme/projets/$id')
-
-/** Indicateurs démo (branche amadou) — API à brancher. */
-const DEMO_EXECUTION = 67
-const DEMO_DECAISSEMENT = 54
 
 export default function ProjetDetail() {
   const { id } = route.useParams()
@@ -188,7 +183,7 @@ export default function ProjetDetail() {
                 <div>
                   <span className='mb-0.5 flex items-center gap-1 text-[9px] font-bold tracking-tight text-muted-foreground uppercase'>
                     <DollarSign className='h-2 w-2 text-green-600' />
-                    Coût
+                    Budget
                   </span>
                   <span className='text-[11px] font-semibold'>
                     {new Intl.NumberFormat('fr-FR', {
@@ -197,42 +192,12 @@ export default function ProjetDetail() {
                       style: 'currency',
                       currency: 'XOF',
                       maximumFractionDigits: 1,
-                    }).format(0)}
+                    }).format(Number(projet.budget_projet) || 0)}
                   </span>
                 </div>
               </div>
 
               <div className='space-y-2.5 border-t pt-2.5'>
-                <div className='space-y-1'>
-                  <div className='flex items-center justify-between'>
-                    <span className='flex items-center gap-1 text-[9px] font-bold tracking-tight text-muted-foreground uppercase'>
-                      <TrendingUp className='h-2 w-2 text-blue-500' />
-                      Exécution physique
-                    </span>
-                    <span className='text-[9px] font-bold text-blue-600'>
-                      {DEMO_EXECUTION}%
-                    </span>
-                  </div>
-                  <ProjetMiniProgress
-                    value={DEMO_EXECUTION}
-                    colorClassName='bg-blue-500'
-                  />
-                </div>
-                <div className='space-y-1'>
-                  <div className='flex items-center justify-between'>
-                    <span className='flex items-center gap-1 text-[9px] font-bold tracking-tight text-muted-foreground uppercase'>
-                      <DollarSign className='h-2 w-2 text-green-600' />
-                      Décaissement
-                    </span>
-                    <span className='text-[9px] font-bold text-green-600'>
-                      {DEMO_DECAISSEMENT}%
-                    </span>
-                  </div>
-                  <ProjetMiniProgress
-                    value={DEMO_DECAISSEMENT}
-                    colorClassName='bg-green-500'
-                  />
-                </div>
                 <div className='space-y-1'>
                   <div className='flex items-center justify-between'>
                     <span className='flex items-center gap-1 text-[9px] font-bold tracking-tight text-muted-foreground uppercase'>

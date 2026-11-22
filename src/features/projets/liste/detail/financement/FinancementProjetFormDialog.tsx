@@ -5,6 +5,7 @@ import {
   useCreateFinancementProjet,
   useUpdateFinancementProjet,
 } from '@/shared/api/hooks/admin/financementProjetHooks'
+import { useGetModesFinancement } from '@/shared/api/hooks/admin/modeFinancementHooks'
 import { useMe } from '@/features/auth'
 import { buildBailleurOptionsFromSignataires } from '@/shared/utils/financementProjetUtils'
 import { resolveRelationId } from '@/shared/utils/resolveApiRelation'
@@ -29,15 +30,25 @@ export default function FinancementProjetFormDialog({
   const isEditing = !!financement?.id_part
   const idProjet = projet.id_projet
   const { data: user } = useMe()
+  const { data: modesFinancement = [] } = useGetModesFinancement()
 
   const bailleurOptions = useMemo(
     () => buildBailleurOptionsFromSignataires(projet.signataires_projet),
     [projet.signataires_projet]
   )
 
+  const modeFinancementOptions = useMemo(
+    () =>
+      modesFinancement.map((m) => ({
+        value: m.id_mode_financement,
+        label: `${m.code_mode_financement} - ${m.nom_mode_financement}`,
+      })),
+    [modesFinancement]
+  )
+
   const formConfig = useMemo(
-    () => getFinancementProjetFormConfig(bailleurOptions),
-    [bailleurOptions]
+    () => getFinancementProjetFormConfig(bailleurOptions, modeFinancementOptions),
+    [bailleurOptions, modeFinancementOptions]
   )
 
   const defaultValues = useMemo(
@@ -47,10 +58,14 @@ export default function FinancementProjetFormDialog({
       montant: financement?.montant != null ? Number(financement.montant) : 0,
       date_accord: financement?.date_accord ?? '',
       observation: financement?.observation ?? '',
-      type_financement: financement?.type_financement ?? 'pret',
+      mode_financement:
+        resolveRelationId(financement?.mode_financement, 'id_mode_financement') ??
+        (typeof financement?.mode_financement === 'number'
+          ? financement.mode_financement
+          : modesFinancement[0]?.id_mode_financement ?? 0),
       bailleur: resolveRelationId(financement?.bailleur, 'id_acteur') ?? 0,
     }),
-    [financement]
+    [financement, modesFinancement]
   )
 
   const createMutation = useCreateFinancementProjet(idProjet)
@@ -65,7 +80,7 @@ export default function FinancementProjetFormDialog({
       montant: Number(data.montant),
       date_accord: data.date_accord,
       observation: data.observation?.trim() || undefined,
-      type_financement: data.type_financement,
+      mode_financement: Number(data.mode_financement),
       bailleur: Number(data.bailleur),
       etat: isEditing ? 'modifier' : 'Ajouter',
       projet: idProjet,

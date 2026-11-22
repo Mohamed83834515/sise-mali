@@ -12,12 +12,28 @@ export const TYPE_FINANCEMENT_OPTIONS: {
 ]
 
 export function formatTypeFinancementLabel(
-  value: TypeFinancement | string | undefined
+  value: TypeFinancement | string | null | undefined
 ): string {
   if (!value) return '—'
   return (
     TYPE_FINANCEMENT_OPTIONS.find((opt) => opt.value === value)?.label ?? value
   )
+}
+
+export function resolveModeFinancementLabel(
+  value: FinancementProjet['mode_financement'] | undefined | null,
+  modesById?: Map<number, ModeFinancement>
+): string {
+  if (value == null) return '—'
+  if (typeof value === 'object' && value !== null) {
+    return value.nom_mode_financement || value.code_mode_financement || '—'
+  }
+  const id = typeof value === 'number' ? value : Number(value)
+  if (id && modesById?.has(id)) {
+    const m = modesById.get(id)!
+    return `${m.code_mode_financement} - ${m.nom_mode_financement}`
+  }
+  return id ? String(id) : '—'
 }
 
 export function resolveFinancementProjetId(

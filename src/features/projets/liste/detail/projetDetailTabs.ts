@@ -1,9 +1,7 @@
 import {
-  Briefcase,
+  Building2,
   ClipboardList,
   Coins,
-  Eye,
-  FileSignature,
   FileText,
   Layout,
   LayoutDashboard,
@@ -15,6 +13,7 @@ export type ProjetDetailTabKey =
   | 'dashboard'
   | 'activities'
   | 'financement'
+  | 'infrastructures'
   | 'ptba'
   | 'suivi_ptba'
   | 'conventions'
@@ -44,28 +43,10 @@ export const projetDetailTabs: ProjetDetailTab[] = [
     description: 'Financements du projet (prêt, don, contrepartie).',
   },
   {
-    key: 'activities',
-    name: 'Plan Analitique',
-    icon: Briefcase,
-    description: 'Liste et suivi des activités rattachées au projet.',
-  },
-  {
-    key: 'ptba',
-    name: 'PTBA',
-    icon: ClipboardList,
-    description: 'Planification PTBA des activités du projet.',
-  },
-  {
-    key: 'suivi_ptba',
-    name: 'Suivi PTBA',
-    icon: Eye,
-    description: "Suivi d'avancement des activités PTBA du projet.",
-  },
-  {
-    key: 'conventions',
-    name: 'Conventions',
-    icon: FileSignature,
-    description: 'Conventions rattachées au projet.',
+    key: 'infrastructures',
+    name: 'Infrastructures',
+    icon: Building2,
+    description: 'Infrastructures et travaux du projet.',
   },
   {
     key: 'results_framework',

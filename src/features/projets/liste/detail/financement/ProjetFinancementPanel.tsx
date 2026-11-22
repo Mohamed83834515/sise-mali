@@ -18,6 +18,7 @@ import {
   useDeleteFinancementProjet,
   useGetFinancementsProjet,
 } from '@/shared/api/hooks/admin/financementProjetHooks'
+import { useGetModesFinancement } from '@/shared/api/hooks/admin/modeFinancementHooks'
 import FinancementProjetFormDialog from './FinancementProjetFormDialog'
 
 type ProjetFinancementPanelProps = {
@@ -31,6 +32,7 @@ export default function ProjetFinancementPanel({
   const { search, navigate } = useEmbeddedTableState()
   const { data: financements = [], isLoading } =
     useGetFinancementsProjet(idProjet)
+  const { data: modesFinancement = [] } = useGetModesFinancement()
   const deleteMutation = useDeleteFinancementProjet(idProjet)
 
   const [formOpen, setFormOpen] = useState(false)
@@ -49,6 +51,17 @@ export default function ProjetFinancementPanel({
         ])
       ),
     [projet.signataires_projet]
+  )
+
+  const modesById = useMemo(
+    () =>
+      new Map(
+        modesFinancement.map((mode) => [
+          mode.id_mode_financement,
+          mode,
+        ])
+      ),
+    [modesFinancement]
   )
 
   const handleAdd = () => {
@@ -78,10 +91,11 @@ export default function ProjetFinancementPanel({
     () =>
       buildFinancementProjetColumns({
         signatairesById,
+        modesById,
         onEdit: handleEdit,
         onDeleteRequest: handleDeleteRequest,
       }),
-    [signatairesById, handleEdit, handleDeleteRequest]
+    [signatairesById, modesById, handleEdit, handleDeleteRequest]
   )
 
   const handleConfirmDelete = (row: FinancementProjet) => {

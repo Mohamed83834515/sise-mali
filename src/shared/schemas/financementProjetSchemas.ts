@@ -19,9 +19,10 @@ export const financementProjetSchema = z.object({
     .string()
     .max(1000, "L'observation ne peut pas dépasser 1000 caractères")
     .optional(),
-  type_financement: z.enum(TYPE_FINANCEMENT_VALUES, {
-    message: 'Le type de financement est requis',
-  }),
+  mode_financement: z.coerce
+    .number()
+    .min(1, 'Le mode de financement est requis'),
+  type_financement: z.string().optional(),
   bailleur: z.coerce.number().min(1, 'Le bailleur est requis'),
 })
 

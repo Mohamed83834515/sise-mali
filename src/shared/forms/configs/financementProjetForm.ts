@@ -1,8 +1,8 @@
 import type { FormConfig } from '@/shared/types/formConfig'
-import { TYPE_FINANCEMENT_OPTIONS } from '@/shared/utils/financementProjetUtils'
 
 export function getFinancementProjetFormConfig(
-  bailleurOptions: { value: number; label: string }[]
+  bailleurOptions: { value: number; label: string }[],
+  modeFinancementOptions: { value: number; label: string }[]
 ): FormConfig {
   return {
     fields: [
@@ -23,12 +23,12 @@ export function getFinancementProjetFormConfig(
         gridCols: 2,
       },
       {
-        name: 'type_financement',
-        label: 'Type de financement',
+        name: 'mode_financement',
+        label: 'Mode de financement',
         type: 'select',
-        placeholder: 'Sélectionner un type',
+        placeholder: 'Sélectionner un mode de financement',
         required: true,
-        options: TYPE_FINANCEMENT_OPTIONS,
+        options: modeFinancementOptions,
         gridCols: 2,
       },
       {

@@ -4,6 +4,7 @@ import { buildEditDeleteActionsColumn } from '@/shared/tables/buildEditDeleteAct
 import {
   formatTypeFinancementLabel,
   resolveBailleurLabel,
+  resolveModeFinancementLabel,
 } from '@/shared/utils/financementProjetUtils'
 
 function formatDate(value: string | null | undefined): string {
@@ -23,10 +24,12 @@ function formatMontant(value: number | null | undefined): string {
 
 export function buildFinancementProjetColumns({
   signatairesById,
+  modesById,
   onEdit,
   onDeleteRequest,
 }: {
   signatairesById: Map<number, Acteur>
+  modesById?: Map<number, ModeFinancement>
   onEdit: (row: FinancementProjet) => void
   onDeleteRequest: (row: FinancementProjet) => void
 }): ColumnDef<FinancementProjet>[] {
@@ -41,13 +44,17 @@ export function buildFinancementProjetColumns({
     },
 
     {
-      id: 'type_financement',
-      accessorKey: 'type_financement',
+      id: 'mode_financement',
+      accessorKey: 'mode_financement',
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title='Type' />
+        <DataTableColumnHeader column={column} title='Mode de financement' />
       ),
-      cell: ({ row }) =>
-        formatTypeFinancementLabel(row.original.type_financement),
+      cell: ({ row }) => {
+        if (row.original.mode_financement) {
+          return resolveModeFinancementLabel(row.original.mode_financement, modesById)
+        }
+        return formatTypeFinancementLabel(row.original.type_financement ?? '')
+      },
     },
     {
       id: 'bailleur',

@@ -16,6 +16,8 @@ export const useGetTypesInfrastructures = () => {
   })
 }
 
+export const useGetTypesInfrastructure = useGetTypesInfrastructures
+
 export const useSaveTypeInfrastructure = (
   isEdit: boolean,
   currentRow?: any,

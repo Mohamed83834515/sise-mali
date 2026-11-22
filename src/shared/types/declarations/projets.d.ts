@@ -94,7 +94,8 @@ declare interface FinancementProjet {
   date_enregistrement?: string
   etat?: string
   modifier_le?: string
-  type_financement: TypeFinancement
+  mode_financement?: number | ModeFinancement | null
+  type_financement?: TypeFinancement | string | null
   bailleur: number | Acteur
   projet: number | Projet
   id_personnel?: number
@@ -108,11 +109,33 @@ declare type FinancementProjetApiPayload = {
   date_accord: string
   observation?: string
   etat: string
-  type_financement: TypeFinancement
+  mode_financement: number
+  type_financement?: string
   bailleur: number
   projet: number
   id_personnel: number
   modifier_par: number
+}
+
+declare interface Infrastructure {
+  id_infrastructure: number
+  code_infrastructure: string
+  nom_infrastructure: string
+  maitre_ouvrage?: string | null
+  cout_infrastructure?: number | null
+  date_debut_prevue?: string | null
+  date_fin_prevue?: string | null
+  delai_consomme?: number | null
+  logo?: string | null
+  latitude?: number | null
+  longitude?: number | null
+  projet: number | Projet
+  type_infrastructure?: number | TypeInfrastructure | null
+  bureau_controle?: number | BureauControle | null
+  entreprise_travaux?: number | EntrepriseTravaux | null
+  secteur?: number | Secteur | null
+  sous_secteur?: number | Secteur | null
+  localite?: number | Localite | null
 }
 
 declare interface PartBailleur {
