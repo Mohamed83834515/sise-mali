@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import type { ProjetDetailTab, ProjetDetailTabKey } from './projetDetailTabs'
 import ProjetDashboard from './ProjetDashboard'
+import ProjetPhasesPanel from './phases/ProjetPhasesPanel'
 import ProjetActivitesPanel from './activities/ProjetActivitesPanel'
 import ProjetFinancementPanel from './financement/ProjetFinancementPanel'
 import ProjetInfrastructurePanel from './infrastructures/ProjetInfrastructurePanel'
@@ -18,6 +19,7 @@ type TabPanelRenderer = (projet: Projet) => ReactNode
 
 const TAB_PANEL_RENDERERS: Record<ProjetDetailTabKey, TabPanelRenderer> = {
   dashboard: (projet) => <ProjetDashboard projet={projet} />,
+  phases: (projet) => <ProjetPhasesPanel projet={projet} />,
   financement: (projet) => <ProjetFinancementPanel projet={projet} />,
   infrastructures: (projet) => <ProjetInfrastructurePanel projet={projet} />,
   activities: (projet) => <ProjetActivitesPanel projet={projet} />,

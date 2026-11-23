@@ -85,7 +85,7 @@ export const sidebarData: SidebarData = {
             //   icon: Handshake,
             // },
             {
-              title: 'Cadre Organique du MA',
+              title: 'Département Tutel',
               url: '/parametrage/plans-de-site',
               icon: ClipboardList,
             },

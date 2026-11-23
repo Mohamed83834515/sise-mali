@@ -5,12 +5,14 @@ import {
   FileText,
   Layout,
   LayoutDashboard,
+  Milestone,
   OctagonAlert,
   type LucideIcon,
 } from 'lucide-react'
 
 export type ProjetDetailTabKey =
   | 'dashboard'
+  | 'phases'
   | 'activities'
   | 'financement'
   | 'infrastructures'
@@ -35,6 +37,12 @@ export const projetDetailTabs: ProjetDetailTab[] = [
     name: "Vue d'ensemble",
     icon: LayoutDashboard,
     description: 'Synthèse du projet (indicateurs et avancement).',
+  },
+  {
+    key: 'phases',
+    name: 'Phases',
+    icon: Milestone,
+    description: 'Phases de mise en œuvre et d’exécution du projet.',
   },
   {
     key: 'financement',

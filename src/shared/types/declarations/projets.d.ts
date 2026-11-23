@@ -324,3 +324,10 @@ declare interface ProjetDecaissementAnnuelPoint {
   realise: number
 }
 
+declare interface PhaseProjet {
+  id: number
+  nom_phase: string
+  projet: number | Projet
+}
+
+
