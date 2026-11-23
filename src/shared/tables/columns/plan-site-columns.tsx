@@ -26,8 +26,13 @@ export const buildPlanSiteColumns = (
     const baseColumns = buildColumns([
         {
             type: "text",
-            key: "code_relai_ds",
+            key: "code_ds",
             title: "Code",
+        },
+        {
+            type: "text",
+            key: "code_relai_ds",
+            title: "Sigle",
         },
         {
             type: "text",

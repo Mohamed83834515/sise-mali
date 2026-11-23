@@ -13,7 +13,10 @@ export const projectCreateSchema = z.object({
   description_projet: z.string().optional().nullable(),
 
   // ── Étape 2 : Localisation & Financement ──
-  filter_niveau_localite: z.coerce.number().optional().nullable(),
+  filter_niveau_localite: z
+    .union([z.array(z.coerce.number()), z.coerce.number()])
+    .optional()
+    .nullable(),
   zone_projet: z.array(z.coerce.number()).min(1, 'Localités concernées requises'),
   programme_projet: z.coerce.number().min(1, 'Politique requise'),
   filter_departement_tutelle: z.coerce.number().optional().nullable(),

@@ -42,8 +42,9 @@ export function MultiSelect({
   const [open, setOpen] = React.useState(false);
 
   const handleSelect = (value: string | number) => {
-    const newSelected = selected.includes(value)
-      ? selected.filter((item) => item !== value)
+    const isAlreadySelected = selected.some((item) => String(item) === String(value));
+    const newSelected = isAlreadySelected
+      ? selected.filter((item) => String(item) !== String(value))
       : [...selected, value];
     onChange(newSelected);
   };
@@ -51,12 +52,16 @@ export function MultiSelect({
   const handleRemove = (value: string | number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    onChange(selected.filter((item) => item !== value));
+    onChange(selected.filter((item) => String(item) !== String(value)));
   };
 
-  const selectedLabels = options
-    .filter((option) => selected.includes(option.value))
-    .map((option) => option.label);
+  const selectedOptions = selected.map((val) => {
+    const found = options.find((opt) => String(opt.value) === String(val));
+    return {
+      value: val,
+      label: found ? found.label : String(val),
+    };
+  });
 
   return (
     <Popover open={open} onOpenChange={setOpen} modal={false}>
@@ -76,20 +81,20 @@ export function MultiSelect({
               placeholder
             ) : (
               <>
-                {selectedLabels.map((label, index) => (
+                {selectedOptions.map((item) => (
                   <Badge
-                    key={selected[index]}
+                    key={item.value}
                     variant="secondary"
                     className="mr-1"
                   >
-                    {label}
+                    {item.label}
                     <span
                       className="ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-pointer"
                       onMouseDown={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                       }}
-                      onClick={(e) => handleRemove(selected[index], e)}
+                      onClick={(e) => handleRemove(item.value, e)}
                     >
                       <X className="h-3 w-3 text-muted-foreground hover:text-foreground" />
                     </span>
@@ -122,7 +127,7 @@ export function MultiSelect({
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      selected.includes(option.value)
+                      selected.some((item) => String(item) === String(option.value))
                         ? "opacity-100"
                         : "opacity-0"
                     )}

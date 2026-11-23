@@ -19,7 +19,7 @@ import { useGetEnverguresProjet } from '@/shared/api/hooks/admin/envergureProjet
 import { useGetAllSecteurs } from '@/shared/api/hooks/admin/secteurHooks'
 import { useGetPersonnels } from '@/shared/api/hooks/admin/personnelHooks'
 import { useCreateProjet, useUpdateProjet } from '@/shared/api/hooks/admin/projetHooks'
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { getProjetFormConfig } from '@/shared/forms/configs/projetForm'
 import { ProjectCreateData, projectCreateSchema } from '@/shared/schemas/projetSchema'
 import { toast } from 'sonner'
@@ -50,55 +50,6 @@ export default function AddProjet({ open, onOpenChange, currentRow }: OpenPropsP
   const { data: secteurs = [] } = useGetAllSecteurs()
   const { data: personnels = [] } = useGetPersonnels()
 
-  // ── États pour les filtres dynamiques ──
-  const [filterNiveauLocalite, setFilterNiveauLocalite] = useState<number | null>(null)
-  const [filterDepartementTutelle, setFilterDepartementTutelle] = useState<number | null>(null)
-  const [filterSecteur, setFilterSecteur] = useState<number | null>(null)
-
-  // ── Configuration du formulaire ──
-  const formConfig = useMemo(
-    () =>
-      getProjetFormConfig({
-        acteurs,
-        localites,
-        niveauxLocalite,
-        programmes,
-        niveauxPlanSite,
-        planSites,
-        niveauxAvancement,
-        etatsFinancement,
-        typeProjets,
-        enverguresProjet,
-        secteurs,
-        personnels,
-        filterNiveauLocalite,
-        filterDepartementTutelle,
-        filterSecteur,
-      }),
-    [
-      acteurs,
-      localites,
-      niveauxLocalite,
-      programmes,
-      niveauxPlanSite,
-      planSites,
-      niveauxAvancement,
-      etatsFinancement,
-      typeProjets,
-      enverguresProjet,
-      secteurs,
-      personnels,
-      filterNiveauLocalite,
-      filterDepartementTutelle,
-      filterSecteur,
-    ]
-  )
-
-  // ── Mutations ──
-  const createMutation = useCreateProjet()
-  const updateMutation = useUpdateProjet(currentRow?.id_projet || 0)
-  const mutation = isEdit ? updateMutation : createMutation
-
   // ── Helpers d'extraction d'ID ──
   const extractId = (item: any): number => {
     if (typeof item === 'number') return item
@@ -128,6 +79,100 @@ export default function AddProjet({ open, onOpenChange, currentRow }: OpenPropsP
     return items.map(extractId).filter((id) => id !== 0)
   }
 
+  // ── Département tutelle initial en mode édition ──
+  const initialDepartementTutelle = useMemo(() => {
+    if (!currentRow?.structure_projet || !planSites.length) return null
+    const structId = extractId(currentRow.structure_projet)
+    const struct = planSites.find((ps) => ps.id_ds === structId)
+    if (!struct) return null
+    const parentId =
+      typeof struct.parent_ds === 'object' && struct.parent_ds !== null
+        ? (struct.parent_ds as any).id_ds
+        : struct.parent_ds
+    return parentId ? Number(parentId) : null
+  }, [currentRow, planSites])
+
+  // ── Niveaux de localité initiaux en mode édition ──
+  const initialNiveauxLocalite = useMemo(() => {
+    if (!currentRow?.zone_projet || !localites.length) return []
+    const zoneIds = extractIds(currentRow.zone_projet)
+    const niveauIds = new Set<number>()
+    for (const loc of localites) {
+      if (zoneIds.includes(loc.id_loca)) {
+        const nivId =
+          typeof loc.niveau_loca === 'object' && loc.niveau_loca !== null
+            ? loc.niveau_loca.id_nlc || loc.niveau_loca.nombre_nlc
+            : loc.niveau_loca
+        if (nivId) niveauIds.add(Number(nivId))
+      }
+    }
+    return Array.from(niveauIds)
+  }, [currentRow, localites])
+
+  // ── États pour les filtres dynamiques ──
+  const [filterNiveauLocalite, setFilterNiveauLocalite] = useState<number[]>(initialNiveauxLocalite)
+  const [filterDepartementTutelle, setFilterDepartementTutelle] = useState<number | null>(
+    initialDepartementTutelle
+  )
+  const [filterSecteur, setFilterSecteur] = useState<number | null>(null)
+  const [selectedZoneProjet, setSelectedZoneProjet] = useState<number[]>(() =>
+    extractIds(currentRow?.zone_projet)
+  )
+
+  useEffect(() => {
+    if (open) {
+      setFilterNiveauLocalite(initialNiveauxLocalite)
+      setFilterDepartementTutelle(initialDepartementTutelle)
+      setSelectedZoneProjet(extractIds(currentRow?.zone_projet))
+    }
+  }, [open, initialNiveauxLocalite, initialDepartementTutelle, currentRow])
+
+  // ── Configuration du formulaire ──
+  const formConfig = useMemo(
+    () =>
+      getProjetFormConfig({
+        acteurs,
+        localites,
+        niveauxLocalite,
+        programmes,
+        niveauxPlanSite,
+        planSites,
+        niveauxAvancement,
+        etatsFinancement,
+        typeProjets,
+        enverguresProjet,
+        secteurs,
+        personnels,
+        filterNiveauLocalite,
+        filterDepartementTutelle,
+        filterSecteur,
+        selectedZoneProjet,
+      }),
+    [
+      acteurs,
+      localites,
+      niveauxLocalite,
+      programmes,
+      niveauxPlanSite,
+      planSites,
+      niveauxAvancement,
+      etatsFinancement,
+      typeProjets,
+      enverguresProjet,
+      secteurs,
+      personnels,
+      filterNiveauLocalite,
+      filterDepartementTutelle,
+      filterSecteur,
+      selectedZoneProjet,
+    ]
+  )
+
+  // ── Mutations ──
+  const createMutation = useCreateProjet()
+  const updateMutation = useUpdateProjet(currentRow?.id_projet || 0)
+  const mutation = isEdit ? updateMutation : createMutation
+
   // ── Valeurs par défaut ──
   const defaultValues: ProjectCreateData = {
     // Étape 1
@@ -146,11 +191,11 @@ export default function AddProjet({ open, onOpenChange, currentRow }: OpenPropsP
     description_projet: currentRow?.description_projet ?? '',
 
     // Étape 2
-    filter_niveau_localite: null,
+    filter_niveau_localite: initialNiveauxLocalite,
     zone_projet: extractIds(currentRow?.zone_projet),
     programme_projet:
       extractId(currentRow?.programme_projet) || (idProgramme ? Number(idProgramme) : 0),
-    filter_departement_tutelle: null,
+    filter_departement_tutelle: initialDepartementTutelle,
     structure_projet: extractId(currentRow?.structure_projet),
     niveau_avancement: extractId(currentRow?.niveau_avancement) || null,
     avance_demarrage: currentRow?.avance_demarrage ?? null,
@@ -175,9 +220,19 @@ export default function AddProjet({ open, onOpenChange, currentRow }: OpenPropsP
   // ── Événements de changement sur les champs ──
   const handleFieldChange = (fieldName: string, value: unknown) => {
     if (fieldName === 'filter_niveau_localite') {
-      setFilterNiveauLocalite(value ? Number(value) : null)
+      const vals = Array.isArray(value)
+        ? value.map(Number).filter((v) => !isNaN(v) && v > 0)
+        : value
+          ? [Number(value)]
+          : []
+      setFilterNiveauLocalite(vals)
+    } else if (fieldName === 'zone_projet') {
+      const vals = Array.isArray(value) ? value.map(Number) : []
+      setSelectedZoneProjet(vals)
     } else if (fieldName === 'filter_departement_tutelle') {
-      setFilterDepartementTutelle(value ? Number(value) : null)
+      const depId = value ? Number(value) : null
+      setFilterDepartementTutelle(depId)
+      formRef.current?.setValue('structure_projet', null)
     } else if (fieldName === 'filter_secteur') {
       setFilterSecteur(value ? Number(value) : null)
     } else if (

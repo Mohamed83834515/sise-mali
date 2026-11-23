@@ -27,9 +27,10 @@ export interface ProjetFormOptions {
   secteurs?: Secteur[]
   personnels?: Personnel[]
   // Filtres actifs
-  filterNiveauLocalite?: number | null
+  filterNiveauLocalite?: number[] | number | null
   filterDepartementTutelle?: number | null
   filterSecteur?: number | null
+  selectedZoneProjet?: number[]
 }
 
 export const getProjetFormConfig = ({
@@ -48,21 +49,40 @@ export const getProjetFormConfig = ({
   filterNiveauLocalite,
   filterDepartementTutelle,
   filterSecteur,
+  selectedZoneProjet,
 }: ProjetFormOptions = {}): FormConfig => {
   // ── Filtrage dynamique des localités ──
-  const filteredLocalites = filterNiveauLocalite
+  const selectedLevelIds: number[] = Array.isArray(filterNiveauLocalite)
+    ? filterNiveauLocalite.map(Number).filter((n) => !isNaN(n) && n > 0)
+    : filterNiveauLocalite
+      ? [Number(filterNiveauLocalite)]
+      : []
+
+  const filteredLocalites = selectedLevelIds.length > 0
     ? localites.filter((loc) => {
-        if (typeof loc.niveau_loca === 'object' && loc.niveau_loca !== null) {
-          return (
-            loc.niveau_loca.id_nlc === filterNiveauLocalite ||
-            loc.niveau_loca.nombre_nlc === filterNiveauLocalite
-          )
-        }
-        return loc.niveau_loca === filterNiveauLocalite
+        const nivId =
+          typeof loc.niveau_loca === 'object' && loc.niveau_loca !== null
+            ? loc.niveau_loca.id_nlc || loc.niveau_loca.nombre_nlc
+            : loc.niveau_loca
+        return selectedLevelIds.includes(Number(nivId))
       })
     : localites
 
-  const localiteOpts: SelectOption[] = filteredLocalites.map((loc) => ({
+  // Conserver les localités sélectionnées pour garantir l'affichage de leur nom
+  const localitesMap = new Map<number, Localite>()
+  for (const loc of filteredLocalites) {
+    if (loc.id_loca) localitesMap.set(loc.id_loca, loc)
+  }
+  if (selectedZoneProjet && Array.isArray(selectedZoneProjet)) {
+    for (const id of selectedZoneProjet) {
+      if (!localitesMap.has(id)) {
+        const found = localites.find((l) => l.id_loca === id)
+        if (found) localitesMap.set(id, found)
+      }
+    }
+  }
+
+  const localiteOpts: SelectOption[] = Array.from(localitesMap.values()).map((loc) => ({
     value: loc.id_loca,
     label: loc.code_national_loca
       ? `${loc.code_national_loca} - ${loc.intitule_loca}`
@@ -74,19 +94,67 @@ export const getProjetFormConfig = ({
     label: nl.libelle_nlc,
   }))
 
-  // ── Filtrage dynamique des structures (Plans de site) ──
+  // ── Plan-sites : Département tutelle (Niveau 1) & Structures rattachées (Niveau 2) ──
+  const sortedNiveauxPlanSite = [...niveauxPlanSite].sort(
+    (a: any, b: any) => (Number(a.nombre_nsc) || 0) - (Number(b.nombre_nsc) || 0)
+  )
+  const firstNiveauPlanSite = sortedNiveauxPlanSite[0]
+  const firstNiveauId = firstNiveauPlanSite?.id_nsc || firstNiveauPlanSite?.nombre_nsc
+  const firstNiveauNombre = Number(firstNiveauPlanSite?.nombre_nsc) || 1
+
+  const getPlanSiteParentId = (ps: any): number | null => {
+    const p = ps?.parent_ds ?? ps?.parent
+    if (!p) return null
+    if (typeof p === 'object') return Number(p.id_ds || p.id) || null
+    const num = Number(p)
+    return isNaN(num) || num <= 0 ? null : num
+  }
+
+  const getPlanSiteNiveauId = (ps: any): number | null => {
+    const n = ps?.niveau_structure ?? ps?.niveau_ds ?? ps?.niveau
+    if (!n) return null
+    if (typeof n === 'object') return Number(n.id_nsc || n.nombre_nsc || n.id) || null
+    const num = Number(n)
+    return isNaN(num) || num <= 0 ? null : num
+  }
+
+  const isLevel1PlanSite = (ps: PlanSite): boolean => {
+    const parentId = getPlanSiteParentId(ps)
+    // S'il a un parent défini et > 0, ce n'est PAS un niveau 1 (c'est une structure rattachée)
+    if (parentId && parentId > 0) return false
+
+    const nivId = getPlanSiteNiveauId(ps)
+    if (firstNiveauId && (nivId === Number(firstNiveauId) || nivId === firstNiveauNombre)) {
+      return true
+    }
+    return !parentId
+  }
+
+  // 1er niveau de plan-site = Départements de tutelle
+  const departementsTutelle = planSites.filter(isLevel1PlanSite)
+
+  const departementTutelleOpts: SelectOption[] = departementsTutelle.map((ps) => ({
+    value: ps.id_ds || 0,
+    label: ps.code_relai_ds || ps.code_ds
+      ? `${ps.code_relai_ds || ps.code_ds} - ${ps.intutile_ds}`
+      : ps.intutile_ds || `Département #${ps.id_ds}`,
+  }))
+
+  // 2ème niveau de plan-site = STRICTEMENT les structures rattachées au département sélectionné
+  // On ne doit JAMAIS afficher de structures du premier niveau ici, ni retomber sur tout planSites
   const filteredPlanSites = filterDepartementTutelle
-    ? planSites.filter((ps) => ps.niveau_ds === filterDepartementTutelle)
-    : planSites
+    ? planSites.filter((ps) => {
+        if (isLevel1PlanSite(ps)) return false
+        const parentId = getPlanSiteParentId(ps)
+        return parentId === Number(filterDepartementTutelle)
+      })
+    : []
 
   const planSiteOpts: SelectOption[] = filteredPlanSites.map((ps) => ({
     value: ps.id_ds || 0,
-    label: ps.intutile_ds || ps.code_ds || `Structure #${ps.id_ds}`,
-  }))
-
-  const niveauPlanSiteOpts: SelectOption[] = niveauxPlanSite.map((nsc) => ({
-    value: nsc.id_nsc || nsc.nombre_nsc,
-    label: nsc.libelle_nsc,
+    label: ps.code_relai_ds || ps.code_ds
+      ? `${ps.code_relai_ds || ps.code_ds} - ${ps.intutile_ds}`
+      : ps.intutile_ds || `Structure #${ps.id_ds}`,
   }))
 
   // ── Filtrage dynamique des secteurs / sous-secteurs ──
@@ -244,7 +312,7 @@ export const getProjetFormConfig = ({
       {
         name: 'filter_niveau_localite',
         label: 'Sélectionner les niveaux de localité',
-        type: 'select',
+        type: 'multiselect',
         placeholder: 'Filtrer par niveau (Région, Cercle…)',
         required: false,
         options: niveauLocaliteOpts,
@@ -275,9 +343,9 @@ export const getProjetFormConfig = ({
         name: 'filter_departement_tutelle',
         label: 'Département tutelle',
         type: 'select',
-        placeholder: 'Filtrer par niveau de tutelle',
+        placeholder: 'Sélectionner un département tutelle',
         required: false,
-        options: niveauPlanSiteOpts,
+        options: departementTutelleOpts,
         gridCols: 2,
         formStep: 2,
       },
@@ -285,7 +353,12 @@ export const getProjetFormConfig = ({
         name: 'structure_projet',
         label: 'Structure',
         type: 'select',
-        placeholder: 'Sélectionner une structure',
+        placeholder: filterDepartementTutelle
+          ? filteredPlanSites.length > 0
+            ? 'Sélectionner une structure rattachée'
+            : 'Aucune structure rattachée pour ce département'
+          : 'Sélectionner d’abord un département tutelle',
+        disabled: !filterDepartementTutelle,
         required: true,
         options: planSiteOpts,
         gridCols: 2,
