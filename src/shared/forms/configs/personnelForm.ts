@@ -89,7 +89,7 @@ export function getPersonnelFormConfigForDialog({
         name: 'contact_perso',
         label: 'Contact',
         type: 'tel',
-        placeholder: '+224…',
+        placeholder: '+223…',
         required: true,
         gridCols: 2,
       },

@@ -8,9 +8,15 @@ import { useDeleteActeur, useGetActeurs } from '@/shared/api/hooks/admin/acteurH
 import { useGetCategoriesActeur } from '@/shared/api/hooks/admin/categorieActeurHooks'
 import { buildActeurColumns } from '@/shared/tables/columns/acteur-columns'
 import { GenericDialogs } from '@/shared/tables'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Loader2 } from 'lucide-react'
-import { useNiveauTabsTheme } from '@/components/ui/NiveauTabs'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Label } from '@/components/ui/label'
+import { Loader2, Filter } from 'lucide-react'
 import AddActeur from './AddActeur'
 import { useActeurStore } from '@/stores/acteur-store'
 
@@ -18,20 +24,23 @@ export function ListeActeur() {
   const { search, navigate } = useEmbeddedTableState()
   const [open, setOpen] = useDialogState<'add' | 'edit' | 'delete'>(null)
   const [currentRow, setCurrentRow] = useState<Acteur | null>(null)
-  // Remplacer le useState local
   const { selectedCategorieId, setSelectedCategorieId } = useActeurStore()
 
   const { data: acteurs = [], isLoading: isLoadingActeurs } = useGetActeurs()
   const { data: categories = [], isLoading: isLoadingCategories } = useGetCategoriesActeur()
-  const { tabsStyle } = useNiveauTabsTheme()
 
   // Compter le nombre d'acteurs par catégorie
   const countByCategorie = useMemo(() => {
     const counts = new Map<number, number>()
     categories.forEach((cat) => {
-      const count = acteurs.filter(
-        (acteur) => acteur.categorie_acteur?.id_categorie === cat.id_categorie
-      ).length
+      const count = acteurs.filter((acteur) => {
+        const catId =
+          acteur.categorie_acteur?.id_categorie ??
+          (typeof acteur.categorie_acteur === 'number'
+            ? acteur.categorie_acteur
+            : undefined)
+        return catId === cat.id_categorie
+      }).length
       counts.set(cat.id_categorie, count)
     })
     return counts
@@ -46,22 +55,18 @@ export function ListeActeur() {
     })
   }, [categories, countByCategorie])
 
-  // Sélectionner la première catégorie par défaut (celle avec le plus d'acteurs)
-  const defaultCategorieId = useMemo(() => {
-    if (sortedCategories.length > 0 && selectedCategorieId === null) {
-      setSelectedCategorieId(sortedCategories[0].id_categorie)
-    }
-    return selectedCategorieId ?? sortedCategories[0]?.id_categorie ?? null
-  }, [sortedCategories, selectedCategorieId])
-
   // Filtrer les acteurs par catégorie
   const filteredActeurs = useMemo(() => {
-    const activeId = selectedCategorieId ?? defaultCategorieId
-    if (!activeId) return []
-    return acteurs.filter(
-      (acteur) => acteur.categorie_acteur?.id_categorie === activeId
-    )
-  }, [acteurs, selectedCategorieId, defaultCategorieId])
+    if (!selectedCategorieId) return acteurs
+    return acteurs.filter((acteur) => {
+      const catId =
+        acteur.categorie_acteur?.id_categorie ??
+        (typeof acteur.categorie_acteur === 'number'
+          ? acteur.categorie_acteur
+          : undefined)
+      return catId === selectedCategorieId
+    })
+  }, [acteurs, selectedCategorieId])
 
   const columns = useMemo(
     () => buildActeurColumns(setOpen, setCurrentRow),
@@ -78,46 +83,57 @@ export function ListeActeur() {
     )
   }
 
-  const currentActiveId = selectedCategorieId ?? defaultCategorieId
+  const selectedCatObj = selectedCategorieId
+    ? sortedCategories.find((c) => c.id_categorie === selectedCategorieId)
+    : null
 
   return (
-    <div className='space-y-2 px-2'>
-      {/* En-tête */}
-      <div className='overflow-x-auto'>
-        <Tabs
-          orientation='vertical'
-          className='gap-1 space-y-1'
-          style={tabsStyle}
-          value={String(currentActiveId)}
-          onValueChange={(val) => setSelectedCategorieId(Number(val))}
-        >
-          <TabsList className='flex max-w-full flex-nowrap sm:flex-wrap overflow-x-auto gap-1 scrollbar-none'>
-            {sortedCategories && sortedCategories.length > 0 ? (
-              sortedCategories.map((categorie) => {
-                // Sécuriser chaque élément
+    <div className='space-y-3 px-2'>
+      {/* Filtre par catégorie sous forme de Select */}
+      <div className='flex items-center justify-between gap-4 rounded-lg border bg-card p-2.5 shadow-sm'>
+        <div className='flex items-center gap-2.5'>
+          <Filter className='h-4 w-4 text-primary shrink-0' />
+          <Label htmlFor='categorie-filter' className='text-xs font-semibold text-slate-700 whitespace-nowrap'>
+            Catégorie d&apos;acteur :
+          </Label>
+          <Select
+            value={selectedCategorieId ? String(selectedCategorieId) : 'all'}
+            onValueChange={(val) =>
+              setSelectedCategorieId(val === 'all' ? null : Number(val))
+            }
+          >
+            <SelectTrigger id='categorie-filter' className='h-8.5 min-w-[240px] max-w-sm text-xs font-medium'>
+              <SelectValue placeholder='Toutes les catégories' />
+            </SelectTrigger>
+            <SelectContent className='max-h-64'>
+              <SelectItem value='all'>
+                Toutes les catégories ({acteurs.length})
+              </SelectItem>
+              {sortedCategories.map((categorie) => {
                 if (!categorie || !categorie.id_categorie) return null
-
-                const nom = categorie.nom_categorie || 'Sans nom'
-                const displayNom = nom.length > 15 ? nom.substring(0, 12) + '…' : nom
-                const count = countByCategorie?.get(categorie.id_categorie) || 0
-
+                const count = countByCategorie.get(categorie.id_categorie) || 0
                 return (
-                  <TabsTrigger
+                  <SelectItem
                     key={categorie.id_categorie}
                     value={String(categorie.id_categorie)}
                   >
-                    {displayNom}
-                    <span className='rounded-full bg-muted px-1.5 py-0.5 text-xs text-black'>
-                      ({count})
-                    </span>
-                  </TabsTrigger>
+                    {categorie.nom_categorie} ({count})
+                  </SelectItem>
                 )
-              })
-            ) : (
-              <span>Aucune catégorie d'acteur trouvée</span>
-            )}
-          </TabsList>
-        </Tabs>
+              })}
+            </SelectContent>
+          </Select>
+        </div>
+
+        {selectedCategorieId && (
+          <button
+            type='button'
+            onClick={() => setSelectedCategorieId(null)}
+            className='text-xs text-primary hover:underline font-medium'
+          >
+            Réinitialiser le filtre
+          </button>
+        )}
       </div>
 
       {/* Tableau des acteurs */}
@@ -144,9 +160,8 @@ export function ListeActeur() {
           defaultPageSize={10}
           showViewOptions={true}
           emptyMessage={
-            currentActiveId
-              ? `Aucun acteur dans la catégorie ${sortedCategories.find((c) => c.id_categorie === currentActiveId)?.nom_categorie || ''
-              }`
+            selectedCatObj
+              ? `Aucun acteur dans la catégorie ${selectedCatObj.nom_categorie || ''}.`
               : 'Aucun acteur trouvé.'
           }
         />

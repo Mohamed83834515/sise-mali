@@ -1,6 +1,6 @@
-import { useCallback, useMemo, useEffect, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { getRouteApi } from '@tanstack/react-router'
-import { Loader2 } from 'lucide-react'
+import { Loader2, Filter } from 'lucide-react'
 import { GenericTable } from '@/shared/tables'
 import { useActiveProgramme } from '@/hooks/use-active-programme'
 import { buildProjetsColumns } from '@/shared/tables/columns/projets-columns'
@@ -12,8 +12,7 @@ import { GenericDeleteDialog } from '@/shared/tables'
 import AddProjet from './AddProjet'
 import { useGeneralParamsQuery } from '@/shared/api/hooks/generalParams/queries'
 import { useTypeProjetStore } from '@/stores/type-projet-store'
-import { useNiveauTabsTheme } from './detail/NiveauTabs'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
@@ -33,7 +32,6 @@ export default function ListeProjets() {
   const navigate = route.useNavigate()
   const activeProgramme = useActiveProgramme()
 
-  const { tabsStyle } = useNiveauTabsTheme()
   const [open, setOpen] = useDialogState<'add' | 'edit' | 'delete' | 'cloture'>(null)
   const [currentRow, setCurrentRow] = useState<Projet | null>(null)
 
@@ -68,20 +66,6 @@ export default function ListeProjets() {
       a.nom_type_projet?.localeCompare(b.nom_type_projet) || 0
     )
   }, [typeProjets])
-
-  // ✅ ID actif : store s'il est valide, sinon premier type disponible
-  const activeTypeId = useMemo(() => {
-    if (!sortedTypes.length) return null
-    const existsInList = sortedTypes.some(t => t.id_type_projet === selectedTypeProjetId)
-    return existsInList ? selectedTypeProjetId : sortedTypes[0].id_type_projet
-  }, [sortedTypes, selectedTypeProjetId])
-
-  // ✅ Sync le store si on a dû fallback sur le premier type
-  useEffect(() => {
-    if (activeTypeId !== null && activeTypeId !== selectedTypeProjetId) {
-      setSelectedTypeProjetId(activeTypeId)
-    }
-  }, [activeTypeId, selectedTypeProjetId, setSelectedTypeProjetId])
 
   // Fonction pour ouvrir le dialogue de clôture
   const handleClotureClick = (row: Projet) => {
@@ -118,17 +102,33 @@ export default function ListeProjets() {
     return projets
   }, [projets, userLevel, nPersonnel])
 
+  // ✅ Compter les projets par type
+  const countByType = useMemo(() => {
+    const counts = new Map<number, number>()
+    sortedTypes.forEach((t) => {
+      const count = filteredByResponsable.filter((p) => {
+        const typeId =
+          typeof p.type_projet === 'number'
+            ? p.type_projet
+            : (p.type_projet as any)?.id_type_projet
+        return typeId === t.id_type_projet
+      }).length
+      counts.set(t.id_type_projet, count)
+    })
+    return counts
+  }, [sortedTypes, filteredByResponsable])
+
   // ✅ Filtrer par type de projet
   const filteredByType = useMemo(() => {
-    if (!activeTypeId) return filteredByResponsable
+    if (!selectedTypeProjetId) return filteredByResponsable
     return filteredByResponsable.filter((projet) => {
       if (!projet.type_projet) return false
       const id = typeof projet.type_projet === 'number'
         ? projet.type_projet
         : (projet.type_projet as any)?.id_type_projet
-      return id === activeTypeId
+      return id === selectedTypeProjetId
     })
-  }, [filteredByResponsable, activeTypeId])
+  }, [filteredByResponsable, selectedTypeProjetId])
 
   // ✅ Filtrer par statut de clôture
   const filteredProjets = useMemo(() => {
@@ -161,49 +161,74 @@ export default function ListeProjets() {
 
   return (
     <div className='space-y-3 px-1 sm:px-2'>
-      <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2.5'>
-        <div className='overflow-x-auto max-w-full flex-1'>
-          <Tabs
-            orientation='vertical'
-            className='gap-1 space-y-1'
-            style={tabsStyle}
-            value={activeTypeId !== null ? String(activeTypeId) : undefined}
-            onValueChange={(val) => setSelectedTypeProjetId(Number(val))}
+      {/* Barre de filtres (Type de projet & Statut) */}
+      <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-lg border bg-card p-2.5 shadow-sm'>
+        <div className='flex flex-wrap items-center gap-2.5'>
+          <Filter className='h-4 w-4 text-primary shrink-0' />
+          <Label
+            htmlFor='type-projet-filter'
+            className='text-xs font-semibold text-slate-700 whitespace-nowrap'
           >
-            <TabsList className='flex max-w-full flex-nowrap sm:flex-wrap overflow-x-auto gap-1 scrollbar-none'>
+            Type de projet :
+          </Label>
+          <Select
+            value={selectedTypeProjetId ? String(selectedTypeProjetId) : 'all'}
+            onValueChange={(val) =>
+              setSelectedTypeProjetId(val === 'all' ? null : Number(val))
+            }
+          >
+            <SelectTrigger
+              id='type-projet-filter'
+              className='h-8.5 min-w-[220px] max-w-xs text-xs font-medium'
+            >
+              <SelectValue placeholder='Tous les types de projet' />
+            </SelectTrigger>
+            <SelectContent className='max-h-64'>
+              <SelectItem value='all'>
+                Tous les types ({filteredByResponsable.length})
+              </SelectItem>
               {sortedTypes.map((type) => {
-                // const count = countByType.get(type.id_type_projet) || 0
+                const count = countByType.get(type.id_type_projet) || 0
                 return (
-                  <TabsTrigger
-                    className='relative shrink-0'
+                  <SelectItem
                     key={type.id_type_projet}
                     value={String(type.id_type_projet)}
                   >
-                    {type.nom_type_projet.length > 20
-                      ? type.nom_type_projet.substring(0, 14) + '…'
-                      : type.nom_type_projet}
-                    {/* ✅ Afficher le compteur */}
-                    {/* <span className='rounded-full bg-muted px-1.5 py-0.5 text-xs text-black'>
-                      ({count})
-                    </span> */}
-                  </TabsTrigger>
+                    {type.nom_type_projet} ({count})
+                  </SelectItem>
                 )
               })}
-            </TabsList>
-          </Tabs>
+            </SelectContent>
+          </Select>
+
+          {selectedTypeProjetId && (
+            <button
+              type='button'
+              onClick={() => setSelectedTypeProjetId(null)}
+              className='text-xs text-primary hover:underline font-medium ml-1'
+            >
+              Réinitialiser
+            </button>
+          )}
         </div>
-        <Select
-          value={filtreCloture}
-          onValueChange={(value) => setFiltreCloture(value as FiltreCloture)}
-        >
-          <SelectTrigger className='w-full sm:w-[160px] h-9 shrink-0'>
-            <SelectValue placeholder='Statut' />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value='en_cours'>📋 En cours</SelectItem>
-            <SelectItem value='cloturer'>✅ Clôturés</SelectItem>
-          </SelectContent>
-        </Select>
+
+        <div className='flex items-center gap-2'>
+          <Label className='text-xs font-semibold text-slate-700 whitespace-nowrap hidden sm:inline'>
+            Statut :
+          </Label>
+          <Select
+            value={filtreCloture}
+            onValueChange={(value) => setFiltreCloture(value as FiltreCloture)}
+          >
+            <SelectTrigger className='w-full sm:w-[150px] h-8.5 text-xs font-medium shrink-0'>
+              <SelectValue placeholder='Statut' />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value='en_cours'>📋 En cours</SelectItem>
+              <SelectItem value='cloturer'>✅ Clôturés</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <div className='space-y-2'>
@@ -221,9 +246,9 @@ export default function ListeProjets() {
           defaultPageSize={10}
           showViewOptions={false}
           emptyMessage={
-            activeTypeId
-              ? `Aucun projet ${filtreCloture === 'en_cours' ? 'en cours' : 'clôturé'} dans le type ${sortedTypes.find(t => t.id_type_projet === activeTypeId)?.nom_type_projet || ''}`
-              : 'Aucun projet trouvé.'
+            selectedTypeProjetId
+              ? `Aucun projet ${filtreCloture === 'en_cours' ? 'en cours' : 'clôturé'} dans le type ${sortedTypes.find(t => t.id_type_projet === selectedTypeProjetId)?.nom_type_projet || ''}`
+              : `Aucun projet ${filtreCloture === 'en_cours' ? 'en cours' : 'clôturé'} trouvé.`
           }
         />
       </div>

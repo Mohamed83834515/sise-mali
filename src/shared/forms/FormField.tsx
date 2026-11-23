@@ -1370,7 +1370,7 @@ export const FormField = ({
                 <PhoneInput
                   international
                   countryCallingCodeEditable={false}
-                  defaultCountry={'GN'}
+                  defaultCountry={'ML'}
                   value={value || undefined}
                   onChange={(phoneValue: any) => {
                     onChange(phoneValue ?? '')

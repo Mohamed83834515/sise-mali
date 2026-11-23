@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 import { TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CHART_COLORS, useColor } from '@/stores/others/color-store'
+import { cn } from '@/lib/utils'
 
 export function useNiveauTabsTheme() {
   const { color } = useColor()
@@ -33,6 +34,21 @@ export function NiveauTabTrigger({ value, count, children }: NiveauTabTriggerPro
   )
 }
 
-export function NiveauTabsList({ children }: { children: React.ReactNode }) {
-  return <TabsList className='flex max-w-full flex-nowrap justify-start gap-1 overflow-x-auto'>{children}</TabsList>
+export function NiveauTabsList({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <TabsList
+      className={cn(
+        'inline-flex w-auto max-w-full flex-nowrap justify-start sm:justify-start gap-1 overflow-x-auto',
+        className
+      )}
+    >
+      {children}
+    </TabsList>
+  )
 }

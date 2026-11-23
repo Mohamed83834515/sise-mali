@@ -122,7 +122,7 @@ export default function ListeSecteur() {
           className='w-full'
           style={tabsStyle}
         >
-          <div className='border-b pb-2'>
+          <div className='border-b pb-2 flex justify-start'>
             <NiveauTabsList>
               {sortedNiveaux.map((niveau) => {
                 const count = allSecteurs.filter(
