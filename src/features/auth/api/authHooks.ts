@@ -68,11 +68,33 @@ export function useLogin() {
     mutationFn: (credentials: LoginCredentials) =>
       authService.login(credentials),
 
-    onSuccess: async (data:any) => {
+    onSuccess: async (data: any, variables: LoginCredentials) => {
+      // ✅ Si l'authentification à double facteur (OTP) est activée
+      if (data?.otp_required) {
+        toast.info(
+          data.message ||
+            'Un code OTP a été envoyé à votre adresse e-mail (valable 5 min).'
+        )
+
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem(
+            'pending_otp_username',
+            variables.id_personnel_perso
+          )
+        }
+
+        navigate({
+          to: '/otp',
+        })
+        return
+      }
+
       // ✅ Mettre à jour le store
       login()
-      // data contient probablement l'utilisateur avec niveau_perso
-      const userLevel = data.personnel.niveau_perso || 1
+
+      // data contient l'utilisateur avec niveau_perso
+      const userLevel =
+        data?.personnel?.niveau_perso ?? data?.user?.niveau_perso ?? 1
 
       // ✅ Déterminer la redirection assainie
       let redirectPath = sanitizeRedirectPath(search.redirect)
@@ -96,6 +118,68 @@ export function useLogin() {
 
     onError: (error) => {
       toast.error(error.message)
+      handleApiError(error)
+    },
+  })
+}
+
+// ✅ Hook pour la validation du code OTP (2FA)
+export function useVerifyOtp() {
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+  const { login } = useAuthStore()
+
+  return useMutation({
+    mutationFn: (payload: {
+      otp?: string
+      otp_code?: string
+      id_personnel_perso?: string
+    }) => authService.verifyOtp(payload),
+
+    onSuccess: async (data: any) => {
+      login()
+
+      const userLevel =
+        data?.personnel?.niveau_perso ?? data?.user?.niveau_perso ?? 1
+
+      if (typeof window !== 'undefined') {
+        sessionStorage.removeItem('pending_otp_username')
+      }
+
+      let redirectPath = '/'
+      if (userLevel === 3) {
+        redirectPath = '/projet-programme/projets'
+      }
+
+      toast.success('Connexion réussie')
+
+      navigate({
+        to: redirectPath,
+        replace: true,
+      })
+
+      await queryClient.invalidateQueries({
+        queryKey: personnelKeys.me(),
+      })
+    },
+
+    onError: (error: any) => {
+      const data = error?.response?.data
+      let msg = 'Code OTP invalide ou expiré'
+      if (typeof data === 'string') {
+        msg = data
+      } else if (data?.otp_code) {
+        msg = Array.isArray(data.otp_code)
+          ? data.otp_code.join(', ')
+          : String(data.otp_code)
+      } else if (data?.detail) {
+        msg = data.detail
+      } else if (data?.message) {
+        msg = data.message
+      } else if (error?.message) {
+        msg = error.message
+      }
+      toast.error(msg)
       handleApiError(error)
     },
   })

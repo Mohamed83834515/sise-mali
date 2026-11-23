@@ -24,7 +24,7 @@ export const publicApi = axios.create({
 
 // Excluded endpoints
 
-const EXCLUDED = ['/auth/login']
+const EXCLUDED = ['/auth/login', '/auth/verify-otp', '/auth/otp']
 
 const isExcluded = (url?: string) => EXCLUDED.some((e) => url?.includes(e))
 

@@ -1,6 +1,7 @@
 declare interface LoginCredentials {
   id_personnel_perso: string
   password: string
+  otp?: string
 }
 
 declare interface ResetLinkCredentials {
@@ -23,9 +24,12 @@ declare interface AuthUser {
 }
 
 declare interface LoginResponse {
-  access: string
-  refresh: string
+  access?: string
+  refresh?: string
   user?: AuthUser
+  personnel?: any
+  otp_required?: boolean
+  message?: string
 }
 
 declare interface ChangePasswordData {

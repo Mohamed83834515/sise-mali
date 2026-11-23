@@ -4,6 +4,7 @@ import { toast } from 'sonner'
 export interface LoginCredentials {
   id_personnel_perso: string
   password: string
+  otp?: string
 }
 
 export interface ResetLinkCredentials {
@@ -26,9 +27,12 @@ interface User {
 }
 
 interface LoginResponse {
-  access: string
-  refresh: string
+  access?: string
+  refresh?: string
   user?: User
+  personnel?: any
+  otp_required?: boolean
+  message?: string
 }
 
 interface ChangePasswordData {
@@ -44,6 +48,47 @@ export const authService = {
       method: 'POST',
       data: credentials,
     })
+  },
+
+  // Verify OTP for 2FA
+  async verifyOtp(payload: {
+    otp?: string
+    otp_code?: string
+    id_personnel_perso?: string
+  }): Promise<LoginResponse> {
+    const code = payload.otp_code || payload.otp || ''
+    const dataToSend = {
+      otp_code: code,
+      otp: code,
+      ...(payload.id_personnel_perso
+        ? { id_personnel_perso: payload.id_personnel_perso }
+        : {}),
+    }
+
+    try {
+      return await apiClient.request<LoginResponse>('/auth/verify-otp/', {
+        method: 'POST',
+        data: dataToSend,
+      })
+    } catch (err: any) {
+      if (err?.response?.status === 404) {
+        try {
+          return await apiClient.request<LoginResponse>('/auth/otp/', {
+            method: 'POST',
+            data: dataToSend,
+          })
+        } catch (subErr: any) {
+          if (subErr?.response?.status === 404) {
+            return await apiClient.request<LoginResponse>('/auth/login/', {
+              method: 'POST',
+              data: dataToSend,
+            })
+          }
+          throw subErr
+        }
+      }
+      throw err
+    }
   },
 
   async me(): Promise<Personnel> {
