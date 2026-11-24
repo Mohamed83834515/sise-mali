@@ -31,10 +31,15 @@ export const useSaveInfrastructure = (
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: (data: Record<string, any> | FormData) =>
-      isEdit && currentRow?.id_infrastructure
-        ? infrastructureService.update(currentRow.id_infrastructure, data)
-        : infrastructureService.create(data),
+    mutationFn: (data: Record<string, any> | FormData) => {
+      if (isEdit && currentRow?.id_infrastructure) {
+        return infrastructureService.update(currentRow.id_infrastructure, data)
+      }
+      if (idProjet) {
+        return infrastructureService.createForProjet(idProjet, data)
+      }
+      return infrastructureService.create(data)
+    },
 
     onSuccess: async () => {
       await queryClient.invalidateQueries({

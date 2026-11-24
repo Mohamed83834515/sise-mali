@@ -269,16 +269,38 @@ export default function AddProjet({ open, onOpenChange, currentRow }: OpenPropsP
       is_active:
         data.is_active === true || data.is_active === 'true' || data.is_active === 'Oui',
       structure_projet: data.structure_projet ? Number(data.structure_projet) : null,
-      signataires_projet: (data.signataires_projet || []).map(Number),
-      partenaires_execution_projet: (data.partenaires_execution_projet || []).map(Number),
-      zone_projet: (data.zone_projet || []).map(Number),
-      niveau_avancement: data.niveau_avancement ? Number(data.niveau_avancement) : null,
+      signataires_projet: Array.isArray(data.signataires_projet)
+        ? data.signataires_projet.map(Number).filter((n) => !isNaN(n) && n > 0)
+        : [],
+      partenaires_execution_projet: Array.isArray(data.partenaires_execution_projet)
+        ? data.partenaires_execution_projet.map(Number).filter((n) => !isNaN(n) && n > 0)
+        : [],
+      zone_projet: (data.zone_projet || []).map(Number).filter((n) => !isNaN(n) && n > 0),
+      niveau_avancement:
+        data.niveau_avancement && Number(data.niveau_avancement) > 0
+          ? Number(data.niveau_avancement)
+          : null,
       avance_demarrage: data.avance_demarrage ? Number(data.avance_demarrage) : null,
-      etat_financement: data.etat_financement ? Number(data.etat_financement) : null,
-      envergure_projet: data.envergure_projet ? Number(data.envergure_projet) : null,
-      secteur_projet: data.secteur_projet ? Number(data.secteur_projet) : null,
-      responsable_projet: data.responsable_projet ? Number(data.responsable_projet) : null,
-      budget_projet: Number(data.budget_projet || 0),
+      etat_financement:
+        data.etat_financement && Number(data.etat_financement) > 0
+          ? Number(data.etat_financement)
+          : null,
+      envergure_projet:
+        data.envergure_projet && Number(data.envergure_projet) > 0
+          ? Number(data.envergure_projet)
+          : null,
+      secteur_projet:
+        data.secteur_projet && Number(data.secteur_projet) > 0
+          ? Number(data.secteur_projet)
+          : null,
+      responsable_projet:
+        data.responsable_projet && Number(data.responsable_projet) > 0
+          ? Number(data.responsable_projet)
+          : null,
+      budget_projet:
+        currentRow?.budget_projet != null
+          ? Number(currentRow.budget_projet)
+          : Number(data.budget_projet || 0),
       duree_projet: Number(data.duree_projet || 0),
       recuperation_geolocation:
         data.recuperation_geolocation === 'oui' || data.recuperation_geolocation === true,

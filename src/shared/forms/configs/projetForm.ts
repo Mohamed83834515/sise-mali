@@ -392,15 +392,6 @@ export const getProjetFormConfig = ({
         formStep: 2,
       },
       {
-        name: 'budget_projet',
-        label: 'Coût global',
-        type: 'number',
-        placeholder: 'Ex : 1100000000…',
-        required: true,
-        gridCols: 2,
-        formStep: 2,
-      },
-      {
         name: 'etat_financement',
         label: 'État de financement',
         type: 'select',

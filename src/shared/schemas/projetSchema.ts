@@ -24,7 +24,7 @@ export const projectCreateSchema = z.object({
   niveau_avancement: z.coerce.number().optional().nullable(),
   avance_demarrage: z.coerce.number().optional().nullable(),
   date_estimation: z.string().optional().nullable(),
-  budget_projet: z.coerce.number().min(0, 'Coût global requis'),
+  budget_projet: z.coerce.number().optional().nullable().default(0),
   etat_financement: z.coerce.number().optional().nullable(),
 
   // ── Étape 3 : Classification, Géolocalisation & Acteurs ──
@@ -35,10 +35,32 @@ export const projectCreateSchema = z.object({
   recuperation_geolocation: z.union([z.boolean(), z.string()]).optional().nullable(),
   latitude: z.union([z.coerce.number(), z.string()]).optional().nullable(),
   longitude: z.union([z.coerce.number(), z.string()]).optional().nullable(),
-  responsable_projet: z.coerce.number().optional().nullable(),
-  signataires_projet: z.array(z.coerce.number()).optional().default([]),
-  partenaires_execution_projet: z.array(z.coerce.number()).optional().default([]),
-  partenaire_projet: z.coerce.number().optional().nullable(),
+  responsable_projet: z
+    .preprocess((val) => {
+      if (val === '' || val === null || val === undefined || val === 0 || val === '0') return null
+      const num = Number(val)
+      return isNaN(num) || num <= 0 ? null : num
+    }, z.number().nullable().optional()),
+  signataires_projet: z
+    .preprocess((val) => {
+      if (!val) return []
+      if (Array.isArray(val)) return val.map(Number).filter((n) => !isNaN(n) && n > 0)
+      const num = Number(val)
+      return isNaN(num) || num <= 0 ? [] : [num]
+    }, z.array(z.number()).nullable().optional().default([])),
+  partenaires_execution_projet: z
+    .preprocess((val) => {
+      if (!val) return []
+      if (Array.isArray(val)) return val.map(Number).filter((n) => !isNaN(n) && n > 0)
+      const num = Number(val)
+      return isNaN(num) || num <= 0 ? [] : [num]
+    }, z.array(z.number()).nullable().optional().default([])),
+  partenaire_projet: z
+    .preprocess((val) => {
+      if (val === '' || val === null || val === undefined || val === 0 || val === '0') return null
+      const num = Number(val)
+      return isNaN(num) || num <= 0 ? null : num
+    }, z.number().nullable().optional()),
 })
 
 export const projetClotureSchema = z.object({
