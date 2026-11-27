@@ -7,19 +7,14 @@ import {
   BookOpen,
   FolderOpen,
   CalendarDays,
-  Eye,
   LayoutGrid,
   User,
   SlidersHorizontal,
   MapPin,
   FileStack,
-  BarChart2,
   Target,
   LineChart,
   TrendingUp,
-  FileBarChart,
-  ListChecks,
-  Wallet,
   ClipboardCheck,
   Layers,
   WalletCards,
@@ -112,11 +107,11 @@ export const sidebarData: SidebarData = {
               url: '/programme/liste',
               icon: FileStack,
             },
-            {
-              title: 'Cadre Analytique',
-              url: '/programme/cadre-analytique',
-              icon: BarChart2,
-            },
+            // {
+            //   title: 'Cadre Analytique',
+            //   url: '/programme/cadre-analytique',
+            //   icon: BarChart2,
+            // },
             {
               title: 'Cadre stratégique',
               url: '/programme/cadre-strategique',
@@ -136,33 +131,33 @@ export const sidebarData: SidebarData = {
         },
 
         // ── Programmation ─────────────────────────────────────
-        {
-          title: 'Planification',
-          icon: CalendarDays,
-          items: [
+        // {
+        //   title: 'Planification',
+        //   icon: CalendarDays,
+        //   items: [
 
-            {
-              title: 'Plans d\'Actions Opérationnels',
-              url: '/programmation/ptba',
-              icon: ClipboardList,
-            },
-            // {
-            //   title: 'Contrats de performance',
-            //   url: '/programmation/contrat-performance',
-            //   icon: FileSignature,
-            // },
-            // {
-            //   title: 'Paramétrage des marchés',
-            //   url: '/programmation/parametrage-marches',
-            //   icon: List,
-            // },
-            // {
-            //   title: 'Plan de passation des marchés',
-            //   url: '/programmation/ppms',
-            //   icon: FileStack,
-            // },
-          ],
-        },
+        //     {
+        //       title: 'Plans d\'Actions Opérationnels',
+        //       url: '/programmation/ptba',
+        //       icon: ClipboardList,
+        //     },
+        // {
+        //   title: 'Contrats de performance',
+        //   url: '/programmation/contrat-performance',
+        //   icon: FileSignature,
+        // },
+        // {
+        //   title: 'Paramétrage des marchés',
+        //   url: '/programmation/parametrage-marches',
+        //   icon: List,
+        // },
+        // {
+        //   title: 'Plan de passation des marchés',
+        //   url: '/programmation/ppms',
+        //   icon: FileStack,
+        // },
+        // ],
+        // },
         // ── Projet ─────────────────────────────────────
         {
           title: 'Projets / Programmes',
@@ -198,11 +193,11 @@ export const sidebarData: SidebarData = {
               url: '/suivi-resultats/suivi-indicateurs',
               icon: LineChart,
             },
-            {
-              title: 'Suivi du Plan d\'Action Opérationnel',
-              url: '/suivi-resultats/suivi-ptba',
-              icon: Eye,
-            },
+            // {
+            //   title: 'Suivi du Plan d\'Action Opérationnel',
+            //   url: '/suivi-resultats/suivi-ptba',
+            //   icon: Eye,
+            // },
             // {
             //   title: "Suivi du Plan de passation des marchés",
             //   url: "/suivi-resultats/suivi-ppm",
@@ -217,32 +212,32 @@ export const sidebarData: SidebarData = {
         },
 
         // ── Rapport ───────────────────────────────────────────
-        {
-          title: 'Etats et Rapports',
-          icon: FileBarChart,
-          items: [
-            {
-              title: 'Plans d\'Actions Opérationnels',
-              url: '/rapport/ptba',
-              icon: ClipboardList,
-            },
-            {
-              title: 'Avancement des activités',
-              url: '/rapport/etat-des-activites',
-              icon: ListChecks,
-            },
-            {
-              title: 'Suivi budgétaire',
-              url: '/rapport/decaissement',
-              icon: Wallet,
-            },
-            {
-              title: 'Suivi des indicateurs',
-              url: '/rapport/indicateurs',
-              icon: LineChart,
-            },
-          ],
-        },
+        // {
+        //   title: 'Etats et Rapports',
+        //   icon: FileBarChart,
+        //   items: [
+        //     {
+        //       title: 'Plans d\'Actions Opérationnels',
+        //       url: '/rapport/ptba',
+        //       icon: ClipboardList,
+        //     },
+        //     {
+        //       title: 'Avancement des activités',
+        //       url: '/rapport/etat-des-activites',
+        //       icon: ListChecks,
+        //     },
+        //     {
+        //       title: 'Suivi budgétaire',
+        //       url: '/rapport/decaissement',
+        //       icon: Wallet,
+        //     },
+        //     {
+        //       title: 'Suivi des indicateurs',
+        //       url: '/rapport/indicateurs',
+        //       icon: LineChart,
+        //     },
+        //   ],
+        // },
       ],
     },
 
