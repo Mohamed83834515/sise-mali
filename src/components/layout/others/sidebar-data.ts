@@ -80,7 +80,7 @@ export const sidebarData: SidebarData = {
             //   icon: Handshake,
             // },
             {
-              title: 'Département Tutel',
+              title: 'Département de Tutelle',
               url: '/parametrage/plans-de-site',
               icon: ClipboardList,
             },
